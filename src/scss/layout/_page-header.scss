@@ -1,6 +1,6 @@
 @layer layout {
   .page-header {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -28,6 +28,9 @@
     grid-area: stack;
     width: 28.9rem;
     height: auto;
+    transition:
+      opacity 0.2s,
+      visibility 0.2s;
   }
 
   .page-header__logo-compact {
@@ -35,6 +38,9 @@
     width: 22.1rem;
     opacity: 0;
     visibility: hidden;
+    transition:
+      opacity 0.2s,
+      visibility 0.2s;
   }
 
   .page-header__middle-wrapper {
@@ -68,6 +74,7 @@
     text-transform: uppercase;
     font-family: var(--imb-plex-sans);
     color: var(--text-color);
+    transition: padding 0.2s;
 
     svg {
       width: 2.4rem;
@@ -88,6 +95,9 @@
     width: 8rem;
     height: 8rem;
     background: rgba(255, 255, 255, 0.1);
+    transition:
+      height 0.2s,
+      border-radius 0.2s;
 
     svg {
       width: 2.4rem;
@@ -109,6 +119,7 @@
     flex-shrink: 0;
     border-radius: 5rem;
     background: rgba(255, 255, 255, 0.1);
+    transition: padding 0.2s;
   }
   .page-header__nav-list {
     display: flex;
@@ -129,6 +140,7 @@
     line-height: 105%;
     text-transform: uppercase;
     font-family: var(--imb-plex-sans);
+    transition: padding 0.2s;
 
     svg {
       flex-shrink: 0;
@@ -148,7 +160,9 @@
     flex-shrink: 0;
     transition:
       background-color 0.2s,
-      color 0.2s;
+      color 0.2s,
+      height 0.2s,
+      border-radius 0.2s;
     svg {
       width: 2.4rem;
       height: 2.4rem;
@@ -170,6 +184,50 @@
     flex-shrink: 0;
     transition:
       background-color 0.2s,
-      color 0.2s;
+      color 0.2s,
+      padding 0.2s;
+  }
+
+  .page-header--compact .page-header__logo-full {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .page-header--compact .page-header__products-btn {
+    padding-block: 1.7rem;
+  }
+
+  .page-header--compact .page-header__search-btn {
+    height: 6rem;
+    border-radius: 5rem;
+  }
+
+  // .page-header--compact .page-header__nav {
+  //   padding-inline: 4rem;
+  // }
+
+  .page-header--compact .page-header__nav-link {
+    padding-block: 2.35rem;
+  }
+
+  .page-header--compact .page-header__phone {
+    height: 6rem;
+    border-radius: 5rem;
+  }
+
+  .page-header--compact .page-header__cta {
+    padding-block: 2.3rem;
+  }
+
+  .page-header--compact.page-header--theme-white
+    .page-header__logo-compact--white {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .page-header--compact.page-header--theme-blue
+    .page-header__logo-compact--blue {
+    opacity: 1;
+    visibility: visible;
   }
 }

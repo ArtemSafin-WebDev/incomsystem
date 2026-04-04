@@ -131,11 +131,21 @@
     height: 6rem;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.72);
-  }
+    transition: background-color 0.2s;
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      fill: #fff;
+      transition: fill 0.2s;
+    }
 
-  .hero__social-link svg {
-    width: 2.4rem;
-    height: 2.4rem;
-    fill: #fff;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: white;
+        svg {
+          fill: var(--primary-color);
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,31 @@
+<section class="about-company js-header-theme-section" data-compact-trigger data-header-theme="white">
+    <div class="about-company__bg">
+        <img src="/images/about-company/bg.webp" alt="">
+    </div>
+
+    <div class="container">
+        <div class="about-company__grid">
+            <h2 class="about-company__title">{{aboutCompany.title}}</h2>
+
+            <div class="about-company__content">
+                <p class="about-company__description">{{{aboutCompany.description}}}</p>
+
+                <ul class="about-company__stats-list">
+                    {{#each aboutCompany.stats}}
+                    <li class="about-company__stats-item">
+                        <p class="about-company__stats-value">
+                            <span>{{this.value}}</span><span class="about-company__stats-suffix">{{this.suffix}}</span>
+                        </p>
+                        <div class="about-company__stats-text">
+                            <p class="about-company__stats-title">{{this.title}}</p>
+                            <p class="about-company__stats-description">{{this.text}}</p>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <a href="#" class="about-company__btn btn">{{aboutCompany.buttonText}}</a>
+        </div>
+    </div>
+</section>
