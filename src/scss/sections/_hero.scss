@@ -11,45 +11,13 @@
     min-height: 100vh;
   }
 
-  // .hero__overlay {
-  //   position: relative;
-  //   min-height: inherit;
-  //   isolation: isolate;
-  // }
-
   // .hero__overlay::before {
   //   content: "";
   //   position: absolute;
   //   inset: 0;
   //   background: rgba(0, 0, 0, 0.42);
   //   backdrop-filter: blur(2rem);
-  //   -webkit-backdrop-filter: blur(2rem);
 
-  //   -webkit-mask-image:
-  //     linear-gradient(#fff 0 0),
-  //     url("/images/hero/mask.svg");
-  //   -webkit-mask-repeat: no-repeat, no-repeat;
-  //   -webkit-mask-size:
-  //     100% 100%,
-  //     32.2rem 33.1rem;
-  //   -webkit-mask-position:
-  //     0 0,
-  //     left 4rem bottom 4rem;
-  //   -webkit-mask-mode: alpha, alpha;
-  //   -webkit-mask-composite: xor;
-
-  //   mask-image:
-  //     linear-gradient(#fff 0 0),
-  //     url("/images/hero/mask.svg");
-  //   mask-repeat: no-repeat, no-repeat;
-  //   mask-size:
-  //     100% 100%,
-  //     32.2rem 33.1rem;
-  //   mask-position:
-  //     0 0,
-  //     left 4rem bottom 4rem;
-  //   mask-mode: alpha, alpha;
-  //   mask-composite: exclude;
   // }
 
   .hero__content {
@@ -61,12 +29,14 @@
     padding-top: 24rem;
     padding-bottom: 4rem;
     min-height: 85rem;
+    min-height: 70vh;
   }
 
   .hero__overlay {
     position: absolute;
     inset: 0;
     z-index: -1;
+
     &::before {
       content: "";
       position: absolute;
@@ -77,6 +47,28 @@
       margin-left: -50vw;
       background-color: rgba(0, 111, 221, 0.6);
       backdrop-filter: blur(65px);
+      -webkit-mask-image:
+        linear-gradient(#fff 0 0), url("/images/hero/mask.svg");
+      -webkit-mask-repeat: no-repeat, no-repeat;
+      -webkit-mask-size:
+        100% 100%,
+        32.2rem 33.1rem;
+      -webkit-mask-position:
+        0 0,
+        left 4rem bottom 4rem;
+      -webkit-mask-mode: alpha, alpha;
+      -webkit-mask-composite: xor;
+
+      mask-image: linear-gradient(#fff 0 0), url("/images/hero/mask.svg");
+      mask-repeat: no-repeat, no-repeat;
+      mask-size:
+        100% 100%,
+        32.2rem 33.1rem;
+      mask-position:
+        0 0,
+        left 4rem bottom 4rem;
+      mask-mode: alpha, alpha;
+      mask-composite: exclude;
     }
   }
 
