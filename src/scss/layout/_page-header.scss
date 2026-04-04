@@ -5,6 +5,10 @@
     top: 0;
     width: 100%;
     z-index: 200;
+    transition:
+      background-color 0.2s,
+      border-color 0.2s;
+    border-bottom: 1px solid transparent;
   }
 
   .page-header__row {
@@ -13,6 +17,7 @@
     gap: 2rem;
     padding: 3rem 0;
     color: white;
+    transition: padding 0.2s;
   }
 
   .page-header__logo {
@@ -119,7 +124,9 @@
     flex-shrink: 0;
     border-radius: 5rem;
     background: rgba(255, 255, 255, 0.1);
-    transition: padding 0.2s;
+    transition:
+      padding 0.2s,
+      background-color 0.2s;
   }
   .page-header__nav-list {
     display: flex;
@@ -193,18 +200,35 @@
     visibility: hidden;
   }
 
+  .page-header--compact {
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .page-header--compact .page-header__row {
+    color: var(--text-color);
+    padding: 1rem 0;
+  }
+
   .page-header--compact .page-header__products-btn {
     padding-block: 1.7rem;
+    background: var(--primary-color);
+    color: #fff;
   }
 
   .page-header--compact .page-header__search-btn {
     height: 6rem;
     border-radius: 5rem;
+    background: #f2f2fa;
+
+    svg {
+      fill: var(--text-color);
+    }
   }
 
-  // .page-header--compact .page-header__nav {
-  //   padding-inline: 4rem;
-  // }
+  .page-header--compact .page-header__nav {
+    background: #f2f2fa;
+  }
 
   .page-header--compact .page-header__nav-link {
     padding-block: 2.35rem;
@@ -213,20 +237,17 @@
   .page-header--compact .page-header__phone {
     height: 6rem;
     border-radius: 5rem;
+    background: #f2f2fa;
+    color: var(--text-color);
   }
 
   .page-header--compact .page-header__cta {
     padding-block: 2.3rem;
+    background: var(--primary-color);
+    color: #fff;
   }
 
-  .page-header--compact.page-header--theme-white
-    .page-header__logo-compact--white {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .page-header--compact.page-header--theme-blue
-    .page-header__logo-compact--blue {
+  .page-header--compact .page-header__logo-compact--blue {
     opacity: 1;
     visibility: visible;
   }
