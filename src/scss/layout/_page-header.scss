@@ -36,6 +36,11 @@
     transition:
       opacity 0.2s,
       visibility 0.2s;
+
+    &--blue {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 
   .page-header__logo-compact {
