@@ -1,0 +1,205 @@
+@layer sections {
+  .realised-projects {
+    background-color: white;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+  }
+
+  .realised-projects__grid {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 2rem;
+    row-gap: 0;
+  }
+
+  .realised-projects__title {
+    grid-column: 1 / 3;
+    font-family: var(--rf-dewi);
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+    text-wrap: balance;
+    margin-bottom: 9rem;
+  }
+
+  .realised-projects__meta {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: end;
+    border-bottom: 0.1rem solid rgba(34, 34, 34, 0.2);
+    padding-bottom: 4rem;
+  }
+
+  .realised-projects__caption,
+  .realised-projects__total {
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .realised-projects__caption {
+    grid-column: 1 / 3;
+  }
+
+  .realised-projects__total {
+    grid-column: 3 / 5;
+    opacity: 0.5;
+  }
+
+  .realised-projects__all-link {
+    grid-column: 8 / 9;
+    justify-self: end;
+    color: var(--primary-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+  }
+
+  .realised-projects__list {
+    grid-column: 1 / -1;
+  }
+
+  .realised-projects__item {
+    border-bottom: 0.1rem solid rgba(34, 34, 34, 0.2);
+    padding-block: 4rem;
+  }
+
+  .realised-projects__btn {
+    margin-top: 12rem;
+    grid-column: 3 / 7;
+    justify-self: center;
+    width: 44.6rem;
+    max-width: 100%;
+  }
+
+  .realised-project-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .realised-project-card__left {
+    display: grid;
+    grid-template-columns: 44.5rem minmax(0, 1fr);
+    column-gap: 2rem;
+    align-items: start;
+  }
+
+  .realised-project-card__media {
+    grid-column: 1 / 2;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    aspect-ratio: 445 / 260;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .realised-project-card__year {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .realised-project-card__right {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: start;
+    grid-template-rows: 1fr auto;
+  }
+
+  .realised-project-card__title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.09rem;
+  }
+
+  .realised-project-card__link {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    justify-self: start;
+    color: var(--text-color);
+    width: max-content;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    height: 6rem;
+    border-radius: 4rem;
+    border-width: 0.1rem;
+    border-color: rgba(34, 34, 34, 0.2);
+    padding: 1.7rem 3rem;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+    border-style: solid;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: #fff;
+
+        svg {
+          color: #fff;
+        }
+      }
+    }
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      color: var(--primary-color);
+      fill: currentColor;
+    }
+  }
+
+  .realised-project-card__logo {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    justify-self: end;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    border: 1px solid #dfdfdf;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    overflow: hidden;
+    background-color: #fff;
+
+    img {
+      width: 9.8rem;
+      height: 9.8rem;
+      object-fit: contain;
+    }
+  }
+}

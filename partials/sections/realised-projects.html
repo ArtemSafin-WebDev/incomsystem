@@ -1,0 +1,26 @@
+<section class="realised-projects">
+    <div class="container">
+        <div class="realised-projects__grid">
+            <h2 class="realised-projects__title">{{realisedProjects.title}}</h2>
+
+            <div class="realised-projects__meta">
+                <p class="realised-projects__caption">{{realisedProjects.caption}}</p>
+                <p class="realised-projects__total">{{realisedProjects.totalText}}</p>
+                <a class="realised-projects__all-link"
+                    href="{{realisedProjects.allProjectsHref}}">{{realisedProjects.allProjectsText}}</a>
+            </div>
+
+            <ul class="realised-projects__list">
+                {{#each realisedProjects.projects}}
+                <li class="realised-projects__item">
+                    {{> components/cards/realised-project-card project=this detailsText=../realisedProjects.detailsText
+                    }}
+                </li>
+                {{/each}}
+            </ul>
+
+            <a class="btn btn--dark-text realised-projects__btn"
+                href="{{realisedProjects.allProjectsHref}}">{{realisedProjects.allProjectsText}}</a>
+        </div>
+    </div>
+</section>

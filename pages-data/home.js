@@ -45,5 +45,41 @@ export default {
       ],
       buttonText: "О компании",
     },
+    realisedProjects: {
+      title: "Реализованные проекты",
+      caption: "Последние",
+      totalText: "600+ проектов реализовано",
+      allProjectsText: "Все проекты",
+      allProjectsHref: "#",
+      detailsText: "Подробнее",
+      projects: [
+        {
+          year: "2018—2019",
+          title:
+            "Система измерений количества сжиженного природного газа КриоПАГЗ",
+          image: "/images/realised-projects/cards/1.webp",
+          logo: "/images/realised-projects/logos/1.webp",
+          logoAlt: "Газпром",
+          href: "#",
+        },
+        {
+          year: "2018—2019",
+          title:
+            "Автоматизированная система управления и регулирования расхода газлифтной скважины",
+          image: "/images/realised-projects/cards/2.webp",
+          logo: "/images/realised-projects/logos/2.webp",
+          logoAlt: "Криогенмаш",
+          href: "#",
+        },
+        {
+          year: "2018",
+          title: "Установка поверочная автоматизированная УПА 1200",
+          image: "/images/realised-projects/cards/3.webp",
+          logo: "/images/realised-projects/logos/3.webp",
+          logoAlt: "Инкомсистем",
+          href: "#",
+        },
+      ],
+    },
   },
 };

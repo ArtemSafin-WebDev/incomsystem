@@ -1,0 +1,21 @@
+<article class="realised-project-card">
+    <div class="realised-project-card__left">
+        <div class="realised-project-card__media">
+            <img src="{{project.image}}" alt="{{project.title}}">
+        </div>
+        <p class="realised-project-card__year">{{project.year}}</p>
+    </div>
+
+    <div class="realised-project-card__right">
+        <h3 class="realised-project-card__title">{{project.title}}</h3>
+        <a class="realised-project-card__link" href="{{project.href}}">
+            <span>{{detailsText}}</span>
+            <svg width="16" height="16" aria-hidden="true">
+                <use xlink:href="#arrows/right"></use>
+            </svg>
+        </a>
+        <div class="realised-project-card__logo">
+            <img src="{{project.logo}}" alt="{{project.logoAlt}}">
+        </div>
+    </div>
+</article>
