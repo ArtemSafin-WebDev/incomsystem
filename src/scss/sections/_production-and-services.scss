@@ -2,7 +2,8 @@
   .production-and-services {
     position: relative;
     z-index: 2;
-    overflow: clip;
+    isolation: isolate;
+    overflow: hidden;
     color: #fff;
     background: linear-gradient(121.17deg, #17223c 0%, #091021 100%);
   }
@@ -11,6 +12,7 @@
     position: absolute;
     inset: 0;
     z-index: -2;
+    overflow: hidden;
 
     img {
       position: absolute;
@@ -20,6 +22,16 @@
       height: 100%;
       object-fit: cover;
       max-width: none;
+      filter: blur(12rem);
+      transform: scale(1.12);
+      transform-origin: center;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.1);
     }
   }
 

@@ -5,6 +5,7 @@
     top: 0;
     width: 100%;
     z-index: 200;
+    isolation: isolate;
     transition:
       background-color 0.2s,
       border-color 0.2s;

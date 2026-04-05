@@ -6,6 +6,7 @@
     -webkit-font-smoothing: antialiased;
     scrollbar-gutter: stable;
     scroll-behavior: smooth;
+    overscroll-behavior: none;
     font-size: clamp(4px, 0.52vw, 200px);
     @include mq.down(sm) {
       font-size: 10px;
