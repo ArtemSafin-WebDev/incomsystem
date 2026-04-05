@@ -122,13 +122,16 @@
 
   .page-footer__company-item,
   .page-footer__muted-text {
-    color: #fff;
     font-family: var(--inter);
     font-size: 1.4rem;
     font-style: normal;
     font-weight: 500;
     line-height: 1;
-    opacity: 0.7;
+  }
+
+  .page-footer__company-item,
+  .page-footer__muted-text {
+    color: rgba(255 255 255 / 70%);
   }
 
   .page-footer__address {
@@ -198,16 +201,28 @@
     display: grid;
     place-items: center;
     background: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: white;
+        svg {
+          fill: var(--primary-color);
+        }
+      }
+    }
   }
 
   .page-footer__social-link svg {
     width: 2.4rem;
     height: 2.4rem;
     fill: #fff;
+    transition: fill 0.2s;
   }
 
   .page-footer__copyright {
     white-space: nowrap;
+    color: rgba(255 255 255 / 70%);
   }
 
   .page-footer__policy {
@@ -218,6 +233,12 @@
     text-decoration: underline;
     text-decoration-skip-ink: none;
     width: fit-content;
+    color: rgba(255 255 255 / 70%);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: white;
+      }
+    }
   }
 
   .page-footer__developer {
@@ -226,6 +247,12 @@
     display: flex;
     align-items: flex-end;
     gap: 1.8rem;
+    color: rgba(255 255 255 / 70%);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: white;
+      }
+    }
   }
 
   .page-footer__developer-text {
@@ -238,26 +265,5 @@
     width: 3.8rem;
     height: 5.5rem;
     flex-shrink: 0;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .page-footer__map-link:hover,
-    .page-footer__policy:hover {
-      opacity: 0.7;
-    }
-
-    .page-footer__section-text--link:hover,
-    .page-footer__developer:hover .page-footer__developer-text {
-      color: #006fdd;
-      opacity: 1;
-    }
-
-    .page-footer__social-link:hover {
-      background-color: #fff;
-    }
-
-    .page-footer__social-link:hover svg {
-      fill: #006fdd;
-    }
   }
 }

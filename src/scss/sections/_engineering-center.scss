@@ -116,6 +116,13 @@
     justify-content: space-between;
     gap: 2rem;
     aspect-ratio: 445 / 200;
+    transition: border-color 0.2s;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: white;
+      }
+    }
   }
 
   .engineering-doc-card__body {

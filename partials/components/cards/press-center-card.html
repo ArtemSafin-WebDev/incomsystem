@@ -1,14 +1,12 @@
-<article class="press-center-card">
-    <a class="press-center-card__media" href="{{item.href}}">
+<a class="press-center-card" href="{{item.href}}">
+    <span class="press-center-card__media">
         <img src="{{item.image}}" alt="{{item.title}}">
-    </a>
+    </span>
 
     <div class="press-center-card__meta">
         <span class="press-center-card__tag">{{item.tag}}</span>
         <time class="press-center-card__date" datetime="2025-01-09">{{item.date}}</time>
     </div>
 
-    <h3 class="press-center-card__title">
-        <a href="{{item.href}}">{{item.title}}</a>
-    </h3>
-</article>
+    <h3 class="press-center-card__title">{{item.title}}</h3>
+</a>
