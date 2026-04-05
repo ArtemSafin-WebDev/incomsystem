@@ -1,5 +1,6 @@
 import CompactHeader from "../classes/components/CompactHeader";
 import PressCenter from "../classes/components/PressCenter";
+import ProductionAndServices from "../classes/components/ProductionAndServices";
 
 export default function sections() {
   const header = document.querySelector<HTMLElement>(".page-header");
@@ -11,8 +12,15 @@ export default function sections() {
   const pressCenterSections = document.querySelectorAll<HTMLElement>(
     ".js-press-center"
   );
+  const productionAndServicesSections = document.querySelectorAll<HTMLElement>(
+    ".js-production-and-services"
+  );
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
+  });
+
+  productionAndServicesSections.forEach((section) => {
+    new ProductionAndServices(section);
   });
 }

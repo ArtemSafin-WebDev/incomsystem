@@ -1,0 +1,24 @@
+<section class="production-and-services js-production-and-services">
+    <div class="production-and-services__bg" aria-hidden="true">
+        <img src="{{productionAndServices.background}}" alt="">
+    </div>
+    <div class="container">
+        <div class="production-and-services__inner">
+            <h2 class="production-and-services__title">{{{productionAndServices.title}}}</h2>
+
+            <div class="production-and-services__list-wrapper">
+                <p class="production-and-services__caption">{{productionAndServices.caption}}</p>
+                <ul class="production-and-services__list">
+                    {{#each productionAndServices.items}}
+                    {{> components/cards/production-and-services-item item=this }}
+                    {{/each}}
+                </ul>
+            </div>
+
+            <p class="production-and-services__description">{{productionAndServices.description}}</p>
+            <a class="btn production-and-services__btn" href="{{productionAndServices.buttonHref}}">
+                {{productionAndServices.buttonText}}
+            </a>
+        </div>
+    </div>
+</section>

@@ -149,6 +149,53 @@ export default {
         },
       ],
     },
+    productionAndServices: {
+      title: "Продукция <br>и услуги",
+      caption: "6 направлений",
+      description:
+        "НИЦ «Инкомсистем» один из самых востребованных системных интеграторов",
+      background: "/images/production-and-services/bg.webp",
+      buttonText: "Продукция и услуги",
+      buttonHref: "#",
+      items: [
+        {
+          title: "Контроллеры АБАК",
+          href: "#",
+          image: "/images/production-and-services/items/plc-abak.webp",
+          imageAlt: "Контроллеры АБАК",
+        },
+        {
+          title: "Аналитические системы",
+          href: "#",
+          image: "/images/production-and-services/items/plc-abak.webp",
+          imageAlt: "Аналитические системы",
+        },
+        {
+          title: "Автоматизированные системы управления",
+          href: "#",
+          image: "/images/production-and-services/items/plc-abak.webp",
+          imageAlt: "Автоматизированные системы управления",
+        },
+        {
+          title: "Система измерений и блочное оборудование",
+          href: "#",
+          image: "/images/production-and-services/items/plc-abak.webp",
+          imageAlt: "Система измерений и блочное оборудование",
+        },
+        {
+          title: "Метрология и сервис",
+          href: "#",
+          image: "/images/production-and-services/items/plc-abak.webp",
+          imageAlt: "Метрология и сервис",
+        },
+        {
+          title: "Сульфинертное покрытие Incomsteel®",
+          href: "#",
+          image: "/images/production-and-services/items/plc-abak.webp",
+          imageAlt: "Сульфинертное покрытие Incomsteel®",
+        },
+      ],
+    },
     aboutCompany: {
       title: "О компании",
       description:
