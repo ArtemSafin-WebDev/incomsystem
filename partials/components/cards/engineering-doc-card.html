@@ -1,4 +1,4 @@
-<article class="engineering-doc-card">
+<a class="engineering-doc-card" href="{{doc.href}}">
     <div class="engineering-doc-card__body">
         <div class="engineering-doc-card__top">
             <h3 class="engineering-doc-card__title">{{doc.title}}</h3>
@@ -9,7 +9,7 @@
             </p>
         </div>
 
-        <a class="engineering-doc-card__download" href="{{doc.href}}">{{doc.downloadText}}</a>
+        <span class="engineering-doc-card__download">{{doc.downloadText}}</span>
     </div>
 
     <span class="engineering-doc-card__icon" aria-hidden="true">
@@ -17,4 +17,4 @@
             <use xlink:href="#pdf"></use>
         </svg>
     </span>
-</article>
+</a>
