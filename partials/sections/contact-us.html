@@ -1,0 +1,55 @@
+<section class="contact-us">
+    <div class="container">
+        <p class="contact-us__caption">{{contactUs.caption}}</p>
+
+        <div class="contact-us__body">
+            <img class="contact-us__bg" src="{{contactUs.background}}" alt="">
+
+            <div class="contact-us__content">
+                <div class="contact-us__head">
+                    <h2 class="contact-us__title">{{{contactUs.title}}}</h2>
+                    <p class="contact-us__description">{{contactUs.description}}</p>
+                </div>
+
+                <form class="contact-us__form contact-us-form js-form"
+                    action="{{contactUs.formAction}}"
+                    method="post">
+                    {{#each contactUs.fields}}
+                    <div class="contact-us-form__row {{#if this.isTextarea}}contact-us-form__row--message{{/if}}">
+                        <label class="contact-us-form__label" for="{{this.id}}">{{this.label}}</label>
+
+                        <div class="contact-us-form__control">
+                            {{#if this.isTextarea}}
+                            <textarea id="{{this.id}}"
+                                name="{{this.name}}"
+                                placeholder="{{this.placeholder}}"
+                                rows="1"
+                                {{#if this.required}}required{{/if}}></textarea>
+                            {{else}}
+                            <input id="{{this.id}}"
+                                name="{{this.name}}"
+                                type="{{this.type}}"
+                                placeholder="{{this.placeholder}}"
+                                {{#if this.autocomplete}}autocomplete="{{this.autocomplete}}"{{/if}}
+                                {{#if this.required}}required{{/if}}>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{/each}}
+
+                    <div class="contact-us-form__footer">
+                        <button class="btn contact-us-form__submit" type="submit">{{contactUs.submitText}}</button>
+
+                        <p class="contact-us-form__policy">
+                            {{{contactUs.policyText}}}
+                            <a class="contact-us-form__policy-link"
+                                href="{{contactUs.policyLinkHref}}"
+                                target="_blank"
+                                rel="noreferrer noopener">{{contactUs.policyLinkText}}</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

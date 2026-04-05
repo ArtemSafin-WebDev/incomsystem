@@ -1,6 +1,7 @@
 const pressCenterItems = [
   {
-    title: "Инкомсистем: вклад в программу импортозамещения измерительной техники",
+    title:
+      "Инкомсистем: вклад в программу импортозамещения измерительной техники",
     image: "/images/press-center/1.webp",
     tag: "События",
     date: "9.01.2025",
@@ -16,7 +17,8 @@ const pressCenterItems = [
     tabs: ["articles", "news", "gallery"],
   },
   {
-    title: "Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей»",
+    title:
+      "Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей»",
     image: "/images/press-center/3.webp",
     tag: "События",
     date: "9.01.2025",
@@ -38,6 +40,93 @@ const getPressCenterItemsByTab = (tab) =>
   tab === "all"
     ? pressCenterItems
     : pressCenterItems.filter((item) => item.tabs.includes(tab));
+
+const contactUsFields = [
+  {
+    id: "contact-name",
+    name: "name",
+    label: "Имя",
+    placeholder: "Имя",
+    type: "text",
+    autocomplete: "name",
+    required: true,
+  },
+  {
+    id: "contact-company",
+    name: "company",
+    label: "Компания",
+    placeholder: "Компания",
+    type: "text",
+    autocomplete: "organization",
+    required: true,
+  },
+  {
+    id: "contact-phone",
+    name: "phone",
+    label: "Телефон",
+    placeholder: "Телефон",
+    type: "tel",
+    autocomplete: "tel",
+    required: true,
+  },
+  {
+    id: "contact-email",
+    name: "email",
+    label: "Электронная почта",
+    placeholder: "mail@company.ru",
+    type: "email",
+    autocomplete: "email",
+    required: true,
+  },
+  {
+    id: "contact-message",
+    name: "message",
+    label: "Сообщение",
+    placeholder: "Сообщение",
+    required: true,
+  },
+];
+
+const engineeringCenterNavigation = [
+  {
+    label: "Продукция и услуги",
+    href: "#",
+  },
+  {
+    label: "Проекты",
+    href: "#",
+    active: true,
+  },
+  {
+    label: "О компании",
+    href: "#",
+  },
+  {
+    label: "Документация",
+    href: "#",
+  },
+  {
+    label: "Контакты",
+    href: "#",
+  },
+];
+
+const engineeringCenterDocuments = [
+  {
+    title: "Каталог продукции",
+    type: "PDF",
+    size: "1.5 Мб",
+    href: "#",
+    downloadText: "Скачать",
+  },
+  {
+    title: "Презентация компании",
+    type: "PDF",
+    size: "1.2 Мб",
+    href: "#",
+    downloadText: "Скачать",
+  },
+];
 
 export default {
   "/index.html": {
@@ -155,6 +244,27 @@ export default {
           items: getPressCenterItemsByTab("gallery"),
         },
       ],
+    },
+    contactUs: {
+      caption: "Форма обратной связи",
+      title: "Свяжитесь <br>с нами",
+      description: "Если есть вопросы — напишите нам",
+      background: "/images/contact-us/bg.webp",
+      formAction: "#",
+      submitText: "Отправить",
+      policyText: "Нажимая кнопку, вы даете согласие на обработку&nbsp;",
+      policyLinkText: "персональных данных.",
+      policyLinkHref: "https://incomsystem.ru/upload/uf/baa/pol.pdf",
+      fields: contactUsFields,
+    },
+    engineeringCenter: {
+      copyright: "© 1991—2025",
+      documents: engineeringCenterDocuments,
+      navigation: engineeringCenterNavigation,
+      navigationAriaLabel: "Навигация по разделам",
+      label: "Научно-инженерный центр",
+      logo: "/images/incomsystem.svg",
+      logoAlt: "Инкомсистем",
     },
   },
 };

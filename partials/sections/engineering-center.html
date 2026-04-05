@@ -1,0 +1,36 @@
+<section class="engineering-center">
+    <div class="container">
+        <div class="engineering-center__top">
+            <p class="engineering-center__copyright">{{engineeringCenter.copyright}}</p>
+
+            <div class="engineering-center__docs">
+                <ul class="engineering-center__docs-list">
+                    {{#each engineeringCenter.documents}}
+                    <li class="engineering-center__docs-item">
+                        {{> components/cards/engineering-doc-card doc=this }}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <nav class="engineering-center__nav" aria-label="{{engineeringCenter.navigationAriaLabel}}">
+            <ul class="engineering-center__nav-list">
+                {{#each engineeringCenter.navigation}}
+                <li class="engineering-center__nav-item {{#if this.active}}engineering-center__nav-item--active{{/if}}">
+                    <a class="engineering-center__nav-link" href="{{this.href}}">{{this.label}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </nav>
+
+        <div class="engineering-center__branding">
+            <p class="engineering-center__label">{{engineeringCenter.label}}</p>
+            <img class="engineering-center__logo"
+                src="{{engineeringCenter.logo}}"
+                alt="{{engineeringCenter.logoAlt}}"
+                width="1840"
+                height="164">
+        </div>
+    </div>
+</section>
