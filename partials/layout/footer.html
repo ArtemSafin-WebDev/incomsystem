@@ -1,0 +1,72 @@
+<footer class="page-footer">
+    <div class="page-footer__bg">
+        <img class="page-footer__bg-image" src="{{footer.mapImage}}" alt="">
+    </div>
+
+
+
+    <div class="container page-footer__container">
+        <div class="page-footer__head">
+            <p class="page-footer__caption">{{footer.caption}}</p>
+
+            <a class="page-footer__map-link" href="{{footer.mapLinkHref}}" target="_blank"
+                rel="noreferrer noopener">{{footer.mapLinkText}}</a>
+        </div>
+
+        <div class="page-footer__content">
+            <div class="page-footer__top">
+                <ul class="page-footer__company-list">
+                    {{#each footer.companyDetails}}
+                    <li class="page-footer__company-item">{{this}}</li>
+                    {{/each}}
+                </ul>
+
+                <div class="page-footer__address">
+                    <p class="page-footer__section-label">{{footer.addressTitle}}</p>
+                    <p class="page-footer__section-text">{{footer.address}}</p>
+                    <p class="page-footer__muted-text">{{footer.addressNote}}</p>
+                </div>
+
+                <div class="page-footer__contacts-wrap">
+                    <div class="page-footer__contacts">
+                        <p class="page-footer__section-label">{{footer.contactTitle}}</p>
+                        <a class="page-footer__section-text page-footer__section-text--link"
+                            href="tel:{{footer.phoneRaw}}">
+                            {{footer.phone}}
+                        </a>
+                        <a class="page-footer__section-text page-footer__section-text--link"
+                            href="mailto:{{footer.email}}">
+                            {{footer.email}}
+                        </a>
+                    </div>
+
+                    <ul class="page-footer__social-list" aria-label="{{footer.socialsAriaLabel}}">
+                        {{#each footer.socials}}
+                        <li>
+                            <a class="page-footer__social-link" href="{{this.href}}" aria-label="{{this.label}}">
+                                <svg width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="#{{this.icon}}"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="page-footer__bottom">
+                <p class="page-footer__muted-text page-footer__copyright">{{footer.copyright}}</p>
+
+                <a class="page-footer__muted-text page-footer__policy" href="{{footer.policyLink}}" target="_blank"
+                    rel="noreferrer noopener">{{footer.policyText}}</a>
+
+                <a class="page-footer__developer" href="{{footer.developer.href}}" target="_blank"
+                    rel="noreferrer noopener">
+                    <span class="page-footer__muted-text page-footer__developer-text">{{footer.developer.text}}</span>
+                    <img class="page-footer__developer-logo" src="{{footer.developer.logo}}"
+                        alt="{{footer.developer.logoAlt}}">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
