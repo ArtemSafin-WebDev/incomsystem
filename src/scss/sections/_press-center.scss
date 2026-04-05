@@ -1,0 +1,205 @@
+@use "tools/media" as mq;
+
+@layer sections {
+  .press-center {
+    background-color: #f2f2fa;
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+  }
+
+  .press-center__grid {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 2rem;
+    row-gap: 0;
+  }
+
+  .press-center__title {
+    grid-column: 1 / 3;
+    margin-bottom: 9rem;
+    font-family: var(--rf-dewi);
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+  }
+
+  .press-center__controls {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: center;
+    border-bottom: 1px solid rgba(34, 34, 34, 0.2);
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .press-center__tabs {
+    grid-column: 1 / 7;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .press-center__tabs-item {
+    flex-shrink: 0;
+  }
+
+  .press-center__tab-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 15rem;
+    height: 6rem;
+    padding: 1.7rem 3rem;
+    border-radius: 4rem;
+    border: 0.4rem solid transparent;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.05rem;
+    text-underline-offset: 0.25rem;
+
+    &.active {
+      border-color: var(--primary-color);
+      text-decoration: none;
+    }
+  }
+
+  .press-center__top-link {
+    grid-column: 8 / 9;
+    justify-self: end;
+    color: var(--primary-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+  }
+
+  .press-center__panels {
+    grid-column: 1 / -1;
+    margin-bottom: 12rem;
+  }
+
+  .press-center__panel {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .press-center__slider {
+    overflow: visible;
+  }
+
+  .press-center__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 6rem;
+  }
+
+  .press-center__item {
+    position: relative;
+    height: auto;
+
+    &:not(:first-child)::before {
+      content: "";
+      position: absolute;
+      left: -3rem;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background-color: rgba(34, 34, 34, 0.2);
+    }
+
+    &:nth-child(4n + 1)::before {
+      content: none;
+    }
+  }
+
+  .press-center-card {
+    min-height: 59rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .press-center-card__media {
+    display: block;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    aspect-ratio: 425 / 297;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .press-center-card__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .press-center-card__tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5rem;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .press-center-card__date {
+    font-family: var(--ibm-plex-mono);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .press-center-card__title {
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.066rem;
+    margin-bottom: 3rem;
+    margin-top: auto;
+
+    // a {
+    //   color: inherit;
+    // }
+  }
+
+  .press-center__btn {
+    grid-column: 3 / 7;
+    justify-self: center;
+    width: 44.6rem;
+    max-width: 100%;
+  }
+}

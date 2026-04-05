@@ -1,3 +1,44 @@
+const pressCenterItems = [
+  {
+    title: "Инкомсистем: вклад в программу импортозамещения измерительной техники",
+    image: "/images/press-center/1.webp",
+    tag: "События",
+    date: "9.01.2025",
+    href: "#",
+    tabs: ["articles", "events", "gallery"],
+  },
+  {
+    title: "АБАК ПЛК в Республике Беларусь!",
+    image: "/images/press-center/2.webp",
+    tag: "Оборудование",
+    date: "9.01.2025",
+    href: "#",
+    tabs: ["articles", "news", "gallery"],
+  },
+  {
+    title: "Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей»",
+    image: "/images/press-center/3.webp",
+    tag: "События",
+    date: "9.01.2025",
+    href: "#",
+    tabs: ["events", "gallery"],
+  },
+  {
+    title:
+      "НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект»",
+    image: "/images/press-center/4.webp",
+    tag: "События",
+    date: "9.01.2025",
+    href: "#",
+    tabs: ["news", "events", "gallery"],
+  },
+];
+
+const getPressCenterItemsByTab = (tab) =>
+  tab === "all"
+    ? pressCenterItems
+    : pressCenterItems.filter((item) => item.tabs.includes(tab));
+
 export default {
   "/index.html": {
     title: "Главная страница",
@@ -78,6 +119,40 @@ export default {
           logo: "/images/realised-projects/logos/3.webp",
           logoAlt: "Инкомсистем",
           href: "#",
+        },
+      ],
+    },
+    pressCenter: {
+      title: "Пресс-центр",
+      topLinkText: "В пресс-центр",
+      topLinkHref: "#",
+      buttonText: "В пресс-центр",
+      buttonHref: "#",
+      tabs: [
+        {
+          key: "all",
+          label: "Все",
+          items: getPressCenterItemsByTab("all"),
+        },
+        {
+          key: "articles",
+          label: "Статьи",
+          items: getPressCenterItemsByTab("articles"),
+        },
+        {
+          key: "news",
+          label: "Новости",
+          items: getPressCenterItemsByTab("news"),
+        },
+        {
+          key: "events",
+          label: "События",
+          items: getPressCenterItemsByTab("events"),
+        },
+        {
+          key: "gallery",
+          label: "Галерея",
+          items: getPressCenterItemsByTab("gallery"),
         },
       ],
     },

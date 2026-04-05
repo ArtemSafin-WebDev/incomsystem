@@ -1,0 +1,42 @@
+<section class="press-center">
+    <div class="container">
+        <div class="press-center__grid js-press-center">
+            <h2 class="press-center__title">{{pressCenter.title}}</h2>
+
+            <div class="press-center__controls">
+                <ul class="press-center__tabs">
+                    {{#each pressCenter.tabs}}
+                    <li class="press-center__tabs-item">
+                        <button type="button"
+                            class="press-center__tab-btn js-press-center-tab-btn {{#if @first}}active{{/if}}">
+                            {{this.label}}
+                        </button>
+                    </li>
+                    {{/each}}
+                </ul>
+
+                <a class="press-center__top-link"
+                    href="{{pressCenter.topLinkHref}}">{{pressCenter.topLinkText}}</a>
+            </div>
+
+            <div class="press-center__panels">
+                {{#each pressCenter.tabs}}
+                <div class="press-center__panel js-press-center-tab-panel {{#if @first}}active{{/if}}">
+                    <div class="press-center__slider swiper js-press-center-slider">
+                        <ul class="press-center__list swiper-wrapper">
+                            {{#each this.items}}
+                            <li class="press-center__item swiper-slide">
+                                {{> components/cards/press-center-card item=this }}
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+            <a class="btn btn--dark-text press-center__btn"
+                href="{{pressCenter.buttonHref}}">{{pressCenter.buttonText}}</a>
+        </div>
+    </div>
+</section>
