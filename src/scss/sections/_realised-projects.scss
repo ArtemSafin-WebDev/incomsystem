@@ -118,6 +118,8 @@
     grid-column: 1 / -1;
 
     @include mq.down(sm) {
+      min-width: 0;
+      width: 100%;
       overflow: visible;
     }
   }
@@ -140,6 +142,12 @@
       width: 30rem;
       flex-shrink: 0;
       height: auto;
+      margin-right: 2rem;
+      display: flex;
+      flex-direction: column;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
@@ -198,12 +206,14 @@
     gap: 2rem;
     @include mq.down(sm) {
       grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-rows: auto auto 1fr auto;
       grid-template-areas:
         "media media"
         "year logo"
         "title title"
         "link link";
       gap: 2rem;
+      flex-grow: 1;
     }
   }
 

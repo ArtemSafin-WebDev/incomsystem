@@ -1,8 +1,10 @@
+import { gsap } from "gsap";
 import Swiper from "swiper";
 import { MOBILE_BREAKPOINT } from "../../constants/breakpoints";
 import Component from "../Component";
 
 class RealisedProjects extends Component {
+  private readonly media = gsap.matchMedia();
   private readonly sliderElement: HTMLElement | null;
   private slider: Swiper | null = null;
 
@@ -17,27 +19,23 @@ class RealisedProjects extends Component {
       return;
     }
 
-    this.syncSliderState();
-    window.addEventListener("resize", this.handleResize);
+    this.media.add(`(max-width: ${MOBILE_BREAKPOINT}px)`, () => {
+      this.mountSlider();
+
+      return () => {
+        this.unmountSlider();
+      };
+    });
   }
 
   public destroy() {
-    window.removeEventListener("resize", this.handleResize);
+    this.media.revert();
     this.unmountSlider();
     this.unregister();
   }
 
-  private readonly handleResize = () => {
-    this.syncSliderState();
-  };
-
-  private syncSliderState() {
+  private mountSlider() {
     if (!this.sliderElement) {
-      return;
-    }
-
-    if (!this.isMobile()) {
-      this.unmountSlider();
       return;
     }
 
@@ -60,10 +58,6 @@ class RealisedProjects extends Component {
 
     this.slider.destroy(true, true);
     this.slider = null;
-  }
-
-  private isMobile() {
-    return window.innerWidth <= MOBILE_BREAKPOINT;
   }
 }
 
