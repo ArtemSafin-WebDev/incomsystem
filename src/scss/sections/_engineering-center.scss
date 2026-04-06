@@ -78,6 +78,16 @@
     text-transform: uppercase;
     padding-block: 2rem;
     padding-inline: 1rem;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: white;
+        color: var(--text-color);
+      }
+    }
   }
 
   .engineering-center__nav-item--active .engineering-center__nav-link {
