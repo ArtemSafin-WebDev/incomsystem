@@ -1,8 +1,14 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .contact-us {
     padding-top: 4rem;
     position: relative;
     z-index: 2;
+
+    @include mq.down(sm) {
+      padding-top: 3.2rem;
+    }
   }
 
   .contact-us__caption {
@@ -13,12 +19,26 @@
     line-height: 1;
     color: var(--text-color);
     margin-bottom: 4rem;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+      margin-bottom: 3.2rem;
+    }
   }
 
   .contact-us__body {
     position: relative;
     border-radius: 0.5rem;
     overflow: hidden;
+  }
+
+  .contact-us__bg-picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 
   .contact-us__bg {
@@ -38,6 +58,13 @@
     gap: 2rem;
     padding: 4rem;
     color: #fff;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 4rem 2.1rem 4rem;
+    }
   }
 
   .contact-us__head {
@@ -45,6 +72,10 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+
+    @include mq.down(sm) {
+      gap: 2rem;
+    }
   }
 
   .contact-us__title {
@@ -56,6 +87,12 @@
     letter-spacing: -0.12rem;
     text-transform: uppercase;
     text-wrap: balance;
+
+    @include mq.down(sm) {
+      font-size: 3rem;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+    }
   }
 
   .contact-us__description {
@@ -64,12 +101,23 @@
     font-style: normal;
     font-weight: 500;
     line-height: 1;
+
+    @include mq.down(sm) {
+      font-family: var(--rf-dewi);
+      font-size: 1.4rem;
+      line-height: 1.05;
+      letter-spacing: -0.014rem;
+    }
   }
 
   .contact-us__form {
     grid-column: 5 / -1;
     justify-self: start;
     align-self: end;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+    }
   }
 
   .contact-us-form {
@@ -85,6 +133,14 @@
     align-items: center;
     padding-block: 2.4rem;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    @include mq.down(sm) {
+      gap: 2rem;
+      padding-block: 2.4rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
   }
 
   .contact-us-form__row:first-child {
@@ -98,10 +154,20 @@
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: -0.042rem;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+      line-height: 1;
+      letter-spacing: -0.036rem;
+    }
   }
 
   .contact-us-form__control {
     min-width: 0;
+    @include mq.down(sm) {
+      width: 30%;
+      flex-grow: 1;
+    }
   }
 
   .contact-us-form__control :is(input, textarea) {
@@ -112,6 +178,13 @@
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: -0.066rem;
+
+    @include mq.down(sm) {
+      text-align: right;
+      font-size: 1.4rem;
+      line-height: 1;
+      letter-spacing: -0.042rem;
+    }
   }
 
   .contact-us-form__control textarea {
@@ -130,11 +203,25 @@
     gap: 4rem;
     align-items: center;
     margin-top: 8rem;
+
+    @include mq.down(sm) {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 2rem;
+    }
   }
 
   .contact-us-form__submit {
     max-width: 100%;
     flex-shrink: 0;
+
+    @include mq.down(sm) {
+      width: 100%;
+      padding-block: 2.1rem;
+      order: 2;
+    }
   }
 
   .contact-us-form__policy {
@@ -146,6 +233,11 @@
     font-weight: 400;
     line-height: 1.4;
     letter-spacing: -0.042rem;
+
+    @include mq.down(sm) {
+      line-height: 1.5rem;
+      order: 1;
+    }
   }
 
   .contact-us-form__policy-link {
@@ -167,5 +259,9 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.2;
+
+    @include mq.down(sm) {
+      grid-column: 1 / -1;
+    }
   }
 }

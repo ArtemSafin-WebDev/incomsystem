@@ -3,7 +3,10 @@
         <p class="contact-us__caption">{{contactUs.caption}}</p>
 
         <div class="contact-us__body">
-            <img class="contact-us__bg" src="{{contactUs.background}}" alt="">
+            <picture class="contact-us__bg-picture">
+                <source media="(max-width: 576px)" srcset="{{contactUs.backgroundMobile}}">
+                <img class="contact-us__bg" src="{{contactUs.background}}" alt="">
+            </picture>
 
             <div class="contact-us__content">
                 <div class="contact-us__head">

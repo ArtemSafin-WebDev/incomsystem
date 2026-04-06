@@ -300,6 +300,7 @@ export default {
       title: "Свяжитесь <br>с нами",
       description: "Если есть вопросы — напишите нам",
       background: "/images/contact-us/bg.webp",
+      backgroundMobile: "/images/contact-us/bg-mobile.webp",
       formAction: "#",
       submitText: "Отправить",
       policyText: "Нажимая кнопку, вы даете согласие на обработку&nbsp;",

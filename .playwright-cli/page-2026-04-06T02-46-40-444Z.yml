@@ -1,0 +1,279 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link:
+        - /url: "#"
+      - generic [ref=e5]:
+        - link "Позвонить" [ref=e6] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e7]
+        - link "Открыть меню" [ref=e8] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e9]
+  - main [ref=e10]:
+    - generic [ref=e18]:
+      - heading "Инкомсистем" [level=1] [ref=e19]
+      - paragraph [ref=e20]: один из востребованных системных интеграторов и производителей систем коммерческого учета в Российской Федерации
+      - paragraph [ref=e21]: Создан в 1991 году
+    - generic [ref=e26]:
+      - heading "О компании" [level=2] [ref=e27]
+      - generic [ref=e28]:
+        - paragraph [ref=e29]: Научно-инженерный центр ИНКОМСИСТЕМ создан в 1991 году на базе НПО Нефтепромавтоматика, которая с 1959 года была головной организации МинПрибора СССР в области автоматизации нефтяной и газовой промышленности
+        - list [ref=e30]:
+          - listitem [ref=e31]:
+            - paragraph [ref=e32]: 600+
+            - generic [ref=e33]:
+              - paragraph [ref=e34]: проектов запущено
+              - paragraph [ref=e35]: Нам доверяют ключевые заказчики нефтегазовой отрасли
+          - listitem [ref=e36]:
+            - paragraph [ref=e37]: 30+
+            - generic [ref=e38]:
+              - paragraph [ref=e39]: лет на рынке
+              - paragraph [ref=e40]: Нам доверяют ключевые заказчики нефтегазовой отрасли
+          - listitem [ref=e41]:
+            - paragraph [ref=e42]: 700+
+            - generic [ref=e43]:
+              - paragraph [ref=e44]: человек в штате
+              - paragraph [ref=e45]: Нам доверяют ключевые заказчики нефтегазовой отрасли
+      - link "О компании" [ref=e46] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e51]:
+      - heading "Продукция и услуги" [level=2] [ref=e52]:
+        - text: Продукция
+        - text: и услуги
+      - list [ref=e54]:
+        - listitem [ref=e55]:
+          - link "Контроллеры АБАК" [ref=e56] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e57]: Контроллеры АБАК
+            - img [ref=e59]
+        - listitem [ref=e60]:
+          - link "Аналитические системы" [ref=e61] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e62]: Аналитические системы
+            - img [ref=e64]
+        - listitem [ref=e65]:
+          - link "Автоматизированные системы управления" [ref=e66] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e67]: Автоматизированные системы управления
+            - img [ref=e69]
+        - listitem [ref=e70]:
+          - link "Система измерений и блочное оборудование" [ref=e71] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e72]: Система измерений и блочное оборудование
+            - img [ref=e74]
+        - listitem [ref=e75]:
+          - link "Метрология и сервис" [ref=e76] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e77]: Метрология и сервис
+            - img [ref=e79]
+        - listitem [ref=e80]:
+          - link "Сульфинертное покрытие Incomsteel®" [ref=e81] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e82]: Сульфинертное покрытие Incomsteel®
+            - img [ref=e84]
+      - paragraph [ref=e85]: НИЦ «Инкомсистем» один из самых востребованных системных интеграторов
+      - link "Продукция и услуги" [ref=e86] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e89]:
+      - heading "Реализованные проекты" [level=2] [ref=e90]
+      - generic [ref=e91]:
+        - paragraph [ref=e92]: Последние
+        - paragraph [ref=e93]: 600+ проектов реализовано
+      - list [ref=e95]:
+        - listitem [ref=e96]:
+          - article [ref=e97]:
+            - generic [ref=e98]:
+              - img "Система измерений количества сжиженного природного газа КриоПАГЗ" [ref=e100]
+              - paragraph [ref=e101]: 2018—2019
+            - generic [ref=e102]:
+              - heading "Система измерений количества сжиженного природного газа КриоПАГЗ" [level=3] [ref=e103]
+              - link "Подробнее" [ref=e104] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e105]: Подробнее
+                - img [ref=e106]
+              - img "Газпром" [ref=e108]
+        - listitem [ref=e109]:
+          - article [ref=e110]:
+            - generic [ref=e111]:
+              - img "Автоматизированная система управления и регулирования расхода газлифтной скважины" [ref=e113]
+              - paragraph [ref=e114]: 2018—2019
+            - generic [ref=e115]:
+              - heading "Автоматизированная система управления и регулирования расхода газлифтной скважины" [level=3] [ref=e116]
+              - link "Подробнее" [ref=e117] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e118]: Подробнее
+                - img [ref=e119]
+              - img "Криогенмаш" [ref=e121]
+        - listitem [ref=e122]:
+          - article [ref=e123]:
+            - generic [ref=e124]:
+              - img "Установка поверочная автоматизированная УПА 1200" [ref=e126]
+              - paragraph [ref=e127]: "2018"
+            - generic [ref=e128]:
+              - heading "Установка поверочная автоматизированная УПА 1200" [level=3] [ref=e129]
+              - link "Подробнее" [ref=e130] [cursor=pointer]:
+                - /url: "#"
+                - generic [ref=e131]: Подробнее
+                - img [ref=e132]
+              - img "Инкомсистем" [ref=e134]
+      - paragraph [ref=e135]:
+        - img [ref=e137]
+        - generic [ref=e138]: Листайте влево/вправо
+      - link "Все проекты" [ref=e139] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e142]:
+      - heading "Пресс-центр" [level=2] [ref=e143]
+      - generic [ref=e144]:
+        - list [ref=e145]:
+          - listitem [ref=e146]:
+            - button "Все" [ref=e147] [cursor=pointer]
+          - listitem [ref=e148]:
+            - button "Статьи" [ref=e149] [cursor=pointer]
+          - listitem [ref=e150]:
+            - button "Новости" [ref=e151] [cursor=pointer]
+          - listitem [ref=e152]:
+            - button "События" [ref=e153] [cursor=pointer]
+          - listitem [ref=e154]:
+            - button "Галерея" [ref=e155] [cursor=pointer]
+        - paragraph [ref=e156]:
+          - img [ref=e158]
+          - generic [ref=e159]: Листайте влево/вправо
+      - list [ref=e163]:
+        - listitem [ref=e164]:
+          - 'link "Инкомсистем: вклад в программу импортозамещения измерительной техники События 9.01.2025 Инкомсистем: вклад в программу импортозамещения измерительной техники" [ref=e165] [cursor=pointer]':
+            - /url: "#"
+            - 'img "Инкомсистем: вклад в программу импортозамещения измерительной техники" [ref=e167]'
+            - generic [ref=e168]:
+              - generic [ref=e169]: События
+              - time [ref=e170]: 9.01.2025
+            - 'heading "Инкомсистем: вклад в программу импортозамещения измерительной техники" [level=3] [ref=e171]'
+        - listitem [ref=e172]:
+          - link "АБАК ПЛК в Республике Беларусь! Оборудование 9.01.2025 АБАК ПЛК в Республике Беларусь!" [ref=e173] [cursor=pointer]:
+            - /url: "#"
+            - img "АБАК ПЛК в Республике Беларусь!" [ref=e175]
+            - generic [ref=e176]:
+              - generic [ref=e177]: Оборудование
+              - time [ref=e178]: 9.01.2025
+            - heading "АБАК ПЛК в Республике Беларусь!" [level=3] [ref=e179]
+        - listitem [ref=e180]:
+          - 'link "Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей» События 9.01.2025 Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей»" [ref=e181] [cursor=pointer]':
+            - /url: "#"
+            - 'img "Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей»" [ref=e183]'
+            - generic [ref=e184]:
+              - generic [ref=e185]: События
+              - time [ref=e186]: 9.01.2025
+            - 'heading "Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей»" [level=3] [ref=e187]'
+        - listitem [ref=e188]:
+          - link "НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект» События 9.01.2025 НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект»" [ref=e189] [cursor=pointer]:
+            - /url: "#"
+            - img "НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект»" [ref=e191]
+            - generic [ref=e192]:
+              - generic [ref=e193]: События
+              - time [ref=e194]: 9.01.2025
+            - heading "НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект»" [level=3] [ref=e195]
+      - paragraph [ref=e196]:
+        - img [ref=e198]
+        - generic [ref=e199]: Листайте влево/вправо
+      - link "В пресс-центр" [ref=e200] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e202]:
+      - paragraph [ref=e203]: Форма обратной связи
+      - generic [ref=e206]:
+        - generic [ref=e207]:
+          - heading "Свяжитесь с нами" [level=2] [ref=e208]:
+            - text: Свяжитесь
+            - text: с нами
+          - paragraph [ref=e209]: Если есть вопросы — напишите нам
+        - generic [ref=e210]:
+          - generic [ref=e211]:
+            - generic [ref=e212]: Имя
+            - textbox "Имя" [ref=e214]
+          - generic [ref=e215]:
+            - generic [ref=e216]: Компания
+            - textbox "Компания" [ref=e218]
+          - generic [ref=e219]:
+            - generic [ref=e220]: Телефон
+            - textbox "Телефон" [ref=e222]
+          - generic [ref=e223]:
+            - generic [ref=e224]: Электронная почта
+            - textbox "Электронная почта" [ref=e226]:
+              - /placeholder: mail@company.ru
+          - generic [ref=e227]:
+            - generic [ref=e228]: Сообщение
+            - textbox "Сообщение" [ref=e230]
+          - generic [ref=e231]:
+            - button "Отправить" [ref=e232] [cursor=pointer]
+            - paragraph [ref=e233]:
+              - text: Нажимая кнопку, вы даете согласие на обработку
+              - link "персональных данных." [ref=e234] [cursor=pointer]:
+                - /url: https://incomsystem.ru/upload/uf/baa/pol.pdf
+    - generic [ref=e236]:
+      - list [ref=e239]:
+        - listitem [ref=e240]:
+          - link "Каталог продукции PDF · 1.5 Мб Скачать" [ref=e241] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e242]:
+              - generic [ref=e243]:
+                - heading "Каталог продукции" [level=3] [ref=e244]
+                - paragraph [ref=e245]:
+                  - generic [ref=e246]: PDF
+                  - generic [ref=e247]: ·
+                  - generic [ref=e248]: 1.5 Мб
+              - generic [ref=e249]: Скачать
+            - img [ref=e251]
+        - listitem [ref=e252]:
+          - link "Презентация компании PDF · 1.2 Мб Скачать" [ref=e253] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e254]:
+              - generic [ref=e255]:
+                - heading "Презентация компании" [level=3] [ref=e256]
+                - paragraph [ref=e257]:
+                  - generic [ref=e258]: PDF
+                  - generic [ref=e259]: ·
+                  - generic [ref=e260]: 1.2 Мб
+              - generic [ref=e261]: Скачать
+            - img [ref=e263]
+      - generic [ref=e264]:
+        - paragraph [ref=e265]: Научно-инженерный центр
+        - img "Инкомсистем" [ref=e266]
+  - contentinfo [ref=e267]:
+    - generic [ref=e269]:
+      - generic [ref=e270]:
+        - paragraph [ref=e271]: Контакты
+        - link "Открыть в Яндекс Картах" [ref=e272] [cursor=pointer]:
+          - /url: https://yandex.ru/maps/?text=%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%A2%D0%B0%D1%82%D0%B0%D1%80%D1%81%D1%82%D0%B0%D0%BD,%20%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C,%20%D1%83%D0%BB.%20%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D1%8F,%20104%D0%98
+      - generic [ref=e273]:
+        - generic [ref=e274]:
+          - list [ref=e275]:
+            - listitem [ref=e276]: НИЦ «ИНКОМСИСТЕМ»
+            - listitem [ref=e277]: ИНН 1660002574
+            - listitem [ref=e278]: ОГРН 1021603619091
+          - generic [ref=e279]:
+            - paragraph [ref=e280]: Адрес
+            - paragraph [ref=e281]: Республика Татарстан, Казань, ул. Восстания, зд. 104И
+            - paragraph [ref=e282]: (ранее ул.Восстания, 100, корпус 13)
+          - generic [ref=e283]:
+            - generic [ref=e284]:
+              - paragraph [ref=e285]: Связаться
+              - link "+7 843 212-50-10" [ref=e286] [cursor=pointer]:
+                - /url: tel:+78432125010
+              - link "info@incomsteel.ru" [ref=e287] [cursor=pointer]:
+                - /url: mailto:info@incomsteel.ru
+            - list "Социальные сети" [ref=e288]:
+              - listitem [ref=e289]:
+                - link "Telegram" [ref=e290] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e291]
+              - listitem [ref=e292]:
+                - link "ВКонтакте" [ref=e293] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e294]
+        - generic [ref=e295]:
+          - paragraph [ref=e296]: ©1991-2025 АО «Научно-инженерный центр «ИНКОМСИСТЕМ»
+          - link "Политика в отношении обработки персональных данных" [ref=e297] [cursor=pointer]:
+            - /url: https://incomsystem.ru/upload/uf/baa/pol.pdf
+          - link "Разработка сайта — Mark Weber Mark Weber" [ref=e298] [cursor=pointer]:
+            - /url: https://markweber.pro/
+            - generic [ref=e299]: Разработка сайта — Mark Weber
+            - img "Mark Weber" [ref=e300]
