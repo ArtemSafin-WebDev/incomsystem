@@ -1,6 +1,11 @@
 <section class="production-and-services js-production-and-services">
     <div class="production-and-services__bg" aria-hidden="true">
-        <img src="{{productionAndServices.background}}" alt="">
+        <picture>
+            {{#if productionAndServices.backgroundMobile}}
+            <source media="(max-width: 576px)" srcset="{{productionAndServices.backgroundMobile}}">
+            {{/if}}
+            <img src="{{productionAndServices.background}}" alt="">
+        </picture>
     </div>
     <div class="container">
         <div class="production-and-services__inner">

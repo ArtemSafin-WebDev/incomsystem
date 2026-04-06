@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .production-and-services {
     position: relative;
@@ -25,6 +27,11 @@
       filter: blur(12rem);
       transform: scale(1.12);
       transform-origin: center;
+
+      @include mq.down(sm) {
+        filter: blur(5rem);
+        transform: scale(1.2);
+      }
     }
 
     &::after {
@@ -39,6 +46,13 @@
     position: relative;
     padding-top: 16rem;
     padding-bottom: 6rem;
+
+    @include mq.down(sm) {
+      padding-top: 6rem;
+      padding-bottom: 3.6rem;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .production-and-services__title {
@@ -50,6 +64,14 @@
     letter-spacing: -0.12rem;
     text-transform: uppercase;
     margin-bottom: 12rem;
+
+    @include mq.down(sm) {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+      margin-bottom: 4rem;
+    }
   }
 
   .production-and-services__caption {
@@ -60,12 +82,21 @@
     font-weight: 400;
     line-height: 1.8;
     opacity: 0.5;
+
+    @include mq.down(sm) {
+      display: none;
+    }
   }
 
   .production-and-services__list-wrapper {
     margin-bottom: 16rem;
+
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @include mq.down(sm) {
+      margin-bottom: 4rem;
     }
   }
   .production-and-services__list {
@@ -83,13 +114,17 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    min-height: 7rem;
+
     color: #fff;
     padding: 1.4rem 0;
     transition:
       padding 0.2s,
       border-radius 0.2s,
       background-color 0.2s;
+
+    @include mq.down(sm) {
+      padding-block: 1.4rem;
+    }
   }
 
   .production-and-services__item-preview {
@@ -101,6 +136,10 @@
     visibility: hidden;
     pointer-events: none;
     will-change: transform, opacity;
+
+    @include mq.down(sm) {
+      display: none;
+    }
   }
 
   .production-and-services__item-preview-image {
@@ -118,6 +157,11 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.06rem;
+
+    @include mq.down(sm) {
+      font-size: 1.4rem;
+      letter-spacing: -0.028rem;
+    }
   }
 
   .production-and-services__icon {
@@ -148,6 +192,14 @@
     line-height: 1.8;
     opacity: 0.5;
     margin-bottom: 4rem;
+
+    @include mq.down(sm) {
+      max-width: none;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      margin-bottom: 4rem;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -157,6 +209,11 @@
     width: 44.6rem;
     max-width: 100%;
     margin-inline: auto;
+
+    @include mq.down(sm) {
+      width: auto;
+      margin: 0;
+    }
   }
 
   .production-and-services__item.is-active {
@@ -167,6 +224,12 @@
     padding-inline: 2rem;
     border-radius: 0.5rem;
     background-color: var(--primary-color);
+
+    @include mq.down(sm) {
+      padding-inline: 0;
+      border-radius: 0;
+      background-color: transparent;
+    }
   }
 
   .production-and-services__item.is-active .production-and-services__icon {
@@ -175,6 +238,15 @@
     svg {
       width: 2.4rem;
       height: 2.1rem;
+    }
+
+    @include mq.down(sm) {
+      color: var(--primary-color);
+
+      svg {
+        width: 1.1693rem;
+        height: 1.0182rem;
+      }
     }
   }
 }

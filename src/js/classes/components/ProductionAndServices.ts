@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+import { MOBILE_BREAKPOINT } from "../../constants/breakpoints";
 import Component from "../Component";
 
 type ItemHandlers = {
@@ -11,9 +12,13 @@ class ProductionAndServices extends Component {
   private readonly items: HTMLElement[];
   private readonly previews: HTMLElement[];
   private readonly itemHandlers = new Map<HTMLElement, ItemHandlers>();
+  private readonly mobileMediaQuery = window.matchMedia(
+    `(max-width: ${MOBILE_BREAKPOINT}px)`
+  );
   private requestedIndex = -1;
   private activeIndex = -1;
   private isTransitioning = false;
+  private isInteractionEnabled = false;
 
   constructor(element: HTMLElement) {
     super(element);
@@ -74,28 +79,23 @@ class ProductionAndServices extends Component {
       };
 
       this.itemHandlers.set(item, { mouseEnter, mouseLeave, focusIn });
-      item.addEventListener("mouseenter", mouseEnter);
-      item.addEventListener("mouseleave", mouseLeave);
-      item.addEventListener("focusin", focusIn);
     });
-
-    this.element.addEventListener("mouseleave", this.handleMouseLeave);
-    this.element.addEventListener("focusout", this.handleFocusOut);
+    this.syncInteractionState();
+    this.mobileMediaQuery.addEventListener("change", this.handleViewportChange);
   }
 
   public destroy() {
-    this.itemHandlers.forEach((handlers, item) => {
-      item.removeEventListener("mouseenter", handlers.mouseEnter);
-      item.removeEventListener("mouseleave", handlers.mouseLeave);
-      item.removeEventListener("focusin", handlers.focusIn);
-    });
+    this.mobileMediaQuery.removeEventListener("change", this.handleViewportChange);
+    this.disableInteractions();
 
     this.itemHandlers.clear();
-    this.element.removeEventListener("mouseleave", this.handleMouseLeave);
-    this.element.removeEventListener("focusout", this.handleFocusOut);
     gsap.killTweensOf(this.previews);
     this.unregister();
   }
+
+  private readonly handleViewportChange = () => {
+    this.syncInteractionState();
+  };
 
   private readonly handleMouseLeave = (event: Event) => {
     const relatedTarget =
@@ -119,6 +119,10 @@ class ProductionAndServices extends Component {
   };
 
   private request(index: number) {
+    if (!this.isInteractionEnabled) {
+      return;
+    }
+
     if (index === this.requestedIndex) {
       return;
     }
@@ -207,6 +211,52 @@ class ProductionAndServices extends Component {
     if (this.requestedIndex !== this.activeIndex) {
       this.processQueue();
     }
+  }
+
+  private syncInteractionState() {
+    if (this.mobileMediaQuery.matches) {
+      this.disableInteractions();
+      return;
+    }
+
+    this.enableInteractions();
+  }
+
+  private enableInteractions() {
+    if (this.isInteractionEnabled) {
+      return;
+    }
+
+    this.itemHandlers.forEach((handlers, item) => {
+      item.addEventListener("mouseenter", handlers.mouseEnter);
+      item.addEventListener("mouseleave", handlers.mouseLeave);
+      item.addEventListener("focusin", handlers.focusIn);
+    });
+
+    this.element.addEventListener("mouseleave", this.handleMouseLeave);
+    this.element.addEventListener("focusout", this.handleFocusOut);
+    this.isInteractionEnabled = true;
+  }
+
+  private disableInteractions() {
+    if (this.isInteractionEnabled) {
+      this.itemHandlers.forEach((handlers, item) => {
+        item.removeEventListener("mouseenter", handlers.mouseEnter);
+        item.removeEventListener("mouseleave", handlers.mouseLeave);
+        item.removeEventListener("focusin", handlers.focusIn);
+      });
+
+      this.element.removeEventListener("mouseleave", this.handleMouseLeave);
+      this.element.removeEventListener("focusout", this.handleFocusOut);
+    }
+
+    this.isInteractionEnabled = false;
+    this.requestedIndex = -1;
+    this.activeIndex = -1;
+    this.isTransitioning = false;
+    this.items.forEach((item) => item.classList.remove("is-active"));
+    gsap.killTweensOf(this.previews);
+    gsap.set(this.previews, { autoAlpha: 0, scale: 0 });
   }
 }
 

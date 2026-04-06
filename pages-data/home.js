@@ -155,6 +155,7 @@ export default {
       description:
         "НИЦ «Инкомсистем» один из самых востребованных системных интеграторов",
       background: "/images/production-and-services/bg.webp",
+      backgroundMobile: "/images/production-and-services/bg-mobile.webp",
       buttonText: "Продукция и услуги",
       buttonHref: "#",
       items: [
