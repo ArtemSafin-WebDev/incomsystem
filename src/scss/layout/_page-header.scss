@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer layout {
   .page-header {
     position: fixed;
@@ -19,6 +21,14 @@
     padding: 3rem 0;
     color: white;
     transition: padding 0.2s;
+
+    @include mq.down(sm) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.7rem 0;
+    }
   }
 
   .page-header__logo {
@@ -28,6 +38,10 @@
     grid-template-areas: "stack";
     align-items: center;
     justify-items: flex-start;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+    }
   }
 
   .page-header__logo-full {
@@ -37,6 +51,10 @@
     transition:
       opacity 0.2s,
       visibility 0.2s;
+
+    @include mq.down(sm) {
+      width: 19.3rem;
+    }
 
     &--blue {
       opacity: 0;
@@ -52,6 +70,10 @@
     transition:
       opacity 0.2s,
       visibility 0.2s;
+
+    @include mq.down(sm) {
+      display: none;
+    }
   }
 
   .page-header__middle-wrapper {
@@ -60,6 +82,45 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    @include mq.down(sm) {
+      display: none;
+    }
+  }
+
+  .page-header__mobile-actions {
+    display: none;
+
+    @include mq.down(sm) {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  .page-header__mobile-btn {
+    display: grid;
+    place-items: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      fill: currentColor;
+    }
+  }
+
+  .page-header__mobile-btn--phone {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  .page-header__mobile-btn--menu {
+    background: #fff;
+    color: var(--text-color);
   }
 
   .page-header__products {
@@ -123,6 +184,10 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    @include mq.down(sm) {
+      display: none;
+    }
   }
 
   .page-header__nav {

@@ -6,7 +6,7 @@
     --container-max-width: 184rem;
 
     @include mq.down(sm) {
-      --container-padding: 2rem;
+      --container-padding: 1.6rem;
     }
   }
 }
