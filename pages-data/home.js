@@ -320,6 +320,7 @@ export default {
     footer: {
       caption: "Контакты",
       mapImage: "/images/footer/map.webp",
+      mapImageMobile: "/images/footer/map-mobile.webp",
       mapPin: "/images/footer/pin.svg",
       mapLinkText: "Открыть в Яндекс Картах",
       mapLinkHref:
@@ -354,7 +355,7 @@ export default {
       policyLink: "https://incomsystem.ru/upload/uf/baa/pol.pdf",
       developer: {
         href: "https://markweber.pro/",
-        text: "Разработка сайта — Mark Weber",
+        text: "Дизайн и разработка сайта — Mark Weber",
         logo: "/images/markweber.svg",
         logoAlt: "Mark Weber",
       },

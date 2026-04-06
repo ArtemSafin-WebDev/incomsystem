@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer layout {
   .page-footer {
     position: relative;
@@ -40,6 +42,10 @@
     display: flex;
     flex-direction: column;
     grid-area: stack;
+
+    @include mq.down(sm) {
+      padding-inline: 2rem;
+    }
   }
 
   .page-footer__head {
@@ -50,6 +56,11 @@
     gap: 2rem;
     padding-top: 4rem;
     padding-bottom: 4rem;
+
+    @include mq.down(sm) {
+      padding-top: 2rem;
+      padding-bottom: 8rem;
+    }
   }
 
   .page-footer__caption {
@@ -63,6 +74,11 @@
     line-height: 1;
     color: #fff;
     justify-self: flex-start;
+
+    @include mq.down(sm) {
+      width: 100%;
+      max-width: 34.3rem;
+    }
   }
 
   .page-footer__map-pin {
@@ -74,6 +90,10 @@
     height: 9rem;
     object-fit: contain;
     z-index: 5;
+
+    @include mq.down(sm) {
+      top: var(--map-mobile-pin-y-coord, 14%);
+    }
   }
 
   .page-footer__map-link {
@@ -100,6 +120,11 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+
+    @include mq.down(sm) {
+      padding-top: 4.6rem;
+      padding-bottom: 2rem;
+    }
   }
 
   .page-footer__top,
@@ -107,17 +132,38 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2rem;
+
+    @include mq.down(sm) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .page-footer__top {
+    @include mq.down(sm) {
+      gap: 4rem;
+    }
   }
 
   .page-footer__bottom {
     margin-top: auto;
     align-items: end;
+
+    @include mq.down(sm) {
+      margin-top: 0;
+      padding-top: 4rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      gap: 2rem;
+      align-items: start;
+    }
   }
 
   .page-footer__company-list {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   .page-footer__company-item,
@@ -139,6 +185,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+    }
   }
 
   .page-footer__contacts-wrap {
@@ -147,6 +197,14 @@
     align-items: flex-start;
     justify-content: space-between;
     gap: 2rem;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 4rem;
+    }
   }
 
   .page-footer__contacts {
@@ -174,24 +232,42 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.066rem;
+
+    @include mq.down(sm) {
+      margin-top: 1.4rem;
+    }
   }
 
   .page-footer__section-text + .page-footer__section-text {
     margin-top: 2rem;
+    @include mq.down(sm) {
+      margin-top: 1.4rem;
+    }
   }
 
   .page-footer__address .page-footer__muted-text {
     margin-top: 2rem;
     line-height: 1.2;
     letter-spacing: -0.042rem;
+    @include mq.down(sm) {
+      margin-top: 1.4rem;
+    }
   }
 
   .page-footer__social-list {
     margin-top: auto;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    @include mq.down(sm) {
+      margin-top: 0;
+    }
   }
 
   .page-footer__social-link {
@@ -223,6 +299,11 @@
   .page-footer__copyright {
     white-space: nowrap;
     color: rgba(255 255 255 / 70%);
+
+    @include mq.down(sm) {
+      white-space: normal;
+      line-height: 1.4;
+    }
   }
 
   .page-footer__policy {
@@ -234,6 +315,12 @@
     text-decoration-skip-ink: none;
     width: fit-content;
     color: rgba(255 255 255 / 70%);
+
+    @include mq.down(sm) {
+      grid-column: auto;
+      line-height: 1.4;
+    }
+
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         color: white;
@@ -248,6 +335,16 @@
     align-items: flex-end;
     gap: 1.8rem;
     color: rgba(255 255 255 / 70%);
+
+    @include mq.down(sm) {
+      grid-column: auto;
+      justify-self: start;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 2rem;
+      color: rgba(255 255 255 / 50%);
+    }
+
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         color: white;
@@ -259,11 +356,21 @@
     max-width: 16.3rem;
     line-height: 1.2;
     letter-spacing: -0.042rem;
+
+    @include mq.down(sm) {
+      font-size: 1.4rem;
+      max-width: 17.6rem;
+    }
   }
 
   .page-footer__developer-logo {
     width: 3.8rem;
     height: 5.5rem;
     flex-shrink: 0;
+
+    @include mq.down(sm) {
+      width: 3.5637rem;
+      height: 4.8rem;
+    }
   }
 }

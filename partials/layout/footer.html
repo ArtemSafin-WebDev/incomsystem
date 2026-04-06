@@ -1,7 +1,10 @@
 <footer class="page-footer">
     <div class="page-footer__bg">
-        <img class="page-footer__bg-image" src="{{footer.mapImage}}" alt="">
-        <img src="/images/footer/pin.svg" alt="" class="page-footer__map-pin">
+        <picture class="page-footer__bg-picture">
+            <source media="(width <= 576px)" srcset="{{footer.mapImageMobile}}">
+            <img class="page-footer__bg-image" src="{{footer.mapImage}}" alt="">
+        </picture>
+        <img src="{{footer.mapPin}}" alt="" class="page-footer__map-pin">
     </div>
 
 
