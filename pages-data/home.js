@@ -230,6 +230,7 @@ export default {
       allProjectsText: "Все проекты",
       allProjectsHref: "#",
       detailsText: "Подробнее",
+      scrollHintText: "Листайте влево/вправо",
       projects: [
         {
           year: "2018—2019",

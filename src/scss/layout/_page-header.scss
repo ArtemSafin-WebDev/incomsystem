@@ -16,6 +16,11 @@
     &--compact {
       background: #fff;
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+      @include mq.down(sm) {
+        background: white;
+        border-bottom-color: transparent;
+      }
     }
   }
 
@@ -38,6 +43,10 @@
     .page-header--compact & {
       color: var(--text-color);
       padding: 1rem 0;
+
+      @include mq.down(sm) {
+        padding: 1.7rem 0;
+      }
     }
   }
 
@@ -69,11 +78,25 @@
     &--blue {
       opacity: 0;
       visibility: hidden;
+
+      @include mq.down(sm) {
+        .page-header--compact & {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
 
     .page-header--compact & {
       opacity: 0;
       visibility: hidden;
+    }
+  }
+
+  @include mq.down(sm) {
+    .page-header--compact .page-header__logo-full.page-header__logo-full--blue {
+      opacity: 1;
+      visibility: visible;
     }
   }
 
@@ -138,11 +161,21 @@
   .page-header__mobile-btn--phone {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
+
+    .page-header--compact & {
+      background: #f2f2fa;
+      color: var(--text-color);
+    }
   }
 
   .page-header__mobile-btn--menu {
     background: #fff;
     color: var(--text-color);
+
+    .page-header--compact & {
+      background: var(--primary-color);
+      color: #fff;
+    }
   }
 
   .page-header__products {

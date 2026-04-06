@@ -1,4 +1,4 @@
-<section class="realised-projects">
+<section class="realised-projects js-realised-projects">
     <div class="container">
         <div class="realised-projects__grid">
             <h2 class="realised-projects__title">{{realisedProjects.title}}</h2>
@@ -10,14 +10,25 @@
                     href="{{realisedProjects.allProjectsHref}}">{{realisedProjects.allProjectsText}}</a>
             </div>
 
-            <ul class="realised-projects__list">
-                {{#each realisedProjects.projects}}
-                <li class="realised-projects__item">
-                    {{> components/cards/realised-project-card project=this detailsText=../realisedProjects.detailsText
-                    }}
-                </li>
-                {{/each}}
-            </ul>
+            <div class="realised-projects__slider swiper js-realised-projects-slider">
+                <ul class="realised-projects__list swiper-wrapper">
+                    {{#each realisedProjects.projects}}
+                    <li class="realised-projects__item swiper-slide">
+                        {{> components/cards/realised-project-card project=this detailsText=../realisedProjects.detailsText
+                        }}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <p class="realised-projects__hint">
+                <span class="realised-projects__hint-icon" aria-hidden="true">
+                    <svg width="15" height="15">
+                        <use xlink:href="#swipe-horizontal"></use>
+                    </svg>
+                </span>
+                <span>{{realisedProjects.scrollHintText}}</span>
+            </p>
 
             <a class="btn btn--dark-text realised-projects__btn"
                 href="{{realisedProjects.allProjectsHref}}">{{realisedProjects.allProjectsText}}</a>

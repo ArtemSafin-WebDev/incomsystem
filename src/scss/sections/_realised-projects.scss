@@ -1,8 +1,15 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .realised-projects {
     background-color: white;
     padding-top: 12rem;
     padding-bottom: 8rem;
+
+    @include mq.down(sm) {
+      padding-top: 8rem;
+      padding-bottom: 6rem;
+    }
   }
 
   .realised-projects__grid {
@@ -10,6 +17,12 @@
     grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 2rem;
     row-gap: 0;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   .realised-projects__title {
@@ -23,6 +36,15 @@
     text-transform: uppercase;
     text-wrap: balance;
     margin-bottom: 9rem;
+
+    @include mq.down(sm) {
+      grid-column: 1 / -1;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+      margin-bottom: 3rem;
+    }
   }
 
   .realised-projects__meta {
@@ -33,6 +55,15 @@
     align-items: end;
     border-bottom: 0.1rem solid rgba(34, 34, 34, 0.2);
     padding-bottom: 4rem;
+
+    @include mq.down(sm) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 2rem;
+    }
   }
 
   .realised-projects__caption,
@@ -42,15 +73,28 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+    }
   }
 
   .realised-projects__caption {
     grid-column: 1 / 3;
+
+    @include mq.down(sm) {
+      grid-column: 1 / 2;
+    }
   }
 
   .realised-projects__total {
     grid-column: 3 / 5;
     opacity: 0.5;
+
+    @include mq.down(sm) {
+      grid-column: 2 / 3;
+      justify-self: end;
+    }
   }
 
   .realised-projects__all-link {
@@ -64,15 +108,73 @@
     line-height: 1.05;
     letter-spacing: 0.14rem;
     text-transform: uppercase;
+
+    @include mq.down(sm) {
+      display: none;
+    }
+  }
+
+  .realised-projects__slider {
+    grid-column: 1 / -1;
+
+    @include mq.down(sm) {
+      overflow: visible;
+    }
   }
 
   .realised-projects__list {
-    grid-column: 1 / -1;
+    display: block;
+
+    @include mq.down(sm) {
+      display: flex;
+    }
   }
 
   .realised-projects__item {
-    border-bottom: 0.1rem solid rgba(34, 34, 34, 0.2);
+    border-bottom: 1px solid rgba(34, 34, 34, 0.2);
     padding-block: 4rem;
+    box-sizing: border-box;
+    @include mq.down(sm) {
+      border-bottom: none;
+      padding-block: 0;
+      width: 30rem;
+      flex-shrink: 0;
+      height: auto;
+    }
+  }
+
+  .realised-projects__hint {
+    display: none;
+
+    @include mq.down(sm) {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      font-family: var(--inter);
+      font-size: 0.8rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -0.024rem;
+      color: var(--text-color);
+    }
+  }
+
+  .realised-projects__hint-icon {
+    width: 1.7rem;
+    height: 1.7rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    svg {
+      width: 1.7rem;
+      height: 1.7rem;
+      display: block;
+      flex-shrink: 0;
+    }
   }
 
   .realised-projects__btn {
@@ -81,12 +183,28 @@
     justify-self: center;
     width: 44.6rem;
     max-width: 100%;
+
+    @include mq.down(sm) {
+      margin-top: 4rem;
+      grid-column: auto;
+      justify-self: stretch;
+      width: auto;
+    }
   }
 
   .realised-project-card {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
+    @include mq.down(sm) {
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        "media media"
+        "year logo"
+        "title title"
+        "link link";
+      gap: 2rem;
+    }
   }
 
   .realised-project-card__left {
@@ -94,6 +212,10 @@
     grid-template-columns: 44.5rem minmax(0, 1fr);
     column-gap: 2rem;
     align-items: start;
+
+    @include mq.down(sm) {
+      display: contents;
+    }
   }
 
   .realised-project-card__media {
@@ -107,6 +229,12 @@
       height: 100%;
       object-fit: cover;
     }
+
+    @include mq.down(sm) {
+      grid-area: media;
+      aspect-ratio: 300 / 175;
+      margin-bottom: 1.5rem;
+    }
   }
 
   .realised-project-card__year {
@@ -117,6 +245,13 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1;
+
+    @include mq.down(sm) {
+      display: block;
+      grid-area: year;
+      align-self: center;
+      font-size: 1.2rem;
+    }
   }
 
   .realised-project-card__right {
@@ -125,6 +260,10 @@
     gap: 2rem;
     align-items: start;
     grid-template-rows: 1fr auto;
+
+    @include mq.down(sm) {
+      display: contents;
+    }
   }
 
   .realised-project-card__title {
@@ -136,6 +275,12 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.09rem;
+
+    @include mq.down(sm) {
+      grid-area: title;
+      font-size: 2rem;
+      letter-spacing: -0.06rem;
+    }
   }
 
   .realised-project-card__link {
@@ -148,9 +293,8 @@
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    height: 6rem;
     border-radius: 4rem;
-    border-width: 0.1rem;
+    border-width: 1px;
     border-color: rgba(34, 34, 34, 0.2);
     padding: 1.7rem 3rem;
     font-family: var(--inter);
@@ -161,6 +305,16 @@
     letter-spacing: 0.14rem;
     text-transform: uppercase;
     border-style: solid;
+
+    @include mq.down(sm) {
+      grid-area: link;
+      width: auto;
+      justify-content: center;
+      margin-top: 0.5rem;
+      margin-inline: 0;
+      padding: 2.1rem 3rem;
+      justify-self: stretch;
+    }
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
@@ -192,14 +346,22 @@
     border: 1px solid #dfdfdf;
     display: grid;
     place-items: center;
-    padding: 1rem;
     overflow: hidden;
     background-color: #fff;
 
     img {
-      width: 9.8rem;
-      height: 9.8rem;
-      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @include mq.down(sm) {
+      display: grid;
+      grid-area: logo;
+      align-self: center;
+      width: 5rem;
+      height: 5rem;
     }
   }
 }

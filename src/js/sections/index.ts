@@ -1,6 +1,7 @@
 import CompactHeader from "../classes/components/CompactHeader";
 import PressCenter from "../classes/components/PressCenter";
 import ProductionAndServices from "../classes/components/ProductionAndServices";
+import RealisedProjects from "../classes/components/RealisedProjects";
 
 export default function sections() {
   const header = document.querySelector<HTMLElement>(".page-header");
@@ -15,6 +16,9 @@ export default function sections() {
   const productionAndServicesSections = document.querySelectorAll<HTMLElement>(
     ".js-production-and-services"
   );
+  const realisedProjectsSections = document.querySelectorAll<HTMLElement>(
+    ".js-realised-projects"
+  );
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
@@ -22,5 +26,9 @@ export default function sections() {
 
   productionAndServicesSections.forEach((section) => {
     new ProductionAndServices(section);
+  });
+
+  realisedProjectsSections.forEach((section) => {
+    new RealisedProjects(section);
   });
 }
