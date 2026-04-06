@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .about-company {
     position: relative;
@@ -7,7 +9,6 @@
       linear-gradient(90deg, #ebebeb 0%, #ebebeb 100%);
     isolation: isolate;
     overflow: clip;
-    min-height: 120rem;
   }
 
   .about-company__bg {
@@ -23,6 +24,11 @@
       height: 100%;
       object-fit: cover;
       max-width: none;
+
+      @include mq.down(sm) {
+        width: 100%;
+        object-position: center top;
+      }
     }
   }
 
@@ -33,6 +39,15 @@
     padding-top: 16rem;
     padding-bottom: 6.1rem;
     min-height: 120rem;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      min-height: auto;
+      padding-top: 4rem;
+      padding-bottom: 3.5rem;
+    }
   }
 
   .about-company__title {
@@ -44,6 +59,13 @@
     line-height: 1.2;
     letter-spacing: -0.12rem;
     text-transform: uppercase;
+
+    @include mq.down(sm) {
+      grid-column: 1 / -1;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.06rem;
+    }
   }
 
   .about-company__content {
@@ -51,6 +73,11 @@
     display: flex;
     flex-direction: column;
     gap: 8rem;
+
+    @include mq.down(sm) {
+      grid-column: 1 / -1;
+      gap: 4rem;
+    }
   }
 
   .about-company__description {
@@ -62,6 +89,13 @@
     font-weight: 400;
     line-height: 1.4;
     letter-spacing: -0.09rem;
+
+    @include mq.down(sm) {
+      width: auto;
+      font-family: var(--rf-dewi);
+      font-size: 1.4rem;
+      letter-spacing: -0.014rem;
+    }
   }
 
   .about-company__stats-list {
@@ -77,6 +111,13 @@
     border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
     padding-block: 4rem;
     align-items: center;
+
+    @include mq.down(sm) {
+      grid-template-columns: 12rem minmax(0, 1fr);
+      gap: 1rem;
+
+      padding-block: 1.2rem;
+    }
   }
 
   .about-company__stats-value {
@@ -86,17 +127,31 @@
     font-weight: 300;
     line-height: 1;
     letter-spacing: -0.24rem;
+
+    @include mq.down(sm) {
+      font-size: 6rem;
+      line-height: 1.2;
+      letter-spacing: -0.12rem;
+    }
   }
 
   .about-company__stats-suffix {
     font-size: 7.74rem;
     line-height: 1.2;
+
+    @include mq.down(sm) {
+      font-size: 3.87rem;
+    }
   }
 
   .about-company__stats-text {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+
+    @include mq.down(sm) {
+      gap: 1rem;
+    }
   }
 
   .about-company__stats-title {
@@ -106,6 +161,11 @@
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: -0.09rem;
+
+    @include mq.down(sm) {
+      font-size: 1.4rem;
+      letter-spacing: -0.042rem;
+    }
   }
 
   .about-company__stats-description {
@@ -117,6 +177,12 @@
     line-height: 1.8;
     opacity: 0.5;
     max-width: 34rem;
+
+    @include mq.down(sm) {
+      max-width: 21.3rem;
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
   }
 
   .about-company__btn {
@@ -125,5 +191,10 @@
     justify-self: center;
     width: 44.5rem;
     max-width: 100%;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+      align-self: stretch;
+    }
   }
 }
