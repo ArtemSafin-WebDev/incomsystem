@@ -264,6 +264,7 @@ export default {
       title: "Пресс-центр",
       topLinkText: "В пресс-центр",
       topLinkHref: "#",
+      scrollHintText: "Листайте влево/вправо",
       buttonText: "В пресс-центр",
       buttonHref: "#",
       tabs: [

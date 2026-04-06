@@ -1,19 +1,27 @@
+import { gsap } from "gsap";
 import Swiper from "swiper";
 import { MOBILE_BREAKPOINT } from "../../constants/breakpoints";
 import Component from "../Component";
 
 class PressCenter extends Component {
+  private readonly media = gsap.matchMedia();
   private readonly tabButtons: HTMLButtonElement[];
   private readonly tabPanels: HTMLElement[];
-  private readonly tabButtonHandlers = new Map<HTMLButtonElement, EventListener>();
+  private readonly tabButtonHandlers = new Map<
+    HTMLButtonElement,
+    EventListener
+  >();
+  private readonly sliders = new Map<HTMLElement, Swiper>();
   private activeIndex = -1;
-  private slider: Swiper | null = null;
+  private isMobileMode = false;
 
   constructor(element: HTMLElement) {
     super(element);
 
     this.tabButtons = Array.from(
-      this.element.querySelectorAll<HTMLButtonElement>(".js-press-center-tab-btn")
+      this.element.querySelectorAll<HTMLButtonElement>(
+        ".js-press-center-tab-btn"
+      )
     );
     this.tabPanels = Array.from(
       this.element.querySelectorAll<HTMLElement>(".js-press-center-tab-panel")
@@ -34,24 +42,29 @@ class PressCenter extends Component {
     });
 
     this.setActiveTab(0);
-    window.addEventListener("resize", this.handleResize);
+
+    this.media.add(`(max-width: ${MOBILE_BREAKPOINT}px)`, () => {
+      this.isMobileMode = true;
+      this.syncSliderState();
+
+      return () => {
+        this.isMobileMode = false;
+        this.unmountSliders();
+      };
+    });
   }
 
   public destroy() {
-    window.removeEventListener("resize", this.handleResize);
+    this.media.revert();
 
     this.tabButtonHandlers.forEach((handler, button) => {
       button.removeEventListener("click", handler);
     });
     this.tabButtonHandlers.clear();
 
-    this.unmountSlider();
+    this.unmountSliders();
     this.unregister();
   }
-
-  private readonly handleResize = () => {
-    this.syncSliderState();
-  };
 
   private setActiveTab(index: number) {
     if (
@@ -74,51 +87,52 @@ class PressCenter extends Component {
   }
 
   private syncSliderState() {
-    if (!this.isMobile()) {
-      this.unmountSlider();
+    if (!this.isMobileMode) {
       return;
     }
 
     const activePanel = this.tabPanels[this.activeIndex];
 
     if (!activePanel) {
-      this.unmountSlider();
       return;
     }
 
-    const sliderElement = activePanel.querySelector<HTMLElement>(
+    const slider = this.mountSlider(activePanel);
+    if (!slider) {
+      return;
+    }
+
+    slider.update();
+  }
+
+  private mountSlider(panel: HTMLElement) {
+    const existingSlider = this.sliders.get(panel);
+    if (existingSlider) {
+      return existingSlider;
+    }
+
+    const sliderElement = panel.querySelector<HTMLElement>(
       ".js-press-center-slider"
     );
 
     if (!sliderElement) {
-      this.unmountSlider();
-      return;
+      return null;
     }
 
-    if (this.slider?.el === sliderElement) {
-      this.slider.update();
-      return;
-    }
-
-    this.unmountSlider();
-    this.slider = new Swiper(sliderElement, {
+    const slider = new Swiper(sliderElement, {
       slidesPerView: "auto",
-      spaceBetween: 16,
-      speed: 450,
+      speed: 600,
     });
+
+    this.sliders.set(panel, slider);
+    return slider;
   }
 
-  private unmountSlider() {
-    if (!this.slider) {
-      return;
-    }
-
-    this.slider.destroy(true, true);
-    this.slider = null;
-  }
-
-  private isMobile() {
-    return window.innerWidth <= MOBILE_BREAKPOINT;
+  private unmountSliders() {
+    this.sliders.forEach((slider) => {
+      slider.destroy(true, true);
+    });
+    this.sliders.clear();
   }
 }
 

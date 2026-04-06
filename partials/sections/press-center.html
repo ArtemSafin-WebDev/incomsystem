@@ -15,6 +15,15 @@
                     {{/each}}
                 </ul>
 
+                <p class="press-center__tabs-hint">
+                    <span class="press-center__hint-icon" aria-hidden="true">
+                        <svg width="15" height="15">
+                            <use xlink:href="#swipe-horizontal"></use>
+                        </svg>
+                    </span>
+                    <span>{{pressCenter.scrollHintText}}</span>
+                </p>
+
                 <a class="press-center__top-link"
                     href="{{pressCenter.topLinkHref}}">{{pressCenter.topLinkText}}</a>
             </div>
@@ -34,6 +43,15 @@
                 </div>
                 {{/each}}
             </div>
+
+            <p class="press-center__cards-hint">
+                <span class="press-center__hint-icon" aria-hidden="true">
+                    <svg width="15" height="15">
+                        <use xlink:href="#swipe-horizontal"></use>
+                    </svg>
+                </span>
+                <span>{{pressCenter.scrollHintText}}</span>
+            </p>
 
             <a class="btn btn--dark-text press-center__btn"
                 href="{{pressCenter.buttonHref}}">{{pressCenter.buttonText}}</a>
