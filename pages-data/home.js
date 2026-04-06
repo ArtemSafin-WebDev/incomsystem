@@ -128,6 +128,42 @@ const engineeringCenterDocuments = [
   },
 ];
 
+const mobileMenuLinks = [
+  {
+    label: "Продукция и услуги",
+    href: "#",
+  },
+  {
+    label: "Проекты",
+    href: "#",
+  },
+  {
+    label: "О компании",
+    href: "#",
+  },
+  {
+    label: "Документация",
+    href: "#",
+  },
+  {
+    label: "Контакты",
+    href: "#",
+  },
+];
+
+const mobileMenuSocials = [
+  {
+    href: "#",
+    label: "Telegram",
+    icon: "social/telegram",
+  },
+  {
+    href: "#",
+    label: "ВКонтакте",
+    icon: "social/vk",
+  },
+];
+
 export default {
   "/index.html": {
     title: "Главная страница",
@@ -316,6 +352,21 @@ export default {
       label: "Научно-инженерный центр",
       logo: "/images/incomsystem.svg",
       logoAlt: "Инкомсистем",
+    },
+    mobileMenu: {
+      logoHref: "#",
+      logoSrc: "/images/shared/logo.svg",
+      logoAlt: "Инкомсистем",
+      searchPlaceholder: "Поиск",
+      menuAriaLabel: "Мобильное меню",
+      links: mobileMenuLinks,
+      socials: mobileMenuSocials,
+      ctaText: "связаться с нами",
+      ctaHref: "#",
+      phoneHref: "#",
+      phoneAriaLabel: "Позвонить",
+      openAriaLabel: "Открыть меню",
+      closeAriaLabel: "Закрыть меню",
     },
     footer: {
       caption: "Контакты",

@@ -1,0 +1,59 @@
+<div class="mobile-menu js-mobile-menu" id="mobile-menu-panel" aria-hidden="true" inert>
+    <div class="container">
+        <div class="mobile-menu__content">
+            <div class="mobile-menu__header">
+                <a href="{{mobileMenu.logoHref}}" class="mobile-menu__logo">
+                    <img src="{{mobileMenu.logoSrc}}" alt="{{mobileMenu.logoAlt}}">
+                </a>
+                <div class="mobile-menu__header-actions">
+                    <a href="{{mobileMenu.phoneHref}}" class="mobile-menu__top-btn mobile-menu__top-btn--phone"
+                        aria-label="{{mobileMenu.phoneAriaLabel}}">
+                        <svg width="24" height="24" aria-hidden="true">
+                            <use xlink:href="#phone"></use>
+                        </svg>
+                    </a>
+                    <button type="button" class="mobile-menu__top-btn mobile-menu__top-btn--close js-mobile-menu-close"
+                        aria-label="{{mobileMenu.closeAriaLabel}}">
+                        <svg width="15" height="15" aria-hidden="true">
+                            <use xlink:href="#close"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <form class="mobile-menu__search-form js-mobile-menu-search-form" role="search">
+                <input class="mobile-menu__search-input js-mobile-menu-search-input" type="search" name="q"
+                    placeholder="{{mobileMenu.searchPlaceholder}}" aria-label="{{mobileMenu.searchPlaceholder}}">
+                <button type="submit" class="mobile-menu__search-btn" aria-label="Найти">
+                    <svg width="24" height="24" aria-hidden="true">
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </button>
+            </form>
+            <nav class="mobile-menu__nav" aria-label="{{mobileMenu.menuAriaLabel}}">
+                <ul class="mobile-menu__nav-list">
+                    {{#each mobileMenu.links}}
+                    <li class="mobile-menu__nav-item">
+                        <a href="{{href}}" class="mobile-menu__nav-link js-mobile-menu-link">{{label}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </nav>
+            <div class="mobile-menu__bottom">
+                <ul class="mobile-menu__socials">
+                    {{#each mobileMenu.socials}}
+                    <li class="mobile-menu__socials-item">
+                        <a href="{{href}}" class="mobile-menu__social-link" aria-label="{{label}}">
+                            <svg width="24" height="24" aria-hidden="true">
+                                <use xlink:href="#{{icon}}"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+                <a href="{{mobileMenu.ctaHref}}" class="mobile-menu__cta">
+                    {{mobileMenu.ctaText}}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
