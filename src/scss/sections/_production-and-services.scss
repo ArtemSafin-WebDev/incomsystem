@@ -50,6 +50,10 @@
     .production-and-services--about-company & {
       padding-top: 15rem;
       padding-bottom: 26rem;
+      @include mq.down(sm) {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+      }
     }
 
     @include mq.down(sm) {
@@ -72,6 +76,9 @@
 
     .production-and-services--about-company & {
       margin-bottom: 8rem;
+      @include mq.down(sm) {
+        margin-bottom: 4rem;
+      }
     }
 
     @include mq.down(sm) {
@@ -132,7 +139,7 @@
       background-color 0.2s;
 
     @include mq.down(sm) {
-      padding-block: 1.4rem;
+      padding-block: 1.7rem;
     }
   }
 

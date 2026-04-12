@@ -1,9 +1,15 @@
+@use "tools/media" as mq;
+
 @layer components {
   .harsh-conditions-card {
     display: flex;
     flex-direction: column;
     gap: 4rem;
     color: #fff;
+
+    @include mq.down(sm) {
+      gap: 2rem;
+    }
   }
 
   .harsh-conditions-card__caption {
@@ -12,6 +18,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+    }
   }
 
   .harsh-conditions-card__media {
@@ -25,6 +35,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @include mq.down(sm) {
+      aspect-ratio: 3 / 2;
     }
   }
 }

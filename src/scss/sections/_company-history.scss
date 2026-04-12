@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .company-history {
     padding-block: 4rem;
@@ -5,12 +7,21 @@
     color: #222233;
     overflow: clip;
     margin-bottom: 15rem;
+
+    @include mq.down(sm) {
+      margin-bottom: 8rem;
+      padding: 0;
+    }
   }
 
   .company-history__grid {
     display: flex;
     flex-direction: column;
     gap: 12rem;
+
+    @include mq.down(sm) {
+      gap: 2.4rem;
+    }
   }
 
   .company-history__title {
@@ -21,6 +32,11 @@
     line-height: 1.2;
     letter-spacing: -0.12rem;
     text-transform: uppercase;
+
+    @include mq.down(sm) {
+      font-size: 3rem;
+      letter-spacing: -0.06rem;
+    }
   }
 
   .company-history__slider {
@@ -31,6 +47,13 @@
     overflow: visible;
   }
 
+  .company-history__navigation {
+    @include mq.down(sm) {
+      gap: 0.5rem;
+      justify-content: center;
+    }
+  }
+
   .company-history__list {
     display: flex;
   }
@@ -38,6 +61,10 @@
   .company-history__item {
     width: 40rem;
     flex: 0 0 auto;
+
+    @include mq.down(sm) {
+      width: auto;
+    }
   }
 
   .company-history-card {
@@ -47,6 +74,12 @@
     padding: 0 3rem 3rem;
     border-left: 1px solid #ccc;
     box-sizing: border-box;
+
+    @include mq.down(sm) {
+      min-width: 19rem;
+      gap: 4rem;
+      padding: 0 2rem 2rem;
+    }
   }
 
   .company-history__item:first-child .company-history-card {
@@ -62,6 +95,13 @@
     line-height: 75%;
     letter-spacing: -0.24rem;
     color: #006fdd;
+
+    @include mq.down(sm) {
+      width: 15rem;
+      font-size: 6rem;
+      line-height: 75%;
+      letter-spacing: -0.12rem;
+    }
   }
 
   .company-history-card__description {
@@ -72,5 +112,12 @@
     font-weight: 500;
     line-height: 1.4;
     letter-spacing: -0.066rem;
+    overflow-wrap: anywhere;
+
+    @include mq.down(sm) {
+      width: 15rem;
+      font-size: 1.4rem;
+      letter-spacing: -0.042rem;
+    }
   }
 }

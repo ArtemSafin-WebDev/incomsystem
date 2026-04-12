@@ -1,10 +1,17 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .harsh-conditions {
     position: relative;
     overflow: clip;
     padding-top: 4rem;
-    padding-bottom: 15rem;
+    margin-bottom: 15rem;
     background: linear-gradient(180deg, #0074e8 0 110rem, #fff 110rem 100%);
+
+    @include mq.down(sm) {
+      background: linear-gradient(180deg, #006fdd 0 39rem, #fff 39rem 100%);
+      margin-bottom: 8rem;
+    }
   }
 
   .harsh-conditions__pattern {
@@ -20,6 +27,10 @@
       width: 100%;
       height: auto;
     }
+
+    @include mq.down(sm) {
+      display: none;
+    }
   }
 
   .harsh-conditions__grid {
@@ -28,6 +39,12 @@
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 2rem;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   .harsh-conditions__title {
@@ -41,6 +58,15 @@
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.12rem;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+      max-width: 34.4rem;
+      margin-bottom: 4rem;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.04rem;
+    }
   }
 
   .harsh-conditions__slider {
@@ -50,6 +76,11 @@
     min-width: 0;
     margin-bottom: 12rem;
     overflow: visible;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+      margin-bottom: 0;
+    }
   }
 
   .harsh-conditions__list {
@@ -59,9 +90,18 @@
   .harsh-conditions__item {
     width: 137.5rem;
     flex: 0 0 auto;
+
+    @include mq.down(sm) {
+      width: 30rem;
+    }
   }
 
   .harsh-conditions__navigation {
     grid-column: 1 / -1;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+      margin-top: 2rem;
+    }
   }
 }

@@ -1,0 +1,366 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: "#"
+      - generic [ref=e6]:
+        - link "Продукция и услуги" [ref=e8] [cursor=pointer]:
+          - /url: "#"
+          - text: Продукция и услуги
+          - img [ref=e9]
+        - link [ref=e12] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e13]
+      - generic [ref=e15]:
+        - navigation [ref=e16]:
+          - list [ref=e17]:
+            - listitem [ref=e18]:
+              - link "О компании" [ref=e19] [cursor=pointer]:
+                - /url: "#"
+                - text: О компании
+                - img [ref=e20]
+            - listitem [ref=e22]:
+              - link "Документация" [ref=e23] [cursor=pointer]:
+                - /url: "#"
+                - text: Документация
+                - img [ref=e24]
+            - listitem [ref=e26]:
+              - link "Контакты" [ref=e27] [cursor=pointer]:
+                - /url: "#"
+        - link [ref=e28] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e29]
+        - link "связаться с нами" [ref=e31] [cursor=pointer]:
+          - /url: "#"
+  - main [ref=e32]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - navigation "Хлебные крошки" [ref=e35]:
+          - list [ref=e36]:
+            - listitem [ref=e37]:
+              - link "Главная" [ref=e38] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e39]:
+              - text: /
+              - generic [ref=e40]: О компании
+        - generic [ref=e41]:
+          - heading "НИЦ “Инкомсистем”" [level=1] [ref=e42]
+          - paragraph [ref=e43]: Создана в 1991 году
+      - generic [ref=e46]:
+        - paragraph [ref=e47]: Инкомсистем один из востребованных системных интеграторов и производителей систем коммерческого учета в Российской Федерации
+        - link "Смотреть видео о компании" [ref=e48] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e49]: Смотреть видео о компании
+          - img [ref=e50]
+      - generic [ref=e53]:
+        - paragraph [ref=e54]: Цифры о компании
+        - list [ref=e55]:
+          - listitem [ref=e56]:
+            - paragraph [ref=e57]: 600+
+            - generic [ref=e58]:
+              - paragraph [ref=e59]: проектов запущено
+              - paragraph [ref=e60]: Нам доверяют ключевые заказчики нефтегазовой отрасли
+          - listitem [ref=e61]:
+            - paragraph [ref=e62]: 30+
+            - generic [ref=e63]:
+              - paragraph [ref=e64]: лет на рынке
+              - paragraph [ref=e65]: Нам доверяют ключевые заказчики нефтегазовой отрасли
+          - listitem [ref=e66]:
+            - paragraph [ref=e67]: 700+
+            - generic [ref=e68]:
+              - paragraph [ref=e69]: человек в штате
+              - paragraph [ref=e70]: Нам доверяют ключевые заказчики нефтегазовой отрасли
+    - generic [ref=e73]:
+      - generic [ref=e74]:
+        - paragraph [ref=e75]: Компания
+        - heading "Начиная с 1991 года специалистами Центра внедрены сотни информационно-управляющих систем, обеспечивающих автоматизированное управление и противоаварийную защиту на предприятиях нефтегазодобычи и нефтехимии" [level=2] [ref=e76]
+      - list [ref=e78]:
+        - listitem [ref=e79]:
+          - article [ref=e80]:
+            - heading "Более 30 лет опыта в ключевых отраслях" [level=3] [ref=e82]
+            - paragraph [ref=e83]: Мы обладаем богатым опытом, накопленным более чем за 30 лет работы в различных отраслях промышленности, включая энергетику, нефтехимию и другие стратегически важные секторы.
+        - listitem [ref=e84]:
+          - article [ref=e85]:
+            - heading "Экспертиза в международных проектах" [level=3] [ref=e87]
+            - paragraph [ref=e88]: Успешно реализуем проекты, соответствующие строгим международным стандартам, обеспечивая надежность и безопасность наших решений в глобальном масштабе.
+        - listitem [ref=e89]:
+          - article [ref=e90]:
+            - heading "Решаем сложные задачи комплексно" [level=3] [ref=e92]
+            - paragraph [ref=e93]: Наша команда профессионалов способна разрабатывать инновационные решения для задач любой сложности, предлагая комплексный подход, от проектирования до внедрения.
+        - listitem [ref=e94]:
+          - article [ref=e95]:
+            - heading "Собственное производство высокотехнологичного оборудования" [level=3] [ref=e97]
+            - paragraph [ref=e98]: Инвестируя в развитие, мы создали собственные производственные мощности для выпуска передовых контроллеров и вычислителей АБАК, гарантируя качество и контроль на каждом этапе.
+        - listitem [ref=e99]:
+          - article [ref=e100]:
+            - heading "Автоматизация и реконструкция под ключ" [level=3] [ref=e102]
+            - paragraph [ref=e103]: Обладаем уникальным опытом реконструкции устаревших систем автоматизации, внедряя современные решения для повышения эффективности и надежности производства.
+        - listitem [ref=e104]:
+          - article [ref=e105]:
+            - heading "Гарантия качества на всех этапах" [level=3] [ref=e107]
+            - paragraph [ref=e108]: Тщательно контролируем качество на всех этапах жизненного цикла проекта, от разработки документации до создания и поставки оборудования, обеспечивая соответствие самым высоким требованиям.
+        - listitem [ref=e109]:
+          - article [ref=e110]:
+            - heading "Полное сервисное сопровождение" [level=3] [ref=e112]
+            - paragraph [ref=e113]: Предоставляем комплексное сервисное обслуживание поставленного оборудования, включая техническую поддержку, программное обеспечение и обучение специалистов заказчика.
+        - listitem [ref=e114]:
+          - article [ref=e115]:
+            - heading "Надежный партнер, ориентированный на результат" [level=3] [ref=e117]
+            - paragraph [ref=e118]: Мы ценим доверие наших клиентов и несем полную ответственность за свои решения, гарантируя успешное достижение поставленных целей и долгосрочное сотрудничество.
+    - region "Спроектированные и изготовленные системы эффективно эксплуатируются в самых сложных климатических условиях, на морских платформах, на арктических объектах" [ref=e120]:
+      - generic [ref=e122]:
+        - heading "Спроектированные и изготовленные системы эффективно эксплуатируются в самых сложных климатических условиях, на морских платформах, на арктических объектах" [level=2] [ref=e123]
+        - list [ref=e125]:
+          - listitem [ref=e126]:
+            - article [ref=e127]:
+              - paragraph [ref=e128]: Морская платформа в море
+          - listitem [ref=e130]:
+            - article [ref=e131]:
+              - paragraph [ref=e132]: Морская платформа в море
+        - navigation "Навигация слайдера с примерами эксплуатации" [ref=e134]:
+          - button "Предыдущий слайд" [disabled]:
+            - img
+          - button "Следующий слайд" [ref=e135] [cursor=pointer]:
+            - img [ref=e136]
+    - region "История компании" [ref=e138]:
+      - generic [ref=e140]:
+        - heading "История компании" [level=2] [ref=e141]
+        - list [ref=e143]:
+          - listitem [ref=e144]:
+            - article [ref=e145]:
+              - paragraph [ref=e146]: "1998"
+              - paragraph [ref=e147]: Короткий текст, описывающий событие\достижение\значимый шаг и т.д.
+          - listitem [ref=e148]:
+            - article [ref=e149]:
+              - paragraph [ref=e150]: "2000"
+              - paragraph [ref=e151]: Короткий текст, описывающий событие\достижение\значимый шаг и т.д.
+          - listitem [ref=e152]:
+            - article [ref=e153]:
+              - paragraph [ref=e154]: "2003"
+              - paragraph [ref=e155]: Короткий текст, описывающий событие\достижение\значимый шаг и т.д.
+          - listitem [ref=e156]:
+            - article [ref=e157]:
+              - paragraph [ref=e158]: "2006"
+              - paragraph [ref=e159]: Короткий текст, описывающий событие\достижение\значимый шаг и т.д.
+          - listitem [ref=e160]:
+            - article [ref=e161]:
+              - paragraph [ref=e162]: "2006"
+              - paragraph [ref=e163]: Короткий текст, описывающий событие\достижение\значимый шаг и т.д.
+        - navigation "Навигация слайдера с историей компании" [ref=e164]:
+          - button "Предыдущий год" [disabled]:
+            - img
+          - button "Следующий год" [ref=e165] [cursor=pointer]:
+            - img [ref=e166]
+    - generic [ref=e172]:
+      - heading "Направления деятельности" [level=2] [ref=e173]:
+        - text: Направления
+        - text: деятельности
+      - generic [ref=e174]:
+        - paragraph [ref=e175]: 6 направлений
+        - list [ref=e176]:
+          - listitem [ref=e177]:
+            - link "Контроллеры АБАК" [ref=e178] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e179]: Контроллеры АБАК
+              - img [ref=e181]
+          - listitem [ref=e183]:
+            - link "Аналитические системы" [ref=e184] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e185]: Аналитические системы
+              - img [ref=e187]
+          - listitem [ref=e189]:
+            - link "Автоматизированные системы управления" [ref=e190] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e191]: Автоматизированные системы управления
+              - img [ref=e193]
+          - listitem [ref=e195]:
+            - link "Система измерений и блочное оборудование" [ref=e196] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e197]: Система измерений и блочное оборудование
+              - img [ref=e199]
+          - listitem [ref=e201]:
+            - link "Метрология и сервис" [ref=e202] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e203]: Метрология и сервис
+              - img [ref=e205]
+          - listitem [ref=e207]:
+            - link "Сульфинертное покрытие Incomsteel®" [ref=e208] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e209]: Сульфинертное покрытие Incomsteel®
+              - img [ref=e211]
+    - region "Награды" [ref=e213]:
+      - generic [ref=e215]:
+        - heading "Награды" [level=2] [ref=e216]
+        - list [ref=e218]:
+          - listitem [ref=e219]:
+            - link "100 Лучших Товаров России Награды 9.01.2025 100 Лучших Товаров России" [ref=e220] [cursor=pointer]:
+              - /url: "#"
+              - img "100 Лучших Товаров России" [ref=e222]
+              - generic [ref=e223]:
+                - generic [ref=e224]: Награды
+                - time [ref=e225]: 9.01.2025
+              - heading "100 Лучших Товаров России" [level=3] [ref=e226]
+          - listitem [ref=e227]:
+            - link "100 Лучших Товаров России Награды 9.01.2025 100 Лучших Товаров России" [ref=e228] [cursor=pointer]:
+              - /url: "#"
+              - img "100 Лучших Товаров России" [ref=e230]
+              - generic [ref=e231]:
+                - generic [ref=e232]: Награды
+                - time [ref=e233]: 9.01.2025
+              - heading "100 Лучших Товаров России" [level=3] [ref=e234]
+          - listitem [ref=e235]:
+            - link "100 Лучших Товаров России Награды 9.01.2025 100 Лучших Товаров России" [ref=e236] [cursor=pointer]:
+              - /url: "#"
+              - img "100 Лучших Товаров России" [ref=e238]
+              - generic [ref=e239]:
+                - generic [ref=e240]: Награды
+                - time [ref=e241]: 9.01.2025
+              - heading "100 Лучших Товаров России" [level=3] [ref=e242]
+          - listitem [ref=e243]:
+            - link "100 Лучших Товаров России Награды 9.01.2025 100 Лучших Товаров России" [ref=e244] [cursor=pointer]:
+              - /url: "#"
+              - img "100 Лучших Товаров России" [ref=e246]
+              - generic [ref=e247]:
+                - generic [ref=e248]: Награды
+                - time [ref=e249]: 9.01.2025
+              - heading "100 Лучших Товаров России" [level=3] [ref=e250]
+          - listitem [ref=e251]:
+            - link "100 Лучших Товаров России Награды 9.01.2025 100 Лучших Товаров России" [ref=e252] [cursor=pointer]:
+              - /url: "#"
+              - img "100 Лучших Товаров России" [ref=e254]
+              - generic [ref=e255]:
+                - generic [ref=e256]: Награды
+                - time [ref=e257]: 9.01.2025
+              - heading "100 Лучших Товаров России" [level=3] [ref=e258]
+          - listitem [ref=e259]:
+            - link "100 Лучших Товаров России Награды 9.01.2025 100 Лучших Товаров России" [ref=e260] [cursor=pointer]:
+              - /url: "#"
+              - img "100 Лучших Товаров России" [ref=e262]
+              - generic [ref=e263]:
+                - generic [ref=e264]: Награды
+                - time [ref=e265]: 9.01.2025
+              - heading "100 Лучших Товаров России" [level=3] [ref=e266]
+        - navigation "Навигация слайдера с наградами компании" [ref=e267]:
+          - button "Предыдущая награда" [disabled]:
+            - img
+          - button "Следующая награда" [ref=e268] [cursor=pointer]:
+            - img [ref=e269]
+    - region "Отзывы" [ref=e271]:
+      - generic [ref=e273]:
+        - heading "Отзывы" [level=2] [ref=e274]
+        - list [ref=e276]:
+          - listitem [ref=e277]:
+            - link "Акционерное общество “Газпром Газэнергосеть” Письменный отзыв компании Газпром Газэнергосеть" [ref=e278] [cursor=pointer]:
+              - /url: "#"
+              - paragraph [ref=e280]: Акционерное общество “Газпром Газэнергосеть”
+              - img "Письменный отзыв компании Газпром Газэнергосеть" [ref=e283]
+          - listitem [ref=e284]:
+            - link "Акционерное общество “Башнефть” Письменный отзыв компании Башнефть" [ref=e285] [cursor=pointer]:
+              - /url: "#"
+              - paragraph [ref=e287]: Акционерное общество “Башнефть”
+              - img "Письменный отзыв компании Башнефть" [ref=e290]
+          - listitem [ref=e291]:
+            - link "Акционерное общество “Газпром Газэнергосеть” Письменный отзыв компании Газпром Газэнергосеть" [ref=e292] [cursor=pointer]:
+              - /url: "#"
+              - paragraph [ref=e294]: Акционерное общество “Газпром Газэнергосеть”
+              - img "Письменный отзыв компании Газпром Газэнергосеть" [ref=e297]
+          - listitem [ref=e298]:
+            - link "Акционерное общество “Газпром Газэнергосеть” Письменный отзыв компании Газпром Газэнергосеть" [ref=e299] [cursor=pointer]:
+              - /url: "#"
+              - paragraph [ref=e301]: Акционерное общество “Газпром Газэнергосеть”
+              - img "Письменный отзыв компании Газпром Газэнергосеть" [ref=e304]
+          - listitem [ref=e305]:
+            - link "Акционерное общество “Газпром Газэнергосеть” Письменный отзыв компании Газпром Газэнергосеть" [ref=e306] [cursor=pointer]:
+              - /url: "#"
+              - paragraph [ref=e308]: Акционерное общество “Газпром Газэнергосеть”
+              - img "Письменный отзыв компании Газпром Газэнергосеть" [ref=e311]
+        - generic [ref=e312]:
+          - paragraph [ref=e313]: 98 отзывов
+          - navigation "Навигация слайдера с отзывами клиентов" [ref=e314]:
+            - button "Предыдущий отзыв" [disabled]:
+              - img
+            - button "Следующий отзыв" [ref=e315] [cursor=pointer]:
+              - img [ref=e316]
+    - region "Руководство" [ref=e319]:
+      - generic [ref=e321]:
+        - heading "Руководство" [level=2] [ref=e322]
+        - list [ref=e324]:
+          - listitem [ref=e325]:
+            - article [ref=e326]:
+              - img "Залаков Наиль Ринатович" [ref=e328]
+              - generic [ref=e329]:
+                - heading "Залаков Наиль Ринатович" [level=3] [ref=e330]
+                - paragraph [ref=e331]: Генеральный директор
+          - listitem [ref=e332]:
+            - article [ref=e333]:
+              - img "Байбеков Адель Шамилевич" [ref=e335]
+              - generic [ref=e336]:
+                - heading "Байбеков Адель Шамилевич" [level=3] [ref=e337]
+                - paragraph [ref=e338]: Операционный директор
+          - listitem [ref=e339]:
+            - article [ref=e340]:
+              - img "Саматов Фоат Фаргатович" [ref=e342]
+              - generic [ref=e343]:
+                - heading "Саматов Фоат Фаргатович" [level=3] [ref=e344]
+                - paragraph [ref=e345]: Операционный директор
+          - listitem [ref=e346]:
+            - article [ref=e347]:
+              - img "Залаков Наиль Ринатович" [ref=e349]
+              - generic [ref=e350]:
+                - heading "Залаков Наиль Ринатович" [level=3] [ref=e351]
+                - paragraph [ref=e352]: Генеральный директор
+          - listitem [ref=e353]:
+            - article [ref=e354]:
+              - img "Саматов Фоат Фаргатович" [ref=e356]
+              - generic [ref=e357]:
+                - heading "Саматов Фоат Фаргатович" [level=3] [ref=e358]
+                - paragraph [ref=e359]: Операционный директор
+        - navigation "Навигация слайдера с руководством компании" [ref=e360]:
+          - button "Предыдущая карточка руководителя" [disabled]:
+            - img
+          - button "Следующая карточка руководителя" [ref=e361] [cursor=pointer]:
+            - img [ref=e362]
+        - generic [ref=e364]:
+          - img "Герб" [ref=e366]
+          - paragraph [ref=e367]: Специалисты принимают активное участие в разработке государственных стандартов, методик измерения и входят в Технические Комитеты РОССТАНДАРТА
+  - contentinfo [ref=e368]:
+    - generic [ref=e371]:
+      - generic [ref=e372]:
+        - paragraph [ref=e373]: Контакты
+        - link "Открыть в Яндекс Картах" [ref=e374] [cursor=pointer]:
+          - /url: https://yandex.ru/maps/?text=%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%A2%D0%B0%D1%82%D0%B0%D1%80%D1%81%D1%82%D0%B0%D0%BD,%20%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C,%20%D1%83%D0%BB.%20%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D1%8F,%20104%D0%98
+      - generic [ref=e375]:
+        - generic [ref=e376]:
+          - list [ref=e377]:
+            - listitem [ref=e378]: НИЦ «ИНКОМСИСТЕМ»
+            - listitem [ref=e379]: ИНН 1660002574
+            - listitem [ref=e380]: ОГРН 1021603619091
+          - generic [ref=e381]:
+            - paragraph [ref=e382]: Адрес
+            - paragraph [ref=e383]: Республика Татарстан, Казань, ул. Восстания, зд. 104И
+            - paragraph [ref=e384]: (ранее ул.Восстания, 100, корпус 13)
+          - generic [ref=e385]:
+            - generic [ref=e386]:
+              - paragraph [ref=e387]: Связаться
+              - link "+7 843 212-50-10" [ref=e388] [cursor=pointer]:
+                - /url: tel:+78432125010
+              - link "info@incomsteel.ru" [ref=e389] [cursor=pointer]:
+                - /url: mailto:info@incomsteel.ru
+            - list "Социальные сети" [ref=e390]:
+              - listitem [ref=e391]:
+                - link "Telegram" [ref=e392] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e393]
+              - listitem [ref=e395]:
+                - link "ВКонтакте" [ref=e396] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e397]
+        - generic [ref=e399]:
+          - paragraph [ref=e400]: ©1991-2025 АО «Научно-инженерный центр «ИНКОМСИСТЕМ»
+          - link "Политика в отношении обработки персональных данных" [ref=e401] [cursor=pointer]:
+            - /url: https://incomsystem.ru/upload/uf/baa/pol.pdf
+          - link "Дизайн и разработка сайта — Mark Weber Mark Weber" [ref=e402] [cursor=pointer]:
+            - /url: https://markweber.pro/
+            - generic [ref=e403]: Дизайн и разработка сайта — Mark Weber
+            - img "Mark Weber" [ref=e404]
+  - img
