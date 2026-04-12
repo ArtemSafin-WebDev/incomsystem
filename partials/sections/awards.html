@@ -1,0 +1,24 @@
+<section class="awards js-awards" aria-labelledby="awards-title">
+    <div class="container">
+        <div class="awards__grid">
+            <h2 class="awards__title" id="awards-title">{{awards.title}}</h2>
+
+            <div class="awards__slider swiper js-awards-slider">
+                <ul class="awards__list swiper-wrapper">
+                    {{#each awards.items}}
+                    <li class="awards__item swiper-slide">
+                        {{> components/cards/press-center-card item=this }}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            {{> components/slider-navigation
+            className="awards__navigation"
+            ariaLabel=awards.navigationAriaLabel
+            prevLabel=awards.previousSlideLabel
+            nextLabel=awards.nextSlideLabel
+            }}
+        </div>
+    </div>
+</section>

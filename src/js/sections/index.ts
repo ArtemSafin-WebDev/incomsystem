@@ -1,3 +1,4 @@
+import Awards from "../classes/components/Awards";
 import CompanyFeatures from "../classes/components/CompanyFeatures";
 import CompanyHistory from "../classes/components/CompanyHistory";
 import HarshConditions from "../classes/components/HarshConditions";
@@ -25,6 +26,7 @@ export default function sections() {
   const companyFeaturesSections = document.querySelectorAll<HTMLElement>(
     ".js-company-features"
   );
+  const awardsSections = document.querySelectorAll<HTMLElement>(".js-awards");
   const productionAndServicesSections = document.querySelectorAll<HTMLElement>(
     ".js-production-and-services"
   );
@@ -44,6 +46,10 @@ export default function sections() {
 
   companyFeaturesSections.forEach((section) => {
     new CompanyFeatures(section);
+  });
+
+  awardsSections.forEach((section) => {
+    new Awards(section);
   });
 
   productionAndServicesSections.forEach((section) => {

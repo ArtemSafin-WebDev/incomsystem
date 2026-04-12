@@ -1,5 +1,13 @@
 import { footer, mobileMenu } from "./shared.js";
 
+const awardsItems = Array.from({ length: 6 }, () => ({
+  title: "100 Лучших Товаров России",
+  image: "/images/press-center/1.webp",
+  tag: "Награды",
+  date: "9.01.2025",
+  href: "#",
+}));
+
 export default {
   "/about-company.html": {
     title: "О компании",
@@ -178,6 +186,13 @@ export default {
           imageAlt: "Сульфинертное покрытие Incomsteel®",
         },
       ],
+    },
+    awards: {
+      title: "Награды",
+      navigationAriaLabel: "Навигация слайдера с наградами компании",
+      previousSlideLabel: "Предыдущая награда",
+      nextSlideLabel: "Следующая награда",
+      items: awardsItems,
     },
     mobileMenu,
     footer,
