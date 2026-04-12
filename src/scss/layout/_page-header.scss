@@ -14,15 +14,20 @@
     border-bottom: 1px solid transparent;
 
     &--compact {
-      background: #fff;
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-
       @include mq.down(sm) {
-        background: white;
         border-bottom-color: transparent;
       }
     }
 
+    &--compact,
+    &--compact-theme {
+      background: #fff;
+
+      @include mq.down(sm) {
+        background: white;
+      }
+    }
   }
 
   .page-header__row {
@@ -41,8 +46,12 @@
       padding: 1.7rem 0;
     }
 
-    .page-header--compact & {
+    .page-header--compact &,
+    .page-header--compact-theme & {
       color: var(--text-color);
+    }
+
+    .page-header--compact & {
       padding: 1rem 0;
 
       @include mq.down(sm) {
@@ -88,9 +97,17 @@
       }
     }
 
-    .page-header--compact & {
+    .page-header--compact &,
+    .page-header--compact-theme & {
       opacity: 0;
       visibility: hidden;
+    }
+  }
+
+  .page-header__logo-full.page-header__logo-full--blue {
+    .page-header--compact-theme:not(.page-header--compact) & {
+      opacity: 1;
+      visibility: visible;
     }
   }
 
@@ -163,7 +180,8 @@
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 
-    .page-header--compact & {
+    .page-header--compact &,
+    .page-header--compact-theme & {
       background: #f2f2fa;
       color: var(--text-color);
     }
@@ -173,7 +191,8 @@
     background: #fff;
     color: var(--text-color);
 
-    .page-header--compact & {
+    .page-header--compact &,
+    .page-header--compact-theme & {
       background: var(--primary-color);
       color: #fff;
     }
@@ -211,10 +230,14 @@
       fill: currentColor;
     }
 
-    .page-header--compact & {
-      padding-block: 1.7rem;
+    .page-header--compact &,
+    .page-header--compact-theme & {
       background: var(--primary-color);
       color: #fff;
+    }
+
+    .page-header--compact & {
+      padding-block: 1.7rem;
     }
   }
 
@@ -239,14 +262,18 @@
       fill: white;
     }
 
-    .page-header--compact & {
-      height: 6rem;
-      border-radius: 5rem;
+    .page-header--compact &,
+    .page-header--compact-theme & {
       background: #f2f2fa;
 
       svg {
         fill: var(--text-color);
       }
+    }
+
+    .page-header--compact & {
+      height: 6rem;
+      border-radius: 5rem;
     }
   }
 
@@ -271,7 +298,8 @@
       padding 0.2s,
       background-color 0.2s;
 
-    .page-header--compact & {
+    .page-header--compact &,
+    .page-header--compact-theme & {
       background: #f2f2fa;
     }
   }
@@ -327,11 +355,15 @@
       fill: currentColor;
     }
 
+    .page-header--compact &,
+    .page-header--compact-theme & {
+      background: #f2f2fa;
+      color: var(--text-color);
+    }
+
     .page-header--compact & {
       height: 6rem;
       border-radius: 5rem;
-      background: #f2f2fa;
-      color: var(--text-color);
     }
   }
 
@@ -352,10 +384,14 @@
       color 0.2s,
       padding 0.2s;
 
-    .page-header--compact & {
-      padding-block: 2.3rem;
+    .page-header--compact &,
+    .page-header--compact-theme & {
       background: var(--primary-color);
       color: #fff;
+    }
+
+    .page-header--compact & {
+      padding-block: 2.3rem;
     }
   }
 }

@@ -3,7 +3,7 @@ import { footer, mobileMenu } from "./shared.js";
 export default {
   "/about-company.html": {
     title: "О компании",
-    headerCompact: true,
+    headerCompactTheme: true,
     companyHero: {
       breadcrumbs: {
         ariaLabel: "Хлебные крошки",

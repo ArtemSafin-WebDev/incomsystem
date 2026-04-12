@@ -3,7 +3,7 @@ import { footer, mobileMenu } from "./shared.js";
 export default {
   "/career.html": {
     title: "Карьера",
-    headerCompact: true,
+    headerCompactTheme: true,
     careerHero: {
       breadcrumbs: {
         ariaLabel: "Хлебные крошки",
