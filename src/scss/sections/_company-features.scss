@@ -5,12 +5,10 @@
     background-color: #fff;
     color: #222233;
 
-    padding-bottom: 15rem;
     margin-bottom: 15rem;
     overflow: clip;
 
     @include mq.down(sm) {
-      padding-bottom: 8rem;
       margin-bottom: 8rem;
     }
   }
