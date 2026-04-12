@@ -1,7 +1,7 @@
 @layer sections {
   .company-leadership {
     padding-top: 4rem;
-    padding-bottom: 6rem;
+    padding-bottom: 15rem;
     background: linear-gradient(180deg, #006fdd 0 36rem, #fff 36rem 100%);
     color: #222233;
     overflow: clip;
@@ -27,7 +27,7 @@
   .company-leadership__slider {
     width: 100%;
     min-width: 0;
-    margin-bottom: 6.4rem;
+
     overflow: visible;
   }
 
@@ -47,5 +47,34 @@
 
   .company-leadership__navigation {
     justify-content: center;
+    margin-top: 12rem;
+  }
+
+  .company-leadership__participation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 92rem;
+    margin: 15rem auto 0;
+  }
+
+  .company-leadership__participation-icon {
+    width: 7.3rem;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .company-leadership__participation-text {
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
   }
 }

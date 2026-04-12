@@ -229,6 +229,11 @@ export default {
       previousSlideLabel: "Предыдущая карточка руководителя",
       nextSlideLabel: "Следующая карточка руководителя",
       items: companyLeadershipItems,
+      participation: {
+        image: "/images/about-company/company-leadership/rostandart-emblem.png",
+        imageAlt: "Герб",
+        text: "Специалисты принимают активное участие в&nbsp;разработке государственных стандартов, методик измерения и&nbsp;входят в&nbsp;Технические Комитеты РОССТАНДАРТА",
+      },
     },
     companyReviews: {
       title: "Отзывы",
