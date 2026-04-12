@@ -1,4 +1,5 @@
 import CompanyFeatures from "../classes/components/CompanyFeatures";
+import HarshConditions from "../classes/components/HarshConditions";
 import CompactHeader from "../classes/components/CompactHeader";
 import MobileMenu from "../classes/components/MobileMenu";
 import PressCenter from "../classes/components/PressCenter";
@@ -26,6 +27,9 @@ export default function sections() {
   const productionAndServicesSections = document.querySelectorAll<HTMLElement>(
     ".js-production-and-services"
   );
+  const harshConditionsSections = document.querySelectorAll<HTMLElement>(
+    ".js-harsh-conditions"
+  );
   const realisedProjectsSections = document.querySelectorAll<HTMLElement>(
     ".js-realised-projects"
   );
@@ -40,6 +44,10 @@ export default function sections() {
 
   productionAndServicesSections.forEach((section) => {
     new ProductionAndServices(section);
+  });
+
+  harshConditionsSections.forEach((section) => {
+    new HarshConditions(section);
   });
 
   realisedProjectsSections.forEach((section) => {

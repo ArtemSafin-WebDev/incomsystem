@@ -1,0 +1,28 @@
+<section class="harsh-conditions js-harsh-conditions" aria-labelledby="harsh-conditions-title">
+    <div class="harsh-conditions__pattern" aria-hidden="true">
+        <img src="/images/harsh-conditions/pattern.webp" alt="">
+    </div>
+
+    <div class="container">
+        <div class="harsh-conditions__grid">
+            <h2 class="harsh-conditions__title" id="harsh-conditions-title">{{{harshConditions.title}}}</h2>
+
+            <div class="harsh-conditions__slider swiper js-harsh-conditions-slider">
+                <ul class="harsh-conditions__list swiper-wrapper">
+                    {{#each harshConditions.items}}
+                    <li class="harsh-conditions__item swiper-slide">
+                        {{> components/cards/harsh-conditions-card item=this }}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            {{> components/slider-navigation
+            className="harsh-conditions__navigation"
+            ariaLabel=harshConditions.navigationAriaLabel
+            prevLabel=harshConditions.previousSlideLabel
+            nextLabel=harshConditions.nextSlideLabel
+            }}
+        </div>
+    </div>
+</section>

@@ -87,6 +87,25 @@ export default {
         },
       ],
     },
+    harshConditions: {
+      title:
+        "Спроектированные и&nbsp;изготовленные системы эффективно эксплуатируются в&nbsp;самых сложных климатических условиях, на&nbsp;морских платформах, на&nbsp;арктических объектах",
+      navigationAriaLabel: "Навигация слайдера с примерами эксплуатации",
+      previousSlideLabel: "Предыдущий слайд",
+      nextSlideLabel: "Следующий слайд",
+      items: [
+        {
+          caption: "Морская платформа в море",
+          image: "/images/harsh-conditions/1.webp",
+          imageAlt: "",
+        },
+        {
+          caption: "Морская платформа в море",
+          image: "/images/harsh-conditions/2.webp",
+          imageAlt: "",
+        },
+      ],
+    },
     mobileMenu,
     footer,
   },
