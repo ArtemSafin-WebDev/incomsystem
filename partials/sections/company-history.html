@@ -1,0 +1,24 @@
+<section class="company-history js-company-history" aria-labelledby="company-history-title">
+    <div class="container">
+        <div class="company-history__grid">
+            <h2 class="company-history__title" id="company-history-title">{{companyHistory.title}}</h2>
+
+            <div class="company-history__slider swiper js-company-history-slider">
+                <ul class="company-history__list swiper-wrapper">
+                    {{#each companyHistory.items}}
+                    <li class="company-history__item swiper-slide">
+                        {{> components/cards/company-history-card item=this }}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            {{> components/slider-navigation
+            className="company-history__navigation"
+            ariaLabel=companyHistory.navigationAriaLabel
+            prevLabel=companyHistory.previousSlideLabel
+            nextLabel=companyHistory.nextSlideLabel
+            }}
+        </div>
+    </div>
+</section>

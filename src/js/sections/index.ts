@@ -1,4 +1,5 @@
 import CompanyFeatures from "../classes/components/CompanyFeatures";
+import CompanyHistory from "../classes/components/CompanyHistory";
 import HarshConditions from "../classes/components/HarshConditions";
 import CompactHeader from "../classes/components/CompactHeader";
 import MobileMenu from "../classes/components/MobileMenu";
@@ -27,6 +28,9 @@ export default function sections() {
   const productionAndServicesSections = document.querySelectorAll<HTMLElement>(
     ".js-production-and-services"
   );
+  const companyHistorySections = document.querySelectorAll<HTMLElement>(
+    ".js-company-history"
+  );
   const harshConditionsSections = document.querySelectorAll<HTMLElement>(
     ".js-harsh-conditions"
   );
@@ -44,6 +48,10 @@ export default function sections() {
 
   productionAndServicesSections.forEach((section) => {
     new ProductionAndServices(section);
+  });
+
+  companyHistorySections.forEach((section) => {
+    new CompanyHistory(section);
   });
 
   harshConditionsSections.forEach((section) => {
