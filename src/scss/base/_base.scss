@@ -36,4 +36,11 @@
     background-color: var(--primary-color);
     -webkit-text-fill-color: white;
   }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    box-sizing: border-box;
+  }
 }

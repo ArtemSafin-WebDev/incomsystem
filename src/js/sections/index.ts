@@ -1,3 +1,4 @@
+import CompanyFeatures from "../classes/components/CompanyFeatures";
 import CompactHeader from "../classes/components/CompactHeader";
 import MobileMenu from "../classes/components/MobileMenu";
 import PressCenter from "../classes/components/PressCenter";
@@ -19,6 +20,9 @@ export default function sections() {
   const pressCenterSections = document.querySelectorAll<HTMLElement>(
     ".js-press-center"
   );
+  const companyFeaturesSections = document.querySelectorAll<HTMLElement>(
+    ".js-company-features"
+  );
   const productionAndServicesSections = document.querySelectorAll<HTMLElement>(
     ".js-production-and-services"
   );
@@ -28,6 +32,10 @@ export default function sections() {
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
+  });
+
+  companyFeaturesSections.forEach((section) => {
+    new CompanyFeatures(section);
   });
 
   productionAndServicesSections.forEach((section) => {

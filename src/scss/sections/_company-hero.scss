@@ -1,7 +1,7 @@
 @layer sections {
   .company-hero {
     padding-top: 16rem;
-    padding-bottom: 8rem;
+    margin-bottom: 15rem;
     background: #fff;
     color: var(--text-color);
     overflow: clip;
@@ -176,7 +176,7 @@
   .company-hero__stats-text {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.6rem;
     margin-top: auto;
   }
 

@@ -1,0 +1,24 @@
+<section class="company-features">
+    <div class="container">
+        <div class="company-features__grid js-company-features">
+            <div class="company-features__intro">
+                <p class="company-features__caption">{{companyFeatures.caption}}</p>
+                <h2 class="company-features__title">{{{companyFeatures.title}}}</h2>
+            </div>
+
+            <div class="company-features__slider swiper js-company-features-slider">
+                <ul class="company-features__list swiper-wrapper">
+                    {{#each companyFeatures.items}}
+                    <li class="company-features__item swiper-slide">
+                        {{> components/cards/company-feature-card item=this }}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="company-features__emblem" aria-hidden="true">
+                <img src="/images/company-features/emblem.svg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
