@@ -1,0 +1,47 @@
+<section class="company-hero">
+    <div class="container">
+        {{> components/breadcrumbs companyHero.breadcrumbs }}
+
+        <div class="company-hero__intro">
+            <h1 class="company-hero__title">{{companyHero.title}}</h1>
+            <p class="company-hero__caption">{{companyHero.caption}}</p>
+        </div>
+    </div>
+
+    <div class="company-hero__media">
+        <img class="company-hero__image" src="{{companyHero.image}}" alt="{{companyHero.imageAlt}}">
+        <div class="company-hero__overlay" aria-hidden="true"></div>
+
+        <div class="container company-hero__media-content">
+            <p class="company-hero__description">{{{companyHero.description}}}</p>
+
+            <a class="company-hero__video-link" href="{{companyHero.videoHref}}">
+                <span>{{companyHero.videoText}}</span>
+                <svg aria-hidden="true">
+                    <use xlink:href="#play-triangle"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="company-hero__stats-block">
+            <p class="company-hero__stats-caption">{{companyHero.statsCaption}}</p>
+
+            <ul class="company-hero__stats-list">
+                {{#each companyHero.stats}}
+                <li class="company-hero__stats-item{{#if this.accent}} company-hero__stats-item--accent{{/if}}">
+                    <p class="company-hero__stats-value">
+                        <span>{{this.value}}</span><span class="company-hero__stats-suffix">{{this.suffix}}</span>
+                    </p>
+
+                    <div class="company-hero__stats-text">
+                        <p class="company-hero__stats-title">{{this.title}}</p>
+                        <p class="company-hero__stats-description">{{this.text}}</p>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</section>

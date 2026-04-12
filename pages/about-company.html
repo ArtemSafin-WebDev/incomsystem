@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {{> layout/meta }}
+</head>
+
+<body>
+  {{> layout/header }}
+  {{> components/mobile-menu mobileMenu=mobileMenu }}
+  <main class="page-main">
+    {{> sections/company-hero companyHero=companyHero }}
+  </main>
+  {{> layout/footer }}
+
+  <script type="module" src="/src/js/main.ts"></script>
+</body>
+
+</html>
