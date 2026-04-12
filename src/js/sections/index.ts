@@ -1,5 +1,4 @@
 import Awards from "../classes/components/Awards";
-import CompanyFeatures from "../classes/components/CompanyFeatures";
 import CompanyHistory from "../classes/components/CompanyHistory";
 import CompanyLeadership from "../classes/components/CompanyLeadership";
 import CompanyReviews from "../classes/components/CompanyReviews";
@@ -25,9 +24,6 @@ export default function sections() {
   const pressCenterSections = document.querySelectorAll<HTMLElement>(
     ".js-press-center"
   );
-  const companyFeaturesSections = document.querySelectorAll<HTMLElement>(
-    ".js-company-features"
-  );
   const awardsSections = document.querySelectorAll<HTMLElement>(".js-awards");
   const companyReviewsSections = document.querySelectorAll<HTMLElement>(
     ".js-company-reviews"
@@ -50,10 +46,6 @@ export default function sections() {
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
-  });
-
-  companyFeaturesSections.forEach((section) => {
-    new CompanyFeatures(section);
   });
 
   awardsSections.forEach((section) => {

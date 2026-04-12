@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .company-features {
     background-color: #fff;
@@ -6,6 +8,11 @@
     padding-bottom: 15rem;
     margin-bottom: 15rem;
     overflow: clip;
+
+    @include mq.down(sm) {
+      padding-bottom: 8rem;
+      margin-bottom: 8rem;
+    }
   }
 
   .company-features__grid {
@@ -13,6 +20,12 @@
     grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 2rem;
     row-gap: 0;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   .company-features__intro {
@@ -21,6 +34,12 @@
     flex-direction: column;
     gap: 4rem;
     margin-bottom: 8rem;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
   }
 
   .company-features__caption {
@@ -29,6 +48,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+    }
   }
 
   .company-features__title {
@@ -40,11 +63,39 @@
     line-height: 1.2;
     letter-spacing: -0.12rem;
     max-width: 137.5rem;
+
+    @include mq.down(sm) {
+      max-width: none;
+      font-size: 2rem;
+      letter-spacing: -0.04rem;
+    }
   }
 
   .company-features__slider {
     grid-column: 1 / -1;
     min-width: 0;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+      padding-inline: var(--container-padding);
+      box-sizing: border-box;
+      overflow-x: auto;
+      overflow-y: hidden;
+      overscroll-behavior-x: contain;
+      touch-action: pan-x;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: var(--container-padding);
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
   .company-features__list {
@@ -52,16 +103,41 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 3rem 2rem;
+
+    @include mq.down(sm) {
+      width: max-content;
+      grid-auto-flow: column;
+      grid-auto-columns: 30rem;
+      grid-template-rows: auto auto;
+      column-gap: 2rem;
+      row-gap: 4rem;
+    }
   }
 
   .company-features__item {
     --company-feature-card-bg: #fff;
     --company-feature-card-color: #222233;
     --company-feature-card-number-color: var(--primary-color);
+    counter-increment: company-features;
 
     display: flex;
     flex-direction: column;
     height: auto;
+
+    @include mq.down(sm) {
+      display: grid;
+      grid-row: span 2;
+      grid-template-rows: subgrid;
+      align-content: start;
+      width: auto;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      background-color: var(--company-feature-card-bg);
+      color: var(--company-feature-card-color);
+      box-sizing: border-box;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
 
     &:nth-child(8n + 2),
     &:nth-child(8n + 7) {
@@ -80,7 +156,6 @@
   }
 
   .company-feature-card {
-    counter-increment: company-features;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -91,6 +166,21 @@
     flex-grow: 1;
     min-height: 40rem;
     box-sizing: border-box;
+
+    @include mq.down(sm) {
+      display: contents;
+    }
+  }
+
+  .company-feature-card__main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include mq.down(sm) {
+      gap: 1rem;
+    }
+
     &::before {
       content: counter(company-features, decimal-leading-zero);
       font-family: var(--ibm-plex-mono);
@@ -111,6 +201,13 @@
     line-height: 1.2;
     letter-spacing: -0.06rem;
     text-wrap: balance;
+
+    @include mq.down(sm) {
+      max-width: 20.8rem;
+      font-size: 2rem;
+      letter-spacing: -0.04rem;
+      text-wrap: initial;
+    }
   }
 
   .company-feature-card__description {
@@ -121,6 +218,45 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.4;
+
+    @include mq.down(sm) {
+      max-width: 23.8rem;
+      margin-top: 0;
+    }
+  }
+
+  .company-features__hint {
+    display: none;
+
+    @include mq.down(sm) {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      font-family: var(--inter);
+      font-size: 0.8rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -0.024rem;
+      color: var(--text-color);
+    }
+  }
+
+  .company-features__hint-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: block;
+      flex-shrink: 0;
+    }
   }
 
   .company-features__emblem {
@@ -134,9 +270,21 @@
     border: 1px solid rgba(34, 34, 51, 0.14);
     border-radius: 50%;
 
+    @include mq.down(sm) {
+      grid-column: auto;
+      margin-top: 8rem;
+      width: 10rem;
+      align-self: center;
+    }
+
     img {
       width: 8rem;
       height: 8rem;
+      object-fit: contain;
+      @include mq.down(sm) {
+        width: 5rem;
+        height: 5rem;
+      }
     }
   }
 }

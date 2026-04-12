@@ -1,20 +1,29 @@
 <section class="company-features">
     <div class="container">
-        <div class="company-features__grid js-company-features">
+        <div class="company-features__grid">
             <div class="company-features__intro">
                 <p class="company-features__caption">{{companyFeatures.caption}}</p>
                 <h2 class="company-features__title">{{{companyFeatures.title}}}</h2>
             </div>
 
-            <div class="company-features__slider swiper js-company-features-slider">
-                <ul class="company-features__list swiper-wrapper">
+            <div class="company-features__slider">
+                <ul class="company-features__list">
                     {{#each companyFeatures.items}}
-                    <li class="company-features__item swiper-slide">
+                    <li class="company-features__item">
                         {{> components/cards/company-feature-card item=this }}
                     </li>
                     {{/each}}
                 </ul>
             </div>
+
+            <p class="company-features__hint">
+                <span class="company-features__hint-icon" aria-hidden="true">
+                    <svg width="15" height="15">
+                        <use xlink:href="#swipe-horizontal"></use>
+                    </svg>
+                </span>
+                <span>{{companyFeatures.scrollHintText}}</span>
+            </p>
 
             <div class="company-features__emblem" aria-hidden="true">
                 <img src="/images/company-features/emblem.svg" alt="">
