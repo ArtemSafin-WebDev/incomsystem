@@ -9,14 +9,22 @@
     </div>
 
     <div class="company-hero__media">
-        <img class="company-hero__image" src="{{companyHero.image}}" alt="{{companyHero.imageAlt}}">
+        <picture class="company-hero__picture">
+            {{#if companyHero.imageMobile}}
+            <source media="(max-width: 576px)" srcset="{{companyHero.imageMobile}}">
+            {{/if}}
+            <img class="company-hero__image" src="{{companyHero.image}}" alt="{{companyHero.imageAlt}}">
+        </picture>
         <div class="company-hero__overlay" aria-hidden="true"></div>
 
         <div class="container company-hero__media-content">
             <p class="company-hero__description">{{{companyHero.description}}}</p>
 
             <a class="company-hero__video-link" href="{{companyHero.videoHref}}">
-                <span>{{companyHero.videoText}}</span>
+                <span class="company-hero__video-text">
+                    <span class="company-hero__video-text-desktop">{{companyHero.videoText}}</span>
+                    <span class="company-hero__video-text-mobile">{{companyHero.videoTextMobile}}</span>
+                </span>
                 <svg aria-hidden="true">
                     <use xlink:href="#play-triangle"></use>
                 </svg>

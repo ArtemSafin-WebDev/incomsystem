@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .company-hero {
     padding-top: 16rem;
@@ -5,10 +7,25 @@
     background: #fff;
     color: var(--text-color);
     overflow: clip;
+
+    @include mq.down(sm) {
+      padding-top: 14rem;
+      margin-bottom: 8rem;
+    }
+  }
+
+  .company-hero .breadcrumbs {
+    @include mq.down(sm) {
+      display: none;
+    }
   }
 
   .company-hero__intro {
     margin-top: 3rem;
+
+    @include mq.down(sm) {
+      margin: 0;
+    }
   }
 
   .company-hero__title {
@@ -18,6 +35,14 @@
     font-weight: 600;
     line-height: 1;
     letter-spacing: -0.48rem;
+
+    @include mq.down(sm) {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+      text-transform: uppercase;
+    }
   }
 
   .company-hero__caption {
@@ -28,6 +53,12 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1;
+
+    @include mq.down(sm) {
+      max-width: none;
+      margin-top: 6.1rem;
+      font-size: 1.2rem;
+    }
   }
 
   .company-hero__media {
@@ -39,6 +70,22 @@
     background: #000;
     color: #fff;
     overflow: hidden;
+
+    @include mq.down(sm) {
+      margin-top: 2rem;
+      min-height: 35rem;
+      aspect-ratio: revert;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .company-hero__picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .company-hero__image {
@@ -48,18 +95,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
 
-  .company-hero__overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0) 65.73%, #000 100%),
-      rgba(0, 0, 0, 0.18);
-    pointer-events: none;
+    @include mq.down(sm) {
+      object-position: center;
+    }
   }
 
   .company-hero__media-content {
@@ -70,6 +109,15 @@
     gap: 2rem;
     align-content: start;
     padding-top: 4rem;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      flex-grow: 1;
+      padding-top: 1.6rem;
+      padding-bottom: 13rem;
+    }
   }
 
   .company-hero__description {
@@ -80,6 +128,13 @@
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.06rem;
+
+    @include mq.down(sm) {
+      width: 23.5rem;
+      max-width: 100%;
+      font-size: 1.4rem;
+      letter-spacing: -0.028rem;
+    }
   }
 
   .company-hero__video-link {
@@ -98,6 +153,19 @@
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2rem;
 
+    @include mq.down(sm) {
+      gap: 1rem;
+      font-size: 1.2rem;
+      line-height: 1.4;
+      text-align: right;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      white-space: nowrap;
+      align-items: center;
+      margin-left: auto;
+      margin-top: auto;
+    }
+
     svg {
       width: 5.9rem;
       height: 9.1rem;
@@ -105,6 +173,26 @@
       stroke: currentColor;
       stroke-width: 1px;
       flex-shrink: 0;
+
+      @include mq.down(sm) {
+        width: 1.6rem;
+        height: 2.4rem;
+        stroke: rgb(255 255 255 / 50%);
+      }
+    }
+  }
+
+  .company-hero__video-text-mobile {
+    display: none;
+
+    @include mq.down(sm) {
+      display: inline;
+    }
+  }
+
+  .company-hero__video-text-desktop {
+    @include mq.down(sm) {
+      display: none;
     }
   }
 
@@ -122,6 +210,15 @@
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       pointer-events: none;
     }
+
+    @include mq.down(sm) {
+      margin-top: -11rem;
+      padding-top: 2rem;
+
+      &::before {
+        top: 0;
+      }
+    }
   }
 
   .company-hero__stats-caption {
@@ -131,6 +228,10 @@
     font-weight: 400;
     line-height: 1;
     color: #fff;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+    }
   }
 
   .company-hero__stats-list {
@@ -138,6 +239,11 @@
     grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 1px;
     margin-top: 4rem;
+
+    @include mq.down(sm) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 2rem;
+    }
   }
 
   .company-hero__stats-item {
@@ -154,6 +260,17 @@
     &:first-child {
       grid-column: 1 / 5;
     }
+
+    @include mq.down(sm) {
+      grid-column: span 1;
+      gap: 3rem;
+      padding: 2rem;
+      min-height: auto;
+
+      &:first-child {
+        grid-column: 1 / -1;
+      }
+    }
   }
 
   .company-hero__stats-item--accent {
@@ -167,10 +284,20 @@
     font-weight: 300;
     line-height: 0.8;
     letter-spacing: -0.24rem;
+
+    @include mq.down(sm) {
+      font-size: 6rem;
+      line-height: 0.8;
+      letter-spacing: -0.12rem;
+    }
   }
 
   .company-hero__stats-suffix {
     font-size: 7.74rem;
+
+    @include mq.down(sm) {
+      font-size: 3.87rem;
+    }
   }
 
   .company-hero__stats-text {
@@ -178,6 +305,10 @@
     flex-direction: column;
     gap: 1.6rem;
     margin-top: auto;
+
+    @include mq.down(sm) {
+      gap: 0.8rem;
+    }
   }
 
   .company-hero__stats-title {
@@ -187,6 +318,11 @@
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: -0.09rem;
+
+    @include mq.down(sm) {
+      font-size: 1.4rem;
+      letter-spacing: -0.042rem;
+    }
   }
 
   .company-hero__stats-description {
@@ -197,5 +333,11 @@
     font-weight: 400;
     line-height: 1.8;
     opacity: 0.5;
+
+    @include mq.down(sm) {
+      max-width: 22.5rem;
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
   }
 }

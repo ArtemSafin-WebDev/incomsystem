@@ -57,10 +57,12 @@ export default {
       title: "НИЦ “Инкомсистем”",
       caption: "Создана в 1991 году",
       image: "/images/company-hero/hero.webp",
+      imageMobile: "/images/company-hero/hero-mobile.webp",
       imageAlt: "",
       description:
         "Инкомсистем один из востребованных системных интеграторов и&nbsp;производителей систем коммерческого учета в&nbsp;Российской Федерации",
       videoText: "Смотреть видео о компании",
+      videoTextMobile: "Смотреть видео",
       videoHref: "#",
       statsCaption: "Цифры о компании",
       stats: [
