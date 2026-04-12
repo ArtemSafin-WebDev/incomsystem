@@ -1,4 +1,4 @@
-<section class="production-and-services js-production-and-services">
+<section class="production-and-services js-production-and-services{{#if productionAndServices.className}} {{productionAndServices.className}}{{/if}}">
     <div class="production-and-services__bg" aria-hidden="true">
         <picture>
             {{#if productionAndServices.backgroundMobile}}
@@ -20,10 +20,15 @@
                 </ul>
             </div>
 
+            {{#if productionAndServices.description}}
             <p class="production-and-services__description">{{productionAndServices.description}}</p>
+            {{/if}}
+
+            {{#if productionAndServices.buttonText}}
             <a class="btn production-and-services__btn" href="{{productionAndServices.buttonHref}}">
                 {{productionAndServices.buttonText}}
             </a>
+            {{/if}}
         </div>
     </div>
 </section>

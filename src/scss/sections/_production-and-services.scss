@@ -47,6 +47,11 @@
     padding-top: 16rem;
     padding-bottom: 6rem;
 
+    .production-and-services--about-company & {
+      padding-top: 15rem;
+      padding-bottom: 26rem;
+    }
+
     @include mq.down(sm) {
       padding-top: 6rem;
       padding-bottom: 3.6rem;
@@ -64,6 +69,10 @@
     letter-spacing: -0.12rem;
     text-transform: uppercase;
     margin-bottom: 12rem;
+
+    .production-and-services--about-company & {
+      margin-bottom: 8rem;
+    }
 
     @include mq.down(sm) {
       font-size: 3rem;
