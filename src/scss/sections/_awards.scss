@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .awards {
     --awards-gap: 4.6667rem;
@@ -7,6 +9,12 @@
     background-color: #f2f2fa;
     color: #222233;
     overflow: clip;
+
+    @include mq.down(sm) {
+      --awards-gap: 2rem;
+
+      padding-bottom: 4rem;
+    }
   }
 
   .awards__grid {
@@ -23,6 +31,13 @@
     line-height: 1;
     letter-spacing: -0.12rem;
     text-transform: uppercase;
+
+    @include mq.down(sm) {
+      margin-bottom: 4rem;
+      font-size: 3rem;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+    }
   }
 
   .awards__slider {
@@ -30,6 +45,11 @@
     min-width: 0;
     margin-bottom: 12rem;
     overflow: hidden;
+
+    @include mq.down(sm) {
+      margin-bottom: 4rem;
+      overflow: visible;
+    }
   }
 
   .awards__list {
@@ -56,6 +76,22 @@
       width: 1px;
       bottom: 0;
       background-color: rgba(34, 34, 51, 0.2);
+    }
+
+    @include mq.down(sm) {
+      width: 30rem;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .awards__navigation {
+    justify-content: center;
+
+    @include mq.down(sm) {
+      gap: 0.5rem;
     }
   }
 }
