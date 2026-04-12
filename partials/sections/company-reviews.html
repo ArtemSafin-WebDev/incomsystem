@@ -1,0 +1,30 @@
+<section class="company-reviews js-company-reviews" aria-labelledby="company-reviews-title">
+    <div class="container">
+        <div class="company-reviews__grid">
+            <h2 class="company-reviews__title" id="company-reviews-title">{{companyReviews.title}}</h2>
+
+            <div class="company-reviews__slider swiper js-company-reviews-slider">
+                <ul class="company-reviews__list swiper-wrapper">
+                    {{#each companyReviews.items}}
+                    <li class="company-reviews__item swiper-slide">
+                        {{> components/cards/company-review-card item=this }}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="company-reviews__footer">
+                <p class="company-reviews__count">{{companyReviews.countLabel}}</p>
+
+                {{> components/slider-navigation
+                className="company-reviews__navigation"
+                ariaLabel=companyReviews.navigationAriaLabel
+                prevLabel=companyReviews.previousSlideLabel
+                nextLabel=companyReviews.nextSlideLabel
+                }}
+
+                <span class="company-reviews__footer-spacer" aria-hidden="true"></span>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,51 @@
+@layer sections {
+  .company-leadership {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+    background: linear-gradient(180deg, #006fdd 0 36rem, #fff 36rem 100%);
+    color: #222233;
+    overflow: clip;
+  }
+
+  .company-leadership__grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .company-leadership__title {
+    margin-bottom: 10.2rem;
+    color: #fff;
+    font-family: var(--rf-dewi);
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+  }
+
+  .company-leadership__slider {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 6.4rem;
+    overflow: visible;
+  }
+
+  .company-leadership__list {
+    display: flex;
+  }
+
+  .company-leadership__item {
+    width: 44.5rem;
+    flex: 0 0 auto;
+    margin-right: 2rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .company-leadership__navigation {
+    justify-content: center;
+  }
+}

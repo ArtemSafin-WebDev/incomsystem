@@ -1,0 +1,24 @@
+<section class="company-leadership js-company-leadership" aria-labelledby="company-leadership-title">
+    <div class="container">
+        <div class="company-leadership__grid">
+            <h2 class="company-leadership__title" id="company-leadership-title">{{companyLeadership.title}}</h2>
+
+            <div class="company-leadership__slider swiper js-company-leadership-slider">
+                <ul class="company-leadership__list swiper-wrapper">
+                    {{#each companyLeadership.items}}
+                    <li class="company-leadership__item swiper-slide">
+                        {{> components/cards/company-leadership-card item=this }}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            {{> components/slider-navigation
+            className="company-leadership__navigation"
+            ariaLabel=companyLeadership.navigationAriaLabel
+            prevLabel=companyLeadership.previousSlideLabel
+            nextLabel=companyLeadership.nextSlideLabel
+            }}
+        </div>
+    </div>
+</section>

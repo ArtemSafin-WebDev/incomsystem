@@ -1,6 +1,8 @@
 import Awards from "../classes/components/Awards";
 import CompanyFeatures from "../classes/components/CompanyFeatures";
 import CompanyHistory from "../classes/components/CompanyHistory";
+import CompanyLeadership from "../classes/components/CompanyLeadership";
+import CompanyReviews from "../classes/components/CompanyReviews";
 import HarshConditions from "../classes/components/HarshConditions";
 import CompactHeader from "../classes/components/CompactHeader";
 import MobileMenu from "../classes/components/MobileMenu";
@@ -27,6 +29,12 @@ export default function sections() {
     ".js-company-features"
   );
   const awardsSections = document.querySelectorAll<HTMLElement>(".js-awards");
+  const companyReviewsSections = document.querySelectorAll<HTMLElement>(
+    ".js-company-reviews"
+  );
+  const companyLeadershipSections = document.querySelectorAll<HTMLElement>(
+    ".js-company-leadership"
+  );
   const productionAndServicesSections = document.querySelectorAll<HTMLElement>(
     ".js-production-and-services"
   );
@@ -50,6 +58,14 @@ export default function sections() {
 
   awardsSections.forEach((section) => {
     new Awards(section);
+  });
+
+  companyReviewsSections.forEach((section) => {
+    new CompanyReviews(section);
+  });
+
+  companyLeadershipSections.forEach((section) => {
+    new CompanyLeadership(section);
   });
 
   productionAndServicesSections.forEach((section) => {

@@ -8,6 +8,35 @@ const awardsItems = Array.from({ length: 6 }, () => ({
   href: "#",
 }));
 
+const leadershipProfiles = [
+  {
+    name: "Залаков Наиль Ринатович",
+    position: "Генеральный директор",
+    image: "/images/about-company/company-leadership/1.webp",
+    imageAlt: "Залаков Наиль Ринатович",
+  },
+  {
+    name: "Байбеков Адель Шамилевич",
+    position: "Операционный директор",
+    image: "/images/about-company/company-leadership/2.webp",
+    imageAlt: "Байбеков Адель Шамилевич",
+  },
+  {
+    name: "Саматов Фоат Фаргатович",
+    position: "Операционный директор",
+    image: "/images/about-company/company-leadership/3.webp",
+    imageAlt: "Саматов Фоат Фаргатович",
+  },
+];
+
+const companyLeadershipItems = [
+  leadershipProfiles[0],
+  leadershipProfiles[1],
+  leadershipProfiles[2],
+  { ...leadershipProfiles[0] },
+  { ...leadershipProfiles[2] },
+];
+
 export default {
   "/about-company.html": {
     title: "О компании",
@@ -193,6 +222,57 @@ export default {
       previousSlideLabel: "Предыдущая награда",
       nextSlideLabel: "Следующая награда",
       items: awardsItems,
+    },
+    companyLeadership: {
+      title: "Руководство",
+      navigationAriaLabel: "Навигация слайдера с руководством компании",
+      previousSlideLabel: "Предыдущая карточка руководителя",
+      nextSlideLabel: "Следующая карточка руководителя",
+      items: companyLeadershipItems,
+    },
+    companyReviews: {
+      title: "Отзывы",
+      countLabel: "98 отзывов",
+      navigationAriaLabel: "Навигация слайдера с отзывами клиентов",
+      previousSlideLabel: "Предыдущий отзыв",
+      nextSlideLabel: "Следующий отзыв",
+      items: [
+        {
+          company: "Акционерное общество “Газпром Газэнергосеть”",
+          href: "#",
+          logo: "/images/company-reviews/gazprom.svg",
+          image: "/images/company-reviews/review-letter.webp",
+          imageAlt: "Письменный отзыв компании Газпром Газэнергосеть",
+        },
+        {
+          company: "Акционерное общество “Башнефть”",
+          href: "#",
+          logo: "/images/company-reviews/bashneft.svg",
+          image: "/images/company-reviews/review-letter.webp",
+          imageAlt: "Письменный отзыв компании Башнефть",
+        },
+        {
+          company: "Акционерное общество “Газпром Газэнергосеть”",
+          href: "#",
+          logo: "/images/company-reviews/gazprom.svg",
+          image: "/images/company-reviews/review-letter.webp",
+          imageAlt: "Письменный отзыв компании Газпром Газэнергосеть",
+        },
+        {
+          company: "Акционерное общество “Газпром Газэнергосеть”",
+          href: "#",
+          logo: "/images/company-reviews/gazprom.svg",
+          image: "/images/company-reviews/review-letter.webp",
+          imageAlt: "Письменный отзыв компании Газпром Газэнергосеть",
+        },
+        {
+          company: "Акционерное общество “Газпром Газэнергосеть”",
+          href: "#",
+          logo: "/images/company-reviews/gazprom.svg",
+          image: "/images/company-reviews/review-letter.webp",
+          imageAlt: "Письменный отзыв компании Газпром Газэнергосеть",
+        },
+      ],
     },
     mobileMenu,
     footer,
