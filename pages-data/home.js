@@ -258,6 +258,7 @@ export default {
         },
       ],
       buttonText: "О компании",
+      buttonHref: "#",
     },
     realisedProjects: {
       title: "Реализованные проекты",

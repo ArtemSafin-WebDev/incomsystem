@@ -1,0 +1,20 @@
+<section class="career-hero">
+    <div class="container">
+        {{> components/breadcrumbs careerHero.breadcrumbs }}
+        <h1 class="career-hero__title">{{careerHero.title}}</h1>
+    </div>
+
+    <div class="career-hero__media">
+        <img class="career-hero__image" src="{{careerHero.image}}" alt="{{careerHero.imageAlt}}">
+        <div class="career-hero__overlay" aria-hidden="true"></div>
+        <div class="container career-hero__media-container">
+            <p class="career-hero__description">{{careerHero.description}}</p>
+            <a class="career-hero__video-link" href="{{careerHero.videoHref}}">
+                <span>{{careerHero.videoText}}</span>
+                <svg aria-hidden="true">
+                    <use xlink:href="#play-triangle"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>

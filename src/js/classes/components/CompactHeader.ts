@@ -32,6 +32,10 @@ class CompactHeader extends Component {
   }
 
   private shouldUseCompactMode(): boolean {
+    if (this.element.hasAttribute("data-compact-static")) {
+      return true;
+    }
+
     return window.scrollY > CompactHeader.COMPACT_SCROLL_OFFSET;
   }
 }
