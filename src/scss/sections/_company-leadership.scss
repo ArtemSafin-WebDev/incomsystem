@@ -1,10 +1,17 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .company-leadership {
     padding-top: 4rem;
-    padding-bottom: 15rem;
+    margin-bottom: 15rem;
     background: linear-gradient(180deg, #006fdd 0 36rem, #fff 36rem 100%);
     color: #222233;
     overflow: clip;
+
+    @include mq.down(sm) {
+      margin-bottom: 8rem;
+      background: linear-gradient(180deg, #006fdd 0 19.4rem, #fff 19.4rem 100%);
+    }
   }
 
   .company-leadership__grid {
@@ -22,6 +29,14 @@
     line-height: 1;
     letter-spacing: -0.12rem;
     text-transform: uppercase;
+
+    @include mq.down(sm) {
+      margin-bottom: 2.5rem;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+    }
   }
 
   .company-leadership__slider {
@@ -40,6 +55,10 @@
     flex: 0 0 auto;
     margin-right: 2rem;
 
+    @include mq.down(sm) {
+      width: 30rem;
+    }
+
     &:last-child {
       margin-right: 0;
     }
@@ -48,6 +67,11 @@
   .company-leadership__navigation {
     justify-content: center;
     margin-top: 12rem;
+
+    @include mq.down(sm) {
+      gap: 0.5rem;
+      margin-top: 3rem;
+    }
   }
 
   .company-leadership__participation {
@@ -57,6 +81,11 @@
     gap: 2rem;
     max-width: 92rem;
     margin: 15rem auto 0;
+
+    @include mq.down(sm) {
+      max-width: 34.3rem;
+      margin-top: 8rem;
+    }
   }
 
   .company-leadership__participation-icon {
@@ -76,5 +105,9 @@
     font-weight: 400;
     line-height: 1.4;
     text-align: center;
+
+    @include mq.down(sm) {
+      font-size: 1.4rem;
+    }
   }
 }

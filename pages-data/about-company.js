@@ -10,19 +10,19 @@ const awardsItems = Array.from({ length: 6 }, () => ({
 
 const leadershipProfiles = [
   {
-    name: "Залаков Наиль Ринатович",
+    name: "Залаков Наиль<br> Ринатович",
     position: "Генеральный директор",
     image: "/images/about-company/company-leadership/1.webp",
     imageAlt: "Залаков Наиль Ринатович",
   },
   {
-    name: "Байбеков Адель Шамилевич",
+    name: "Байбеков Адель<br> Шамилевич",
     position: "Операционный директор",
     image: "/images/about-company/company-leadership/2.webp",
     imageAlt: "Байбеков Адель Шамилевич",
   },
   {
-    name: "Саматов Фоат Фаргатович",
+    name: "Саматов Фоат<br> Фаргатович",
     position: "Операционный директор",
     image: "/images/about-company/company-leadership/3.webp",
     imageAlt: "Саматов Фоат Фаргатович",

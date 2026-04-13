@@ -1,8 +1,10 @@
+@use "tools/media" as mq;
+
 @layer components {
   .company-leadership-card {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3.2rem;
   }
 
   .company-leadership-card__media {
@@ -23,7 +25,11 @@
   .company-leadership-card__content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.8rem;
+
+    @include mq.down(sm) {
+      gap: 1.4rem;
+    }
   }
 
   .company-leadership-card__name {
@@ -33,6 +39,14 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.06rem;
+
+    @include mq.down(sm) {
+      font-size: 2rem;
+      letter-spacing: -0.04rem;
+      br {
+        display: none;
+      }
+    }
   }
 
   .company-leadership-card__position {
