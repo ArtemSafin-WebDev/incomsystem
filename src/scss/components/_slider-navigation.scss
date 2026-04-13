@@ -49,4 +49,17 @@
       }
     }
   }
+
+  .slider-navigation--light {
+    .slider-navigation__button {
+      background: rgba(255, 255, 255, 0.23);
+      color: #fff;
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+  }
 }

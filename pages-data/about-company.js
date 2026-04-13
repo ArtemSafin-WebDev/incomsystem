@@ -37,6 +37,48 @@ const companyLeadershipItems = [
   { ...leadershipProfiles[2] },
 ];
 
+const companyDepartmentsSlides = Array.from({ length: 3 }, () => ({
+  image: "/images/about-company/company-departments/1.webp",
+  imageAlt: "Производственная площадка Инкомсистем",
+}));
+
+const companyDepartmentsItems = [
+  {
+    label: "Автоматизированные системы управления",
+    description:
+      "Описание производственного процесса выбранного департамента",
+  },
+  {
+    label: "Системы измерений и блочное оборудование",
+    description:
+      "Описание производственного процесса выбранного департамента",
+  },
+  {
+    label:
+      "Программируемые логические контроллеры и&nbsp;вычислители расхода “АБАК”",
+    description:
+      "Описание производственного процесса выбранного департамента",
+  },
+  {
+    label: "Аналитические системы",
+    description:
+      "Описание производственного процесса выбранного департамента",
+  },
+  {
+    label: "Метрология и сервис",
+    description:
+      "Описание производственного процесса выбранного департамента",
+  },
+  {
+    label: "Сульфинертное нанонопокрытие incomsteel",
+    description:
+      "Описание производственного процесса выбранного департамента",
+  },
+].map((item) => ({
+  ...item,
+  slides: companyDepartmentsSlides.map((slide) => ({ ...slide })),
+}));
+
 export default {
   "/about-company.html": {
     title: "О компании",
@@ -237,6 +279,14 @@ export default {
         imageAlt: "Герб",
         text: "Специалисты принимают активное участие в&nbsp;разработке государственных стандартов, методик измерения и&nbsp;входят в&nbsp;Технические Комитеты РОССТАНДАРТА",
       },
+    },
+    companyDepartments: {
+      ariaLabel: "Производственные процессы департаментов компании",
+      tabsAriaLabel: "Выбор департамента компании",
+      navigationAriaLabel: "Навигация по фотографиям департамента",
+      previousSlideLabel: "Предыдущая фотография",
+      nextSlideLabel: "Следующая фотография",
+      items: companyDepartmentsItems,
     },
     companyReviews: {
       title: "Отзывы",

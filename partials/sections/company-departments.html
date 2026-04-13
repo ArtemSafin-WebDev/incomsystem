@@ -1,0 +1,42 @@
+<section class="company-departments js-company-departments" aria-label="{{companyDepartments.ariaLabel}}">
+    <div class="company-departments__stack">
+        <div class="company-departments__tabs" role="tablist" aria-label="{{companyDepartments.tabsAriaLabel}}">
+            {{#each companyDepartments.items}}
+            <button type="button" class="company-departments__tab js-tabs-btn{{#if @first}} active{{/if}}" role="tab"
+                id="company-departments-tab-{{@index}}" aria-controls="company-departments-panel-{{@index}}"
+                aria-selected="{{#if @first}}true{{else}}false{{/if}}">
+                <span>{{{this.label}}}</span>
+            </button>
+            {{/each}}
+        </div>
+
+        {{#each companyDepartments.items}}
+        <article class="company-departments__panel js-tabs-item{{#if @first}} active{{/if}}"
+            id="company-departments-panel-{{@index}}" role="tabpanel"
+            aria-labelledby="company-departments-tab-{{@index}}">
+            <div class="company-departments__media">
+                <div class="company-departments__slider swiper js-company-departments-slider">
+                    <ul class="company-departments__slides swiper-wrapper">
+                        {{#each this.slides}}
+                        <li class="company-departments__slide swiper-slide">
+                            <img class="company-departments__slide-image" src="{{this.image}}" alt="{{this.imageAlt}}">
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+                <div class="company-departments__shade" aria-hidden="true"></div>
+                <p class="company-departments__description">{{{this.description}}}</p>
+            </div>
+        </article>
+        {{/each}}
+
+        {{> components/slider-navigation
+        className="company-departments__navigation"
+        theme="light"
+        ariaLabel=companyDepartments.navigationAriaLabel
+        prevLabel=companyDepartments.previousSlideLabel
+        nextLabel=companyDepartments.nextSlideLabel
+        }}
+    </div>
+</section>
