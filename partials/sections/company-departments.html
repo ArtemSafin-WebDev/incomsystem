@@ -1,13 +1,26 @@
 <section class="company-departments js-company-departments" aria-label="{{companyDepartments.ariaLabel}}">
     <div class="company-departments__stack">
-        <div class="company-departments__tabs" role="tablist" aria-label="{{companyDepartments.tabsAriaLabel}}">
-            {{#each companyDepartments.items}}
-            <button type="button" class="company-departments__tab js-tabs-btn{{#if @first}} active{{/if}}" role="tab"
-                id="company-departments-tab-{{@index}}" aria-controls="company-departments-panel-{{@index}}"
-                aria-selected="{{#if @first}}true{{else}}false{{/if}}">
-                <span>{{{this.label}}}</span>
-            </button>
-            {{/each}}
+        <div class="company-departments__header">
+            <div class="company-departments__tabs" role="tablist" aria-label="{{companyDepartments.tabsAriaLabel}}">
+                {{#each companyDepartments.items}}
+                <button type="button" class="company-departments__tab js-tabs-btn{{#if @first}} active{{/if}}" role="tab"
+                    id="company-departments-tab-{{@index}}" aria-controls="company-departments-panel-{{@index}}"
+                    aria-selected="{{#if @first}}true{{else}}false{{/if}}">
+                    <span>{{{this.label}}}</span>
+                </button>
+                {{/each}}
+            </div>
+
+            {{#if companyDepartments.scrollHintText}}
+            <p class="company-departments__hint">
+                <span class="company-departments__hint-icon" aria-hidden="true">
+                    <svg width="15" height="15">
+                        <use xlink:href="#swipe-horizontal-light"></use>
+                    </svg>
+                </span>
+                <span>{{companyDepartments.scrollHintText}}</span>
+            </p>
+            {{/if}}
         </div>
 
         {{#each companyDepartments.items}}

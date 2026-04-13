@@ -29,11 +29,13 @@
   }
 
   .breadcrumbs__link {
-    transition: opacity 0.2s;
+    transition:
+      opacity 0.2s,
+      color 0.2s;
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        opacity: 0.65;
+        color: var(--primary-color);
       }
     }
   }

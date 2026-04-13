@@ -1,7 +1,13 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .company-departments {
     background-color: #fff;
     color: #fff;
+    margin-bottom: 15rem;
+    @include mq.down(sm) {
+      margin-bottom: 8rem;
+    }
   }
 
   .company-departments__stack {
@@ -9,7 +15,11 @@
     width: 100%;
     aspect-ratio: 192 / 93;
     overflow: clip;
-    background-color: #222233;
+    background-color: white;
+
+    @include mq.down(sm) {
+      aspect-ratio: 375 / 600;
+    }
   }
 
   .company-departments__stack > * {
@@ -17,16 +27,52 @@
     min-width: 0;
   }
 
-  .company-departments__tabs {
+  .company-departments__header {
     align-self: start;
     justify-self: start;
     z-index: 2;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @include mq.down(sm) {
+      gap: 2rem;
+      width: 100%;
+      margin-top: 4rem;
+    }
+  }
+
+  .company-departments__tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     width: 37rem;
     max-width: calc(100% - 8rem);
     margin: 4rem;
+
+    @include mq.down(sm) {
+      flex-direction: row;
+      gap: 1rem;
+      width: 100vw;
+      max-width: none;
+      position: relative;
+      left: 50%;
+      margin: 0 0 0 -50vw;
+      padding-inline: var(--container-padding);
+      box-sizing: border-box;
+      overflow-x: auto;
+      overflow-y: hidden;
+      overscroll-behavior-x: contain;
+      touch-action: pan-x;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: var(--container-padding);
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
   .company-departments__tab {
@@ -54,6 +100,16 @@
       display: block;
     }
 
+    @include mq.down(sm) {
+      flex: none;
+      width: fit-content;
+      max-width: 30rem;
+      min-height: auto;
+      padding: 1.6rem;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
     &.active {
       background-color: #006fdd;
       color: #fff;
@@ -67,6 +123,39 @@
       &.active:hover {
         background-color: #0077ee;
       }
+    }
+  }
+
+  .company-departments__hint {
+    display: none;
+
+    @include mq.down(sm) {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0 1.6rem;
+      font-family: var(--inter);
+      font-size: 0.8rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -0.024rem;
+      color: #fff;
+    }
+  }
+
+  .company-departments__hint-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
     }
   }
 
@@ -87,12 +176,20 @@
         opacity 0.35s ease,
         visibility 0s linear 0s;
     }
+
+    @include mq.down(sm) {
+      height: 100%;
+    }
   }
 
   .company-departments__media {
     display: grid;
     min-width: 0;
     min-height: 0;
+
+    @include mq.down(sm) {
+      height: 100%;
+    }
   }
 
   .company-departments__media > * {
@@ -117,8 +214,16 @@
   .company-departments__shade {
     pointer-events: none;
     background:
-      linear-gradient(180deg, rgba(34, 34, 51, 0) 47.1%, rgba(34, 34, 51, 0.5) 94.19%),
-      linear-gradient(90deg, rgba(34, 34, 51, 0.19) 0%, rgba(34, 34, 51, 0.19) 100%);
+      linear-gradient(
+        180deg,
+        rgba(34, 34, 51, 0) 47.1%,
+        rgba(34, 34, 51, 0.5) 94.19%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(34, 34, 51, 0.19) 0%,
+        rgba(34, 34, 51, 0.19) 100%
+      );
   }
 
   .company-departments__description {
@@ -134,6 +239,14 @@
     font-weight: 500;
     line-height: 1.4;
     letter-spacing: -0.028rem;
+
+    @include mq.down(sm) {
+      justify-self: center;
+      width: 34.3rem;
+      max-width: calc(100% - 3.2rem);
+      margin: 0 1.6rem 10rem;
+      text-align: center;
+    }
   }
 
   .company-departments__navigation {
@@ -141,5 +254,14 @@
     justify-self: center;
     z-index: 2;
     margin-bottom: 4rem;
+
+    @include mq.down(sm) {
+      gap: 0.5rem;
+      margin-bottom: 4rem;
+
+      .slider-navigation__button {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
   }
 }

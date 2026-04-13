@@ -1,4 +1,9 @@
-import { footer, mobileMenu } from "./shared.js";
+import {
+  contactUs,
+  engineeringCenter,
+  footer,
+  mobileMenu,
+} from "./shared.js";
 
 const awardsItems = Array.from({ length: 6 }, () => ({
   title: "100 Лучших Товаров России",
@@ -283,6 +288,7 @@ export default {
     companyDepartments: {
       ariaLabel: "Производственные процессы департаментов компании",
       tabsAriaLabel: "Выбор департамента компании",
+      scrollHintText: "Листайте влево/вправо",
       navigationAriaLabel: "Навигация по фотографиям департамента",
       previousSlideLabel: "Предыдущая фотография",
       nextSlideLabel: "Следующая фотография",
@@ -332,6 +338,8 @@ export default {
         },
       ],
     },
+    contactUs,
+    engineeringCenter,
     mobileMenu,
     footer,
   },

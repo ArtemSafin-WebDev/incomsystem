@@ -45,8 +45,11 @@ class CompanyDepartments extends Component {
         btn: ".js-tabs-btn",
         item: ".js-tabs-item",
       },
-      onTabChange: (_oldItem, _newItem, index) => {
+      onTabChange: (oldItem, _newItem, index) => {
         this.syncState(index);
+        if (oldItem) {
+          this.scrollTabIntoView(index);
+        }
         this.mountSlider(index);
       },
     });
@@ -69,6 +72,20 @@ class CompanyDepartments extends Component {
       const isActive = panelIndex === index;
 
       panel.setAttribute("aria-hidden", String(!isActive));
+    });
+  }
+
+  private scrollTabIntoView(index: number) {
+    const button = this.tabButtons[index];
+
+    if (!button || !window.matchMedia("(max-width: 576px)").matches) {
+      return;
+    }
+
+    button.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "nearest",
     });
   }
 
