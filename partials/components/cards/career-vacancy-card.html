@@ -1,0 +1,28 @@
+<li class="career-vacancies__item vacancy-card">
+    <p class="vacancy-card__city">{{item.city}}</p>
+
+    <h3 class="vacancy-card__title">{{item.title}}</h3>
+
+    <ul class="vacancy-card__details" aria-label="{{item.detailsAriaLabel}}">
+        {{#each item.details}}
+        <li class="vacancy-card__detail">
+            <span class="vacancy-card__icon" aria-hidden="true">
+                <svg width="35" height="35">
+                    <use xlink:href="#{{icon}}"></use>
+                </svg>
+            </span>
+
+            <span class="vacancy-card__detail-text">
+                <span class="vacancy-card__detail-label">{{label}}</span>
+                <span class="vacancy-card__detail-value">{{value}}</span>
+            </span>
+        </li>
+        {{/each}}
+    </ul>
+
+    <p class="vacancy-card__salary">{{{item.salary}}}</p>
+
+    <a class="vacancy-card__link" href="{{item.href}}">
+        {{item.linkText}}
+    </a>
+</li>

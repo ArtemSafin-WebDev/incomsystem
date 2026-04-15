@@ -1,0 +1,25 @@
+<section class="career-success-stories company-leadership js-company-leadership"
+    aria-labelledby="career-success-stories-title">
+    <div class="container">
+        <div class="company-leadership__grid">
+            <h2 class="company-leadership__title" id="career-success-stories-title">{{careerSuccessStories.title}}</h2>
+
+            <div class="company-leadership__slider swiper js-company-leadership-slider">
+                <ul class="company-leadership__list swiper-wrapper">
+                    {{#each careerSuccessStories.items}}
+                    <li class="company-leadership__item swiper-slide">
+                        {{> components/cards/career-success-story-card item=this }}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            {{> components/slider-navigation
+            className="company-leadership__navigation career-success-stories__navigation"
+            ariaLabel=careerSuccessStories.navigationAriaLabel
+            prevLabel=careerSuccessStories.previousSlideLabel
+            nextLabel=careerSuccessStories.nextSlideLabel
+            }}
+        </div>
+    </div>
+</section>

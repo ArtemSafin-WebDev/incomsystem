@@ -1,0 +1,106 @@
+@layer sections {
+  .career-students {
+    --career-students-overlap: 24rem;
+
+    position: relative;
+    z-index: 1;
+    margin-top: calc(var(--career-students-overlap) * -1);
+    padding-top: 43rem;
+    padding-bottom: 11rem;
+    background: var(--primary-color);
+    color: #fff;
+  }
+
+  .career-students__title {
+    font-family: var(--rf-dewi);
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+  }
+
+  .career-students__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6rem 2rem;
+    margin-top: 11.2rem;
+  }
+
+  .career-students-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .career-students-card__content {
+    display: flex;
+    min-height: 37rem;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .career-students-card__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 34.5rem;
+  }
+
+  .career-students-card__index {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: var(--ibm-plex-mono);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.028rem;
+  }
+
+  .career-students-card__title {
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.06rem;
+  }
+
+  .career-students-card__description {
+    max-width: 32.5rem;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .career-students-card__media {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .career-students-card__image {
+    display: block;
+    width: 100%;
+    height: 37rem;
+    object-fit: cover;
+  }
+
+  .career-students__btn.btn {
+    width: 44.6rem;
+    max-width: 100%;
+    margin: 8rem auto 0;
+    border-color: #fff;
+    color: #fff;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .career-students__btn.btn:hover {
+      background-color: #fff;
+      color: var(--primary-color);
+    }
+  }
+}

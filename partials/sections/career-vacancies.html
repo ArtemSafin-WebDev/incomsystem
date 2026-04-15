@@ -1,0 +1,21 @@
+<section class="career-vacancies" aria-labelledby="career-vacancies-title">
+    <div class="container">
+        <h2 class="career-vacancies__title" id="career-vacancies-title">{{careerVacancies.title}}</h2>
+
+        <ul class="career-vacancies__list" aria-label="{{careerVacancies.ariaLabel}}">
+            {{#each careerVacancies.items}}
+            {{> components/cards/career-vacancy-card item=this }}
+            {{/each}}
+        </ul>
+
+        <div class="career-vacancies__footer">
+            <p class="career-vacancies__counter">{{careerVacancies.counterText}}</p>
+
+            <button class="career-vacancies__button btn" type="button">
+                {{careerVacancies.buttonText}}
+            </button>
+
+            <span class="career-vacancies__footer-spacer" aria-hidden="true"></span>
+        </div>
+    </div>
+</section>

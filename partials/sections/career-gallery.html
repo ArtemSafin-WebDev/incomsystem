@@ -1,0 +1,25 @@
+<section class="career-gallery js-career-gallery" aria-label="{{careerGallery.ariaLabel}}">
+    <div class="container">
+        <div class="career-gallery__inner">
+            <div class="career-gallery__slider swiper js-career-gallery-slider">
+                <ul class="career-gallery__list swiper-wrapper">
+                    {{#each careerGallery.slides}}
+                    <li class="career-gallery__item swiper-slide">
+                        <div class="career-gallery__media">
+                            <img class="career-gallery__image" src="{{image}}" alt="{{imageAlt}}" loading="lazy">
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            {{> components/slider-navigation
+            theme="light"
+            className="career-gallery__navigation"
+            ariaLabel=careerGallery.navigationAriaLabel
+            prevLabel=careerGallery.previousSlideLabel
+            nextLabel=careerGallery.nextSlideLabel
+            }}
+        </div>
+    </div>
+</section>

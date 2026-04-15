@@ -153,6 +153,23 @@
     }
   }
 
+  .company-features__item--theme-dark {
+    --company-feature-card-bg: #222233;
+    --company-feature-card-color: #fff;
+  }
+
+  .company-features__item--theme-soft {
+    --company-feature-card-bg: #f2f2fa;
+  }
+
+  .company-features__item--number-white {
+    --company-feature-card-number-color: #fff;
+  }
+
+  .company-features__item--number-blue {
+    --company-feature-card-number-color: var(--primary-color);
+  }
+
   .company-feature-card {
     display: flex;
     flex-direction: column;

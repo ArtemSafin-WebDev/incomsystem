@@ -1,4 +1,5 @@
 import Awards from "../classes/components/Awards";
+import CareerGallery from "../classes/components/CareerGallery";
 import CompanyHistory from "../classes/components/CompanyHistory";
 import CompanyDepartments from "../classes/components/CompanyDepartments";
 import CompanyLeadership from "../classes/components/CompanyLeadership";
@@ -26,6 +27,9 @@ export default function sections() {
     ".js-press-center"
   );
   const awardsSections = document.querySelectorAll<HTMLElement>(".js-awards");
+  const careerGallerySections = document.querySelectorAll<HTMLElement>(
+    ".js-career-gallery"
+  );
   const companyReviewsSections = document.querySelectorAll<HTMLElement>(
     ".js-company-reviews"
   );
@@ -54,6 +58,10 @@ export default function sections() {
 
   awardsSections.forEach((section) => {
     new Awards(section);
+  });
+
+  careerGallerySections.forEach((section) => {
+    new CareerGallery(section);
   });
 
   companyReviewsSections.forEach((section) => {

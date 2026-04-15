@@ -1,0 +1,19 @@
+<article class="career-success-story-card">
+    <a class="career-success-story-card__media" href="{{item.videoHref}}" aria-label="{{item.videoAriaLabel}}">
+        <img class="career-success-story-card__image" src="{{item.image}}" alt="{{item.imageAlt}}" loading="lazy">
+        <span class="career-success-story-card__overlay" aria-hidden="true"></span>
+
+        <span class="career-success-story-card__play" aria-hidden="true">
+            <svg width="32" height="50">
+                <use xlink:href="#play-triangle"></use>
+            </svg>
+        </span>
+
+        <span class="career-success-story-card__duration">{{item.duration}}</span>
+    </a>
+
+    <div class="career-success-story-card__content">
+        <h3 class="career-success-story-card__name">{{item.name}}</h3>
+        <p class="career-success-story-card__position">{{item.position}}</p>
+    </div>
+</article>

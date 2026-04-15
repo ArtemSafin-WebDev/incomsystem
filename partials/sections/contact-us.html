@@ -1,6 +1,8 @@
-<section class="contact-us">
+<section class="contact-us{{#if contactUs.className}} {{contactUs.className}}{{/if}}">
     <div class="container">
+        {{#if contactUs.caption}}
         <p class="contact-us__caption">{{contactUs.caption}}</p>
+        {{/if}}
 
         <div class="contact-us__body">
             <picture class="contact-us__bg-picture">
@@ -12,6 +14,18 @@
                 <div class="contact-us__head">
                     <h2 class="contact-us__title">{{{contactUs.title}}}</h2>
                     <p class="contact-us__description">{{contactUs.description}}</p>
+
+                    {{#if contactUs.contacts}}
+                    <div class="contact-us__contacts">
+                        {{#each contactUs.contacts}}
+                        {{#if this.href}}
+                        <a class="contact-us__contact" href="{{this.href}}">{{this.text}}</a>
+                        {{else}}
+                        <p class="contact-us__contact">{{this.text}}</p>
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                    {{/if}}
                 </div>
 
                 <form class="contact-us__form contact-us-form js-form"

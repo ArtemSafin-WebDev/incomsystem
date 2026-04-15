@@ -1,4 +1,4 @@
-<section class="company-features">
+<section class="company-features{{#if companyFeatures.className}} {{companyFeatures.className}}{{/if}}">
     <div class="container">
         <div class="company-features__grid">
             <div class="company-features__intro">
@@ -9,13 +9,14 @@
             <div class="company-features__slider">
                 <ul class="company-features__list">
                     {{#each companyFeatures.items}}
-                    <li class="company-features__item">
+                    <li class="company-features__item{{#if className}} {{className}}{{/if}}">
                         {{> components/cards/company-feature-card item=this }}
                     </li>
                     {{/each}}
                 </ul>
             </div>
 
+            {{#if companyFeatures.showHint}}
             <p class="company-features__hint">
                 <span class="company-features__hint-icon" aria-hidden="true">
                     <svg width="15" height="15">
@@ -24,10 +25,13 @@
                 </span>
                 <span>{{companyFeatures.scrollHintText}}</span>
             </p>
+            {{/if}}
 
+            {{#if companyFeatures.showEmblem}}
             <div class="company-features__emblem" aria-hidden="true">
                 <img src="/images/company-features/emblem.svg" alt="">
             </div>
+            {{/if}}
         </div>
     </div>
 </section>
