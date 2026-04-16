@@ -2,15 +2,28 @@
     <div class="container">
         {{> components/breadcrumbs careerHero.breadcrumbs }}
         <h1 class="career-hero__title">{{careerHero.title}}</h1>
+        {{#if careerHero.caption}}
+        <p class="career-hero__caption">{{careerHero.caption}}</p>
+        {{/if}}
     </div>
 
     <div class="career-hero__media">
-        <img class="career-hero__image" src="{{careerHero.image}}" alt="{{careerHero.imageAlt}}">
+        <picture class="career-hero__picture">
+            {{#if careerHero.imageMobile}}
+            <source media="(max-width: 576px)" srcset="{{careerHero.imageMobile}}">
+            {{/if}}
+            <img class="career-hero__image" src="{{careerHero.image}}" alt="{{careerHero.imageAlt}}">
+        </picture>
         <div class="career-hero__overlay" aria-hidden="true"></div>
         <div class="container career-hero__media-container">
             <p class="career-hero__description">{{careerHero.description}}</p>
             <a class="career-hero__video-link" href="{{careerHero.videoHref}}">
-                <span>{{careerHero.videoText}}</span>
+                <span class="career-hero__video-text">
+                    <span class="career-hero__video-text-desktop">{{careerHero.videoText}}</span>
+                    {{#if careerHero.videoTextMobile}}
+                    <span class="career-hero__video-text-mobile">{{careerHero.videoTextMobile}}</span>
+                    {{/if}}
+                </span>
                 <svg aria-hidden="true">
                     <use xlink:href="#play-triangle"></use>
                 </svg>

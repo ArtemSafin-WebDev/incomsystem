@@ -1,34 +1,45 @@
-<section class="career-students" aria-labelledby="career-students-title">
+<section class="career-students js-career-students" aria-labelledby="career-students-title">
     <div class="container">
         <h2 class="career-students__title" id="career-students-title">{{careerStudents.title}}</h2>
 
-        <ul class="career-students__list" aria-label="{{careerStudents.ariaLabel}}">
-            {{#each careerStudents.items}}
-            <li class="career-students__item">
-                <article class="career-students-card">
-                    {{#if mediaFirst}}
-                    <div class="career-students-card__media">
-                        <img class="career-students-card__image" src="{{image}}" alt="{{imageAlt}}" loading="lazy">
-                    </div>
-                    {{/if}}
-
-                    <div class="career-students-card__content">
-                        <div class="career-students-card__heading">
-                            <p class="career-students-card__index">{{index}}</p>
-                            <h3 class="career-students-card__title">{{{title}}}</h3>
+        <div class="career-students__slider swiper js-career-students-slider">
+            <ul class="career-students__list swiper-wrapper" aria-label="{{careerStudents.ariaLabel}}">
+                {{#each careerStudents.items}}
+                <li class="career-students__item swiper-slide">
+                    <article class="career-students-card">
+                        {{#if mediaFirst}}
+                        <div class="career-students-card__media">
+                            <img class="career-students-card__image" src="{{image}}" alt="{{imageAlt}}" loading="lazy">
                         </div>
-                        <p class="career-students-card__description">{{{text}}}</p>
-                    </div>
+                        {{/if}}
 
-                    {{#unless mediaFirst}}
-                    <div class="career-students-card__media">
-                        <img class="career-students-card__image" src="{{image}}" alt="{{imageAlt}}" loading="lazy">
-                    </div>
-                    {{/unless}}
-                </article>
-            </li>
-            {{/each}}
-        </ul>
+                        <div class="career-students-card__content">
+                            <div class="career-students-card__heading">
+                                <p class="career-students-card__index">{{index}}</p>
+                                <h3 class="career-students-card__title">{{{title}}}</h3>
+                            </div>
+                            <p class="career-students-card__description">{{{text}}}</p>
+                        </div>
+
+                        {{#unless mediaFirst}}
+                        <div class="career-students-card__media">
+                            <img class="career-students-card__image" src="{{image}}" alt="{{imageAlt}}" loading="lazy">
+                        </div>
+                        {{/unless}}
+                    </article>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <p class="career-students__hint">
+            <span class="career-students__hint-icon" aria-hidden="true">
+                <svg width="15" height="15">
+                    <use xlink:href="#swipe-horizontal"></use>
+                </svg>
+            </span>
+            <span>{{careerStudents.scrollHintText}}</span>
+        </p>
 
         <a class="career-students__btn btn" href="{{careerStudents.buttonHref}}">
             {{careerStudents.buttonText}}

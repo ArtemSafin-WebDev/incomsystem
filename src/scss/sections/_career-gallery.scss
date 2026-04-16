@@ -32,7 +32,28 @@
   }
 
   .career-gallery__media {
+    position: relative;
     aspect-ratio: 184 / 93;
+    overflow: hidden;
+
+    @include mq.down(sm) {
+      aspect-ratio: 343 / 300;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          rgba(102, 102, 153, 0) 31%,
+          rgba(34, 34, 51, 0.5) 96.55%
+        );
+        pointer-events: none;
+      }
+    }
   }
 
   .career-gallery__image {
@@ -40,6 +61,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @include mq.down(sm) {
+      transform: scale(1.25);
+      transform-origin: center;
+    }
   }
 
   .career-gallery__navigation {
@@ -50,7 +76,8 @@
     z-index: 1;
 
     @include mq.down(sm) {
-      bottom: 2rem;
+      bottom: 2.3rem;
+      gap: 0.5rem;
     }
   }
 }

@@ -1,6 +1,9 @@
 @layer sections {
   .career-success-stories {
     margin-bottom: 15rem;
+    background-image: none;
+    position: relative;
+    z-index: 5;
   }
 
   .career-success-stories__navigation {

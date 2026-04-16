@@ -252,16 +252,20 @@ export default {
         ],
       },
       title: "Карьера в НИЦ «Инкомсистем»",
+      caption: "Создана в 1991 году",
       image: "/images/career/hero.webp",
+      imageMobile: "/images/career/hero-mobile.webp",
       imageAlt: "",
       description:
         "НИЦ «Инкомсистем» ищет талантливых и перспективных соискателей для реализации масштабных производственных задач",
       videoText: "Смотреть видео о компании",
+      videoTextMobile: "Смотреть видео",
       videoHref: "#",
     },
     careerStudents: {
       title: "Для студентов:",
       ariaLabel: "Возможности для студентов в НИЦ «Инкомсистем»",
+      scrollHintText: "Листайте влево/вправо",
       buttonText: "Подробнее о взаимодействии с вузами",
       buttonHref: "#",
       items: [

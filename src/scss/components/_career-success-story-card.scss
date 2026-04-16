@@ -2,7 +2,7 @@
   .career-success-story-card {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3.2rem;
   }
 
   .career-success-story-card__media {
@@ -47,7 +47,9 @@
       display: block;
       width: 100%;
       height: 100%;
-      fill: currentColor;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1px;
     }
   }
 
@@ -75,7 +77,7 @@
   .career-success-story-card__content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.2rem;
   }
 
   .career-success-story-card__name {

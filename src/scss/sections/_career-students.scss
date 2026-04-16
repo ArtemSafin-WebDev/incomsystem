@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .career-students {
     --career-students-overlap: 24rem;
@@ -9,6 +11,20 @@
     padding-bottom: 11rem;
     background: var(--primary-color);
     color: #fff;
+
+    &:has(+ .company-leadership) {
+      padding-bottom: 47rem;
+      margin-bottom: calc(-1 * (47rem - 11rem));
+    }
+
+    @include mq.down(sm) {
+      --career-students-overlap: 10.5rem;
+
+      margin-top: calc(var(--career-students-overlap) * -1);
+      padding-top: 35.9rem;
+      padding-bottom: 10.6rem;
+      overflow: hidden;
+    }
   }
 
   .career-students__title {
@@ -19,6 +35,22 @@
     line-height: 1;
     letter-spacing: -0.12rem;
     text-transform: uppercase;
+
+    @include mq.down(sm) {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+      margin-bottom: 6.1rem;
+    }
+  }
+
+  .career-students__slider {
+    @include mq.down(sm) {
+      min-width: 0;
+      width: 100%;
+      overflow: visible;
+    }
   }
 
   .career-students__list {
@@ -26,12 +58,33 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 6rem 2rem;
     margin-top: 11.2rem;
+
+    @include mq.down(sm) {
+      display: flex;
+      gap: 0;
+      margin-top: 0;
+    }
+  }
+
+  .career-students__item {
+    @include mq.down(sm) {
+      width: 48.5rem;
+      flex: 0 0 auto;
+      box-sizing: border-box;
+    }
   }
 
   .career-students-card {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
+
+    @include mq.down(sm) {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      width: max-content;
+    }
   }
 
   .career-students-card__content {
@@ -39,6 +92,16 @@
     min-height: 37rem;
     flex-direction: column;
     justify-content: space-between;
+
+    @include mq.down(sm) {
+      order: 1;
+      width: 22.5rem;
+      min-height: auto;
+      padding: 2rem;
+      justify-content: flex-start;
+      gap: 8rem;
+      box-sizing: border-box;
+    }
   }
 
   .career-students-card__heading {
@@ -46,6 +109,10 @@
     flex-direction: column;
     gap: 2rem;
     max-width: 34.5rem;
+
+    @include mq.down(sm) {
+      max-width: none;
+    }
   }
 
   .career-students-card__index {
@@ -56,6 +123,10 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.028rem;
+
+    @include mq.down(sm) {
+      color: #80b7ee;
+    }
   }
 
   .career-students-card__title {
@@ -65,6 +136,13 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.06rem;
+
+    @include mq.down(sm) {
+      max-width: 20.8rem;
+      font-size: 2rem;
+      letter-spacing: -0.04rem;
+      text-wrap: initial;
+    }
   }
 
   .career-students-card__description {
@@ -74,12 +152,23 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.4;
+
+    @include mq.down(sm) {
+      max-width: none;
+    }
   }
 
   .career-students-card__media {
     overflow: hidden;
     border-radius: 0.5rem;
     background: rgba(255, 255, 255, 0.08);
+
+    @include mq.down(sm) {
+      order: 2;
+      width: 24rem;
+      flex: 0 0 24rem;
+      background: none;
+    }
   }
 
   .career-students-card__image {
@@ -87,6 +176,46 @@
     width: 100%;
     height: 37rem;
     object-fit: cover;
+
+    @include mq.down(sm) {
+      height: 24rem;
+    }
+  }
+
+  .career-students__hint {
+    display: none;
+
+    @include mq.down(sm) {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 0.5rem;
+      margin-top: 1.7rem;
+      font-family: var(--inter);
+      font-size: 0.8rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -0.024rem;
+      color: #fff;
+    }
+  }
+
+  .career-students__hint-icon {
+    @include mq.down(sm) {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    svg {
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+      flex-shrink: 0;
+    }
   }
 
   .career-students__btn.btn {
@@ -95,6 +224,11 @@
     margin: 8rem auto 0;
     border-color: #fff;
     color: #fff;
+
+    @include mq.down(sm) {
+      width: auto;
+      margin-top: 3.9rem;
+    }
   }
 
   @media (hover: hover) and (pointer: fine) {
