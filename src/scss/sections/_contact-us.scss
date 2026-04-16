@@ -58,12 +58,14 @@
     gap: 2rem;
     padding: 4rem;
     color: #fff;
+    min-height: 64rem;
 
     @include mq.down(sm) {
       display: flex;
       flex-direction: column;
       gap: 2rem;
       padding: 4rem 2.1rem 4rem;
+      min-height: auto;
     }
   }
 
@@ -82,17 +84,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 1.6rem;
+    margin-top: auto;
   }
 
   .contact-us__contact {
     color: #fff;
     font-family: var(--inter);
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-style: normal;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -0.054rem;
+    font-weight: 400;
+    line-height: 100%;
 
     @include mq.down(sm) {
       font-size: 1.4rem;
@@ -135,7 +137,6 @@
   .contact-us__form {
     grid-column: 5 / -1;
     justify-self: start;
-    align-self: end;
 
     @include mq.down(sm) {
       grid-column: auto;
@@ -145,6 +146,7 @@
   .contact-us-form {
     display: flex;
     flex-direction: column;
+    gap: 3.2rem;
   }
 
   .contact-us-form__row {
@@ -224,7 +226,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4rem;
     align-items: center;
-    margin-top: 8rem;
+    margin-top: auto;
 
     @include mq.down(sm) {
       margin-top: 2rem;
@@ -295,30 +297,7 @@
     }
   }
 
-  .contact-us--career .contact-us__body {
-    background: linear-gradient(121.17deg, #17223c 0%, #091021 100%);
-  }
-
-  .contact-us--career .contact-us__content {
-    min-height: 63.6rem;
-    align-items: end;
-  }
-
-  .contact-us--career .contact-us__head {
-    justify-content: space-between;
-    min-height: 100%;
-    padding-bottom: 2rem;
-  }
-
-  .contact-us--career .contact-us__title {
-    max-width: 44.5rem;
-  }
-
-  .contact-us--career .contact-us__description {
-    max-width: 34rem;
-  }
-
-  .contact-us--career .contact-us__contact:first-child {
+  .contact-us__contact--phone {
     font-size: 5rem;
     font-weight: 600;
     line-height: 1;
@@ -329,22 +308,5 @@
       font-size: 3rem;
       letter-spacing: -0.06rem;
     }
-  }
-
-  .contact-us--career .contact-us__form {
-    width: 100%;
-  }
-
-  .contact-us--career .contact-us-form__row {
-    grid-template-columns: 22rem minmax(0, 1fr);
-  }
-
-  .contact-us--career .contact-us-form__footer {
-    grid-template-columns: 30rem minmax(0, 1fr);
-    align-items: start;
-  }
-
-  .contact-us--career .contact-us-form__submit {
-    width: 100%;
   }
 }

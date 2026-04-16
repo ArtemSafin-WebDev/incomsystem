@@ -180,6 +180,7 @@ const careerContactUs = {
   description: "Отправьте свое резюме или свяжитесь с hr-отделом",
   contacts: [
     {
+      className: "contact-us__contact--phone",
       href: "tel:+78432125010",
       text: "+7 (843) 212-50-10",
     },

@@ -19,9 +19,9 @@
                     <div class="contact-us__contacts">
                         {{#each contactUs.contacts}}
                         {{#if this.href}}
-                        <a class="contact-us__contact" href="{{this.href}}">{{this.text}}</a>
+                        <a class="contact-us__contact{{#if this.className}} {{this.className}}{{/if}}" href="{{this.href}}">{{this.text}}</a>
                         {{else}}
-                        <p class="contact-us__contact">{{this.text}}</p>
+                        <p class="contact-us__contact{{#if this.className}} {{this.className}}{{/if}}">{{this.text}}</p>
                         {{/if}}
                         {{/each}}
                     </div>
@@ -31,28 +31,30 @@
                 <form class="contact-us__form contact-us-form js-form"
                     action="{{contactUs.formAction}}"
                     method="post">
-                    {{#each contactUs.fields}}
-                    <div class="contact-us-form__row {{#if this.isTextarea}}contact-us-form__row--message{{/if}}">
-                        <label class="contact-us-form__label" for="{{this.id}}">{{this.label}}</label>
+                    <div class="contact-us-form__rows">
+                        {{#each contactUs.fields}}
+                        <div class="contact-us-form__row {{#if this.isTextarea}}contact-us-form__row--message{{/if}}">
+                            <label class="contact-us-form__label" for="{{this.id}}">{{this.label}}</label>
 
-                        <div class="contact-us-form__control">
-                            {{#if this.isTextarea}}
-                            <textarea id="{{this.id}}"
-                                name="{{this.name}}"
-                                placeholder="{{this.placeholder}}"
-                                rows="1"
-                                {{#if this.required}}required{{/if}}></textarea>
-                            {{else}}
-                            <input id="{{this.id}}"
-                                name="{{this.name}}"
-                                type="{{this.type}}"
-                                placeholder="{{this.placeholder}}"
-                                {{#if this.autocomplete}}autocomplete="{{this.autocomplete}}"{{/if}}
-                                {{#if this.required}}required{{/if}}>
-                            {{/if}}
+                            <div class="contact-us-form__control">
+                                {{#if this.isTextarea}}
+                                <textarea id="{{this.id}}"
+                                    name="{{this.name}}"
+                                    placeholder="{{this.placeholder}}"
+                                    rows="1"
+                                    {{#if this.required}}required{{/if}}></textarea>
+                                {{else}}
+                                <input id="{{this.id}}"
+                                    name="{{this.name}}"
+                                    type="{{this.type}}"
+                                    placeholder="{{this.placeholder}}"
+                                    {{#if this.autocomplete}}autocomplete="{{this.autocomplete}}"{{/if}}
+                                    {{#if this.required}}required{{/if}}>
+                                {{/if}}
+                            </div>
                         </div>
+                        {{/each}}
                     </div>
-                    {{/each}}
 
                     <div class="contact-us-form__footer">
                         <button class="btn contact-us-form__submit" type="submit">{{contactUs.submitText}}</button>
