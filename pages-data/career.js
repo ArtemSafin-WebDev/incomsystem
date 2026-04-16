@@ -176,6 +176,7 @@ const careerVacanciesItems = [
 
 const careerContactUs = {
   className: "contact-us--career",
+  caption: "Форма обратной связи",
   title: "Не нашли <br>подходящей <br>вакансии",
   description: "Отправьте свое резюме или свяжитесь с hr-отделом",
   contacts: [
@@ -228,8 +229,10 @@ const careerContactUs = {
       id: "career-contact-resume",
       name: "resume",
       label: "Прикрепить резюме",
+      isFile: true,
       placeholder: "Antonov.pdf",
-      type: "text",
+      type: "file",
+      accept: ".pdf,.doc,.docx",
       required: true,
     },
   ],

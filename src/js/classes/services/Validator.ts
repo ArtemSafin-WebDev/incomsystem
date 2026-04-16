@@ -44,6 +44,7 @@ class Validator {
   public errors: ValidationError[] = [];
   private form: HTMLFormElement;
   private textFields: HTMLInputElement[];
+  private fileFields: HTMLInputElement[];
   private selects: HTMLElement[];
   private checkboxes: HTMLInputElement[];
   private hasBeenValidated: boolean = false;
@@ -74,6 +75,7 @@ class Validator {
         'input[type="text"], input[type="email"], input[type="tel"]'
       )
     );
+    this.fileFields = Array.from(form.querySelectorAll('input[type="file"]'));
     this.selects = Array.from(form.querySelectorAll("[data-required-select]"));
     this.checkboxes = Array.from(
       form.querySelectorAll('input[type="checkbox"]')
@@ -88,6 +90,17 @@ class Validator {
       };
       field.addEventListener("input", handler);
       this.listenerPairs.push([field, "input", handler]);
+    });
+
+    this.fileFields.forEach((field) => {
+      const handler = () => {
+        if (this.hasBeenValidated) {
+          const result = this.validateFileField(field);
+          this.showFieldMessage(field, result);
+        }
+      };
+      field.addEventListener("change", handler);
+      this.listenerPairs.push([field, "change", handler]);
     });
 
     this.checkboxes.forEach((checkbox) => {
@@ -136,6 +149,11 @@ class Validator {
       this.showFieldMessage(field, result);
     });
 
+    this.fileFields.forEach((field) => {
+      const result = this.validateFileField(field);
+      this.showFieldMessage(field, result);
+    });
+
     this.selects.forEach((select) => {
       const result = this.validateSelect(select);
       this.placeErrorMessage(select, result);
@@ -155,6 +173,9 @@ class Validator {
     this.form
       .querySelectorAll(`.${this.errorClass}`)
       .forEach((message) => message.remove());
+    this.form
+      .querySelectorAll(`.${this.invalidClass}`)
+      .forEach((field) => field.classList.remove(this.invalidClass));
     this.onLayoutChange();
   };
 
@@ -225,6 +246,24 @@ class Validator {
       field.classList.remove(this.invalidClass);
     }
     return error;
+  }
+
+  private validateFileField(field: HTMLInputElement): ValidationError | null {
+    this.clearErrorsFor(field);
+
+    const hasFile = (field.files?.length ?? 0) > 0;
+    if (field.hasAttribute("required") && !hasFile) {
+      const error: ValidationError = {
+        element: field,
+        message: this.localization[this.locale].requiredField,
+      };
+      this.errors.push(error);
+      field.classList.add(this.invalidClass);
+      return error;
+    }
+
+    field.classList.remove(this.invalidClass);
+    return null;
   }
 
   private getTextFieldError(

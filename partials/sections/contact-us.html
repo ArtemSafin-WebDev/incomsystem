@@ -33,10 +33,10 @@
                     method="post">
                     <div class="contact-us-form__rows">
                         {{#each contactUs.fields}}
-                        <div class="contact-us-form__row {{#if this.isTextarea}}contact-us-form__row--message{{/if}}">
-                            <label class="contact-us-form__label" for="{{this.id}}">{{this.label}}</label>
+                        <div class="contact-us-form__row {{#if this.isTextarea}}contact-us-form__row--message{{/if}}{{#if this.isFile}} contact-us-form__row--file{{/if}}">
+                            <label class="contact-us-form__label{{#if this.isFile}} contact-us-form__label--file{{/if}}" for="{{this.id}}">{{this.label}}</label>
 
-                            <div class="contact-us-form__control">
+                            <div class="contact-us-form__control{{#if this.isFile}} contact-us-form__control--file js-file-field{{/if}}">
                                 {{#if this.isTextarea}}
                                 <textarea id="{{this.id}}"
                                     name="{{this.name}}"
@@ -44,12 +44,23 @@
                                     rows="1"
                                     {{#if this.required}}required{{/if}}></textarea>
                                 {{else}}
+                                {{#if this.isFile}}
+                                <input class="contact-us-form__file-input"
+                                    id="{{this.id}}"
+                                    name="{{this.name}}"
+                                    type="{{this.type}}"
+                                    {{#if this.accept}}accept="{{this.accept}}"{{/if}}
+                                    {{#if this.required}}required{{/if}}>
+                                <span class="contact-us-form__file-value contact-us-form__file-value--placeholder"
+                                    data-placeholder="{{this.placeholder}}">{{this.placeholder}}</span>
+                                {{else}}
                                 <input id="{{this.id}}"
                                     name="{{this.name}}"
                                     type="{{this.type}}"
                                     placeholder="{{this.placeholder}}"
                                     {{#if this.autocomplete}}autocomplete="{{this.autocomplete}}"{{/if}}
                                     {{#if this.required}}required{{/if}}>
+                                {{/if}}
                                 {{/if}}
                             </div>
                         </div>
