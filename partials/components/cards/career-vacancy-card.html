@@ -1,5 +1,5 @@
 <li class="career-vacancies__item">
-    <article class="vacancy-card">
+    <a class="vacancy-card" href="{{item.href}}">
         <p class="vacancy-card__city">{{item.city}}</p>
 
         <h3 class="vacancy-card__title">{{item.title}}</h3>
@@ -23,8 +23,8 @@
 
         <p class="vacancy-card__salary">{{{item.salary}}}</p>
 
-        <a class="vacancy-card__link" href="{{item.href}}">
+        <span class="vacancy-card__link">
             {{item.linkText}}
-        </a>
-    </article>
+        </span>
+    </a>
 </li>
