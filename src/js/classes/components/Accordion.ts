@@ -65,18 +65,22 @@ class Accordion extends Component {
     // Слушаем завершение CSS-перехода на dropdown,
     // чтобы вызвать onHeightChange после анимации, а не до неё
     this.dropdown?.addEventListener("transitionend", this.handleTransitionEnd);
+    this.syncState(this.element.classList.contains("active"));
   }
 
   public open() {
     this.element.classList.add("active");
+    this.syncState(true);
   }
 
   public close() {
     this.element.classList.remove("active");
+    this.syncState(false);
   }
 
   public toggle() {
     this.element.classList.toggle("active");
+    this.syncState(this.element.classList.contains("active"));
   }
 
   /** Снимает все обработчики — вызывать при удалении аккордеона из DOM */
@@ -110,6 +114,11 @@ class Accordion extends Component {
 
     // Сохраняем id RAF, чтобы следующий transitionend мог его отменить
     Accordion.pendingCallbacks.set(this.onHeightChange, id);
+  }
+
+  private syncState(isExpanded: boolean) {
+    this.button?.setAttribute("aria-expanded", String(isExpanded));
+    this.dropdown?.setAttribute("aria-hidden", String(!isExpanded));
   }
 
   /** Обработчик transitionend на .accordion__dropdown */

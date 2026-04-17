@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .career-vacancies {
     padding-top: 4rem;
@@ -6,6 +8,10 @@
     background: #222233;
     color: #fff;
     margin-bottom: 15rem;
+
+    @include mq.down(sm) {
+      margin-bottom: 8rem;
+    }
   }
 
   .career-vacancies__title {
@@ -16,6 +22,12 @@
     line-height: 1;
     letter-spacing: -0.12rem;
     text-transform: uppercase;
+
+    @include mq.down(sm) {
+      font-size: 3rem;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+    }
   }
 
   .career-vacancies__list {
@@ -23,15 +35,45 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: auto auto auto auto auto;
     margin-top: 12rem;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      margin-top: 5rem;
+    }
   }
 
   .career-vacancies__item {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
     padding-right: 5.8rem;
+
+    @include mq.down(sm) {
+      display: block;
+      grid-row: auto;
+      grid-template-rows: none;
+      width: 100%;
+      padding-right: 0;
+    }
   }
 
   .career-vacancies__item:not(:first-child) {
     padding-left: 3rem;
     border-left: 1px solid rgba(255, 255, 255, 0.08);
+
+    @include mq.down(sm) {
+      padding-top: 2rem;
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+
+  .career-vacancies__item:not(:last-child) {
+    @include mq.down(sm) {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
   }
 
   .career-vacancies__footer {
@@ -40,6 +82,12 @@
     align-items: end;
     gap: 2rem;
     margin-top: 12rem;
+
+    @include mq.down(sm) {
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 4rem;
+    }
   }
 
   .career-vacancies__counter,
@@ -49,11 +97,20 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1;
+
+    @include mq.down(sm) {
+      display: none;
+    }
   }
 
   .career-vacancies__button.btn {
     width: 30rem;
     justify-self: center;
+
+    @include mq.down(sm) {
+      width: 100%;
+      justify-self: stretch;
+    }
   }
 
   .career-vacancies__footer-spacer {

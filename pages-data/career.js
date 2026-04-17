@@ -174,6 +174,41 @@ const careerVacanciesItems = [
   },
 ];
 
+const careerFaqItems = [
+  {
+    id: "career-faq-minimum-wage",
+    question:
+      "Памятка о минимальной заработной плате труда в Республике Татарстан с 1 января 2022 года",
+    answer:
+      "Мы приветствуем молодых специалистов и предлагаем стажировки, практику и трудоустройство для студентов и выпускников без опыта работы, помогая им стать профессионалами.",
+  },
+  {
+    id: "career-faq-question-2",
+    question: "Вопрос 2",
+    answer: "Ответ на вопрос будет добавлен позже.",
+  },
+  {
+    id: "career-faq-question-3",
+    question: "Вопрос 3",
+    answer: "Ответ на вопрос будет добавлен позже.",
+  },
+  {
+    id: "career-faq-question-4",
+    question: "Вопрос 4",
+    answer: "Ответ на вопрос будет добавлен позже.",
+  },
+  {
+    id: "career-faq-question-5",
+    question: "Вопрос 5",
+    answer: "Ответ на вопрос будет добавлен позже.",
+  },
+  {
+    id: "career-faq-question-6",
+    question: "Вопрос 6",
+    answer: "Ответ на вопрос будет добавлен позже.",
+  },
+];
+
 const careerContactUs = {
   className: "contact-us--career",
   caption: "Форма обратной связи",
@@ -190,8 +225,8 @@ const careerContactUs = {
       text: "hr@incomsystem.ru",
     },
   ],
-  background: "/images/production-and-services/bg.webp",
-  backgroundMobile: "/images/production-and-services/bg-mobile.webp",
+  background: "/images/contact-us/bg.webp",
+  backgroundMobile: "/images/contact-us/bg-mobile.webp",
   formAction: "#",
   submitText: "Отправить резюме",
   policyText: "Нажимая кнопку, вы даете согласие на обработку&nbsp;",
@@ -292,7 +327,8 @@ export default {
           title: "Участие<br>в&nbsp;R&amp;D проектах",
           text: "(НИОКР, ОКР, патенты).",
           image: "/images/career/students/3.webp",
-          imageAlt: "Студенты и наставник работают с лабораторным оборудованием",
+          imageAlt:
+            "Студенты и наставник работают с лабораторным оборудованием",
           mediaFirst: true,
         },
         {
@@ -308,6 +344,7 @@ export default {
     companyFeatures: {
       caption: "Почему мы",
       title: "8 причин выбрать нашу компанию",
+      titleClassName: "company-features__title--mobile-large",
       showHint: true,
       showEmblem: false,
       scrollHintText: "Листайте влево/вправо",
@@ -331,8 +368,7 @@ export default {
           className: "company-features__item--theme-soft",
         },
         {
-          title:
-            "Сильная корпоративная культура и&nbsp;сплоченный коллектив",
+          title: "Сильная корпоративная культура и&nbsp;сплоченный коллектив",
           text: "У нас создана благоприятная атмосфера, где ценятся взаимопомощь, командная работа и&nbsp;внерабочие мероприятия, объединяющие сотрудников.",
           className: "company-features__item--theme-soft",
         },
@@ -382,6 +418,12 @@ export default {
       counterText: "4 из 32 вакансий",
       buttonText: "Загрузить еще",
       items: careerVacanciesItems,
+    },
+    careerFaq: {
+      title: "Часто<br>задаваемые<br>вопросы",
+      counterText: "6 вопросов",
+      ariaLabel: "Часто задаваемые вопросы о работе в НИЦ «Инкомсистем»",
+      items: careerFaqItems,
     },
     pressCenter: {
       title: "Новости",

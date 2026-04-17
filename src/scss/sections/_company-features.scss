@@ -35,7 +35,7 @@
 
     @include mq.down(sm) {
       grid-column: auto;
-      gap: 2rem;
+      gap: 1rem;
       margin-bottom: 4rem;
     }
   }
@@ -66,6 +66,15 @@
       max-width: none;
       font-size: 2rem;
       letter-spacing: -0.04rem;
+
+      &--mobile-large {
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: -0.06rem;
+        text-wrap: balance;
+      }
     }
   }
 
@@ -104,11 +113,13 @@
 
     @include mq.down(sm) {
       width: max-content;
-      grid-auto-flow: column;
-      grid-auto-columns: 30rem;
-      grid-template-rows: auto auto;
-      column-gap: 2rem;
-      row-gap: 2rem;
+      display: flex;
+      // grid-auto-flow: column;
+      // grid-auto-columns: 30rem;
+      // grid-template-rows: auto auto;
+      // column-gap: 2rem;
+      // row-gap: 2rem;
+      gap: 2rem;
     }
   }
 
@@ -123,12 +134,14 @@
     height: auto;
 
     @include mq.down(sm) {
-      display: grid;
-      grid-row: span 2;
-      grid-template-rows: subgrid;
-      align-content: start;
-      width: auto;
+      // display: grid;
+      // grid-row: span 2;
+      // grid-template-rows: subgrid;
+      // align-content: start;
       padding: 2rem;
+      width: auto;
+      gap: 4rem;
+      width: 30rem;
       border-radius: 0.5rem;
       background-color: var(--company-feature-card-bg);
       color: var(--company-feature-card-color);
@@ -235,8 +248,9 @@
     line-height: 1.4;
 
     @include mq.down(sm) {
-      max-width: 23.8rem;
-      margin-top: 0;
+      margin-top: auto;
+      align-self: flex-end;
+      max-width: none;
     }
   }
 

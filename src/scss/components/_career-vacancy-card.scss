@@ -1,11 +1,22 @@
+@use "tools/media" as mq;
+
 @layer components {
   .vacancy-card {
     display: grid;
-    grid-row: span 5;
+    grid-row: 1 / -1;
     grid-template-rows: subgrid;
     align-content: start;
     min-height: 50.5rem;
     color: #fff;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      grid-row: auto;
+      grid-template-rows: none;
+      align-content: normal;
+      min-height: auto;
+    }
   }
 
   .vacancy-card__city {
@@ -32,6 +43,14 @@
     font-weight: 500;
     line-height: 1.05;
     letter-spacing: -0.06rem;
+
+    @include mq.down(sm) {
+      max-width: 30rem;
+      margin-top: 5rem;
+      font-size: 2rem;
+      line-height: 1.2;
+      letter-spacing: -0.04rem;
+    }
   }
 
   .vacancy-card__details {
@@ -39,12 +58,19 @@
     gap: 2.5rem;
     width: fit-content;
     margin-top: 2.5rem;
+
+    @include mq.down(sm) {
+      gap: 1.5rem;
+      width: 100%;
+      margin-top: 1.5rem;
+    }
   }
 
   .vacancy-card__detail {
     display: flex;
     align-items: center;
     gap: 1rem;
+    width: 100%;
   }
 
   .vacancy-card__icon {
@@ -69,6 +95,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    min-width: 0;
   }
 
   .vacancy-card__detail-label {
@@ -97,6 +124,14 @@
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.06rem;
+
+    @include mq.down(sm) {
+      max-width: 30rem;
+      margin-top: 5rem;
+      font-size: 2rem;
+      line-height: 1.2;
+      letter-spacing: -0.04rem;
+    }
   }
 
   .vacancy-card__link {
@@ -110,5 +145,9 @@
     line-height: 1.05;
     letter-spacing: 0.14rem;
     text-transform: uppercase;
+
+    @include mq.down(sm) {
+      margin-top: 5rem;
+    }
   }
 }

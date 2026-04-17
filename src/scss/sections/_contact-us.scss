@@ -22,7 +22,7 @@
 
     @include mq.down(sm) {
       font-size: 1.2rem;
-      margin-bottom: 3.2rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -63,9 +63,13 @@
     @include mq.down(sm) {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 0rem;
       padding: 4rem 2.1rem 4rem;
       min-height: auto;
+
+      .contact-us--career & {
+        padding-bottom: 8rem;
+      }
     }
   }
 
@@ -77,6 +81,7 @@
 
     @include mq.down(sm) {
       gap: 2rem;
+      display: contents;
     }
   }
 
@@ -86,6 +91,12 @@
     align-items: flex-start;
     gap: 1.6rem;
     margin-top: auto;
+
+    @include mq.down(sm) {
+      margin: 0;
+      order: 20;
+      margin-top: 8rem;
+    }
   }
 
   .contact-us__contact {
@@ -114,8 +125,11 @@
 
     @include mq.down(sm) {
       font-size: 3rem;
-      line-height: 1.2;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%;
       letter-spacing: -0.06rem;
+      text-transform: uppercase;
     }
   }
 
@@ -131,25 +145,24 @@
       font-size: 1.4rem;
       line-height: 1.05;
       letter-spacing: -0.014rem;
+      text-wrap: balance;
+      margin-top: 1.5rem;
     }
   }
 
   .contact-us__form {
     grid-column: 5 / -1;
-    justify-self: start;
-
-    @include mq.down(sm) {
-      grid-column: auto;
-    }
-  }
-
-  .contact-us-form {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
+    @include mq.down(sm) {
+      grid-column: auto;
+      gap: 0;
+      margin-top: 3.2rem;
+    }
   }
 
-  .contact-us-form__row {
+  .contact-us__form-row {
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -167,11 +180,11 @@
     }
   }
 
-  .contact-us-form__row:first-child {
+  .contact-us__form-row:first-child {
     border-top: 0;
   }
 
-  .contact-us-form__label {
+  .contact-us__form-label {
     font-family: var(--inter);
     font-size: 1.4rem;
     font-style: normal;
@@ -186,13 +199,13 @@
     }
   }
 
-  .contact-us-form__label--file {
+  .contact-us__form-label--file {
     text-decoration: underline;
     text-decoration-skip-ink: none;
     text-underline-offset: 0.2rem;
   }
 
-  .contact-us-form__control {
+  .contact-us__form-control {
     min-width: 0;
 
     @include mq.down(sm) {
@@ -201,7 +214,9 @@
     }
   }
 
-  .contact-us-form__control :is(input, textarea, .contact-us-form__file-value) {
+  .contact-us__form-input,
+  .contact-us__form-textarea,
+  .contact-us__form-file-value {
     color: #fff;
     font-family: var(--inter);
     font-size: 2.2rem;
@@ -218,12 +233,12 @@
     }
   }
 
-  .contact-us-form__control--file {
+  .contact-us__form-control--file {
     position: relative;
     cursor: pointer;
   }
 
-  .contact-us-form__file-input {
+  .contact-us__form-file-input {
     position: absolute;
     left: 0;
     top: 0;
@@ -233,7 +248,7 @@
     cursor: pointer;
   }
 
-  .contact-us-form__file-value {
+  .contact-us__form-file-value {
     display: block;
     width: 100%;
     overflow: hidden;
@@ -242,21 +257,22 @@
     pointer-events: none;
   }
 
-  .contact-us-form__file-value--placeholder {
+  .contact-us__form-file-value--placeholder {
     opacity: 0.3;
   }
 
-  .contact-us-form__control textarea {
+  .contact-us__form-textarea {
     height: 8rem;
     field-sizing: fixed;
   }
 
-  .contact-us-form__control :is(input, textarea)::placeholder {
+  .contact-us__form-input::placeholder,
+  .contact-us__form-textarea::placeholder {
     color: #fff;
     opacity: 0.3;
   }
 
-  .contact-us-form__footer {
+  .contact-us__form-footer {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4rem;
@@ -272,7 +288,7 @@
     }
   }
 
-  .contact-us-form__submit {
+  .contact-us__form-submit {
     max-width: 100%;
     flex-shrink: 0;
 
@@ -283,7 +299,7 @@
     }
   }
 
-  .contact-us-form__policy {
+  .contact-us__form-policy {
     color: rgb(255 255 255 / 70%);
 
     font-family: var(--inter);
@@ -299,7 +315,7 @@
     }
   }
 
-  .contact-us-form__policy-link {
+  .contact-us__form-policy-link {
     text-decoration: underline;
     text-decoration-skip-ink: none;
 
@@ -310,7 +326,7 @@
     }
   }
 
-  .contact-us-form__row .validation-error {
+  .contact-us__form-row .validation-error {
     grid-column: 2 / -1;
     margin-top: 0.8rem;
     font-family: var(--inter);

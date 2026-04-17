@@ -3,7 +3,7 @@
         <div class="company-features__grid">
             <div class="company-features__intro">
                 <p class="company-features__caption">{{companyFeatures.caption}}</p>
-                <h2 class="company-features__title">{{{companyFeatures.title}}}</h2>
+                <h2 class="company-features__title{{#if companyFeatures.titleClassName}} {{companyFeatures.titleClassName}}{{/if}}">{{{companyFeatures.title}}}</h2>
             </div>
 
             <div class="company-features__slider">

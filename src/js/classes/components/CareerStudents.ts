@@ -47,7 +47,6 @@ class CareerStudents extends Component {
     this.unmountSlider();
     this.slider = new Swiper(this.sliderElement, {
       slidesPerView: "auto",
-      spaceBetween: 20,
       speed: 600,
       watchOverflow: true,
     });

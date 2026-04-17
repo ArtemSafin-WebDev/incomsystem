@@ -30,8 +30,7 @@
     letter-spacing: -0.48rem;
 
     @include mq.down(sm) {
-      max-width: 29rem;
-      margin-top: 4.4rem;
+      margin-top: 0;
       font-size: 3rem;
       font-weight: 700;
       line-height: 1.2;

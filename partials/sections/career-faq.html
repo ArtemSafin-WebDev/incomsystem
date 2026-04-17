@@ -1,0 +1,40 @@
+<section class="career-faq" aria-labelledby="career-faq-title">
+    <div class="container">
+        <h2 class="career-faq__title" id="career-faq-title">{{{careerFaq.title}}}</h2>
+
+        <div class="career-faq__content">
+            <p class="career-faq__counter">{{careerFaq.counterText}}</p>
+
+            <ul class="career-faq__list" aria-label="{{careerFaq.ariaLabel}}">
+                {{#each careerFaq.items}}
+                <li class="career-faq__item js-accordion">
+                    <button class="career-faq__button js-accordion-btn"
+                        type="button"
+                        id="{{id}}-button"
+                        aria-expanded="false"
+                        aria-controls="{{id}}-panel">
+                        <span class="career-faq__question">{{{question}}}</span>
+                        <span class="career-faq__icon" aria-hidden="true">
+                            <svg width="12" height="12" aria-hidden="true">
+                                <use xlink:href="#arrows/right"></use>
+                            </svg>
+                        </span>
+                    </button>
+
+                    <div class="career-faq__dropdown js-accordion-dropdown"
+                        id="{{id}}-panel"
+                        role="region"
+                        aria-labelledby="{{id}}-button"
+                        aria-hidden="true">
+                        <div class="career-faq__dropdown-inner">
+                            <div class="career-faq__answer">
+                                <p>{{{answer}}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</section>

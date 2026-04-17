@@ -1,12 +1,22 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .career-success-stories {
     margin-bottom: 15rem;
     background-image: none;
     position: relative;
     z-index: 5;
+
+    @include mq.down(sm) {
+      margin-bottom: 8rem;
+    }
   }
 
   .career-success-stories__navigation {
     margin-top: 15.6rem;
+    @include mq.down(sm) {
+      margin-top: 2rem;
+      justify-content: flex-start;
+    }
   }
 }

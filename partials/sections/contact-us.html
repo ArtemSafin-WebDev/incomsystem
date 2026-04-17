@@ -28,33 +28,35 @@
                     {{/if}}
                 </div>
 
-                <form class="contact-us__form contact-us-form js-form"
+                <form class="contact-us__form js-form"
                     action="{{contactUs.formAction}}"
                     method="post">
-                    <div class="contact-us-form__rows">
+                    <div class="contact-us__form-rows">
                         {{#each contactUs.fields}}
-                        <div class="contact-us-form__row {{#if this.isTextarea}}contact-us-form__row--message{{/if}}{{#if this.isFile}} contact-us-form__row--file{{/if}}">
-                            <label class="contact-us-form__label{{#if this.isFile}} contact-us-form__label--file{{/if}}" for="{{this.id}}">{{this.label}}</label>
+                        <div class="contact-us__form-row {{#if this.isTextarea}}contact-us__form-row--message{{/if}}{{#if this.isFile}} contact-us__form-row--file{{/if}}">
+                            <label class="contact-us__form-label{{#if this.isFile}} contact-us__form-label--file{{/if}}" for="{{this.id}}">{{this.label}}</label>
 
-                            <div class="contact-us-form__control{{#if this.isFile}} contact-us-form__control--file js-file-field{{/if}}">
+                            <div class="contact-us__form-control{{#if this.isFile}} contact-us__form-control--file js-file-field{{/if}}">
                                 {{#if this.isTextarea}}
-                                <textarea id="{{this.id}}"
+                                <textarea class="contact-us__form-textarea"
+                                    id="{{this.id}}"
                                     name="{{this.name}}"
                                     placeholder="{{this.placeholder}}"
                                     rows="1"
                                     {{#if this.required}}required{{/if}}></textarea>
                                 {{else}}
                                 {{#if this.isFile}}
-                                <input class="contact-us-form__file-input"
+                                <input class="contact-us__form-file-input"
                                     id="{{this.id}}"
                                     name="{{this.name}}"
                                     type="{{this.type}}"
                                     {{#if this.accept}}accept="{{this.accept}}"{{/if}}
                                     {{#if this.required}}required{{/if}}>
-                                <span class="contact-us-form__file-value contact-us-form__file-value--placeholder"
+                                <span class="contact-us__form-file-value contact-us__form-file-value--placeholder"
                                     data-placeholder="{{this.placeholder}}">{{this.placeholder}}</span>
                                 {{else}}
-                                <input id="{{this.id}}"
+                                <input class="contact-us__form-input"
+                                    id="{{this.id}}"
                                     name="{{this.name}}"
                                     type="{{this.type}}"
                                     placeholder="{{this.placeholder}}"
@@ -67,12 +69,12 @@
                         {{/each}}
                     </div>
 
-                    <div class="contact-us-form__footer">
-                        <button class="btn contact-us-form__submit" type="submit">{{contactUs.submitText}}</button>
+                    <div class="contact-us__form-footer">
+                        <button class="btn contact-us__form-submit" type="submit">{{contactUs.submitText}}</button>
 
-                        <p class="contact-us-form__policy">
+                        <p class="contact-us__form-policy">
                             {{{contactUs.policyText}}}
-                            <a class="contact-us-form__policy-link"
+                            <a class="contact-us__form-policy-link"
                                 href="{{contactUs.policyLinkHref}}"
                                 target="_blank"
                                 rel="noreferrer noopener">{{contactUs.policyLinkText}}</a>

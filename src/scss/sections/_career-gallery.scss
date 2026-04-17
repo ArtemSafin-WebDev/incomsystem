@@ -61,11 +61,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    @include mq.down(sm) {
-      transform: scale(1.25);
-      transform-origin: center;
-    }
   }
 
   .career-gallery__navigation {

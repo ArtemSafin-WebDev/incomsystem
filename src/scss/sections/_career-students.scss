@@ -18,12 +18,17 @@
     }
 
     @include mq.down(sm) {
-      --career-students-overlap: 10.5rem;
+      --career-students-overlap: 20rem;
 
-      margin-top: calc(var(--career-students-overlap) * -1);
-      padding-top: 35.9rem;
-      padding-bottom: 10.6rem;
+      margin-top: calc((var(--career-students-overlap, 0) + 8rem) * -1);
+      padding-top: 25rem;
+      padding-bottom: 25rem;
       overflow: hidden;
+
+      &:has(+ .company-leadership) {
+        padding-bottom: 25rem;
+        margin-bottom: -22rem;
+      }
     }
   }
 
@@ -68,9 +73,16 @@
 
   .career-students__item {
     @include mq.down(sm) {
-      width: 48.5rem;
+      width: 22.5rem;
       flex: 0 0 auto;
       box-sizing: border-box;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      margin-right: 2rem;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
@@ -81,9 +93,10 @@
 
     @include mq.down(sm) {
       display: flex;
-      align-items: center;
-      gap: 2rem;
-      width: max-content;
+      flex-direction: column;
+      width: 22.5rem;
+      flex-grow: 1;
+      min-height: 22rem;
     }
   }
 
@@ -95,12 +108,13 @@
 
     @include mq.down(sm) {
       order: 1;
-      width: 22.5rem;
+
       min-height: auto;
       padding: 2rem;
       justify-content: flex-start;
-      gap: 8rem;
+      gap: 4rem;
       box-sizing: border-box;
+      flex-grow: 1;
     }
   }
 
@@ -155,6 +169,7 @@
 
     @include mq.down(sm) {
       max-width: none;
+      margin-top: auto;
     }
   }
 
@@ -164,10 +179,7 @@
     background: rgba(255, 255, 255, 0.08);
 
     @include mq.down(sm) {
-      order: 2;
-      width: 24rem;
-      flex: 0 0 24rem;
-      background: none;
+      display: none;
     }
   }
 
@@ -187,9 +199,9 @@
 
     @include mq.down(sm) {
       display: inline-flex;
-      align-items: flex-end;
+      align-items: center;
       gap: 0.5rem;
-      margin-top: 1.7rem;
+      margin-top: 2rem;
       font-family: var(--inter);
       font-size: 0.8rem;
       font-style: normal;
@@ -227,7 +239,8 @@
 
     @include mq.down(sm) {
       width: auto;
-      margin-top: 3.9rem;
+      margin-top: 4rem;
+      padding: 1.6rem 1rem;
     }
   }
 

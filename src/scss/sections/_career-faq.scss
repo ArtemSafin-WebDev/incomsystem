@@ -1,0 +1,153 @@
+@use "tools/media" as mq;
+
+@layer sections {
+  .career-faq {
+    margin-bottom: 15rem;
+    color: #222233;
+
+    @include mq.down(sm) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  .career-faq__title {
+    max-width: 41.2rem;
+    font-family: var(--rf-dewi);
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+
+    @include mq.down(sm) {
+      max-width: 21.3rem;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+    }
+  }
+
+  .career-faq__content {
+    margin-top: 12.4rem;
+
+    @include mq.down(sm) {
+      margin-top: 4rem;
+    }
+  }
+
+  .career-faq__counter {
+    margin-bottom: 4rem;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgb(34 34 51 / 50%);
+
+    @include mq.down(sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  .career-faq__list {
+    width: 100%;
+  }
+
+  .career-faq__item {
+    border-top: 1px solid #ccc;
+  }
+
+  .career-faq__item:first-child {
+    border-top: 0;
+  }
+
+  .career-faq__item:last-child {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .career-faq__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+    padding-block: 3rem;
+
+    @include mq.down(sm) {
+      gap: 0;
+      padding-block: 2.4rem;
+    }
+  }
+
+  .career-faq__question {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.06rem;
+
+    @include mq.down(sm) {
+      font-size: 2rem;
+      letter-spacing: -0.04rem;
+    }
+  }
+
+  .career-faq__icon {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 1.2rem;
+    height: 1.2rem;
+    color: #222233;
+    transition: transform 0.2s ease;
+  }
+
+  .career-faq__icon svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
+  }
+
+  .career-faq__item.active .career-faq__icon {
+    transform: rotate(-90deg);
+  }
+
+  .career-faq__dropdown {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition:
+      grid-template-rows 0.3s ease,
+      opacity 0.2s ease;
+  }
+
+  .career-faq__item.active .career-faq__dropdown {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  .career-faq__dropdown-inner {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .career-faq__answer {
+    max-width: 184rem;
+    padding-bottom: 3rem;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+
+    @include mq.down(sm) {
+      padding-bottom: 2.4rem;
+    }
+  }
+}

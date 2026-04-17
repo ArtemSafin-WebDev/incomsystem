@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer components {
   .career-success-story-card {
     display: flex;
@@ -30,6 +32,10 @@
     width: 100%;
     height: 100%;
     background: rgba(34, 34, 51, 0.7);
+
+    @include mq.down(sm) {
+      background: rgba(34, 34, 51, 0.5);
+    }
   }
 
   .career-success-story-card__play {
@@ -42,6 +48,11 @@
     width: 3.2rem;
     height: 5rem;
     transform: translate(-50%, -50%);
+
+    @include mq.down(sm) {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
 
     svg {
       display: block;
@@ -88,6 +99,14 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.06rem;
+
+    @include mq.down(sm) {
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+      letter-spacing: -0.04rem;
+    }
   }
 
   .career-success-story-card__position {

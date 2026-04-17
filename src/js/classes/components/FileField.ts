@@ -9,7 +9,7 @@ class FileField extends Component {
     super(element);
 
     this.input = element.querySelector<HTMLInputElement>('input[type="file"]');
-    this.value = element.querySelector<HTMLElement>(".contact-us-form__file-value");
+    this.value = element.querySelector<HTMLElement>(".contact-us__form-file-value");
     this.form = this.input?.form ?? null;
 
     this.handleChange = this.handleChange.bind(this);
@@ -37,7 +37,7 @@ class FileField extends Component {
 
     this.value.textContent = hasFile ? fileName : placeholder;
     this.value.classList.toggle(
-      "contact-us-form__file-value--placeholder",
+      "contact-us__form-file-value--placeholder",
       !hasFile
     );
   }
