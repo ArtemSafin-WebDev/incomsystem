@@ -46,7 +46,7 @@ class ProductionAndServices extends Component {
 
     gsap.set(this.previews, {
       autoAlpha: 0,
-      scale: 0,
+      y: 40,
       transformOrigin: "50% 50%",
     });
     this.items.forEach((item) => item.classList.remove("is-active"));
@@ -160,7 +160,7 @@ class ProductionAndServices extends Component {
 
     gsap.to(currentPreview, {
       autoAlpha: 0,
-      scale: 0,
+      y: -40,
       duration: 0.18,
       ease: "power2.in",
       overwrite: true,
@@ -191,10 +191,10 @@ class ProductionAndServices extends Component {
 
     this.items[nextIndex]?.classList.add("is-active");
 
-    gsap.set(nextPreview, { autoAlpha: 0, scale: 0 });
+    gsap.set(nextPreview, { autoAlpha: 0, y: 40 });
     gsap.to(nextPreview, {
       autoAlpha: 1,
-      scale: 1,
+      y: 0,
       duration: 0.22,
       ease: "power2.out",
       overwrite: true,
@@ -256,7 +256,7 @@ class ProductionAndServices extends Component {
     this.isTransitioning = false;
     this.items.forEach((item) => item.classList.remove("is-active"));
     gsap.killTweensOf(this.previews);
-    gsap.set(this.previews, { autoAlpha: 0, scale: 0 });
+    gsap.set(this.previews, { autoAlpha: 0, y: 40 });
   }
 }
 
