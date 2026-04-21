@@ -3,33 +3,8 @@
 @layer sections {
   .about-company {
     position: relative;
+    z-index: 1;
     color: #fff;
-    background:
-      linear-gradient(180deg, #001b36 0%, #001932 100%),
-      linear-gradient(90deg, #ebebeb 0%, #ebebeb 100%);
-    isolation: isolate;
-    overflow: clip;
-  }
-
-  .about-company__bg {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-
-    img {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 111.15%;
-      height: 100%;
-      object-fit: cover;
-      max-width: none;
-
-      @include mq.down(sm) {
-        width: 100%;
-        object-position: center top;
-      }
-    }
   }
 
   .about-company__grid {

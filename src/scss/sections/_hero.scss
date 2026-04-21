@@ -6,18 +6,38 @@
     color: #fff;
     background-color: #001932;
     overflow: clip;
-    min-height: 100vh;
     isolation: isolate;
-
-    @include mq.down(sm) {
-      min-height: 100svh;
-    }
   }
 
   .hero__bg {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: -100vh;
+    overflow: clip;
+    pointer-events: none;
+
+    @include mq.down(sm) {
+      height: 100svh;
+      margin-bottom: -100svh;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 25, 50, 0.12) 0%,
+        rgba(0, 25, 50, 0.45) 48%,
+        rgba(0, 25, 50, 0.78) 100%
+      );
+    }
 
     img,
     video {
@@ -30,9 +50,11 @@
     }
 
     picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+
       @include mq.down(sm) {
-        display: block;
-        width: 100%;
         height: 100%;
       }
     }
@@ -44,15 +66,31 @@
     }
   }
 
-  .hero__content {
+  .hero__bg-video {
+    opacity: 0.85;
+
+    @media (prefers-reduced-motion: reduce) {
+      display: none;
+    }
+  }
+
+  .hero__intro {
     position: relative;
     z-index: 1;
+    min-height: 100vh;
+
+    @include mq.down(sm) {
+      min-height: 100svh;
+    }
+  }
+
+  .hero__content {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 2rem;
     padding-top: 24rem;
     padding-bottom: 4rem;
-    min-height: 85rem;
     min-height: 70vh;
 
     @include mq.down(sm) {

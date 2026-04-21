@@ -1,34 +1,42 @@
-<section class="hero">
-    <div class="hero__bg">
+<section class="hero js-intro-bg">
+    <div class="hero__bg" aria-hidden="true">
         <picture>
             <source media="(max-width: 576px)" srcset="/images/hero/bg-mobile.webp">
             <img src="/images/hero/bg.webp" alt="">
         </picture>
+        <video class="hero__bg-video js-intro-bg-video" autoplay muted loop playsinline preload="none"
+            poster="/images/hero/bg.webp">
+            <source data-src="/videos/intro-bg.webm" type="video/webm">
+            <source data-src="/videos/intro-bg.mp4" type="video/mp4">
+        </video>
     </div>
-    <div class="container">
-        <div class="hero__content">
-            <div class="hero__overlay">
+    <div class="hero__intro">
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__overlay">
 
-            </div>
-            <div class="hero__content-inner">
-                <div class="hero__text-content">
-                    <h1 class="hero__title">{{hero.title}}</h1>
-                    <p class="hero__description">{{hero.description}}</p>
-                    <p class="hero__caption">{{hero.caption}}</p>
                 </div>
-                <ul class="hero__social-list">
-                    {{#each hero.socials}}
-                    <li class="hero__social-item">
-                        <a class="hero__social-link" href="{{this.href}}" aria-label="{{this.label}}">
-                            <svg width="24" height="24" aria-hidden="true">
-                                <use xlink:href="#{{this.icon}}"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    {{/each}}
-                </ul>
+                <div class="hero__content-inner">
+                    <div class="hero__text-content">
+                        <h1 class="hero__title">{{hero.title}}</h1>
+                        <p class="hero__description">{{hero.description}}</p>
+                        <p class="hero__caption">{{hero.caption}}</p>
+                    </div>
+                    <ul class="hero__social-list">
+                        {{#each hero.socials}}
+                        <li class="hero__social-item">
+                            <a class="hero__social-link" href="{{this.href}}" aria-label="{{this.label}}">
+                                <svg width="24" height="24" aria-hidden="true">
+                                    <use xlink:href="#{{this.icon}}"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
+    {{> sections/about-company aboutCompany=aboutCompany }}
 </section>
