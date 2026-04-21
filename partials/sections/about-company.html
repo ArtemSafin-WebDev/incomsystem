@@ -1,4 +1,4 @@
-<section class="about-company js-header-theme-section" data-compact-trigger data-header-theme="white">
+<section class="about-company js-about-company js-header-theme-section" data-compact-trigger data-header-theme="white">
     <div class="container">
         <div class="about-company__grid">
             <h2 class="about-company__title">{{aboutCompany.title}}</h2>
@@ -8,7 +8,9 @@
                     {{#each aboutCompany.stats}}
                     <li class="about-company__stats-item">
                         <p class="about-company__stats-value">
-                            <span>{{this.value}}</span><span class="about-company__stats-suffix">{{this.suffix}}</span>
+                            <span class="about-company__stats-value-inner">
+                                <span>{{this.value}}</span><span class="about-company__stats-suffix">{{this.suffix}}</span>
+                            </span>
                         </p>
                         <div class="about-company__stats-text">
                             <p class="about-company__stats-title">{{this.title}}</p>
