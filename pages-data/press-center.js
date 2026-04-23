@@ -144,6 +144,8 @@ export default {
             name: "year",
             placeholder: "2023",
             ariaLabel: "Выберите год",
+            clearable: true,
+            clearAriaLabel: "Очистить выбранный год",
             options: [
               {
                 id: "press-center-year-2025",
