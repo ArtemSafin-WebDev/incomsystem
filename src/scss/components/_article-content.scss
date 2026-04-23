@@ -152,13 +152,8 @@
 
     :scope > figure > img {
       width: 100%;
-      aspect-ratio: 1840 / 794;
+      height: auto;
       border-radius: 0.5rem;
-      object-fit: cover;
-
-      @include mq.down(sm) {
-        aspect-ratio: 343 / 148;
-      }
     }
 
     :scope > :is(h2, h3, figure),
