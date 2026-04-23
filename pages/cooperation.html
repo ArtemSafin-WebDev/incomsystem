@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {{> layout/meta }}
+</head>
+
+<body>
+  {{> layout/header }}
+  {{> components/mobile-menu mobileMenu=mobileMenu }}
+  <main class="page-main">
+    {{> sections/career-hero careerHero=careerHero }}
+    {{> sections/cooperation-types cooperationTypes=cooperationTypes }}
+    {{> sections/contact-us contactUs=contactUs }}
+    {{> sections/engineering-center engineeringCenter=engineeringCenter }}
+  </main>
+  {{> layout/footer }}
+
+  <script type="module" src="/src/js/main.ts"></script>
+</body>
+
+</html>

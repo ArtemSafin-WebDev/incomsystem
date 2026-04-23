@@ -1,7 +1,7 @@
 <section class="career-hero">
     <div class="container">
         {{> components/breadcrumbs careerHero.breadcrumbs }}
-        <h1 class="career-hero__title">{{careerHero.title}}</h1>
+        <h1 class="career-hero__title">{{{careerHero.title}}}</h1>
         {{#if careerHero.caption}}
         <p class="career-hero__caption">{{careerHero.caption}}</p>
         {{/if}}

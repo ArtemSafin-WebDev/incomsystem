@@ -1,0 +1,34 @@
+<section class="gallery-hero">
+    <div class="container">
+        {{> components/breadcrumbs gallery.breadcrumbs }}
+
+        <article class="gallery-hero__banner">
+            <img class="gallery-hero__image" src="{{gallery.hero.image}}" alt="{{gallery.hero.imageAlt}}">
+            <div class="gallery-hero__overlay" aria-hidden="true"></div>
+
+            <div class="gallery-hero__top">
+                <ul class="gallery-hero__tags">
+                    {{#each gallery.hero.tags}}
+                    <li class="gallery-hero__tag">{{this}}</li>
+                    {{/each}}
+                </ul>
+
+                <time class="gallery-hero__date" datetime="{{gallery.hero.datetime}}">{{gallery.hero.date}}</time>
+            </div>
+
+            <h1 class="gallery-hero__title">{{gallery.hero.title}}</h1>
+        </article>
+    </div>
+</section>
+
+<section class="gallery-grid">
+    <div class="container">
+        <ul class="gallery-grid__list" aria-label="{{gallery.gallery.ariaLabel}}">
+            {{#each gallery.gallery.items}}
+            {{> components/cards/gallery-card item=this }}
+            {{/each}}
+        </ul>
+
+        <button class="btn btn--dark-text gallery-grid__button" type="button">{{gallery.gallery.buttonText}}</button>
+    </div>
+</section>

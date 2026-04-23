@@ -99,7 +99,7 @@ const albumItems = [
   },
 ];
 
-const galleryDetailContactUs = {
+const galleryContactUs = {
   ...contactUs,
   className: "contact-us--press-center-subscribe",
   caption: "Подписка",
@@ -108,7 +108,7 @@ const galleryDetailContactUs = {
   submitText: "Подписаться",
   fields: [
     {
-      id: "gallery-detail-subscribe-email",
+      id: "gallery-subscribe-email",
       name: "email",
       label: "Электронная почта",
       placeholder: "mail@company.ru",
@@ -120,17 +120,17 @@ const galleryDetailContactUs = {
 };
 
 export default {
-  "/gallery-detail.html": {
+  "/gallery.html": {
     title: "Парусная регата - 2024",
     headerCompactTheme: true,
     mobileMenu,
     footer,
-    contactUs: galleryDetailContactUs,
+    contactUs: galleryContactUs,
     engineeringCenter: {
       ...engineeringCenter,
       className: "engineering-center--press-center",
     },
-    galleryDetail: {
+    gallery: {
       breadcrumbs: {
         ariaLabel: "Хлебные крошки",
         items: [

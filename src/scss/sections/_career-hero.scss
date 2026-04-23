@@ -56,7 +56,7 @@
   .career-hero__media {
     position: relative;
     width: 100vw;
-    height: 89rem;
+    aspect-ratio: 1920 / 890;
     margin-top: 9.2rem;
     margin-left: calc(50% - 50vw);
     overflow: hidden;
@@ -64,7 +64,7 @@
 
     @include mq.down(sm) {
       width: 100%;
-      height: 25rem;
+      aspect-ratio: 375 / 250;
       margin-top: 1.6rem;
       margin-left: 0;
     }
@@ -74,8 +74,8 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
   }
 
   .career-hero__image {
@@ -83,7 +83,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     object-fit: cover;
 
     @include mq.down(sm) {
@@ -95,16 +95,19 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
     background: rgba(34, 34, 51, 0.5);
     pointer-events: none;
   }
 
   .career-hero__media-container {
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
     z-index: 1;
-    height: 100%;
   }
 
   .career-hero__description {

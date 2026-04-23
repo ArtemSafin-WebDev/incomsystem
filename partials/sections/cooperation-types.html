@@ -1,0 +1,11 @@
+<section class="cooperation-types">
+    <div class="container">
+        <ul class="cooperation-types__list">
+            {{#each cooperationTypes.items}}
+            <li class="cooperation-types__item">
+                {{> components/cards/cooperation-card item=this detailsText=../cooperationTypes.detailsText }}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

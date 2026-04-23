@@ -1,0 +1,256 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: "#"
+      - generic [ref=e6]:
+        - link "Позвонить" [ref=e7] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e8]
+        - button "Открыть меню" [ref=e10] [cursor=pointer]:
+          - img [ref=e11]
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - link:
+            - /url: /
+            - img
+          - generic:
+            - link:
+              - /url: "#"
+              - img
+            - button:
+              - img
+        - search:
+          - searchbox
+          - button:
+            - img
+        - navigation:
+          - list:
+            - listitem:
+              - link:
+                - /url: "#"
+                - text: Продукция и услуги
+            - listitem:
+              - link:
+                - /url: "#"
+                - text: Проекты
+            - listitem:
+              - link:
+                - /url: "#"
+                - text: О компании
+            - listitem:
+              - link:
+                - /url: "#"
+                - text: Документация
+            - listitem:
+              - link:
+                - /url: "#"
+                - text: Контакты
+        - generic:
+          - list:
+            - listitem:
+              - link:
+                - /url: "#"
+                - img
+            - listitem:
+              - link:
+                - /url: "#"
+                - img
+          - link:
+            - /url: "#"
+            - text: связаться с нами
+  - main [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - text: /
+        - heading "НИЦ «Инкомсистем» приглашает к сотрудничеству" [level=1] [ref=e16]:
+          - text: НИЦ «Инкомсистем»
+          - text: приглашает к сотрудничеству
+      - generic [ref=e17]:
+        - img "Команда НИЦ Инкомсистем обсуждает сотрудничество" [ref=e19]
+        - generic:
+          - paragraph [ref=e20]: Центр активно сотрудничает с ведущими проектными институтами нефтегазовой отрасли.
+          - link [ref=e21] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e22]
+    - list [ref=e26]:
+      - listitem [ref=e27]:
+        - article [ref=e28]:
+          - img "Представитель заказчика на объекте" [ref=e30]
+          - paragraph [ref=e31]: 145 заказчиков
+          - generic [ref=e32]:
+            - generic [ref=e33]:
+              - heading "Заказчики" [level=2] [ref=e34]
+              - paragraph [ref=e35]: Центр активно сотрудничает с ведущими проектными институтами нефтегазовой отрасли.
+            - link "Подробнее" [ref=e36] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e37]: Подробнее
+              - img [ref=e38]
+          - list "Логотипы заказчиков" [ref=e40]:
+            - listitem [ref=e41]:
+              - img "Газпром" [ref=e42]
+            - listitem [ref=e43]:
+              - img "Башнефть" [ref=e44]
+            - listitem [ref=e45]:
+              - img "Газпром" [ref=e46]
+      - listitem [ref=e47]:
+        - article [ref=e48]:
+          - img "Партнер компании" [ref=e50]
+          - paragraph [ref=e51]: 25 партнеров
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - heading "Партнеры" [level=2] [ref=e54]
+              - paragraph [ref=e55]: Центр активно сотрудничает с ведущими проектными институтами нефтегазовой отрасли.
+            - link "Подробнее" [ref=e56] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e57]: Подробнее
+              - img [ref=e58]
+          - list "Логотипы партнеров" [ref=e60]:
+            - listitem [ref=e61]:
+              - img "Газпром" [ref=e62]
+            - listitem [ref=e63]:
+              - img "Башнефть" [ref=e64]
+            - listitem [ref=e65]:
+              - img "Газпром" [ref=e66]
+      - listitem [ref=e67]:
+        - article [ref=e68]:
+          - img "Системный интегратор АБАК" [ref=e70]
+          - paragraph [ref=e71]: 9 организаций
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - heading "Системные интеграторы АБАК" [level=2] [ref=e74]
+              - paragraph [ref=e75]: Центр активно сотрудничает с ведущими проектными институтами нефтегазовой отрасли.
+            - link "Подробнее" [ref=e76] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e77]: Подробнее
+              - img [ref=e78]
+          - list "Логотипы системных интеграторов" [ref=e80]:
+            - listitem [ref=e81]:
+              - img "Газпром" [ref=e82]
+            - listitem [ref=e83]:
+              - img "Башнефть" [ref=e84]
+            - listitem [ref=e85]:
+              - img "Газпром" [ref=e86]
+      - listitem [ref=e87]:
+        - article [ref=e88]:
+          - img "Представитель университета" [ref=e90]
+          - paragraph [ref=e91]: 5 организаций
+          - generic [ref=e92]:
+            - generic [ref=e93]:
+              - heading "Сотрудничество с ВУЗами" [level=2] [ref=e94]
+              - paragraph [ref=e95]: Центр активно сотрудничает с ведущими проектными институтами нефтегазовой отрасли.
+            - link "Подробнее" [ref=e96] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e97]: Подробнее
+              - img [ref=e98]
+          - list "Логотипы вузов-партнеров" [ref=e100]:
+            - listitem [ref=e101]:
+              - img "Газпром" [ref=e102]
+            - listitem [ref=e103]:
+              - img "Башнефть" [ref=e104]
+            - listitem [ref=e105]:
+              - img "Газпром" [ref=e106]
+    - generic [ref=e108]:
+      - paragraph [ref=e109]: Форма обратной связи
+      - generic [ref=e112]:
+        - generic [ref=e113]:
+          - heading "Станьте партнером НИИ Инкомсистем" [level=2] [ref=e114]:
+            - text: Станьте партнером
+            - text: НИИ Инкомсистем
+          - paragraph [ref=e115]: Если есть вопросы - напишите нам
+        - generic [ref=e116]:
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - generic [ref=e119]: Имя
+              - textbox "Имя" [ref=e121]
+            - generic [ref=e122]:
+              - generic [ref=e123]: Email
+              - textbox "Email" [ref=e125]:
+                - /placeholder: mail@company.ru
+            - generic [ref=e126]:
+              - generic [ref=e127]: Телефон
+              - textbox "Телефон" [ref=e129]
+            - generic [ref=e130]:
+              - generic [ref=e131]: Компания
+              - textbox "Компания" [ref=e133]
+            - generic [ref=e134]:
+              - generic [ref=e135]: Сообщение
+              - textbox "Сообщение" [ref=e137]
+          - generic [ref=e138]:
+            - button "Отправить" [ref=e139] [cursor=pointer]
+            - paragraph [ref=e140]:
+              - text: Нажимая кнопку, вы даете согласие на обработку
+              - link "персональных данных." [ref=e141] [cursor=pointer]:
+                - /url: https://incomsystem.ru/upload/uf/baa/pol.pdf
+    - generic [ref=e143]:
+      - list [ref=e146]:
+        - listitem [ref=e147]:
+          - link "Каталог продукции PDF · 1.5 Мб Скачать" [ref=e148] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e149]:
+              - generic [ref=e150]:
+                - heading "Каталог продукции" [level=3] [ref=e151]
+                - paragraph [ref=e152]:
+                  - generic [ref=e153]: PDF
+                  - generic [ref=e154]: ·
+                  - generic [ref=e155]: 1.5 Мб
+              - generic [ref=e156]: Скачать
+            - img [ref=e158]
+        - listitem [ref=e160]:
+          - link "Презентация компании PDF · 1.2 Мб Скачать" [ref=e161] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e162]:
+              - generic [ref=e163]:
+                - heading "Презентация компании" [level=3] [ref=e164]
+                - paragraph [ref=e165]:
+                  - generic [ref=e166]: PDF
+                  - generic [ref=e167]: ·
+                  - generic [ref=e168]: 1.2 Мб
+              - generic [ref=e169]: Скачать
+            - img [ref=e171]
+      - generic [ref=e173]:
+        - paragraph [ref=e174]: Научно-инженерный центр
+        - img "Инкомсистем" [ref=e175]
+  - contentinfo [ref=e176]:
+    - generic [ref=e179]:
+      - generic [ref=e180]:
+        - paragraph [ref=e181]: Контакты
+        - link "Открыть в Яндекс Картах" [ref=e182] [cursor=pointer]:
+          - /url: https://yandex.ru/maps/?text=%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%A2%D0%B0%D1%82%D0%B0%D1%80%D1%81%D1%82%D0%B0%D0%BD,%20%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C,%20%D1%83%D0%BB.%20%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D1%8F,%20104%D0%98
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - list [ref=e185]:
+            - listitem [ref=e186]: НИЦ «ИНКОМСИСТЕМ»
+            - listitem [ref=e187]: ИНН 1660002574
+            - listitem [ref=e188]: ОГРН 1021603619091
+          - generic [ref=e189]:
+            - paragraph [ref=e190]: Адрес
+            - paragraph [ref=e191]: Республика Татарстан, Казань, ул. Восстания, зд. 104И
+            - paragraph [ref=e192]: (ранее ул.Восстания, 100, корпус 13)
+          - generic [ref=e193]:
+            - generic [ref=e194]:
+              - paragraph [ref=e195]: Связаться
+              - link "+7 843 212-50-10" [ref=e196] [cursor=pointer]:
+                - /url: tel:+78432125010
+              - link "info@incomsteel.ru" [ref=e197] [cursor=pointer]:
+                - /url: mailto:info@incomsteel.ru
+            - list "Социальные сети" [ref=e198]:
+              - listitem [ref=e199]:
+                - link "Telegram" [ref=e200] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e201]
+              - listitem [ref=e203]:
+                - link "ВКонтакте" [ref=e204] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e205]
+        - generic [ref=e207]:
+          - paragraph [ref=e208]: ©1991-2025 АО «Научно-инженерный центр «ИНКОМСИСТЕМ»
+          - link "Политика в отношении обработки персональных данных" [ref=e209] [cursor=pointer]:
+            - /url: https://incomsystem.ru/upload/uf/baa/pol.pdf
+          - link "Дизайн и разработка сайта — Mark Weber Mark Weber" [ref=e210] [cursor=pointer]:
+            - /url: https://markweber.pro/
+            - generic [ref=e211]: Дизайн и разработка сайта — Mark Weber
+            - img "Mark Weber" [ref=e212]
+  - img

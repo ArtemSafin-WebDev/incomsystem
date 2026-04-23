@@ -1,0 +1,31 @@
+<article class="cooperation-card">
+    <div class="cooperation-card__media">
+        <img src="{{item.image}}" alt="{{item.imageAlt}}">
+    </div>
+
+    <p class="cooperation-card__meta">{{item.meta}}</p>
+
+    <div class="cooperation-card__content">
+        <div class="cooperation-card__content-top">
+            <h2 class="cooperation-card__title">{{item.title}}</h2>
+            <p class="cooperation-card__description">{{item.description}}</p>
+        </div>
+
+        <a class="cooperation-card__link" href="{{item.href}}">
+            <span>{{detailsText}}</span>
+            <svg width="16" height="16" aria-hidden="true">
+                <use xlink:href="#arrows/right"></use>
+            </svg>
+        </a>
+    </div>
+
+    <ul class="cooperation-card__logos" aria-label="{{item.logosAriaLabel}}">
+        {{#each item.logos}}
+        <li class="cooperation-card__logo">
+            <img class="cooperation-card__logo-image{{#if this.className}} {{this.className}}{{/if}}"
+                src="{{this.src}}"
+                alt="{{this.alt}}">
+        </li>
+        {{/each}}
+    </ul>
+</article>

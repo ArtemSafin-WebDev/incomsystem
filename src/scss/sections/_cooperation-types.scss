@@ -1,0 +1,33 @@
+@use "tools/media" as mq;
+
+@layer sections {
+  .cooperation-types {
+    margin-bottom: 15rem;
+
+    @include mq.down(sm) {
+      margin-bottom: 8rem;
+    }
+  }
+
+  .cooperation-types__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cooperation-types__item {
+    padding-top: 4rem;
+    border-top: 1px solid #dfdfdf;
+
+    @include mq.down(sm) {
+      padding-top: 2rem;
+    }
+  }
+
+  .cooperation-types__item + .cooperation-types__item {
+    margin-top: 4rem;
+
+    @include mq.down(sm) {
+      margin-top: 2rem;
+    }
+  }
+}
