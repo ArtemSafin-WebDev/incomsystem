@@ -126,9 +126,10 @@
     font-weight: 600;
     line-height: 0.95;
     letter-spacing: -0.24rem;
+    text-wrap: balance;
 
     @include mq.down(sm) {
-      max-width: 30rem;
+      max-width: none;
       margin: auto 2.1rem 2.8rem;
       font-size: 3.2rem;
       line-height: 1;
