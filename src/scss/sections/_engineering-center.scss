@@ -7,7 +7,7 @@
     margin-top: -32.8rem;
     padding-top: 32.8rem;
     padding-bottom: 4rem;
-    min-height: 156.8rem;
+    min-height: 140.5rem;
     background-color: var(--primary-color);
     color: #fff;
     overflow: hidden;
@@ -30,6 +30,16 @@
       @include mq.down(sm) {
         justify-content: flex-start;
       }
+    }
+  }
+
+  .engineering-center--press-center {
+    margin-top: -16.5rem;
+    padding-top: 16.5rem;
+
+    @include mq.down(sm) {
+      margin-top: -38rem;
+      padding-top: 38rem;
     }
   }
 

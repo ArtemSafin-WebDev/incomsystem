@@ -61,7 +61,13 @@ class Select extends Component {
 
     this.handleResetBtnClick = (event: MouseEvent) => {
       event.preventDefault();
-      this.reset();
+      const target = event.currentTarget as HTMLElement;
+
+      if (target.hasAttribute("data-clear-select")) {
+        this.clearSelection();
+      } else {
+        this.reset();
+      }
     };
     this.resetBtns.forEach((btn) => {
       btn.addEventListener("click", this.handleResetBtnClick);
@@ -145,7 +151,9 @@ class Select extends Component {
       this.element.classList.add("choice-selected");
       const choicesText = activeChoices.map((choice) => {
         const textElement =
-          choice.parentElement?.querySelector("span:last-of-type");
+          choice.parentElement?.querySelector<HTMLElement>(
+            ".select__option-text"
+          ) ?? choice.parentElement?.querySelector("span:last-of-type");
         return textElement?.textContent?.trim();
       });
       if (this.btnTextElement) {
@@ -167,7 +175,9 @@ class Select extends Component {
       if (activeChoice.value.trim()) {
         this.element.classList.add("choice-selected");
         const textElement =
-          activeChoice.parentElement?.querySelector("span:last-of-type");
+          activeChoice.parentElement?.querySelector<HTMLElement>(
+            ".select__option-text"
+          ) ?? activeChoice.parentElement?.querySelector("span:last-of-type");
 
         if (textElement && this.btnTextElement) {
           this.btnTextElement.textContent = textElement.textContent;
@@ -212,6 +222,15 @@ class Select extends Component {
         }
       });
     }
+
+    this.refreshSelectionText();
+    this.close();
+  };
+
+  private clearSelection = () => {
+    this.choices.forEach((choice) => {
+      choice.checked = false;
+    });
 
     this.refreshSelectionText();
     this.close();

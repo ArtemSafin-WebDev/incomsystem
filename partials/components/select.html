@@ -1,0 +1,35 @@
+<div class="select js-select{{#if select.className}} {{select.className}}{{/if}}" data-placeholder="{{select.placeholder}}">
+    <button class="select__button" type="button" aria-label="{{select.ariaLabel}}">
+        <span class="select__button-text js-btn-text">{{select.placeholder}}</span>
+        <span class="select__arrow" aria-hidden="true"></span>
+    </button>
+
+    {{#if select.clearable}}
+    <button class="select__reset js-reset-btn" type="button" data-clear-select aria-label="{{select.clearAriaLabel}}">
+        <svg width="15" height="15" aria-hidden="true">
+            <use xlink:href="#close"></use>
+        </svg>
+    </button>
+    {{/if}}
+
+    <div class="select__dropdown">
+        <ul class="select__list">
+            {{#each select.options}}
+            <li class="select__item">
+                <label class="select__option" for="{{this.id}}">
+                    <input class="select__input"
+                        id="{{this.id}}"
+                        name="{{../select.name}}"
+                        type="radio"
+                        value="{{this.value}}"
+                        {{#if this.checked}}checked{{/if}}>
+                    <span class="select__option-content">
+                        <span class="select__option-text">{{this.label}}</span>
+                        <span class="select__option-mark" aria-hidden="true"></span>
+                    </span>
+                </label>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

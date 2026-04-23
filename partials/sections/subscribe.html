@@ -1,0 +1,37 @@
+<section class="subscribe">
+    <div class="container">
+        <p class="subscribe__caption">{{subscribe.caption}}</p>
+
+        <div class="subscribe__body">
+            <img class="subscribe__bg" src="{{subscribe.background}}" alt="">
+
+            <div class="subscribe__intro">
+                <h2 class="subscribe__title">{{subscribe.title}}</h2>
+                <p class="subscribe__text">{{subscribe.text}}</p>
+            </div>
+
+            <form class="subscribe__form js-form" action="{{subscribe.formAction}}" method="post">
+                <label class="subscribe__field">
+                    <span class="subscribe__label">{{subscribe.emailLabel}}</span>
+                    <input class="subscribe__input"
+                        type="email"
+                        name="{{subscribe.emailName}}"
+                        placeholder="{{subscribe.emailPlaceholder}}"
+                        autocomplete="email"
+                        required>
+                </label>
+
+                <div class="subscribe__footer">
+                    <button class="btn subscribe__button" type="submit">{{subscribe.submitText}}</button>
+                    <p class="subscribe__policy">
+                        {{{subscribe.policyText}}}
+                        <a class="subscribe__policy-link"
+                            href="{{subscribe.policyLinkHref}}"
+                            target="_blank"
+                            rel="noreferrer noopener">{{subscribe.policyLinkText}}</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,4 +1,5 @@
 import AboutCompany from "../classes/components/AboutCompany";
+import ArticleGallery from "../classes/components/ArticleGallery";
 import Awards from "../classes/components/Awards";
 import CareerGallery from "../classes/components/CareerGallery";
 import CareerStudents from "../classes/components/CareerStudents";
@@ -35,6 +36,9 @@ export default function sections() {
   const pressCenterSections = document.querySelectorAll<HTMLElement>(
     ".js-press-center"
   );
+  const articleGalleries = document.querySelectorAll<HTMLElement>(
+    ".js-article-gallery"
+  );
   const awardsSections = document.querySelectorAll<HTMLElement>(".js-awards");
   const aboutCompanySections = document.querySelectorAll<HTMLElement>(
     ".js-about-company"
@@ -69,6 +73,10 @@ export default function sections() {
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
+  });
+
+  articleGalleries.forEach((gallery) => {
+    new ArticleGallery(gallery);
   });
 
   aboutCompanySections.forEach((section) => {

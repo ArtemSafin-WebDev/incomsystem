@@ -5,7 +5,7 @@
 
     <div class="press-center-card__meta">
         <span class="press-center-card__tag">{{item.tag}}</span>
-        <time class="press-center-card__date" datetime="2025-01-09">{{item.date}}</time>
+        <time class="press-center-card__date" {{#if item.datetime}}datetime="{{item.datetime}}"{{else}}datetime="2025-01-09"{{/if}}>{{item.date}}</time>
     </div>
 
     <h3 class="press-center-card__title">{{item.title}}</h3>

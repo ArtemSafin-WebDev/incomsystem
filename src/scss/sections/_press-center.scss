@@ -12,6 +12,16 @@
     }
   }
 
+  .press-center--compact {
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+  }
+
+  .press-center--compact .press-center__title {
+    grid-column: 1 / -1;
+    margin-bottom: 6rem;
+  }
+
   .press-center__grid {
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -181,6 +191,10 @@
       width: 100%;
       margin-bottom: 0;
     }
+  }
+
+  .press-center--compact .press-center__panels {
+    margin-bottom: 0;
   }
 
   .press-center__panel {

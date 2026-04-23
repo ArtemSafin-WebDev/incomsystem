@@ -1,0 +1,77 @@
+<section class="press-center-page">
+    <div class="container">
+        {{> components/breadcrumbs pressCenterPage.breadcrumbs }}
+
+        <h1 class="press-center-page__title">{{pressCenterPage.title}}</h1>
+
+        <article class="press-center-page__hero">
+            <img class="press-center-page__hero-image" src="{{pressCenterPage.hero.image}}" alt="{{pressCenterPage.hero.imageAlt}}">
+
+            <div class="press-center-page__hero-overlay" aria-hidden="true"></div>
+
+            <div class="press-center-page__hero-top">
+                <ul class="press-center-page__hero-tags">
+                    {{#each pressCenterPage.hero.tags}}
+                    <li class="press-center-page__hero-tag">{{this}}</li>
+                    {{/each}}
+                </ul>
+
+                <time class="press-center-page__hero-date" datetime="{{pressCenterPage.hero.datetime}}">{{pressCenterPage.hero.date}}</time>
+            </div>
+
+            <div class="press-center-page__hero-content">
+                <h2 class="press-center-page__hero-title">{{pressCenterPage.hero.title}}</h2>
+                <p class="press-center-page__hero-text">{{pressCenterPage.hero.text}}</p>
+                <a class="btn press-center-page__hero-link" href="{{pressCenterPage.hero.href}}">{{pressCenterPage.hero.linkText}}</a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="press-center-page-news">
+    <div class="container">
+        <form class="press-center-page-news__filters" action="{{pressCenterPage.filters.action}}" method="get">
+            <label class="press-center-page-news__search">
+                <input class="press-center-page-news__search-input"
+                    type="search"
+                    name="{{pressCenterPage.filters.search.name}}"
+                    aria-label="{{pressCenterPage.filters.search.label}}"
+                    placeholder="{{pressCenterPage.filters.search.placeholder}}">
+                <span class="press-center-page-news__search-icon" aria-hidden="true">
+                    <svg width="15" height="15">
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </span>
+            </label>
+
+            {{#each pressCenterPage.filters.selects}}
+            <div class="press-center-page-news__filter-field">
+                <p class="press-center-page-news__filter-label">{{this.label}}</p>
+                {{> components/select select=this }}
+            </div>
+            {{/each}}
+
+            <button class="press-center-page-news__count" type="submit">{{pressCenterPage.filters.countText}}</button>
+        </form>
+
+        <nav class="press-center-page-news__categories" aria-label="{{pressCenterPage.categoriesAriaLabel}}">
+            <ul class="press-center-page-news__categories-list">
+                {{#each pressCenterPage.categories}}
+                <li class="press-center-page-news__category-item">
+                    <a class="press-center-page-news__category-link{{#if this.active}} active{{/if}}" href="{{this.href}}">{{this.label}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </nav>
+
+        <ul class="press-center-page-news__list">
+            {{#each pressCenterPage.items}}
+            <li class="press-center-page-news__item">
+                {{> components/cards/press-center-card item=this }}
+            </li>
+            {{/each}}
+        </ul>
+
+        <a class="btn btn--dark-text press-center-page-news__more" href="{{pressCenterPage.moreHref}}">{{pressCenterPage.moreText}}</a>
+    </div>
+</section>
