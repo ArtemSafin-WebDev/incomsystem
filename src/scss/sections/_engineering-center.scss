@@ -34,12 +34,12 @@
   }
 
   .engineering-center--press-center {
-    margin-top: -16.5rem;
-    padding-top: 16.5rem;
+    margin-top: -12rem;
+    padding-top: 12rem;
 
     @include mq.down(sm) {
-      margin-top: -38rem;
-      padding-top: 38rem;
+      margin-top: -31rem;
+      padding-top: 31rem;
     }
   }
 

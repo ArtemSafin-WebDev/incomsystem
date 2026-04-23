@@ -12,6 +12,9 @@
 
     @include mq.down(sm) {
       padding-top: 3.2rem;
+      &--press-center-subscribe {
+        padding-top: 7rem;
+      }
     }
   }
 
@@ -79,6 +82,10 @@
 
   .contact-us--press-center-subscribe .contact-us__content {
     min-height: 33.6rem;
+
+    @include mq.down(sm) {
+      padding-bottom: 3rem;
+    }
   }
 
   .contact-us__head {

@@ -1,0 +1,265 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: "#"
+      - generic [ref=e6]:
+        - link "Продукция и услуги" [ref=e8] [cursor=pointer]:
+          - /url: "#"
+          - text: Продукция и услуги
+          - img [ref=e9]
+        - link [ref=e12] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e13]
+      - generic [ref=e15]:
+        - navigation [ref=e16]:
+          - list [ref=e17]:
+            - listitem [ref=e18]:
+              - link "О компании" [ref=e19] [cursor=pointer]:
+                - /url: "#"
+                - text: О компании
+                - img [ref=e20]
+            - listitem [ref=e22]:
+              - link "Документация" [ref=e23] [cursor=pointer]:
+                - /url: "#"
+                - text: Документация
+                - img [ref=e24]
+            - listitem [ref=e26]:
+              - link "Контакты" [ref=e27] [cursor=pointer]:
+                - /url: "#"
+        - link [ref=e28] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e29]
+        - link "связаться с нами" [ref=e31] [cursor=pointer]:
+          - /url: "#"
+  - main [ref=e32]:
+    - generic [ref=e34]:
+      - navigation "Хлебные крошки" [ref=e35]:
+        - list [ref=e36]:
+          - listitem [ref=e37]:
+            - link "Главная" [ref=e38] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e39]:
+            - text: /
+            - generic [ref=e40]: Пресс-центр
+      - heading "Пресс-центр" [level=1] [ref=e41]
+      - article [ref=e42]:
+        - img "Участники чемпионата «Профессионалы» на трибунах в Санкт-Петербурге" [ref=e43]
+        - generic [ref=e45]:
+          - list [ref=e46]:
+            - listitem [ref=e47]: События
+            - listitem [ref=e48]: Выставка
+          - time [ref=e49]: 9.01.2025
+        - generic [ref=e50]:
+          - 'heading "Чемпионат «Профессионалы»: итоги финала в Санкт-Петербурге" [level=2] [ref=e51]'
+          - paragraph [ref=e52]: В Санкт-Петербурге завершился финал Чемпионата по профессиональному мастерству «Профессионалы», который проходил с 26 по 30 ноября на площадке КВЦ «Экспофорум»
+          - link "Подробнее" [ref=e53] [cursor=pointer]:
+            - /url: "#"
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - searchbox "Поиск по новостям" [ref=e58]
+          - generic:
+            - img
+        - generic [ref=e59]:
+          - paragraph [ref=e60]: Поиск по году
+          - button "Выберите год" [ref=e62] [cursor=pointer]:
+            - generic [ref=e63]: "2023"
+        - generic [ref=e65]:
+          - paragraph [ref=e66]: Рубрика
+          - generic [ref=e67]:
+            - button "Выберите рубрику" [ref=e68] [cursor=pointer]:
+              - generic [ref=e69]: Выставка
+            - button "Очистить рубрику" [ref=e71] [cursor=pointer]:
+              - img [ref=e72]
+        - button "Всего 8 новостей" [ref=e74] [cursor=pointer]
+      - navigation "Категории пресс-центра" [ref=e75]:
+        - list [ref=e76]:
+          - listitem [ref=e77]:
+            - link "Все" [ref=e78] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e79]:
+            - link "Новости" [ref=e80] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e81]:
+            - link "События" [ref=e82] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e83]:
+            - link "Галерея" [ref=e84] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e85]:
+            - link "Статьи" [ref=e86] [cursor=pointer]:
+              - /url: "#"
+      - list [ref=e87]:
+        - listitem [ref=e88]:
+          - 'link "Инкомсистем: вклад в программу импортозамещения измерительной техники События 9.01.2025 Инкомсистем: вклад в программу импортозамещения измерительной техники" [ref=e89] [cursor=pointer]':
+            - /url: "#"
+            - 'img "Инкомсистем: вклад в программу импортозамещения измерительной техники" [ref=e91]'
+            - generic [ref=e92]:
+              - generic [ref=e93]: События
+              - time [ref=e94]: 9.01.2025
+            - 'heading "Инкомсистем: вклад в программу импортозамещения измерительной техники" [level=3] [ref=e95]'
+        - listitem [ref=e96]:
+          - link "АБАК ПЛК в Республике Беларусь! Оборудование 9.01.2025 АБАК ПЛК в Республике Беларусь!" [ref=e97] [cursor=pointer]:
+            - /url: "#"
+            - img "АБАК ПЛК в Республике Беларусь!" [ref=e99]
+            - generic [ref=e100]:
+              - generic [ref=e101]: Оборудование
+              - time [ref=e102]: 9.01.2025
+            - heading "АБАК ПЛК в Республике Беларусь!" [level=3] [ref=e103]
+        - listitem [ref=e104]:
+          - 'link "Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей» События 9.01.2025 Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей»" [ref=e105] [cursor=pointer]':
+            - /url: "#"
+            - 'img "Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей»" [ref=e107]'
+            - generic [ref=e108]:
+              - generic [ref=e109]: События
+              - time [ref=e110]: 9.01.2025
+            - 'heading "Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей»" [level=3] [ref=e111]'
+        - listitem [ref=e112]:
+          - link "НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект» События 9.01.2025 НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект»" [ref=e113] [cursor=pointer]:
+            - /url: "#"
+            - img "НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект»" [ref=e115]
+            - generic [ref=e116]:
+              - generic [ref=e117]: События
+              - time [ref=e118]: 9.01.2025
+            - heading "НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект»" [level=3] [ref=e119]
+        - listitem [ref=e120]:
+          - 'link "Инкомсистем: вклад в программу импортозамещения измерительной техники События 9.01.2025 Инкомсистем: вклад в программу импортозамещения измерительной техники" [ref=e121] [cursor=pointer]':
+            - /url: "#"
+            - 'img "Инкомсистем: вклад в программу импортозамещения измерительной техники" [ref=e123]'
+            - generic [ref=e124]:
+              - generic [ref=e125]: События
+              - time [ref=e126]: 9.01.2025
+            - 'heading "Инкомсистем: вклад в программу импортозамещения измерительной техники" [level=3] [ref=e127]'
+        - listitem [ref=e128]:
+          - link "АБАК ПЛК в Республике Беларусь! Оборудование 9.01.2025 АБАК ПЛК в Республике Беларусь!" [ref=e129] [cursor=pointer]:
+            - /url: "#"
+            - img "АБАК ПЛК в Республике Беларусь!" [ref=e131]
+            - generic [ref=e132]:
+              - generic [ref=e133]: Оборудование
+              - time [ref=e134]: 9.01.2025
+            - heading "АБАК ПЛК в Республике Беларусь!" [level=3] [ref=e135]
+        - listitem [ref=e136]:
+          - 'link "Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей» События 9.01.2025 Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей»" [ref=e137] [cursor=pointer]':
+            - /url: "#"
+            - 'img "Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей»" [ref=e139]'
+            - generic [ref=e140]:
+              - generic [ref=e141]: События
+              - time [ref=e142]: 9.01.2025
+            - 'heading "Игры с эмоциями: НИЦ Инкомсистем провел праздник «День защиты детей»" [level=3] [ref=e143]'
+        - listitem [ref=e144]:
+          - link "НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект» События 9.01.2025 НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект»" [ref=e145] [cursor=pointer]:
+            - /url: "#"
+            - img "НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект»" [ref=e147]
+            - generic [ref=e148]:
+              - generic [ref=e149]: События
+              - time [ref=e150]: 9.01.2025
+            - heading "НИЦ Инкомсистем на Всероссийской конференции «Промышленный искусственный интеллект»" [level=3] [ref=e151]
+      - link "Загрузить еще" [ref=e152] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e154]:
+      - paragraph [ref=e155]: Подписка
+      - generic [ref=e158]:
+        - generic [ref=e159]:
+          - heading "Подписывайтесь" [level=2] [ref=e160]
+          - paragraph [ref=e161]: чтобы быть в курсе наших новостей
+        - generic [ref=e162]:
+          - generic [ref=e164]:
+            - generic [ref=e165]: Электронная почта
+            - textbox "Электронная почта" [ref=e167]:
+              - /placeholder: mail@company.ru
+          - generic [ref=e168]:
+            - button "Подписаться" [ref=e169] [cursor=pointer]
+            - paragraph [ref=e170]:
+              - text: Нажимая кнопку, вы даете согласие на обработку
+              - link "персональных данных." [ref=e171] [cursor=pointer]:
+                - /url: https://incomsystem.ru/upload/uf/baa/pol.pdf
+    - generic [ref=e173]:
+      - generic [ref=e174]:
+        - paragraph [ref=e175]: © 1991—2025
+        - list [ref=e177]:
+          - listitem [ref=e178]:
+            - link "Каталог продукции PDF · 1.5 Мб Скачать" [ref=e179] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e180]:
+                - generic [ref=e181]:
+                  - heading "Каталог продукции" [level=3] [ref=e182]
+                  - paragraph [ref=e183]:
+                    - generic [ref=e184]: PDF
+                    - generic [ref=e185]: ·
+                    - generic [ref=e186]: 1.5 Мб
+                - generic [ref=e187]: Скачать
+              - img [ref=e189]
+          - listitem [ref=e191]:
+            - link "Презентация компании PDF · 1.2 Мб Скачать" [ref=e192] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e193]:
+                - generic [ref=e194]:
+                  - heading "Презентация компании" [level=3] [ref=e195]
+                  - paragraph [ref=e196]:
+                    - generic [ref=e197]: PDF
+                    - generic [ref=e198]: ·
+                    - generic [ref=e199]: 1.2 Мб
+                - generic [ref=e200]: Скачать
+              - img [ref=e202]
+      - navigation "Навигация по разделам" [ref=e204]:
+        - list [ref=e205]:
+          - listitem [ref=e206]:
+            - link "Продукция и услуги" [ref=e207] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e208]:
+            - link "Проекты" [ref=e209] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e210]:
+            - link "О компании" [ref=e211] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e212]:
+            - link "Документация" [ref=e213] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e214]:
+            - link "Контакты" [ref=e215] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e216]:
+        - paragraph [ref=e217]: Научно-инженерный центр
+        - img "Инкомсистем" [ref=e218]
+  - contentinfo [ref=e219]:
+    - generic [ref=e222]:
+      - generic [ref=e223]:
+        - paragraph [ref=e224]: Контакты
+        - link "Открыть в Яндекс Картах" [ref=e225] [cursor=pointer]:
+          - /url: https://yandex.ru/maps/?text=%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%A2%D0%B0%D1%82%D0%B0%D1%80%D1%81%D1%82%D0%B0%D0%BD,%20%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C,%20%D1%83%D0%BB.%20%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D1%8F,%20104%D0%98
+      - generic [ref=e226]:
+        - generic [ref=e227]:
+          - list [ref=e228]:
+            - listitem [ref=e229]: НИЦ «ИНКОМСИСТЕМ»
+            - listitem [ref=e230]: ИНН 1660002574
+            - listitem [ref=e231]: ОГРН 1021603619091
+          - generic [ref=e232]:
+            - paragraph [ref=e233]: Адрес
+            - paragraph [ref=e234]: Республика Татарстан, Казань, ул. Восстания, зд. 104И
+            - paragraph [ref=e235]: (ранее ул.Восстания, 100, корпус 13)
+          - generic [ref=e236]:
+            - generic [ref=e237]:
+              - paragraph [ref=e238]: Связаться
+              - link "+7 843 212-50-10" [ref=e239] [cursor=pointer]:
+                - /url: tel:+78432125010
+              - link "info@incomsteel.ru" [ref=e240] [cursor=pointer]:
+                - /url: mailto:info@incomsteel.ru
+            - list "Социальные сети" [ref=e241]:
+              - listitem [ref=e242]:
+                - link "Telegram" [ref=e243] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e244]
+              - listitem [ref=e246]:
+                - link "ВКонтакте" [ref=e247] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e248]
+        - generic [ref=e250]:
+          - paragraph [ref=e251]: ©1991-2025 АО «Научно-инженерный центр «ИНКОМСИСТЕМ»
+          - link "Политика в отношении обработки персональных данных" [ref=e252] [cursor=pointer]:
+            - /url: https://incomsystem.ru/upload/uf/baa/pol.pdf
+          - link "Дизайн и разработка сайта — Mark Weber Mark Weber" [ref=e253] [cursor=pointer]:
+            - /url: https://markweber.pro/
+            - generic [ref=e254]: Дизайн и разработка сайта — Mark Weber
+            - img "Mark Weber" [ref=e255]
+  - img
