@@ -1,7 +1,22 @@
-<section class="news-detail-hero">
+<section class="news-detail-hero{{#if newsDetail.hero.isPlain}} news-detail-hero--plain{{/if}}">
     <div class="container">
         {{> components/breadcrumbs newsDetail.breadcrumbs }}
 
+        {{#if newsDetail.hero.isPlain}}
+        <div class="news-detail-hero__simple-top">
+            <ul class="news-detail-hero__tags">
+                {{#each newsDetail.hero.tags}}
+                <li class="news-detail-hero__tag">{{this}}</li>
+                {{/each}}
+            </ul>
+
+            <time class="news-detail-hero__date" datetime="{{newsDetail.hero.datetime}}">{{newsDetail.hero.date}}</time>
+        </div>
+
+        <div class="news-detail-hero__simple-body">
+            <h1 class="news-detail-hero__title">{{newsDetail.hero.title}}</h1>
+        </div>
+        {{else}}
         <article class="news-detail-hero__banner">
             <img class="news-detail-hero__image" src="{{newsDetail.hero.image}}" alt="{{newsDetail.hero.imageAlt}}">
             <div class="news-detail-hero__overlay" aria-hidden="true"></div>
@@ -18,6 +33,7 @@
 
             <h1 class="news-detail-hero__title">{{newsDetail.hero.title}}</h1>
         </article>
+        {{/if}}
     </div>
 </section>
 

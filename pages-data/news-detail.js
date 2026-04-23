@@ -68,6 +68,47 @@ const newsDetailContactUs = {
   ],
 };
 
+const newsDetailContent = {
+  breadcrumbs: {
+    ariaLabel: "Хлебные крошки",
+    items: [
+      {
+        label: "Главная",
+        href: "/",
+      },
+      {
+        label: "Пресс-центр",
+        href: "/press-center.html",
+      },
+      {
+        label:
+          "Чемпионат «Профессионалы»: итоги финала в Санкт-Петербурге",
+      },
+    ],
+  },
+  contentImage: {
+    src: "/images/news-detail/content.webp",
+    alt: "Участники чемпионата с флагом на трибунах",
+  },
+  sideImage: {
+    src: "/images/news-detail/side.webp",
+    alt: "Участники чемпионата на трибунах",
+  },
+  gallery: {
+    ariaLabel: "Фотографии с финала чемпионата «Профессионалы»",
+    prevLabel: "Предыдущее фото",
+    nextLabel: "Следующее фото",
+    images: galleryImages,
+  },
+};
+
+const newsDetailHero = {
+  tags: ["События", "Выставка"],
+  date: "9.01.2025",
+  datetime: "2025-01-09",
+  title: "Чемпионат «Профессионалы»: итоги финала в Санкт-Петербурге",
+};
+
 export default {
   "/news-detail.html": {
     title: "Чемпионат «Профессионалы»: итоги финала в Санкт-Петербурге",
@@ -80,45 +121,65 @@ export default {
       className: "engineering-center--press-center",
     },
     newsDetail: {
-      breadcrumbs: {
-        ariaLabel: "Хлебные крошки",
-        items: [
-          {
-            label: "Главная",
-            href: "/",
-          },
-          {
-            label: "Пресс-центр",
-            href: "/press-center.html",
-          },
-          {
-            label:
-              "Чемпионат «Профессионалы»: итоги финала в Санкт-Петербурге",
-          },
-        ],
-      },
+      ...newsDetailContent,
       hero: {
+        ...newsDetailHero,
         image: "/images/news-detail/banner.webp",
         imageAlt:
           "Участники чемпионата «Профессионалы» на трибунах в Санкт-Петербурге",
-        tags: ["События", "Выставка"],
-        date: "9.01.2025",
-        datetime: "2025-01-09",
-        title: "Чемпионат «Профессионалы»: итоги финала в Санкт-Петербурге",
       },
-      contentImage: {
-        src: "/images/news-detail/content.webp",
-        alt: "Участники чемпионата с флагом на трибунах",
-      },
-      sideImage: {
-        src: "/images/news-detail/side.webp",
-        alt: "Участники чемпионата на трибунах",
-      },
-      gallery: {
-        ariaLabel: "Фотографии с финала чемпионата «Профессионалы»",
-        prevLabel: "Предыдущее фото",
-        nextLabel: "Следующее фото",
-        images: galleryImages,
+    },
+    pressCenter: {
+      title: "Другие статьи",
+      topLinkText: "В пресс-центр",
+      topLinkHref: "/press-center.html",
+      scrollHintText: "Листайте влево/вправо",
+      buttonText: "В пресс-центр",
+      buttonHref: "/press-center.html",
+      tabs: [
+        {
+          key: "all",
+          label: "Все",
+          items: getPressCenterItemsByTab("all"),
+        },
+        {
+          key: "articles",
+          label: "Статьи",
+          items: getPressCenterItemsByTab("articles"),
+        },
+        {
+          key: "news",
+          label: "Новости",
+          items: getPressCenterItemsByTab("news"),
+        },
+        {
+          key: "events",
+          label: "События",
+          items: getPressCenterItemsByTab("events"),
+        },
+        {
+          key: "gallery",
+          label: "Галерея",
+          items: getPressCenterItemsByTab("gallery"),
+        },
+      ],
+    },
+  },
+  "/news-detail-no-image.html": {
+    title: "Чемпионат «Профессионалы»: итоги финала в Санкт-Петербурге",
+    headerCompactTheme: true,
+    mobileMenu,
+    footer,
+    contactUs: newsDetailContactUs,
+    engineeringCenter: {
+      ...engineeringCenter,
+      className: "engineering-center--press-center",
+    },
+    newsDetail: {
+      ...newsDetailContent,
+      hero: {
+        ...newsDetailHero,
+        isPlain: true,
       },
     },
     pressCenter: {

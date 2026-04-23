@@ -62,9 +62,9 @@
       letter-spacing: -0.192rem;
 
       @include mq.down(sm) {
-        font-size: 3.2rem;
-        line-height: 1;
-        letter-spacing: -0.128rem;
+        font-size: 2.8rem;
+        line-height: 1.02;
+        letter-spacing: -0.112rem;
       }
     }
 
