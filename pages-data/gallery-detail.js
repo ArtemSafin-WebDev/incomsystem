@@ -1,4 +1,4 @@
-import { engineeringCenter, footer, mobileMenu } from "./shared.js";
+import { contactUs, engineeringCenter, footer, mobileMenu } from "./shared.js";
 
 const galleryItems = [
   {
@@ -99,13 +99,37 @@ const albumItems = [
   },
 ];
 
+const galleryDetailContactUs = {
+  ...contactUs,
+  className: "contact-us--press-center-subscribe",
+  caption: "Подписка",
+  title: "Подписывайтесь",
+  description: "чтобы быть в курсе наших новостей",
+  submitText: "Подписаться",
+  fields: [
+    {
+      id: "gallery-detail-subscribe-email",
+      name: "email",
+      label: "Электронная почта",
+      placeholder: "mail@company.ru",
+      type: "email",
+      autocomplete: "email",
+      required: true,
+    },
+  ],
+};
+
 export default {
   "/gallery-detail.html": {
     title: "Парусная регата - 2024",
     headerCompactTheme: true,
     mobileMenu,
     footer,
-    engineeringCenter,
+    contactUs: galleryDetailContactUs,
+    engineeringCenter: {
+      ...engineeringCenter,
+      className: "engineering-center--press-center",
+    },
     galleryDetail: {
       breadcrumbs: {
         ariaLabel: "Хлебные крошки",
@@ -149,20 +173,6 @@ export default {
           items: albumItems,
         },
       ],
-    },
-    subscribe: {
-      caption: "Подписка",
-      title: "Подписывайтесь",
-      text: "чтобы быть в курсе наших новостей",
-      background: "/images/press-center/subscribe-bg.webp",
-      formAction: "#",
-      emailLabel: "Электронная почта",
-      emailName: "email",
-      emailPlaceholder: "mail@company.ru",
-      submitText: "Подписаться",
-      policyText: "Нажимая кнопку, вы даете согласие на обработку&nbsp;",
-      policyLinkText: "персональных данных.",
-      policyLinkHref: "https://incomsystem.ru/upload/uf/baa/pol.pdf",
     },
   },
 };
