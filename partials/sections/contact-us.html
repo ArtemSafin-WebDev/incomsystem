@@ -13,7 +13,9 @@
             <div class="contact-us__content">
                 <div class="contact-us__head">
                     <h2 class="contact-us__title">{{{contactUs.title}}}</h2>
+                    {{#if contactUs.description}}
                     <p class="contact-us__description">{{contactUs.description}}</p>
+                    {{/if}}
 
                     {{#if contactUs.contacts}}
                     <div class="contact-us__contacts">
@@ -34,9 +36,13 @@
                     <div class="contact-us__form-rows">
                         {{#each contactUs.fields}}
                         <div class="contact-us__form-row {{#if this.isTextarea}}contact-us__form-row--message{{/if}}{{#if this.isFile}} contact-us__form-row--file{{/if}}">
+                            {{#if this.isSelect}}
+                            <p class="contact-us__form-label">{{this.label}}</p>
+                            {{else}}
                             <label class="contact-us__form-label{{#if this.isFile}} contact-us__form-label--file{{/if}}" for="{{this.id}}">{{this.label}}</label>
+                            {{/if}}
 
-                            <div class="contact-us__form-control{{#if this.isFile}} contact-us__form-control--file js-file-field{{/if}}">
+                            <div class="contact-us__form-control{{#if this.isFile}} contact-us__form-control--file js-file-field{{/if}}{{#if this.isSelect}} contact-us__form-control--select{{/if}}">
                                 {{#if this.isTextarea}}
                                 <textarea class="contact-us__form-textarea"
                                     id="{{this.id}}"
@@ -55,6 +61,9 @@
                                 <span class="contact-us__form-file-value contact-us__form-file-value--placeholder"
                                     data-placeholder="{{this.placeholder}}">{{this.placeholder}}</span>
                                 {{else}}
+                                {{#if this.isSelect}}
+                                {{> components/select select=this }}
+                                {{else}}
                                 <input class="contact-us__form-input"
                                     id="{{this.id}}"
                                     name="{{this.name}}"
@@ -62,6 +71,7 @@
                                     placeholder="{{this.placeholder}}"
                                     {{#if this.autocomplete}}autocomplete="{{this.autocomplete}}"{{/if}}
                                     {{#if this.required}}required{{/if}}>
+                                {{/if}}
                                 {{/if}}
                                 {{/if}}
                             </div>

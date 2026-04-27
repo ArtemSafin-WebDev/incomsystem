@@ -1,7 +1,13 @@
-<div class="select js-select{{#if select.className}} {{select.className}}{{/if}}" data-placeholder="{{select.placeholder}}">
+<div class="select js-select{{#if select.className}} {{select.className}}{{/if}}" data-placeholder="{{select.placeholder}}"{{#if select.required}} data-required-select{{/if}}>
     <button class="select__button" type="button" aria-label="{{select.ariaLabel}}">
         <span class="select__button-text js-btn-text">{{select.placeholder}}</span>
-        <span class="select__arrow" aria-hidden="true"></span>
+        <span class="select__arrow{{#if select.useAltArrow}} select__arrow--svg{{/if}}" aria-hidden="true">
+            {{#if select.useAltArrow}}
+            <svg width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.3164 1.89748L13.4189 0L7.65804 5.76088L1.89716 0L-0.000320435 1.89748L6.7093 8.6071C6.96095 8.85868 7.30221 9 7.65804 9C8.01387 9 8.35514 8.85868 8.60678 8.6071L15.3164 1.89748Z" />
+            </svg>
+            {{/if}}
+        </span>
     </button>
 
     {{#if select.clearable}}
