@@ -336,7 +336,8 @@
 
   .contact-us__select .select__button {
     min-height: auto;
-    padding: 0 2.4rem 0 0;
+    gap: 1rem;
+    padding: 0;
     border: 0;
     border-radius: 0;
     color: #fff;
@@ -484,41 +485,23 @@
   }
 
   @include mq.down(sm) {
-    .contact-us--reference-request .contact-us__content {
-      padding-bottom: 3rem;
-      min-height: auto;
-    }
-
-    .contact-us--reference-request .contact-us__head {
-      max-width: none;
-      gap: 0;
-    }
-
-    .contact-us--reference-request .contact-us__title {
-      max-width: 22rem;
-      font-size: 3rem;
-      line-height: 1;
-      letter-spacing: -0.06rem;
-    }
-
-    .contact-us--reference-request .contact-us__form {
-      gap: 2rem;
-    }
-
-    .contact-us--reference-request .contact-us__form-row {
-      padding-block: 2.4rem;
-      align-items: center;
-    }
-
-    .contact-us--reference-request .contact-us__select .select__button {
-      padding-right: 1.8rem;
+    .contact-us__select .select__button {
       font-size: 1.4rem;
       line-height: 1;
       letter-spacing: -0.042rem;
+      gap: 1rem;
+      justify-content: flex-end;
     }
 
-    .contact-us--reference-request .contact-us__form-submit {
-      width: 100%;
+    .contact-us__select .select__arrow {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+
+    .contact-us__select .select__dropdown {
+      left: auto;
+      right: 0;
+      width: calc(100vw - var(--content-padding) * 2);
     }
   }
 }
