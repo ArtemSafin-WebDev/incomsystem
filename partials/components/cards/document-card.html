@@ -1,16 +1,13 @@
 <a class="document-card" href="{{doc.href}}">
-    <div class="document-card__body">
-        <div class="document-card__top">
-            <h3 class="document-card__title">{{doc.title}}</h3>
-            <p class="document-card__meta">
-                <span>{{doc.type}}</span>
-                <span>·</span>
-                <span>{{doc.size}}</span>
-            </p>
-        </div>
+    <h3 class="document-card__title">{{doc.title}}</h3>
 
-        <span class="document-card__download">{{doc.downloadText}}</span>
-    </div>
+    <p class="document-card__meta">
+        <span>{{doc.type}}</span>
+        <span>·</span>
+        <span>{{doc.size}}</span>
+    </p>
+
+    <span class="document-card__download">{{doc.downloadText}}</span>
 
     <span class="document-card__icon document-card__icon--{{doc.iconClass}}" aria-hidden="true">
         <span class="document-card__icon-text">{{doc.type}}</span>
