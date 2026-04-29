@@ -28,6 +28,24 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+
+    @include mq.down(sm) {
+      position: static;
+      width: auto;
+      height: auto;
+      margin: 0 0 4rem;
+      overflow: visible;
+      clip: auto;
+      color: var(--text-color);
+      font-family: var(--rf-dewi);
+      font-size: 3rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+      text-transform: uppercase;
+      white-space: normal;
+    }
   }
 
   .download-materials-page__filters {
@@ -39,7 +57,7 @@
 
     @include mq.down(sm) {
       grid-template-columns: 1fr;
-      gap: 1.6rem;
+      gap: 1.4rem;
       align-items: stretch;
       margin-top: 0;
     }
@@ -64,6 +82,7 @@
     line-height: 1.05;
 
     @include mq.down(sm) {
+      min-height: 5.6rem;
       padding-inline: 2rem 5.6rem;
     }
 
@@ -85,6 +104,8 @@
 
     @include mq.down(sm) {
       right: 2rem;
+      width: 1.8rem;
+      height: 1.8rem;
     }
 
     svg {
@@ -118,6 +139,19 @@
     }
   }
 
+  .download-materials-page .select__button {
+    @include mq.down(sm) {
+      min-height: 5.6rem;
+      padding: 1.5rem 2rem;
+    }
+  }
+
+  .download-materials-page .select__reset {
+    @include mq.down(sm) {
+      right: 2rem;
+    }
+  }
+
   .download-materials-page__count {
     display: flex;
     align-items: center;
@@ -134,7 +168,9 @@
     text-align: center;
 
     @include mq.down(sm) {
+      min-height: 5.6rem;
       width: 100%;
+      padding-inline: 2rem;
     }
   }
 
@@ -147,8 +183,8 @@
 
     @include mq.down(sm) {
       grid-template-columns: 1fr;
-      row-gap: 2rem;
-      margin-top: 4rem;
+      row-gap: 1.6rem;
+      margin-top: 3.2rem;
     }
   }
 
@@ -157,7 +193,4 @@
     min-width: 0;
   }
 
-  .download-materials-page__item .document-card {
-    aspect-ratio: 445 / 275;
-  }
 }
