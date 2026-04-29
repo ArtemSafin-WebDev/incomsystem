@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {{> layout/meta }}
+</head>
+
+<body>
+  {{> layout/header }}
+  {{> components/mobile-menu mobileMenu=mobileMenu }}
+  <main class="page-main">
+    {{> sections/download-materials-page downloadMaterialsPage=downloadMaterialsPage }}
+    {{> sections/contact-us contactUs=contactUs }}
+    {{> sections/engineering-center engineeringCenter=engineeringCenter }}
+  </main>
+  {{> layout/footer }}
+
+  <script type="module" src="/src/js/main.ts"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<section class="download-materials-page">
+    <div class="container">
+        {{> components/breadcrumbs downloadMaterialsPage.breadcrumbs }}
+
+        <h1 class="download-materials-page__title">{{downloadMaterialsPage.title}}</h1>
+
+        <form class="download-materials-page__filters" action="{{downloadMaterialsPage.filters.action}}" method="get">
+            <label class="download-materials-page__search">
+                <input class="download-materials-page__search-input"
+                    type="search"
+                    name="{{downloadMaterialsPage.filters.search.name}}"
+                    aria-label="{{downloadMaterialsPage.filters.search.label}}"
+                    placeholder="{{downloadMaterialsPage.filters.search.placeholder}}">
+                <span class="download-materials-page__search-icon" aria-hidden="true">
+                    <svg width="15" height="15">
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </span>
+            </label>
+
+            {{#each downloadMaterialsPage.filters.selects}}
+            <div class="download-materials-page__filter-field">
+                <p class="download-materials-page__filter-label">{{this.label}}</p>
+                {{> components/select select=this }}
+            </div>
+            {{/each}}
+
+            <button class="download-materials-page__count" type="submit">{{downloadMaterialsPage.filters.countText}}</button>
+        </form>
+
+        <ul class="download-materials-page__list">
+            {{#each downloadMaterialsPage.items}}
+            <li class="download-materials-page__item">
+                {{> components/cards/document-card doc=this }}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

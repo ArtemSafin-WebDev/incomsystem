@@ -1,0 +1,163 @@
+@use "tools/media" as mq;
+
+@layer sections {
+  .download-materials-page {
+    padding-top: 16rem;
+    padding-bottom: 14.5rem;
+    background-color: #fff;
+
+    @include mq.down(sm) {
+      padding-top: 12rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  .download-materials-page .breadcrumbs {
+    @include mq.down(sm) {
+      display: none;
+    }
+  }
+
+  .download-materials-page__title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .download-materials-page__filters {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: end;
+    margin-top: 7.6rem;
+
+    @include mq.down(sm) {
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+      align-items: stretch;
+      margin-top: 0;
+    }
+  }
+
+  .download-materials-page__search {
+    position: relative;
+    display: block;
+  }
+
+  .download-materials-page__search-input {
+    width: 100%;
+    min-height: 6rem;
+    padding: 1.7rem 6.5rem 1.7rem 3rem;
+    border: 1px solid #c2c2c8;
+    border-radius: 4rem;
+    background-color: transparent;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.05;
+
+    @include mq.down(sm) {
+      padding-inline: 2rem 5.6rem;
+    }
+
+    &::placeholder {
+      color: rgba(34, 34, 51, 0.5);
+      opacity: 1;
+    }
+  }
+
+  .download-materials-page__search-icon {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    width: 2rem;
+    height: 2rem;
+    color: var(--text-color);
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    @include mq.down(sm) {
+      right: 2rem;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+  }
+
+  .download-materials-page__filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @include mq.down(sm) {
+      gap: 1rem;
+    }
+  }
+
+  .download-materials-page__filter-label {
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.05;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .download-materials-page__count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 6rem;
+    padding: 1.7rem 3rem;
+    border-radius: 4rem;
+    background-color: #222233;
+    color: #fff;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.05;
+    text-align: center;
+
+    @include mq.down(sm) {
+      width: 100%;
+    }
+  }
+
+  .download-materials-page__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 2rem;
+    row-gap: 8rem;
+    margin-top: 4.5rem;
+
+    @include mq.down(sm) {
+      grid-template-columns: 1fr;
+      row-gap: 2rem;
+      margin-top: 4rem;
+    }
+  }
+
+  .download-materials-page__item {
+    display: flex;
+    min-width: 0;
+  }
+
+  .download-materials-page__item .document-card {
+    aspect-ratio: 445 / 275;
+  }
+}
