@@ -4,31 +4,31 @@
   .other-articles {
     background-color: #f2f2fa;
     padding-top: 4rem;
-    padding-bottom: 8rem;
+    padding-bottom: 10rem;
     overflow: hidden;
 
-    @include mq.up(md) {
-      padding-bottom: 10rem;
+    @include mq.down(sm) {
+      padding-bottom: 6rem;
     }
   }
 
   .other-articles__title {
-    margin-bottom: 3rem;
+    margin-bottom: 10.4rem;
     color: var(--text-color);
     font-family: var(--rf-dewi);
-    font-size: 3rem;
+    font-size: 6rem;
     font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.06rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.12rem;
     text-transform: uppercase;
 
-    @include mq.up(md) {
-      margin-bottom: 10.4rem;
-      font-size: 6rem;
-      font-weight: 600;
-      line-height: 1;
-      letter-spacing: -0.12rem;
+    @include mq.down(sm) {
+      margin-bottom: 3rem;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
     }
   }
 
@@ -42,20 +42,21 @@
 
   .other-articles__item {
     position: relative;
-    width: min(30rem, calc(100vw - 4rem));
+    width: calc((100% - 18rem) / 4);
     height: auto;
-    margin-right: 2rem;
+    margin-right: 6rem;
     flex-shrink: 0;
 
     &:first-child {
       &::before {
-        display: none;
+        content: none;
       }
     }
+
     &::before {
       content: "";
       position: absolute;
-      left: -1rem;
+      left: -3rem;
       top: 0;
       bottom: 0;
       width: 1px;
@@ -66,20 +67,21 @@
       margin-right: 0;
     }
 
-    @include mq.up(md) {
-      width: calc((100% - 18rem) / 4);
-      margin-right: 6rem;
+    @include mq.down(sm) {
+      width: min(30rem, calc(100vw - 4rem));
+      margin-right: 2rem;
+
       &::before {
-        display: none;
+        content: none;
       }
     }
   }
 
   .other-articles__item .press-center-card {
-    min-height: auto;
+    min-height: 58rem;
 
-    @include mq.up(md) {
-      min-height: 58rem;
+    @include mq.down(sm) {
+      min-height: auto;
     }
   }
 
@@ -89,14 +91,11 @@
 
   .other-articles__navigation {
     width: max-content;
-    margin: 4rem auto 0;
+    margin: 13rem auto 0;
 
-    @include mq.up(md) {
-      margin-top: 13rem;
+    @include mq.down(sm) {
+      margin-top: 4rem;
     }
   }
 
-  .other-articles__navigation .slider-navigation__button {
-    background-color: rgba(34, 34, 34, 0.1);
-  }
 }

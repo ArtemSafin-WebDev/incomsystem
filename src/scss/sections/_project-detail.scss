@@ -115,12 +115,19 @@
     padding-block: 1.7rem;
     border-width: 1px;
     border-color: rgba(34, 34, 34, 0.2);
+    margin-top: 1.5rem;
 
     svg {
       width: 1.6rem;
       height: 1.6rem;
-      color: var(--primary-color);
+
       fill: currentColor;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: var(--primary-color);
+      }
     }
 
     @include mq.down(sm) {
@@ -131,6 +138,7 @@
       max-width: 100%;
       padding: 1.4rem 2rem;
       font-size: 1.2rem;
+      margin-top: 0;
 
       svg {
         width: 1.4rem;
@@ -337,11 +345,6 @@
     }
   }
 
-  .project-detail-gallery__navigation .slider-navigation__button {
-    background-color: #f2f2fa;
-    color: var(--text-color);
-  }
-
   .project-detail-gallery__thumbs {
     margin-top: 1rem;
 
@@ -438,5 +441,4 @@
   .project-detail-table__cell--value {
     border-left: 1px solid rgba(34, 34, 51, 0.14);
   }
-
 }
