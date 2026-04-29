@@ -52,8 +52,9 @@
 
     @include mq.down(sm) {
       grid-template-columns: 1fr;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      gap: 3rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
     }
   }
 
@@ -66,12 +67,15 @@
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: -0.06rem;
+    text-wrap: balance;
 
     @include mq.down(sm) {
       grid-column: auto;
       max-width: none;
       font-size: 2rem;
+      line-height: 1.15;
       letter-spacing: -0.04rem;
+      text-wrap: balance;
     }
   }
 
@@ -80,89 +84,6 @@
 
     @include mq.down(sm) {
       grid-column: auto;
-    }
-  }
-
-  .realised-projects-page__banner-card .engineering-doc-card {
-    border-radius: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 2rem;
-    color: inherit;
-    text-decoration: none;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 2rem;
-    min-height: 20rem;
-    transition: border-color 0.2s;
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        border-color: #fff;
-      }
-    }
-
-    @include mq.down(sm) {
-      min-height: 18rem;
-    }
-  }
-
-  .realised-projects-page__banner-card .engineering-doc-card__body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 2rem;
-    align-self: stretch;
-    min-width: 0;
-  }
-
-  .realised-projects-page__banner-card .engineering-doc-card__top {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .realised-projects-page__banner-card .engineering-doc-card__title {
-    color: #fff;
-    font-family: var(--inter);
-    font-size: 2.2rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4;
-    letter-spacing: -0.066rem;
-  }
-
-  .realised-projects-page__banner-card .engineering-doc-card__meta,
-  .realised-projects-page__banner-card .engineering-doc-card__download {
-    color: #fff;
-    font-family: var(--inter);
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-  }
-
-  .realised-projects-page__banner-card .engineering-doc-card__meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    opacity: 0.7;
-  }
-
-  .realised-projects-page__banner-card .engineering-doc-card__icon {
-    width: 6rem;
-    height: 6rem;
-    border-radius: 50%;
-    background-color: #01c5f5;
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-    color: #fff;
-
-    svg {
-      width: 100%;
-      height: 100%;
-      fill: currentColor;
     }
   }
 }

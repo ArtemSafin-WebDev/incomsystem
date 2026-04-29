@@ -1,0 +1,138 @@
+<section class="project-detail-hero">
+    <div class="container">
+        {{> components/breadcrumbs projectDetail.breadcrumbs }}
+
+        <div class="project-detail-hero__meta">
+            <ul class="project-detail-hero__tags">
+                {{#each projectDetail.tags}}
+                <li class="project-detail-hero__tag">{{this}}</li>
+                {{/each}}
+            </ul>
+
+            <p class="project-detail-hero__year">{{projectDetail.year}}</p>
+        </div>
+
+        <div class="project-detail-hero__head">
+            <h1 class="project-detail-hero__title">{{projectDetail.title}}</h1>
+
+            <a class="btn btn--dark-text project-detail-hero__button" href="{{projectDetail.requestHref}}">
+                <span>{{projectDetail.requestText}}</span>
+                <svg width="16" height="16" aria-hidden="true">
+                    <use xlink:href="#arrows/right"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="project-detail-content">
+    <div class="container">
+        <nav class="project-detail-nav" aria-label="{{projectDetail.navigationAriaLabel}}">
+            <ul class="project-detail-nav__list">
+                {{#each projectDetail.navigation}}
+                <li class="project-detail-nav__item">
+                    <a class="project-detail-nav__link{{#if this.active}} project-detail-nav__link--active{{/if}}"
+                        href="{{this.href}}">{{this.label}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </nav>
+
+        <div class="project-detail-content__inner">
+            <section class="project-detail-section" id="about-project">
+                <h2 class="project-detail-section__title">{{projectDetail.about.title}}</h2>
+
+                <div class="project-detail-section__text">
+                    {{#each projectDetail.about.paragraphs}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                </div>
+            </section>
+
+            <div class="project-detail-gallery js-article-gallery" aria-label="{{projectDetail.gallery.ariaLabel}}">
+                <div class="project-detail-gallery__main swiper js-article-gallery-main">
+                    <ul class="project-detail-gallery__list swiper-wrapper">
+                        {{#each projectDetail.gallery.images}}
+                        <li class="project-detail-gallery__item swiper-slide">
+                            <img src="{{this.src}}" alt="{{this.alt}}" loading="lazy">
+                        </li>
+                        {{/each}}
+                    </ul>
+
+                    {{> components/slider-navigation className="project-detail-gallery__navigation" ariaLabel=projectDetail.gallery.ariaLabel prevLabel=projectDetail.gallery.prevLabel nextLabel=projectDetail.gallery.nextLabel }}
+                </div>
+
+                <div class="project-detail-gallery__thumbs swiper js-article-gallery-thumbs" aria-hidden="true">
+                    <ul class="project-detail-gallery__thumbs-list swiper-wrapper">
+                        {{#each projectDetail.gallery.images}}
+                        <li class="project-detail-gallery__thumb swiper-slide">
+                            <img src="{{this.src}}" alt="" loading="lazy">
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+            <section class="project-detail-section" id="technical-characteristics">
+                <h2 class="project-detail-section__title">{{projectDetail.technical.title}}</h2>
+
+                <div class="project-detail-section__text">
+                    {{#each projectDetail.technical.paragraphs}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                </div>
+            </section>
+
+            <section class="project-detail-section" id="abak-characteristics">
+                <h2 class="project-detail-section__title">{{projectDetail.abak.title}}</h2>
+
+                <div class="project-detail-table">
+                    {{#each projectDetail.abak.rows}}
+                    <div class="project-detail-table__row">
+                        <p class="project-detail-table__cell project-detail-table__cell--label">{{this.label}}</p>
+                        <div class="project-detail-table__cell project-detail-table__cell--value">
+                            {{#if this.values}}
+                            {{#each this.values}}
+                            <p>{{this}}</p>
+                            {{/each}}
+                            {{else}}
+                            <p>{{this.value}}</p>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </section>
+
+            <section class="project-detail-section" id="project-features">
+                <h2 class="project-detail-section__title">{{projectDetail.features.title}}</h2>
+
+                <div class="project-detail-section__text">
+                    {{#each projectDetail.features.paragraphs}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+<section class="other-projects js-other-projects">
+    <div class="container">
+        <div class="other-projects__top">
+            <h2 class="other-projects__title">{{projectDetail.otherProjects.title}}</h2>
+
+            {{> components/slider-navigation className="other-projects__navigation" ariaLabel=projectDetail.otherProjects.ariaLabel prevLabel=projectDetail.otherProjects.prevLabel nextLabel=projectDetail.otherProjects.nextLabel }}
+        </div>
+
+        <div class="other-projects__slider swiper js-other-projects-slider">
+            <ul class="other-projects__list swiper-wrapper">
+                {{#each projectDetail.otherProjects.items}}
+                <li class="other-projects__item swiper-slide">
+                    {{> components/cards/other-project-card project=this detailsText=../projectDetail.otherProjects.detailsText }}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</section>

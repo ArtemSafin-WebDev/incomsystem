@@ -11,6 +11,7 @@ import HarshConditions from "../classes/components/HarshConditions";
 import CompactHeader from "../classes/components/CompactHeader";
 import IntroBackgroundVideo from "../classes/components/IntroBackgroundVideo";
 import MobileMenu from "../classes/components/MobileMenu";
+import OtherProjects from "../classes/components/OtherProjects";
 import PressCenter from "../classes/components/PressCenter";
 import ProductionAndServices from "../classes/components/ProductionAndServices";
 import RealisedProjects from "../classes/components/RealisedProjects";
@@ -70,6 +71,8 @@ export default function sections() {
   const realisedProjectsSections = document.querySelectorAll<HTMLElement>(
     ".js-realised-projects"
   );
+  const otherProjectsSections =
+    document.querySelectorAll<HTMLElement>(".js-other-projects");
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
@@ -121,5 +124,9 @@ export default function sections() {
 
   realisedProjectsSections.forEach((section) => {
     new RealisedProjects(section);
+  });
+
+  otherProjectsSections.forEach((section) => {
+    new OtherProjects(section);
   });
 }
