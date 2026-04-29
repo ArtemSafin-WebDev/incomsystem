@@ -103,9 +103,9 @@
     pointer-events: none;
 
     @include mq.down(sm) {
-      right: 2rem;
-      width: 1.8rem;
-      height: 1.8rem;
+      right: 2.6rem;
+      width: 2.2rem;
+      height: 2.2rem;
     }
 
     svg {
@@ -136,19 +136,6 @@
 
     @include mq.down(sm) {
       font-size: 1.2rem;
-    }
-  }
-
-  .download-materials-page .select__button {
-    @include mq.down(sm) {
-      min-height: 5.6rem;
-      padding: 1.5rem 2rem;
-    }
-  }
-
-  .download-materials-page .select__reset {
-    @include mq.down(sm) {
-      right: 2rem;
     }
   }
 
@@ -192,5 +179,4 @@
     display: flex;
     min-width: 0;
   }
-
 }

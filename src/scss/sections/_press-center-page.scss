@@ -256,16 +256,16 @@
     position: absolute;
     right: 3rem;
     top: 50%;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     color: var(--text-color);
     transform: translateY(-50%);
     pointer-events: none;
 
     @include mq.down(sm) {
-      right: 2rem;
-      width: 2rem;
-      height: 2rem;
+      right: 3rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
 
     svg {
