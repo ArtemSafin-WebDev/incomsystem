@@ -121,8 +121,6 @@
     <div class="container">
         <div class="other-projects__top">
             <h2 class="other-projects__title">{{projectDetail.otherProjects.title}}</h2>
-
-            {{> components/slider-navigation className="other-projects__navigation" ariaLabel=projectDetail.otherProjects.ariaLabel prevLabel=projectDetail.otherProjects.prevLabel nextLabel=projectDetail.otherProjects.nextLabel }}
         </div>
 
         <div class="other-projects__slider swiper js-other-projects-slider">
@@ -134,5 +132,7 @@
                 {{/each}}
             </ul>
         </div>
+
+        {{> components/slider-navigation className="other-projects__navigation" ariaLabel=projectDetail.otherProjects.ariaLabel prevLabel=projectDetail.otherProjects.prevLabel nextLabel=projectDetail.otherProjects.nextLabel }}
     </div>
 </section>

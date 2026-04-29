@@ -43,6 +43,38 @@ const getPressCenterItemsByTab = (tab) =>
     ? pressCenterItems
     : pressCenterItems.filter((item) => item.tabs.includes(tab));
 
+const otherArticleItems = [
+  ...pressCenterItems,
+  {
+    title: "Инкомсистем расширяет линейку решений для промышленной автоматизации",
+    image: "/images/press-center/1.webp",
+    tag: "Оборудование",
+    date: "12.01.2025",
+    href: "#",
+  },
+  {
+    title: "Новые подходы к подготовке инженерных команд для сложных проектов",
+    image: "/images/press-center/2.webp",
+    tag: "Статьи",
+    date: "15.01.2025",
+    href: "#",
+  },
+  {
+    title: "Инкомсистем принял участие в отраслевой встрече производителей",
+    image: "/images/press-center/3.webp",
+    tag: "События",
+    date: "20.01.2025",
+    href: "#",
+  },
+  {
+    title: "Практика внедрения отечественных контроллеров на объектах заказчиков",
+    image: "/images/press-center/4.webp",
+    tag: "Статьи",
+    date: "24.01.2025",
+    href: "#",
+  },
+];
+
 const galleryImages = Array.from({ length: 8 }, (_, index) => ({
   src: "/images/news-detail/gallery.webp",
   alt: `Участники финала чемпионата «Профессионалы», фото ${index + 1}`,
@@ -129,40 +161,12 @@ export default {
           "Участники чемпионата «Профессионалы» на трибунах в Санкт-Петербурге",
       },
     },
-    pressCenter: {
+    otherArticles: {
       title: "Другие статьи",
-      topLinkText: "В пресс-центр",
-      topLinkHref: "/press-center.html",
-      scrollHintText: "Листайте влево/вправо",
-      buttonText: "В пресс-центр",
-      buttonHref: "/press-center.html",
-      tabs: [
-        {
-          key: "all",
-          label: "Все",
-          items: getPressCenterItemsByTab("all"),
-        },
-        {
-          key: "articles",
-          label: "Статьи",
-          items: getPressCenterItemsByTab("articles"),
-        },
-        {
-          key: "news",
-          label: "Новости",
-          items: getPressCenterItemsByTab("news"),
-        },
-        {
-          key: "events",
-          label: "События",
-          items: getPressCenterItemsByTab("events"),
-        },
-        {
-          key: "gallery",
-          label: "Галерея",
-          items: getPressCenterItemsByTab("gallery"),
-        },
-      ],
+      ariaLabel: "Навигация по другим статьям",
+      prevLabel: "Предыдущие статьи",
+      nextLabel: "Следующие статьи",
+      items: otherArticleItems,
     },
   },
   "/news-detail-no-image.html": {

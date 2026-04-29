@@ -6,6 +6,9 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    @include mq.down(sm) {
+      gap: 0.5rem;
+    }
   }
 
   .slider-navigation__button {

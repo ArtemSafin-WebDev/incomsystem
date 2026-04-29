@@ -1,0 +1,102 @@
+@use "tools/media" as mq;
+
+@layer sections {
+  .other-articles {
+    background-color: #f2f2fa;
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+    overflow: hidden;
+
+    @include mq.up(md) {
+      padding-bottom: 10rem;
+    }
+  }
+
+  .other-articles__title {
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    font-family: var(--rf-dewi);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.06rem;
+    text-transform: uppercase;
+
+    @include mq.up(md) {
+      margin-bottom: 10.4rem;
+      font-size: 6rem;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.12rem;
+    }
+  }
+
+  .other-articles__slider {
+    overflow: visible;
+  }
+
+  .other-articles__list {
+    list-style: none;
+  }
+
+  .other-articles__item {
+    position: relative;
+    width: min(30rem, calc(100vw - 4rem));
+    height: auto;
+    margin-right: 2rem;
+    flex-shrink: 0;
+
+    &:first-child {
+      &::before {
+        display: none;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1rem;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background-color: rgba(34, 34, 34, 0.2);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include mq.up(md) {
+      width: calc((100% - 18rem) / 4);
+      margin-right: 6rem;
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .other-articles__item .press-center-card {
+    min-height: auto;
+
+    @include mq.up(md) {
+      min-height: 58rem;
+    }
+  }
+
+  .other-articles__item .press-center-card__title {
+    margin-bottom: 0;
+  }
+
+  .other-articles__navigation {
+    width: max-content;
+    margin: 4rem auto 0;
+
+    @include mq.up(md) {
+      margin-top: 13rem;
+    }
+  }
+
+  .other-articles__navigation .slider-navigation__button {
+    background-color: rgba(34, 34, 34, 0.1);
+  }
+}
