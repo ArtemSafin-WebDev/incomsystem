@@ -33,7 +33,9 @@
   }
 
   .other-articles__slider {
-    overflow: visible;
+    @include mq.down(sm) {
+      overflow: visible;
+    }
   }
 
   .other-articles__list {
@@ -97,5 +99,4 @@
       margin-top: 4rem;
     }
   }
-
 }

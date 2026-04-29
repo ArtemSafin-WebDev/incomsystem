@@ -1,0 +1,51 @@
+<section class="documentation-page">
+    <div class="container">
+        {{> components/breadcrumbs documentationPage.breadcrumbs }}
+
+        <div class="documentation-page__grid">
+            <h1 class="documentation-page__title">{{documentationPage.title}}</h1>
+
+            <div class="documentation-page__content">
+                {{#each documentationPage.intro}}
+                <p>{{this}}</p>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="documentation-documents">
+    <div class="container">
+        <form class="documentation-documents__filters" action="{{documentationPage.documents.filters.action}}" method="get">
+            <label class="documentation-documents__search">
+                <input class="documentation-documents__search-input"
+                    type="search"
+                    name="{{documentationPage.documents.filters.search.name}}"
+                    aria-label="{{documentationPage.documents.filters.search.label}}"
+                    placeholder="{{documentationPage.documents.filters.search.placeholder}}">
+                <span class="documentation-documents__search-icon" aria-hidden="true">
+                    <svg width="15" height="15">
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </span>
+            </label>
+
+            {{#each documentationPage.documents.filters.selects}}
+            <div class="documentation-documents__filter-field">
+                <p class="documentation-documents__filter-label">{{this.label}}</p>
+                {{> components/select select=this }}
+            </div>
+            {{/each}}
+
+            <button class="documentation-documents__count" type="submit">{{documentationPage.documents.filters.countText}}</button>
+        </form>
+
+        <ul class="documentation-documents__list">
+            {{#each documentationPage.documents.items}}
+            <li class="documentation-documents__item">
+                {{> components/cards/document-card doc=this }}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

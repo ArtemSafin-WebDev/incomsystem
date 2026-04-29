@@ -38,11 +38,6 @@ const pressCenterItems = [
   },
 ];
 
-const getPressCenterItemsByTab = (tab) =>
-  tab === "all"
-    ? pressCenterItems
-    : pressCenterItems.filter((item) => item.tabs.includes(tab));
-
 const otherArticleItems = [
   ...pressCenterItems,
   {
@@ -186,40 +181,12 @@ export default {
         isPlain: true,
       },
     },
-    pressCenter: {
+    otherArticles: {
       title: "Другие статьи",
-      topLinkText: "В пресс-центр",
-      topLinkHref: "/press-center.html",
-      scrollHintText: "Листайте влево/вправо",
-      buttonText: "В пресс-центр",
-      buttonHref: "/press-center.html",
-      tabs: [
-        {
-          key: "all",
-          label: "Все",
-          items: getPressCenterItemsByTab("all"),
-        },
-        {
-          key: "articles",
-          label: "Статьи",
-          items: getPressCenterItemsByTab("articles"),
-        },
-        {
-          key: "news",
-          label: "Новости",
-          items: getPressCenterItemsByTab("news"),
-        },
-        {
-          key: "events",
-          label: "События",
-          items: getPressCenterItemsByTab("events"),
-        },
-        {
-          key: "gallery",
-          label: "Галерея",
-          items: getPressCenterItemsByTab("gallery"),
-        },
-      ],
+      ariaLabel: "Навигация по другим статьям",
+      prevLabel: "Предыдущие статьи",
+      nextLabel: "Следующие статьи",
+      items: otherArticleItems,
     },
   },
 };

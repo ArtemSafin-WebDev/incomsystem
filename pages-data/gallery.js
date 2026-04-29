@@ -161,18 +161,12 @@ export default {
         items: galleryItems,
       },
     },
-    pressCenter: {
+    otherAlbums: {
       title: "Другие альбомы",
-      className: "press-center--compact",
-      hideControls: true,
-      hideCardsHint: true,
-      tabs: [
-        {
-          key: "albums",
-          label: "Альбомы",
-          items: albumItems,
-        },
-      ],
+      ariaLabel: "Навигация по другим альбомам",
+      prevLabel: "Предыдущие альбомы",
+      nextLabel: "Следующие альбомы",
+      items: albumItems,
     },
   },
 };

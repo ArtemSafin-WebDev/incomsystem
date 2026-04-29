@@ -6,6 +6,10 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+
+    &:has(.swiper-button-lock) {
+      display: none !important;
+    }
     @include mq.down(sm) {
       gap: 0.5rem;
     }
