@@ -55,14 +55,6 @@
     }
   }
 
-  .product-detail-page__content > h2 {
-    @include mq.down(sm) {
-      font-size: 2.2rem;
-      line-height: 1.1;
-      letter-spacing: -0.044rem;
-    }
-  }
-
   .product-detail-page__topics-list {
     list-style: none;
   }
