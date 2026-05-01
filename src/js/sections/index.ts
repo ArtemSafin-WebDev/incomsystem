@@ -15,6 +15,7 @@ import OtherArticles from "../classes/components/OtherArticles";
 import OtherProjects from "../classes/components/OtherProjects";
 import PressCenter from "../classes/components/PressCenter";
 import ProductionAndServices from "../classes/components/ProductionAndServices";
+import ProductionAndServicesPage from "../classes/components/ProductionAndServicesPage";
 import RealisedProjects from "../classes/components/RealisedProjects";
 
 export default function sections() {
@@ -63,6 +64,8 @@ export default function sections() {
   const productionAndServicesSections = document.querySelectorAll<HTMLElement>(
     ".js-production-and-services"
   );
+  const productionAndServicesPageSections =
+    document.querySelectorAll<HTMLElement>(".js-production-and-services-page");
   const companyHistorySections = document.querySelectorAll<HTMLElement>(
     ".js-company-history"
   );
@@ -116,6 +119,10 @@ export default function sections() {
 
   productionAndServicesSections.forEach((section) => {
     new ProductionAndServices(section);
+  });
+
+  productionAndServicesPageSections.forEach((section) => {
+    new ProductionAndServicesPage(section);
   });
 
   companyHistorySections.forEach((section) => {

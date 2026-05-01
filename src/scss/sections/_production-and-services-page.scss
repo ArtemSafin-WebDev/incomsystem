@@ -1,0 +1,290 @@
+@use "tools/media" as mq;
+
+@layer sections {
+  .production-and-services-page {
+    padding-top: 16rem;
+    padding-bottom: 11rem;
+    background-color: #fff;
+
+    @include mq.down(sm) {
+      padding-top: 12rem;
+      padding-bottom: 4rem;
+    }
+  }
+
+  .production-and-services-page .breadcrumbs {
+    @include mq.down(sm) {
+      display: none;
+    }
+  }
+
+  .production-and-services-page__title {
+    margin-top: 4rem;
+    color: var(--text-color);
+    font-family: var(--rf-dewi);
+    font-size: 12rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.48rem;
+
+    @include mq.down(sm) {
+      margin-top: 0;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+      text-transform: uppercase;
+    }
+  }
+
+  .production-and-services-page__list {
+    margin-top: 12.8rem;
+
+    @include mq.down(sm) {
+      margin-top: 4rem;
+    }
+  }
+
+  .production-and-services-page__item {
+    border-top: 1px solid rgba(34, 34, 34, 0.2);
+  }
+
+  .production-and-services-page__card {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    @include mq.down(sm) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding-block: 2rem;
+    }
+  }
+
+  .production-and-services-page__image-link {
+    grid-column: 1 / 3;
+    display: block;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    aspect-ratio: 445 / 262;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+    }
+  }
+
+  .production-and-services-page__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .production-and-services-page__count {
+    grid-column: 3 / 5;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+      order: -1;
+      font-size: 1.2rem;
+      opacity: 0.7;
+    }
+  }
+
+  .production-and-services-page__content {
+    grid-column: 5 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5rem;
+    min-width: 0;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+      gap: 2.4rem;
+    }
+  }
+
+  .production-and-services-page__item-title {
+    max-width: 52.8rem;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.09rem;
+
+    @include mq.down(sm) {
+      font-size: 2.2rem;
+      letter-spacing: -0.044rem;
+    }
+  }
+
+  .production-and-services-page__services-wrap,
+  .production-and-services-page__services {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .production-and-services-page__services-wrap {
+    gap: 2rem;
+    max-width: 71rem;
+
+    @include mq.down(sm) {
+      max-width: none;
+    }
+  }
+
+  .production-and-services-page__services {
+    gap: 2rem;
+
+    @include mq.down(sm) {
+      gap: 1.4rem;
+    }
+  }
+
+  .production-and-services-page__service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.05;
+    transition: color 0.2s;
+
+    @include mq.down(sm) {
+      align-items: baseline;
+      line-height: 1.2;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .production-and-services-page__service-link--accent {
+    color: var(--primary-color);
+  }
+
+  .production-and-services-page__services:not(.is-expanded)
+    .production-and-services-page__service:nth-child(n + 11) {
+    display: none;
+  }
+
+  .production-and-services-page__service-text {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 0.2rem;
+  }
+
+  .production-and-services-page__service-arrow {
+    color: var(--primary-color);
+    width: 1.2rem;
+    height: 1.2rem;
+    flex-shrink: 0;
+    fill: currentColor;
+  }
+
+  .production-and-services-page__service-arrow--down {
+    transform: rotate(90deg);
+    transform-origin: center;
+  }
+
+  .production-and-services-page__more {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--primary-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.05;
+    transition: color 0.2s;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--text-color);
+      }
+    }
+  }
+
+  .production-and-services-page__more-text {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 0.2rem;
+  }
+
+  .production-and-services-page__more-arrow {
+    width: 1.2rem;
+    height: 1.2rem;
+    flex-shrink: 0;
+    fill: currentColor;
+    transform: rotate(90deg);
+    transform-origin: center;
+  }
+
+  .production-and-services-page__more.is-hidden {
+    display: none;
+  }
+
+  .production-and-services-page__details {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: auto;
+    padding: 2.15rem 3rem;
+    border: 1px solid rgba(34, 34, 34, 0.2);
+    border-radius: 4rem;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+    transition:
+      border-color 0.2s,
+      background-color 0.2s,
+      color 0.2s;
+
+    .production-and-services-page__details-arrow {
+      color: var(--primary-color);
+      width: 1.2rem;
+      height: 1.2rem;
+      flex-shrink: 0;
+      fill: currentColor;
+      transition: fill 0.2s;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: var(--primary-color);
+        background-color: var(--primary-color);
+        color: #fff;
+
+        .production-and-services-page__details-arrow {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

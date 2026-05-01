@@ -1,0 +1,63 @@
+<section class="production-and-services-page js-production-and-services-page">
+    <div class="container">
+        {{> components/breadcrumbs productionAndServicesPage.breadcrumbs }}
+
+        <h1 class="production-and-services-page__title">{{{productionAndServicesPage.title}}}</h1>
+
+        <ul class="production-and-services-page__list">
+            {{#each productionAndServicesPage.items}}
+            <li class="production-and-services-page__item">
+                <article class="production-and-services-page__card">
+                    <a class="production-and-services-page__image-link" href="{{this.href}}"
+                        aria-label="{{this.title}}">
+                        <img class="production-and-services-page__image" src="{{this.image}}" alt="{{this.imageAlt}}">
+                    </a>
+
+                    <p class="production-and-services-page__count">{{this.count}}</p>
+
+                    <div class="production-and-services-page__content">
+                        <h2 class="production-and-services-page__item-title">{{this.title}}</h2>
+
+                        {{#if this.services}}
+                        <div class="production-and-services-page__services-wrap">
+                            <ul class="production-and-services-page__services js-production-and-services-page-services">
+                                {{#each this.services}}
+                                <li class="production-and-services-page__service">
+                                    <a class="production-and-services-page__service-link{{#if this.accent}} production-and-services-page__service-link--accent{{/if}}"
+                                        href="{{this.href}}">
+                                        <span class="production-and-services-page__service-text">{{this.label}}</span>
+                                        <svg
+                                            class="production-and-services-page__service-arrow{{#if this.arrowDown}} production-and-services-page__service-arrow--down{{/if}}"
+                                            width="12" height="12" aria-hidden="true">
+                                            <use xlink:href="#arrows/arrow-right-fat"></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                {{/each}}
+                            </ul>
+
+                            {{#if this.hasHiddenServices}}
+                            <button class="production-and-services-page__more js-production-and-services-page-more" type="button">
+                                <span class="production-and-services-page__more-text">{{../productionAndServicesPage.moreText}}</span>
+                                <svg class="production-and-services-page__more-arrow" width="12" height="12" aria-hidden="true">
+                                    <use xlink:href="#arrows/arrow-right-fat"></use>
+                                </svg>
+                            </button>
+                            {{/if}}
+                        </div>
+                        {{/if}}
+
+                        <a class="production-and-services-page__details" href="{{this.href}}">
+                            <span>{{../productionAndServicesPage.detailsText}}</span>
+                            <svg class="production-and-services-page__details-arrow" width="12" height="12"
+                                aria-hidden="true">
+                                <use xlink:href="#arrows/arrow-right-fat"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>
