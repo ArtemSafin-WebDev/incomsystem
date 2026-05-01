@@ -171,6 +171,14 @@
       }
     }
 
+    :scope > .article-snippet:first-child {
+      margin-top: 0;
+    }
+
+    :scope > .article-snippet:last-child {
+      margin-bottom: 0;
+    }
+
     :scope > .article-snippet--media-right {
       @include mq.down(sm) {
         margin-top: 2rem;
