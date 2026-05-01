@@ -18,13 +18,33 @@
             <nav class="article-snippet product-detail-page__topics" aria-label="Материалы раздела">
                 <ul class="product-detail-page__topics-list">
                     {{#each productDetailPage.topics}}
-                    <li class="product-detail-page__topics-item">
-                        <a class="product-detail-page__topics-link" href="{{this.href}}">
+                    <li class="product-detail-page__topics-item js-accordion">
+                        <button class="product-detail-page__topics-button js-accordion-btn"
+                            type="button"
+                            id="{{this.id}}-button"
+                            aria-expanded="false"
+                            aria-controls="{{this.id}}-panel">
                             <span>{{this.label}}</span>
-                            <svg width="12" height="12" aria-hidden="true">
-                                <use xlink:href="#arrows/arrow-right-fat"></use>
-                            </svg>
-                        </a>
+                            <span class="product-detail-page__topics-icon" aria-hidden="true">
+                                <svg width="12" height="12" aria-hidden="true">
+                                    <use xlink:href="#arrows/right"></use>
+                                </svg>
+                            </span>
+                        </button>
+
+                        <div class="product-detail-page__topics-dropdown js-accordion-dropdown"
+                            id="{{this.id}}-panel"
+                            role="region"
+                            aria-labelledby="{{this.id}}-button"
+                            aria-hidden="true">
+                            <div class="product-detail-page__topics-dropdown-inner">
+                                <div class="product-detail-page__topics-content">
+                                    {{#each this.paragraphs}}
+                                    <p>{{this}}</p>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     {{/each}}
                 </ul>
