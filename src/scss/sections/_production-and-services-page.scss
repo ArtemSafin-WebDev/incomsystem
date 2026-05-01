@@ -155,26 +155,25 @@
   }
 
   .production-and-services-page__service-link {
-    display: inline-flex;
-    align-items: center;
+    display: block;
+
     gap: 1rem;
     color: var(--text-color);
     font-family: var(--inter);
     font-size: 1.4rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 1.05;
+    line-height: 1.2;
     transition: color 0.2s;
-
-    @include mq.down(sm) {
-      align-items: baseline;
-      line-height: 1.2;
-    }
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         color: var(--primary-color);
       }
+    }
+
+    @include mq.down(sm) {
+      line-height: 1.4;
     }
   }
 
@@ -199,6 +198,9 @@
     height: 1.2rem;
     flex-shrink: 0;
     fill: currentColor;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5rem;
   }
 
   .production-and-services-page__service-arrow--down {
@@ -285,6 +287,13 @@
           color: #fff;
         }
       }
+    }
+
+    @include mq.down(sm) {
+      line-height: 1.4;
+      padding: 1.6rem 2rem;
+      font-size: 1.2rem;
+      gap: 1rem;
     }
   }
 }
