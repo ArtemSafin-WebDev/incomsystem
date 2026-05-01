@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .other-categories {
     position: relative;
@@ -7,6 +9,12 @@
     padding-bottom: 15rem;
     background-color: #f2f2fa;
     overflow: hidden;
+
+    @include mq.down(sm) {
+      margin-top: -8rem;
+      padding-top: 12rem;
+      padding-bottom: 8rem;
+    }
   }
 
   .other-categories__title {
@@ -19,10 +27,22 @@
     line-height: 1;
     letter-spacing: -0.12rem;
     text-transform: uppercase;
+
+    @include mq.down(sm) {
+      margin-bottom: 4rem;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+    }
   }
 
   .other-categories__slider {
     overflow: hidden;
+
+    @include mq.down(sm) {
+      overflow: visible;
+    }
   }
 
   .other-categories__list {
@@ -35,6 +55,11 @@
     height: auto;
     margin-right: 6rem;
     flex-shrink: 0;
+
+    @include mq.down(sm) {
+      width: min(30rem, calc(100vw - 4rem));
+      margin-right: 2rem;
+    }
   }
 
   .other-categories__item:first-child::before {
@@ -49,6 +74,10 @@
     width: 1px;
     height: 100%;
     background-color: rgba(34, 34, 34, 0.2);
+
+    @include mq.down(sm) {
+      content: none;
+    }
   }
 
   .other-categories__item:last-child {
@@ -58,5 +87,9 @@
   .other-categories__navigation {
     width: max-content;
     margin: 13rem auto 0;
+
+    @include mq.down(sm) {
+      margin-top: 4rem;
+    }
   }
 }
