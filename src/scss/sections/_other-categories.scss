@@ -22,8 +22,6 @@
   }
 
   .other-categories__slider {
-    width: calc(100% + 4rem);
-    margin-left: -2rem;
     overflow: hidden;
   }
 
@@ -33,17 +31,21 @@
 
   .other-categories__item {
     position: relative;
-    width: 40.5rem;
+    width: calc((100% - 18rem) / 4);
     height: auto;
-    margin-right: 7.333rem;
+    margin-right: 6rem;
     flex-shrink: 0;
   }
 
-  .other-categories__item::after {
+  .other-categories__item:first-child::before {
+    content: none;
+  }
+
+  .other-categories__item::before {
     content: "";
     position: absolute;
     top: 0;
-    right: -3.666rem;
+    left: -3rem;
     width: 1px;
     height: 100%;
     background-color: rgba(34, 34, 34, 0.2);
@@ -53,12 +55,8 @@
     margin-right: 0;
   }
 
-  .other-categories__item:last-child::after {
-    content: none;
-  }
-
   .other-categories__navigation {
     width: max-content;
-    margin: 12rem auto 0;
+    margin: 13rem auto 0;
   }
 }

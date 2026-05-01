@@ -60,15 +60,17 @@
     text-transform: uppercase;
     transition:
       border-color 0.2s,
+      background-color 0.2s,
       color 0.2s;
   }
 
   .product-category-card__button-arrow {
     color: var(--primary-color);
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 1.4;
-    letter-spacing: -0.032rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    flex-shrink: 0;
+    fill: currentColor;
+    transition: color 0.2s;
   }
 
   @media (hover: hover) and (pointer: fine) {
@@ -78,7 +80,12 @@
 
     .product-category-card__button:hover {
       border-color: var(--primary-color);
-      color: var(--primary-color);
+      background-color: var(--primary-color);
+      color: #fff;
+    }
+
+    .product-category-card__button:hover .product-category-card__button-arrow {
+      color: #fff;
     }
   }
 }
