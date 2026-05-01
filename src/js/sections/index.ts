@@ -17,6 +17,7 @@ import PressCenter from "../classes/components/PressCenter";
 import ProductionAndServices from "../classes/components/ProductionAndServices";
 import ProductionAndServicesPage from "../classes/components/ProductionAndServicesPage";
 import RealisedProjects from "../classes/components/RealisedProjects";
+import SimpleSlider from "../classes/components/SimpleSlider";
 
 export default function sections() {
   const header = document.querySelector<HTMLElement>(".page-header");
@@ -80,6 +81,8 @@ export default function sections() {
   const otherArticlesSections = document.querySelectorAll<HTMLElement>(
     ".js-other-articles"
   );
+  const simpleSliderSections =
+    document.querySelectorAll<HTMLElement>(".js-simple-slider");
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
@@ -143,5 +146,9 @@ export default function sections() {
 
   otherArticlesSections.forEach((section) => {
     new OtherArticles(section);
+  });
+
+  simpleSliderSections.forEach((section) => {
+    new SimpleSlider(section);
   });
 }

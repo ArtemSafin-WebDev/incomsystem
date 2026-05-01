@@ -1,0 +1,17 @@
+<section class="other-categories js-simple-slider">
+    <div class="container">
+        <h2 class="other-categories__title">{{otherCategories.title}}</h2>
+
+        <div class="other-categories__slider swiper js-simple-slider-track">
+            <ul class="other-categories__list swiper-wrapper">
+                {{#each otherCategories.items}}
+                <li class="other-categories__item swiper-slide">
+                    {{> components/cards/product-category-card item=this detailsText=../otherCategories.detailsText }}
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        {{> components/slider-navigation className="other-categories__navigation" ariaLabel=otherCategories.ariaLabel prevLabel=otherCategories.prevLabel nextLabel=otherCategories.nextLabel }}
+    </div>
+</section>
