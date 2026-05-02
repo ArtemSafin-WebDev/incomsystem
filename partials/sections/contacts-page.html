@@ -1,0 +1,101 @@
+<section class="contacts-page">
+    <div class="container">
+        {{> components/breadcrumbs contactsPage.breadcrumbs }}
+
+        <h1 class="contacts-page__title">{{contactsPage.title}}</h1>
+
+        <div class="contacts-page__info" aria-label="{{contactsPage.infoAriaLabel}}">
+            {{#each contactsPage.contacts}}
+            <section class="contacts-page__info-item">
+                <h2 class="contacts-page__info-title">{{this.title}}</h2>
+
+                <div class="contacts-page__info-content">
+                    {{#each this.items}}
+                    {{#if this.href}}
+                    <a class="contacts-page__info-text" href="{{this.href}}">{{this.text}}</a>
+                    {{else}}
+                    <p class="contacts-page__info-text">{{{this.text}}}</p>
+                    {{/if}}
+                    {{#if this.note}}
+                    <p class="contacts-page__info-note">{{this.note}}</p>
+                    {{/if}}
+                    {{/each}}
+                </div>
+
+                {{#if this.socials}}
+                <ul class="contacts-page__socials" aria-label="{{../contactsPage.socialsAriaLabel}}">
+                    {{#each this.socials}}
+                    <li>
+                        <a class="contacts-page__social-link" href="{{this.href}}" aria-label="{{this.label}}">
+                            <svg width="24" height="24" aria-hidden="true">
+                                <use xlink:href="#{{this.icon}}"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </section>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="contacts-page__map">
+        <img class="contacts-page__map-image" src="{{contactsPage.map.image}}" alt="">
+        <img class="contacts-page__map-pin" src="{{contactsPage.map.pin}}" alt="">
+        <p class="contacts-page__map-caption">{{contactsPage.map.caption}}</p>
+        <a class="contacts-page__map-link" href="{{contactsPage.map.href}}" target="_blank" rel="noreferrer noopener">
+            {{contactsPage.map.linkText}}
+        </a>
+    </div>
+
+    <div class="container">
+        <section class="contacts-page__partner js-accordion">
+            <button class="btn btn--dark-text contacts-page__partner-button js-accordion-btn"
+                type="button"
+                id="partner-card-button"
+                aria-expanded="false"
+                aria-controls="partner-card-panel">
+                {{contactsPage.partner.buttonText}}
+            </button>
+
+            <div class="contacts-page__partner-dropdown js-accordion-dropdown"
+                id="partner-card-panel"
+                role="region"
+                aria-labelledby="partner-card-button"
+                aria-hidden="true">
+                <div class="contacts-page__partner-dropdown-inner">
+                    <dl class="contacts-page__details">
+                        {{#each contactsPage.partner.details}}
+                        <div class="contacts-page__details-row">
+                            <dt class="contacts-page__details-term">{{this.term}}</dt>
+                            <dd class="contacts-page__details-value">{{this.value}}</dd>
+                        </div>
+                        {{/each}}
+                    </dl>
+
+                    <a class="contacts-page__document-card" href="{{contactsPage.partner.document.href}}">
+                        <div class="contacts-page__document-body">
+                            <div class="contacts-page__document-top">
+                                <h2 class="contacts-page__document-title">{{{contactsPage.partner.document.title}}}</h2>
+                                <p class="contacts-page__document-meta">
+                                    <span>{{contactsPage.partner.document.type}}</span>
+                                    <span>·</span>
+                                    <span>{{contactsPage.partner.document.size}}</span>
+                                </p>
+                            </div>
+
+                            <span class="contacts-page__document-download">{{contactsPage.partner.document.downloadText}}</span>
+                        </div>
+
+                        <span class="contacts-page__document-icon" aria-hidden="true">
+                            <svg width="60" height="60">
+                                <use xlink:href="#pdf"></use>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
