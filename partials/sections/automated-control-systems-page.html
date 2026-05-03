@@ -1,0 +1,105 @@
+<section class="category-detail-hero">
+    <div class="container">
+        {{> components/breadcrumbs categoryPage.breadcrumbs }}
+
+        <div class="category-detail-hero__grid">
+            <h1 class="category-detail-hero__title">{{categoryPage.title}}</h1>
+
+            <a class="category-detail-hero__button" href="{{categoryPage.referenceHref}}">
+                <span>{{categoryPage.referenceText}}</span>
+                <svg class="category-detail-hero__button-arrow" width="12" height="12" aria-hidden="true">
+                    <use xlink:href="#arrows/arrow-right-fat"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="category-detail-services">
+    <div class="container">
+        <ul class="category-detail-services__list">
+            {{#each categoryPage.services}}
+            <li class="category-detail-services__item">
+                {{> components/cards/product-category-card item=this detailsText=../categoryPage.detailsText }}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>
+
+{{> sections/automated-control-systems-media media=categoryPage.introMedia }}
+
+<section class="category-detail-topics">
+    <div class="container">
+        <p class="category-detail-topics__caption">{{categoryPage.topicsCaption}}</p>
+
+        <nav class="product-detail-page__topics" aria-label="{{categoryPage.topicsAriaLabel}}">
+            <ul class="product-detail-page__topics-list">
+                {{#each categoryPage.topics}}
+                <li class="product-detail-page__topics-item js-accordion">
+                    <button class="product-detail-page__topics-button js-accordion-btn"
+                        type="button"
+                        id="{{this.id}}-button"
+                        aria-expanded="false"
+                        aria-controls="{{this.id}}-panel">
+                        <span>{{this.label}}</span>
+                        <span class="product-detail-page__topics-icon" aria-hidden="true">
+                            <svg width="12" height="12" aria-hidden="true">
+                                <use xlink:href="#arrows/right"></use>
+                            </svg>
+                        </span>
+                    </button>
+
+                    <div class="product-detail-page__topics-dropdown js-accordion-dropdown"
+                        id="{{this.id}}-panel"
+                        role="region"
+                        aria-labelledby="{{this.id}}-button"
+                        aria-hidden="true">
+                        <div class="product-detail-page__topics-dropdown-inner">
+                            <div class="product-detail-page__topics-content">
+                                {{#if this.items}}
+                                <ol>
+                                    {{#each this.items}}
+                                    <li>{{this}}</li>
+                                    {{/each}}
+                                </ol>
+                                {{/if}}
+
+                                {{#each this.paragraphs}}
+                                <p>{{this}}</p>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </nav>
+    </div>
+</section>
+
+<section class="category-detail-cycle">
+    <div class="container">
+        <h2 class="category-detail-cycle__title">{{{categoryPage.cycle.title}}}</h2>
+
+        <ol class="category-detail-cycle__list">
+            {{#each categoryPage.cycle.items}}
+            <li class="category-detail-cycle__item">
+                <span class="category-detail-cycle__number">{{this.number}}</span>
+                <h3 class="category-detail-cycle__item-title">{{{this.title}}}</h3>
+
+                {{#if this.text}}
+                <p class="category-detail-cycle__text">{{this.text}}</p>
+                {{/if}}
+
+                <a class="category-detail-cycle__button{{#if this.active}} category-detail-cycle__button--active{{/if}}" href="{{this.href}}">
+                    <span>{{../categoryPage.detailsText}}</span>
+                    <svg class="category-detail-cycle__button-arrow" width="12" height="12" aria-hidden="true">
+                        <use xlink:href="#arrows/arrow-right-fat"></use>
+                    </svg>
+                </a>
+            </li>
+            {{/each}}
+        </ol>
+    </div>
+</section>

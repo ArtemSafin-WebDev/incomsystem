@@ -6,6 +6,17 @@
     padding-bottom: 11rem;
     background-color: #fff;
     color: #222233;
+
+    @include mq.down(sm) {
+      padding-top: 12rem;
+      padding-bottom: 5rem;
+    }
+  }
+
+  .contacts-page .breadcrumbs {
+    @include mq.down(sm) {
+      display: none;
+    }
   }
 
   .contacts-page__title {
@@ -16,6 +27,15 @@
     font-weight: 600;
     line-height: 1;
     letter-spacing: -0.48rem;
+
+    @include mq.down(sm) {
+      margin-top: 0;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+      text-transform: uppercase;
+    }
   }
 
   .contacts-page__info {
@@ -23,6 +43,13 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2rem;
     margin-top: 11rem;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 4rem;
+    }
   }
 
   .contacts-page__info-item {
@@ -32,11 +59,26 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+
+    @include mq.down(sm) {
+      min-height: auto;
+      padding: 2.4rem 0;
+      border-right: 0;
+      border-top: 1px solid rgb(34 34 51 / 12%);
+      gap: 2rem;
+    }
   }
 
   .contacts-page__info-item:last-child {
     padding-right: 0;
     border-right: 0;
+  }
+
+  .contacts-page__info-item:first-child {
+    @include mq.down(sm) {
+      border-top: 0;
+      padding-top: 0;
+    }
   }
 
   .contacts-page__info-title {
@@ -46,6 +88,13 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.042rem;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+      line-height: 1;
+      letter-spacing: -0.036rem;
+      opacity: 0.7;
+    }
   }
 
   .contacts-page__info-content {
@@ -53,6 +102,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
+
+    @include mq.down(sm) {
+      gap: 1.4rem;
+    }
   }
 
   .contacts-page__info-text {
@@ -64,6 +117,21 @@
     line-height: 1.2;
     letter-spacing: -0.066rem;
     color: inherit;
+
+    @include mq.down(sm) {
+      font-size: 2rem;
+      letter-spacing: -0.04rem;
+    }
+  }
+
+  a.contacts-page__info-text {
+    transition: color 0.2s;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
   }
 
   .contacts-page__info-note {
@@ -75,6 +143,12 @@
     line-height: 1.2;
     letter-spacing: -0.042rem;
     opacity: 0.7;
+
+    @include mq.down(sm) {
+      margin-top: -0.4rem;
+      font-size: 1.2rem;
+      letter-spacing: -0.036rem;
+    }
   }
 
   .contacts-page__socials {
@@ -82,6 +156,10 @@
     align-items: center;
     gap: 1rem;
     margin-top: auto;
+
+    @include mq.down(sm) {
+      margin-top: 0.4rem;
+    }
   }
 
   .contacts-page__social-link {
@@ -95,6 +173,11 @@
     transition:
       background-color 0.2s,
       color 0.2s;
+
+    @include mq.down(sm) {
+      width: 5rem;
+      height: 5rem;
+    }
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
@@ -116,6 +199,15 @@
     overflow: hidden;
     background-color: #001326;
     color: #fff;
+
+    @include mq.down(sm) {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+      padding: 2rem var(--container-padding);
+      background-color: transparent;
+      color: var(--primary-color);
+    }
   }
 
   .contacts-page__map::after {
@@ -131,12 +223,20 @@
       rgba(0, 0, 0, 0.5) 100%
     );
     pointer-events: none;
+
+    @include mq.down(sm) {
+      display: none;
+    }
   }
 
   .contacts-page__map-image {
     display: block;
     width: 100%;
     height: auto;
+
+    @include mq.down(sm) {
+      display: none;
+    }
   }
 
   .contacts-page__map-pin {
@@ -147,6 +247,10 @@
     width: 9rem;
     height: 9rem;
     transform: translate(-50%, -50%);
+
+    @include mq.down(sm) {
+      display: none;
+    }
   }
 
   .contacts-page__map-caption {
@@ -159,6 +263,10 @@
     font-style: normal;
     font-weight: 500;
     line-height: 1;
+
+    @include mq.down(sm) {
+      display: none;
+    }
   }
 
   .contacts-page__map-link {
@@ -177,6 +285,13 @@
     text-decoration-skip-ink: none;
     text-underline-offset: 0.4rem;
     white-space: nowrap;
+
+    @include mq.down(sm) {
+      position: static;
+      transform: none;
+      color: inherit;
+      font-size: 1.4rem;
+    }
   }
 
   .contacts-page__partner {
@@ -184,11 +299,22 @@
     flex-direction: column;
     align-items: center;
     margin-top: 12rem;
+
+    @include mq.down(sm) {
+      width: 100%;
+      margin-top: 5rem;
+    }
   }
 
   .contacts-page__partner-button {
     width: 44.6rem;
     min-height: 8rem;
+
+    @include mq.down(sm) {
+      width: 100%;
+      min-height: 6.4rem;
+      padding-block: 2rem;
+    }
   }
 
   .contacts-page__partner.active .contacts-page__partner-button {
@@ -200,6 +326,7 @@
     display: grid;
     grid-template-rows: 0fr;
     width: 100%;
+    min-width: 0;
     opacity: 0;
     transition:
       grid-template-rows 0.3s ease,
@@ -217,6 +344,10 @@
     margin-inline: auto;
     min-height: 0;
     overflow: hidden;
+
+    @include mq.down(sm) {
+      width: 100%;
+    }
   }
 
   .contacts-page__details {
@@ -224,6 +355,11 @@
     flex-direction: column;
     gap: 1.5rem;
     padding-top: 12rem;
+
+    @include mq.down(sm) {
+      gap: 0;
+      padding-top: 4rem;
+    }
   }
 
   .contacts-page__details-row {
@@ -237,6 +373,13 @@
     font-size: 1.8rem;
     font-style: normal;
     line-height: 1.2;
+
+    @include mq.down(sm) {
+      display: block;
+      padding-block: 1.6rem;
+      font-size: 1.4rem;
+      letter-spacing: -0.028rem;
+    }
   }
 
   .contacts-page__details-term {
@@ -244,7 +387,15 @@
   }
 
   .contacts-page__details-value {
+    min-width: 0;
+    margin: 0;
     font-weight: 400;
+    overflow-wrap: anywhere;
+
+    @include mq.down(sm) {
+      margin-top: 0.8rem;
+      color: rgb(34 34 51 / 70%);
+    }
   }
 
   .contacts-page__document-card {
@@ -262,6 +413,12 @@
     transition:
       border-color 0.2s,
       color 0.2s;
+
+    @include mq.down(sm) {
+      min-height: 15rem;
+      margin-top: 3rem;
+      padding: 1.6rem;
+    }
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
@@ -292,6 +449,11 @@
     font-weight: 500;
     line-height: 1.4;
     letter-spacing: -0.066rem;
+
+    @include mq.down(sm) {
+      font-size: 2rem;
+      letter-spacing: -0.06rem;
+    }
   }
 
   .contacts-page__document-meta {
@@ -304,6 +466,10 @@
     font-weight: 400;
     line-height: 1;
     opacity: 0.7;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+    }
   }
 
   .contacts-page__document-download {
@@ -312,6 +478,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+    }
   }
 
   .contacts-page__document-icon {
@@ -323,6 +493,11 @@
     place-items: center;
     flex-shrink: 0;
     color: #fff;
+
+    @include mq.down(sm) {
+      width: 5rem;
+      height: 5rem;
+    }
   }
 
   .contacts-page__document-icon svg {

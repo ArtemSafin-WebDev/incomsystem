@@ -1,0 +1,31 @@
+<section class="category-detail-media{{#if media.className}} {{media.className}}{{/if}}">
+    <div class="category-detail-media__pattern" aria-hidden="true">
+        <img src="/images/harsh-conditions/pattern.webp" alt="">
+    </div>
+
+    <div class="container">
+        <div class="category-detail-media__inner">
+            <h2 class="category-detail-media__title">{{{media.title}}}</h2>
+
+            {{#if media.bullets}}
+            <ul class="category-detail-media__bullets">
+                {{#each media.bullets}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            {{/if}}
+
+            {{#if media.text}}
+            <p class="category-detail-media__text">{{media.text}}</p>
+            {{/if}}
+
+            <figure class="category-detail-media__figure">
+                {{#if media.caption}}
+                <figcaption class="category-detail-media__caption">{{media.caption}}</figcaption>
+                {{/if}}
+
+                <img class="category-detail-media__image" src="{{media.image}}" alt="{{media.imageAlt}}" loading="lazy">
+            </figure>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,13 @@
+<section class="category-detail-documents">
+    <div class="container">
+        <h2 class="category-detail-documents__title">{{categoryPage.documents.title}}</h2>
+
+        <ul class="category-detail-documents__list">
+            {{#each categoryPage.documents.items}}
+            <li class="category-detail-documents__item">
+                {{> components/cards/document-card doc=this }}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>
