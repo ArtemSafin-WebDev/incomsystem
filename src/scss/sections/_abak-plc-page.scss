@@ -1,0 +1,509 @@
+@use "tools/media" as mq;
+
+@layer sections {
+  .abak-plc-hero {
+    padding-top: 16rem;
+    padding-bottom: 12.8rem;
+    background-color: #fff;
+
+    @include mq.down(sm) {
+      padding-top: 10rem;
+      padding-bottom: 5rem;
+      overflow: clip;
+    }
+  }
+
+  .abak-plc-hero .breadcrumbs {
+    margin-bottom: 4rem;
+
+    @include mq.down(sm) {
+      display: none;
+    }
+  }
+
+  .abak-plc-hero__title {
+    color: var(--text-color);
+    font-family: var(--rf-dewi);
+    font-size: 12rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.48rem;
+    text-transform: uppercase;
+
+    @include mq.down(sm) {
+      font-size: 2.8rem;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+  }
+
+  .abak-plc-banner {
+    position: relative;
+    aspect-ratio: 1920 / 400;
+    overflow: hidden;
+    background-color: #222233;
+
+    @include mq.down(sm) {
+      aspect-ratio: 375 / 220;
+    }
+  }
+
+  .abak-plc-banner::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+
+  .abak-plc-banner__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .abak-plc-banner__text {
+    position: relative;
+    z-index: 2;
+    max-width: 67.8rem;
+    padding-top: 3.8rem;
+    color: #fff;
+    font-family: var(--rf-dewi);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.06rem;
+
+    @include mq.down(sm) {
+      max-width: 26rem;
+      padding-top: 2rem;
+      font-size: 1.8rem;
+      letter-spacing: 0;
+    }
+  }
+
+  .abak-plc-modules {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    background-color: #f2f2fa;
+
+    @include mq.down(sm) {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+      overflow: hidden;
+    }
+  }
+
+  .abak-plc-modules__filters {
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 8rem;
+
+    @include mq.down(sm) {
+      display: none;
+    }
+  }
+
+  .abak-plc-modules__filter {
+    width: calc((100% - 14rem) / 4);
+  }
+
+  .abak-plc-modules__filter-label {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.05;
+  }
+
+  .abak-plc-modules__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 6rem;
+    row-gap: 8rem;
+    list-style: none;
+
+    @include mq.down(sm) {
+      position: relative;
+      left: 50%;
+      display: flex;
+      gap: 0;
+      width: 100vw;
+      margin-left: -50vw;
+      padding-inline: var(--container-padding);
+      overflow-x: auto;
+      scrollbar-width: none;
+      scroll-padding-left: var(--container-padding);
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .abak-plc-modules__item {
+    position: relative;
+    min-width: 0;
+
+    @include mq.down(sm) {
+      flex: 0 0 min(30rem, calc(100vw - (var(--container-padding) * 2)));
+      min-width: min(30rem, calc(100vw - (var(--container-padding) * 2)));
+      margin-right: 2rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .abak-plc-modules__item:not(:nth-child(4n))::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -3rem;
+    width: 1px;
+    background-color: rgba(34, 34, 34, 0.2);
+
+    @include mq.down(sm) {
+      content: none;
+    }
+  }
+
+  .abak-plc-module-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    color: var(--text-color);
+
+    @include mq.down(sm) {
+      gap: 2rem;
+      min-height: auto;
+    }
+  }
+
+  .abak-plc-module-card__image-link {
+    display: block;
+    aspect-ratio: 405 / 297;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: #d8dce4;
+  }
+
+  .abak-plc-module-card__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+
+  .abak-plc-module-card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4rem;
+
+    @include mq.down(sm) {
+      gap: 2rem;
+    }
+  }
+
+  .abak-plc-module-card__title {
+    margin-bottom: 4rem;
+    font-family: var(--inter);
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.066rem;
+
+    @include mq.down(sm) {
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      letter-spacing: -0.048rem;
+    }
+  }
+
+  .abak-plc-module-card__text {
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.042rem;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+      letter-spacing: -0.036rem;
+    }
+  }
+
+  .abak-plc-module-card__button,
+  .abak-plc-modules__more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    min-height: 6rem;
+    border: 1px solid rgba(34, 34, 34, 0.2);
+    border-radius: 4rem;
+    padding: 1.7rem 3rem;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+    transition:
+      border-color 0.2s,
+      background-color 0.2s,
+      color 0.2s;
+
+    @include mq.down(sm) {
+      gap: 1rem;
+      min-height: 4.4rem;
+      padding: 1.2rem 2rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.11rem;
+    }
+  }
+
+  .abak-plc-module-card__button {
+    align-self: flex-start;
+  }
+
+  .abak-plc-module-card__button-arrow {
+    width: 1.2rem;
+    height: 1.2rem;
+    color: var(--primary-color);
+    fill: currentColor;
+    transition: color 0.2s;
+  }
+
+  .abak-plc-modules__more {
+    display: flex;
+    width: 44.6rem;
+    max-width: 100%;
+    min-height: 8rem;
+    margin: 12rem auto 0;
+    border-color: var(--primary-color);
+
+    @include mq.down(sm) {
+      display: none;
+    }
+  }
+
+  .abak-plc-numbered {
+    padding-top: 4rem;
+    padding-bottom: 15rem;
+    background-color: #fff;
+    color: var(--text-color);
+
+    @include mq.down(sm) {
+      padding-top: 3rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  .abak-plc-numbered--dark {
+    background-color: #222233;
+    color: #fff;
+  }
+
+  .abak-plc-numbered__caption {
+    margin-bottom: 4rem;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1;
+
+    @include mq.down(sm) {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  .abak-plc-numbered__title {
+    margin-bottom: 8rem;
+    font-family: var(--rf-dewi);
+    font-size: 6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.12rem;
+    text-transform: uppercase;
+
+    @include mq.down(sm) {
+      margin-bottom: 4rem;
+      font-size: 3rem;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+  }
+
+  .abak-plc-numbered--dark .abak-plc-numbered__title {
+    color: #fff;
+  }
+
+  .abak-plc-numbered__list {
+    counter-reset: abak-plc-numbered;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 6rem;
+    row-gap: 16rem;
+    list-style: none;
+
+    @include mq.down(sm) {
+      display: block;
+    }
+  }
+
+  .abak-plc-numbered__item {
+    counter-increment: abak-plc-numbered;
+    position: relative;
+    padding-right: 3rem;
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.06rem;
+
+    @include mq.down(sm) {
+      padding: 2.4rem 0;
+      border-top: 1px solid rgba(34, 34, 51, 0.2);
+      font-size: 2rem;
+      letter-spacing: 0;
+
+      &:first-child {
+        padding-top: 0;
+        border-top: 0;
+      }
+    }
+  }
+
+  .abak-plc-numbered__item::before {
+    content: none;
+  }
+
+  .abak-plc-numbered__item:nth-child(n + 5):nth-child(4n + 1)::before {
+    content: "";
+    position: absolute;
+    top: -8rem;
+    left: 0;
+    width: calc(400% + 18rem);
+    height: 1px;
+    background-color: rgba(34, 34, 51, 0.2);
+    pointer-events: none;
+
+    @include mq.down(sm) {
+      content: none;
+    }
+  }
+
+  .abak-plc-numbered__item::after {
+    content: "";
+    position: absolute;
+    left: -3rem;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(34, 34, 51, 0.2);
+    pointer-events: none;
+
+    @include mq.down(sm) {
+      content: none;
+    }
+  }
+
+  .abak-plc-numbered__item:nth-child(4n + 1)::after {
+    content: none;
+  }
+
+  .abak-plc-numbered__number {
+    display: block;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-family: var(--ibm-plex-mono);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.028rem;
+
+    @include mq.down(sm) {
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  .abak-plc-numbered__number::before {
+    content: counter(abak-plc-numbered, decimal-leading-zero);
+  }
+
+  .abak-plc-numbered--dark .abak-plc-numbered__title {
+    margin-bottom: 14rem;
+  }
+
+  .abak-plc-numbered--dark
+    .abak-plc-numbered__item:nth-child(n + 5):nth-child(4n + 1)::before,
+  .abak-plc-numbered--dark .abak-plc-numbered__item::after {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .abak-plc-topics {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    background-color: #fff;
+
+    @include mq.down(sm) {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  .abak-plc-company {
+    margin-top: 15rem;
+    margin-bottom: 0;
+    min-height: auto;
+
+    @include mq.down(sm) {
+      margin-top: 7rem;
+    }
+  }
+
+  .other-categories:has(+ .contact-us) {
+    margin-top: 0;
+    padding-top: 4rem;
+    margin-bottom: 15rem;
+  }
+
+  .other-categories + .contact-us {
+    padding-top: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .abak-plc-module-card__image-link:hover .abak-plc-module-card__image {
+      transform: scale(1.04);
+    }
+
+    .abak-plc-module-card__button:hover,
+    .abak-plc-modules__more:hover {
+      border-color: var(--primary-color);
+      background-color: var(--primary-color);
+      color: #fff;
+    }
+
+    .abak-plc-module-card__button:hover .abak-plc-module-card__button-arrow {
+      color: #fff;
+    }
+  }
+}

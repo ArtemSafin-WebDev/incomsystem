@@ -1,0 +1,143 @@
+<section class="abak-plc-hero">
+    <div class="container">
+        {{> components/breadcrumbs abakPlcPage.breadcrumbs }}
+
+        <h1 class="abak-plc-hero__title">{{abakPlcPage.title}}</h1>
+    </div>
+</section>
+
+<section class="abak-plc-banner" aria-label="{{abakPlcPage.banner.ariaLabel}}">
+    <img class="abak-plc-banner__image" src="{{abakPlcPage.banner.image}}" alt="{{abakPlcPage.banner.imageAlt}}">
+    <div class="container">
+        <p class="abak-plc-banner__text">{{abakPlcPage.banner.text}}</p>
+    </div>
+</section>
+
+<section class="abak-plc-modules">
+    <div class="container">
+        <div class="abak-plc-modules__filters" aria-label="{{abakPlcPage.filters.ariaLabel}}">
+            {{#each abakPlcPage.filters.selects}}
+            <div class="abak-plc-modules__filter">
+                <p class="abak-plc-modules__filter-label">{{this.label}}</p>
+                {{> components/select select=this }}
+            </div>
+            {{/each}}
+        </div>
+
+        <ul class="abak-plc-modules__list">
+            {{#each abakPlcPage.modules.items}}
+            <li class="abak-plc-modules__item">
+                <article class="abak-plc-module-card">
+                    <a class="abak-plc-module-card__image-link" href="{{this.href}}" aria-label="{{this.title}}">
+                        <img class="abak-plc-module-card__image" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
+                    </a>
+
+                    <div class="abak-plc-module-card__content">
+                        <div>
+                            <h2 class="abak-plc-module-card__title">{{this.title}}</h2>
+                            <p class="abak-plc-module-card__text">{{this.text}}</p>
+                        </div>
+
+                        <a class="abak-plc-module-card__button" href="{{this.href}}">
+                            <span>{{../abakPlcPage.modules.detailsText}}</span>
+                            <svg class="abak-plc-module-card__button-arrow" width="12" height="12" aria-hidden="true">
+                                <use xlink:href="#arrows/arrow-right-fat"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </li>
+            {{/each}}
+        </ul>
+
+        <button class="abak-plc-modules__more" type="button">{{abakPlcPage.modules.moreText}}</button>
+    </div>
+</section>
+
+<section class="abak-plc-numbered">
+    <div class="container">
+        <p class="abak-plc-numbered__caption">{{abakPlcPage.advantages.caption}}</p>
+        <h2 class="abak-plc-numbered__title">{{abakPlcPage.advantages.title}}</h2>
+
+        <ol class="abak-plc-numbered__list">
+            {{#each abakPlcPage.advantages.items}}
+            <li class="abak-plc-numbered__item">
+                <span class="abak-plc-numbered__number" aria-hidden="true"></span>
+                <span class="abak-plc-numbered__text">{{this}}</span>
+            </li>
+            {{/each}}
+        </ol>
+    </div>
+</section>
+
+<section class="abak-plc-numbered abak-plc-numbered--dark">
+    <div class="container">
+        <h2 class="abak-plc-numbered__title">{{abakPlcPage.characteristics.title}}</h2>
+
+        <ol class="abak-plc-numbered__list">
+            {{#each abakPlcPage.characteristics.items}}
+            <li class="abak-plc-numbered__item">
+                <span class="abak-plc-numbered__number" aria-hidden="true"></span>
+                <span class="abak-plc-numbered__text">{{this}}</span>
+            </li>
+            {{/each}}
+        </ol>
+    </div>
+</section>
+
+<section class="abak-plc-topics">
+    <div class="container">
+        <nav class="product-detail-page__topics" aria-label="{{abakPlcPage.topicsAriaLabel}}">
+            <ul class="product-detail-page__topics-list">
+                {{#each abakPlcPage.topics}}
+                <li class="product-detail-page__topics-item js-accordion">
+                    <button class="product-detail-page__topics-button js-accordion-btn"
+                        type="button"
+                        id="{{this.id}}-button"
+                        aria-expanded="false"
+                        aria-controls="{{this.id}}-panel">
+                        <span>{{this.label}}</span>
+                        <span class="product-detail-page__topics-icon" aria-hidden="true">
+                            <svg width="12" height="12" aria-hidden="true">
+                                <use xlink:href="#arrows/right"></use>
+                            </svg>
+                        </span>
+                    </button>
+
+                    <div class="product-detail-page__topics-dropdown js-accordion-dropdown"
+                        id="{{this.id}}-panel"
+                        role="region"
+                        aria-labelledby="{{this.id}}-button"
+                        aria-hidden="true">
+                        <div class="product-detail-page__topics-dropdown-inner">
+                            <div class="product-detail-page__topics-content">
+                                {{#if this.items}}
+                                <ol>
+                                    {{#each this.items}}
+                                    <li>{{this}}</li>
+                                    {{/each}}
+                                </ol>
+                                {{/if}}
+
+                                {{#each this.paragraphs}}
+                                <p>{{this}}</p>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </nav>
+
+        <div class="article-snippet article-snippet--company abak-plc-company">
+            <div class="article-snippet__logo" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <path d="M30.2327 21.5627C24.5795 26.6098 20.8541 32.1109 20.8541 40C20.8541 45.3946 22.6785 49.407 25.6306 53.163L38.5188 43.4431V21.5627H46.2916V58.6749H38.5188V52.8092L30.7425 58.6699L30.7442 58.6749H20.2409C15.792 53.6474 13.0813 47.139 13.0812 40C13.0812 32.9721 15.7059 26.5567 20.0326 21.5627H30.2327Z" fill="#006FDD"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M41.3627 0C58.326 5.39664e-05 72.8902 9.88301 79.2717 24.0147C79.4815 24.4478 79.7091 24.9184 79.9492 25.4627C79.9628 25.4956 79.9863 25.5114 80 25.5446L79.9458 25.5872L79.9492 25.5905L73.6177 30.5356V30.5307L61.3495 40.1179L79.646 54.4161L79.6307 54.457L79.8509 54.6306C73.8089 69.4781 58.8636 79.9999 41.3627 80C18.5204 80 0.000114433 62.0915 0 40C0 17.9102 18.5203 0 41.3627 0ZM41.3627 7.38739C22.7659 7.38739 7.63566 22.0159 7.63566 40C7.63578 57.9858 22.766 72.6143 41.3627 72.6143C53.7502 72.6142 64.5316 66.2602 70.3758 56.6634L56.9744 46.1917V58.6749H49.2016V21.5627H56.9744V34.0442L70.4334 23.5266C64.5757 13.88 53.7451 7.38744 41.3627 7.38739Z" fill="#006FDD"/>
+                </svg>
+            </div>
+            <p>{{abakPlcPage.companySnippet}}</p>
+        </div>
+    </div>
+</section>
