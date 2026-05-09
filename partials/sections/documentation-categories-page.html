@@ -35,5 +35,30 @@
             </li>
             {{/each}}
         </ul>
+
+        {{#if documentationCategoriesPage.subcategories}}
+        {{#if documentationCategoriesPage.subcategoriesTitle}}
+        <p class="documentation-categories-page__group-title">{{documentationCategoriesPage.subcategoriesTitle}}</p>
+        {{/if}}
+        <ul class="documentation-categories-page__subcategories">
+            {{#each documentationCategoriesPage.subcategories}}
+            <li class="documentation-categories-page__subcategory">
+                {{> components/cards/document-category-card category=this }}
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+
+        {{#if documentationCategoriesPage.documents}}
+        <p class="documentation-categories-page__group-title documentation-categories-page__group-title--documents">{{documentationCategoriesPage.documents.title}}</p>
+
+        <ul class="documentation-categories-page__documents">
+            {{#each documentationCategoriesPage.documents.items}}
+            <li class="documentation-categories-page__document">
+                {{> components/cards/document-card doc=this }}
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
     </div>
 </section>

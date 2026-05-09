@@ -9,7 +9,6 @@
     @include mq.down(sm) {
       padding-top: 10rem;
       padding-bottom: 6rem;
-      overflow: clip;
     }
   }
 
@@ -47,11 +46,12 @@
     letter-spacing: -0.48rem;
 
     @include mq.down(sm) {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       font-weight: 700;
       line-height: 1.1;
       letter-spacing: 0;
       text-transform: uppercase;
+      overflow-wrap: anywhere;
     }
   }
 
@@ -163,7 +163,7 @@
 
   .category-detail-media {
     position: relative;
-    overflow: clip;
+
     padding-top: 4rem;
     margin-bottom: 15rem;
     background: linear-gradient(180deg, #0074e8 0 110rem, #fff 110rem 100%);
@@ -171,15 +171,8 @@
     @include mq.down(sm) {
       padding-top: 3rem;
       margin-bottom: 8rem;
-      background: linear-gradient(180deg, #0074e8 0 46rem, #fff 46rem 100%);
-    }
-  }
-
-  .category-detail-media--closing {
-    margin-bottom: 15rem;
-
-    @include mq.down(sm) {
-      margin-bottom: 8rem;
+      background: #0074e8;
+      margin-bottom: 15rem;
     }
   }
 
@@ -210,6 +203,7 @@
 
     @include mq.down(sm) {
       max-width: none;
+      container-type: inline-size;
     }
   }
 
@@ -269,13 +263,19 @@
       margin-bottom: 3rem;
 
       li + li {
-        margin-top: 1.2rem;
+        margin-top: 0.6rem;
       }
     }
   }
 
   .category-detail-media__figure {
     margin: 0;
+    aspect-ratio: 1840 / 900;
+    position: relative;
+    @include mq.down(sm) {
+      aspect-ratio: 300 / 190;
+      margin-bottom: calc(100cqw * 190 / 300 * -1 / 2);
+    }
   }
 
   .category-detail-media__caption {
@@ -287,14 +287,12 @@
   }
 
   .category-detail-media__image {
-    display: block;
     width: 100%;
-    aspect-ratio: 1840 / 900;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
     object-fit: cover;
-
-    @include mq.down(sm) {
-      aspect-ratio: 300 / 190;
-    }
   }
 
   .category-detail-topics {
@@ -555,14 +553,18 @@
     font-family: var(--rf-dewi);
     font-size: 6rem;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1;
     letter-spacing: -0.12rem;
     text-transform: uppercase;
+    text-wrap: balance;
 
     @include mq.down(sm) {
       margin-bottom: 3rem;
       font-size: 3rem;
-      letter-spacing: 0;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.06rem;
+      overflow-wrap: anywhere;
     }
   }
 
@@ -583,38 +585,6 @@
 
     @include mq.down(sm) {
       min-height: 22rem;
-    }
-  }
-
-  .press-center--direction .press-center__title {
-    grid-column: 1 / -1;
-    width: max-content;
-    max-width: 100%;
-    white-space: nowrap;
-
-    @include mq.down(sm) {
-      width: auto;
-      white-space: normal;
-    }
-  }
-
-  .contact-us.contact-us--category .contact-us__head {
-    grid-column: 1 / 5;
-    max-width: 64rem;
-
-    @include mq.down(sm) {
-      grid-column: auto;
-      max-width: none;
-    }
-  }
-
-  .contact-us.contact-us--category .contact-us__title {
-    font-size: 5.2rem;
-    text-wrap: initial;
-
-    @include mq.down(sm) {
-      font-size: 3rem;
-      line-height: 1.1;
     }
   }
 

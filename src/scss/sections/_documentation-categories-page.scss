@@ -181,6 +181,100 @@
     min-width: 0;
   }
 
+  .documentation-categories-page__group-title {
+    margin-top: 8rem;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1;
+
+    @include mq.down(sm) {
+      margin-top: 3.2rem;
+      font-size: 1.3rem;
+    }
+  }
+
+  .documentation-categories-page__subcategories {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 8rem;
+
+    @include mq.down(sm) {
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+      margin-top: 2.4rem;
+    }
+  }
+
+  .documentation-categories-page__group-title + .documentation-categories-page__subcategories {
+    margin-top: 4rem;
+
+    @include mq.down(sm) {
+      margin-top: 2rem;
+    }
+  }
+
+  .documentation-categories-page__subcategory {
+    display: flex;
+    min-width: 0;
+
+    @include mq.down(sm) {
+      .document-category-card {
+        min-height: 10.8rem;
+        padding: 1.8rem 2rem;
+      }
+
+      .document-category-card__title {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .documentation-categories-page__group-title--documents {
+    margin-top: 8rem;
+
+    @include mq.down(sm) {
+      margin-top: 3.6rem;
+    }
+  }
+
+  .documentation-categories-page__documents {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+
+    @include mq.down(sm) {
+      grid-template-columns: 1fr;
+      gap: 1.4rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .documentation-categories-page__document {
+    display: flex;
+    min-width: 0;
+
+    .document-card {
+      min-height: 25rem;
+    }
+
+    @include mq.down(sm) {
+      .document-card {
+        min-height: 16.8rem;
+        padding: 1.8rem 2rem;
+      }
+
+      .document-card__title {
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+    }
+  }
+
   .documentation-categories-page__filter-field .select {
     min-width: 0;
   }

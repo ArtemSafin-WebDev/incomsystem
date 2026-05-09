@@ -177,7 +177,6 @@ const documents = [
 
 const categoryContactUs = {
   ...contactUs,
-  className: "contact-us--category",
   title: "Станьте партнером<br>НИЦ Инкомсистем",
 };
 
@@ -269,7 +268,7 @@ export default {
         },
       ],
       cycle: {
-        title: "Производственный цикл<br>контроллеров АСУ",
+        title: "Производственный цикл контроллеров АСУ",
         items: [
           {
             number: "01",
@@ -306,7 +305,6 @@ export default {
       },
     },
     pressCenter: {
-      className: "press-center--direction",
       title: "Новости направления",
       topLinkText: "Все новости",
       topLinkHref: "#",

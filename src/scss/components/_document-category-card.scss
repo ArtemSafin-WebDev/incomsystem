@@ -5,6 +5,7 @@
     display: flex;
     min-width: 0;
     width: 100%;
+    min-height: 15rem;
     padding: 2rem;
     border: 1px solid #c2c2c8;
     border-radius: 0.5rem;
@@ -16,6 +17,7 @@
       color 0.2s;
 
     @include mq.down(sm) {
+      min-height: 13.2rem;
       padding: 2rem;
     }
 
@@ -33,6 +35,19 @@
     }
   }
 
+  .document-category-card--active {
+    border-color: transparent;
+    background-color: #f2f2fa;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .document-category-card--active:hover {
+      border-color: transparent;
+      background-color: #f2f2fa;
+      color: #222233;
+    }
+  }
+
   .document-category-card__body {
     display: flex;
     min-width: 0;
@@ -42,7 +57,7 @@
     width: 100%;
 
     @include mq.down(sm) {
-      gap: 3rem;
+      gap: 2.4rem;
     }
   }
 
