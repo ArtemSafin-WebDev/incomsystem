@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { footer, mobileMenu } from "./pages-data/shared.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dataDir = path.resolve(__dirname, "pages-data");
@@ -29,7 +30,8 @@ for (const file of dataFiles) {
 // Автоматически собираем список всех страниц для /pages.html
 const allHtmlFiles = fs
   .readdirSync(path.resolve(__dirname, "pages"))
-  .filter((f) => f.endsWith(".html") && f !== "pages.html");
+  .filter((f) => f.endsWith(".html") && f !== "pages.html")
+  .sort((a, b) => a.localeCompare(b, "ru"));
 
 const pagesList = allHtmlFiles.map((file) => {
   const key = `/${file}`;
@@ -39,6 +41,10 @@ const pagesList = allHtmlFiles.map((file) => {
 
 pagesConfig["/pages.html"] = {
   title: "Все страницы",
+  headerCompact: true,
+  mobileMenu,
+  footer,
+  pagesCount: pagesList.length,
   pagesList,
 };
 

@@ -1,46 +1,46 @@
-<section class="abak-plc-hero">
+<section class="product-page-hero">
     <div class="container">
         {{> components/breadcrumbs abakPlcPage.breadcrumbs }}
 
-        <h1 class="abak-plc-hero__title">{{abakPlcPage.title}}</h1>
+        <h1 class="product-page-hero__title">{{abakPlcPage.title}}</h1>
     </div>
 </section>
 
-<section class="abak-plc-banner" aria-label="{{abakPlcPage.banner.ariaLabel}}">
-    <img class="abak-plc-banner__image" src="{{abakPlcPage.banner.image}}" alt="{{abakPlcPage.banner.imageAlt}}">
+<section class="product-page-banner" aria-label="{{abakPlcPage.banner.ariaLabel}}">
+    <img class="product-page-banner__image" src="{{abakPlcPage.banner.image}}" alt="{{abakPlcPage.banner.imageAlt}}">
     <div class="container">
-        <p class="abak-plc-banner__text">{{abakPlcPage.banner.text}}</p>
+        <p class="product-page-banner__text">{{abakPlcPage.banner.text}}</p>
     </div>
 </section>
 
-<section class="abak-plc-modules">
+<section class="product-page-modules">
     <div class="container">
-        <div class="abak-plc-modules__filters" aria-label="{{abakPlcPage.filters.ariaLabel}}">
+        <div class="product-page-modules__filters" aria-label="{{abakPlcPage.filters.ariaLabel}}">
             {{#each abakPlcPage.filters.selects}}
-            <div class="abak-plc-modules__filter">
-                <p class="abak-plc-modules__filter-label">{{this.label}}</p>
+            <div class="product-page-modules__filter">
+                <p class="product-page-modules__filter-label">{{this.label}}</p>
                 {{> components/select select=this }}
             </div>
             {{/each}}
         </div>
 
-        <ul class="abak-plc-modules__list">
+        <ul class="product-page-modules__list">
             {{#each abakPlcPage.modules.items}}
-            <li class="abak-plc-modules__item">
-                <article class="abak-plc-module-card">
-                    <a class="abak-plc-module-card__image-link" href="{{this.href}}" aria-label="{{this.title}}">
-                        <img class="abak-plc-module-card__image" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
+            <li class="product-page-modules__item">
+                <article class="product-page-module-card">
+                    <a class="product-page-module-card__image-link" href="{{this.href}}" aria-label="{{this.title}}">
+                        <img class="product-page-module-card__image" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
                     </a>
 
-                    <div class="abak-plc-module-card__content">
+                    <div class="product-page-module-card__content">
                         <div>
-                            <h2 class="abak-plc-module-card__title">{{this.title}}</h2>
-                            <p class="abak-plc-module-card__text">{{this.text}}</p>
+                            <h2 class="product-page-module-card__title">{{this.title}}</h2>
+                            <p class="product-page-module-card__text">{{this.text}}</p>
                         </div>
 
-                        <a class="abak-plc-module-card__button" href="{{this.href}}">
+                        <a class="product-page-module-card__button" href="{{this.href}}">
                             <span>{{../abakPlcPage.modules.detailsText}}</span>
-                            <svg class="abak-plc-module-card__button-arrow" width="12" height="12" aria-hidden="true">
+                            <svg class="product-page-module-card__button-arrow" width="12" height="12" aria-hidden="true">
                                 <use xlink:href="#arrows/arrow-right-fat"></use>
                             </svg>
                         </a>
@@ -50,42 +50,42 @@
             {{/each}}
         </ul>
 
-        <button class="abak-plc-modules__more" type="button">{{abakPlcPage.modules.moreText}}</button>
+        <button class="product-page-modules__more" type="button">{{abakPlcPage.modules.moreText}}</button>
     </div>
 </section>
 
-<section class="abak-plc-numbered">
+<section class="product-page-numbered">
     <div class="container">
-        <p class="abak-plc-numbered__caption">{{abakPlcPage.advantages.caption}}</p>
-        <h2 class="abak-plc-numbered__title">{{abakPlcPage.advantages.title}}</h2>
+        <p class="product-page-numbered__caption">{{abakPlcPage.advantages.caption}}</p>
+        <h2 class="product-page-numbered__title">{{abakPlcPage.advantages.title}}</h2>
 
-        <ol class="abak-plc-numbered__list">
+        <ol class="product-page-numbered__list">
             {{#each abakPlcPage.advantages.items}}
-            <li class="abak-plc-numbered__item">
-                <span class="abak-plc-numbered__number" aria-hidden="true"></span>
-                <span class="abak-plc-numbered__text">{{this}}</span>
+            <li class="product-page-numbered__item">
+                <span class="product-page-numbered__number" aria-hidden="true"></span>
+                <span class="product-page-numbered__text">{{this}}</span>
             </li>
             {{/each}}
         </ol>
     </div>
 </section>
 
-<section class="abak-plc-numbered abak-plc-numbered--dark">
+<section class="product-page-numbered product-page-numbered--dark">
     <div class="container">
-        <h2 class="abak-plc-numbered__title">{{abakPlcPage.characteristics.title}}</h2>
+        <h2 class="product-page-numbered__title">{{abakPlcPage.characteristics.title}}</h2>
 
-        <ol class="abak-plc-numbered__list">
+        <ol class="product-page-numbered__list">
             {{#each abakPlcPage.characteristics.items}}
-            <li class="abak-plc-numbered__item">
-                <span class="abak-plc-numbered__number" aria-hidden="true"></span>
-                <span class="abak-plc-numbered__text">{{this}}</span>
+            <li class="product-page-numbered__item">
+                <span class="product-page-numbered__number" aria-hidden="true"></span>
+                <span class="product-page-numbered__text">{{this}}</span>
             </li>
             {{/each}}
         </ol>
     </div>
 </section>
 
-<section class="abak-plc-topics">
+<section class="product-page-topics">
     <div class="container">
         <nav class="product-detail-page__topics" aria-label="{{abakPlcPage.topicsAriaLabel}}">
             <ul class="product-detail-page__topics-list">
@@ -130,7 +130,7 @@
             </ul>
         </nav>
 
-        <div class="article-snippet article-snippet--company abak-plc-company">
+        <div class="article-snippet article-snippet--company product-page-company">
             <div class="article-snippet__logo" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
                     <path d="M30.2327 21.5627C24.5795 26.6098 20.8541 32.1109 20.8541 40C20.8541 45.3946 22.6785 49.407 25.6306 53.163L38.5188 43.4431V21.5627H46.2916V58.6749H38.5188V52.8092L30.7425 58.6699L30.7442 58.6749H20.2409C15.792 53.6474 13.0813 47.139 13.0812 40C13.0812 32.9721 15.7059 26.5567 20.0326 21.5627H30.2327Z" fill="#006FDD"/>

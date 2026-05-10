@@ -33,30 +33,30 @@
     <div class="container">
         <p class="category-detail-topics__caption">{{categoryPage.topicsCaption}}</p>
 
-        <nav class="product-detail-page__topics" aria-label="{{categoryPage.topicsAriaLabel}}">
-            <ul class="product-detail-page__topics-list">
+        <nav class="category-detail-topics__accordion" aria-label="{{categoryPage.topicsAriaLabel}}">
+            <ul class="category-detail-topics__list">
                 {{#each categoryPage.topics}}
-                <li class="product-detail-page__topics-item js-accordion">
-                    <button class="product-detail-page__topics-button js-accordion-btn"
+                <li class="category-detail-topics__item js-accordion">
+                    <button class="category-detail-topics__button js-accordion-btn"
                         type="button"
                         id="{{this.id}}-button"
                         aria-expanded="false"
                         aria-controls="{{this.id}}-panel">
                         <span>{{this.label}}</span>
-                        <span class="product-detail-page__topics-icon" aria-hidden="true">
+                        <span class="category-detail-topics__icon" aria-hidden="true">
                             <svg width="12" height="12" aria-hidden="true">
                                 <use xlink:href="#arrows/right"></use>
                             </svg>
                         </span>
                     </button>
 
-                    <div class="product-detail-page__topics-dropdown js-accordion-dropdown"
+                    <div class="category-detail-topics__dropdown js-accordion-dropdown"
                         id="{{this.id}}-panel"
                         role="region"
                         aria-labelledby="{{this.id}}-button"
                         aria-hidden="true">
-                        <div class="product-detail-page__topics-dropdown-inner">
-                            <div class="product-detail-page__topics-content">
+                        <div class="category-detail-topics__dropdown-inner">
+                            <div class="category-detail-topics__content">
                                 {{#if this.items}}
                                 <ol>
                                     {{#each this.items}}

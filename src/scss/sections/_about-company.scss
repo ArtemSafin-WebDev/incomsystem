@@ -1,4 +1,5 @@
 @use "tools/media" as mq;
+@use "tools/typography" as type;
 
 @layer sections {
   .about-company {
@@ -27,19 +28,10 @@
 
   .about-company__title {
     grid-column: 1 / 3;
-    font-family: var(--rf-dewi);
-    font-size: 6rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: -0.12rem;
-    text-transform: uppercase;
+    @include type.section-title;
 
     @include mq.down(sm) {
       grid-column: 1 / -1;
-      font-size: 3rem;
-      font-weight: 700;
-      letter-spacing: -0.06rem;
     }
   }
 

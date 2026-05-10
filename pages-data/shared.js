@@ -92,6 +92,7 @@ export const contactUsFields = [
     name: "message",
     label: "Сообщение",
     placeholder: "Сообщение",
+    isTextarea: true,
     required: true,
   },
 ];

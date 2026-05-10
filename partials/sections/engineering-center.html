@@ -17,7 +17,7 @@
         <nav class="engineering-center__nav" aria-label="{{engineeringCenter.navigationAriaLabel}}">
             <ul class="engineering-center__nav-list">
                 {{#each engineeringCenter.navigation}}
-                <li class="engineering-center__nav-item {{#if this.active}}engineering-center__nav-item--active{{/if}}">
+                <li class="engineering-center__nav-item">
                     <a class="engineering-center__nav-link" href="{{this.href}}">{{this.label}}</a>
                 </li>
                 {{/each}}

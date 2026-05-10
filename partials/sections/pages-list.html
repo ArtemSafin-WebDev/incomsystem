@@ -1,0 +1,19 @@
+<section class="pages-list">
+    <div class="container">
+        <div class="pages-list__head">
+            <p class="pages-list__count">Всего страниц: {{pagesCount}}</p>
+            <h1 class="pages-list__title">Все страницы</h1>
+        </div>
+
+        <ul class="pages-list__items">
+            {{#each pagesList}}
+            <li class="pages-list__item">
+                <a class="pages-list__link" href="{{url}}">
+                    <span class="pages-list__name">{{title}}</span>
+                    <span class="pages-list__url">{{url}}</span>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

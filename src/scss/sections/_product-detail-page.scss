@@ -1,4 +1,5 @@
 @use "tools/media" as mq;
+@use "tools/typography" as type;
 
 @layer sections {
   .product-detail-hero {
@@ -26,22 +27,11 @@
     width: min(93rem, 100%);
     margin-left: calc((100% + 2rem) / 8);
     color: #222233;
-    font-family: var(--rf-dewi);
-    font-size: 6rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.24rem;
+    @include type.detail-title;
 
     @include mq.down(sm) {
       width: 100%;
       margin-left: 0;
-      font-size: 2.6rem;
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: 0;
-      text-transform: uppercase;
-      overflow-wrap: anywhere;
     }
   }
 

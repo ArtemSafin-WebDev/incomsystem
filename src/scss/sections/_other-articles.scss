@@ -1,4 +1,5 @@
 @use "tools/media" as mq;
+@use "tools/typography" as type;
 
 @layer sections {
   .other-articles {
@@ -15,20 +16,10 @@
   .other-articles__title {
     margin-bottom: 10.4rem;
     color: var(--text-color);
-    font-family: var(--rf-dewi);
-    font-size: 6rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.12rem;
-    text-transform: uppercase;
+    @include type.section-title;
 
     @include mq.down(sm) {
       margin-bottom: 3rem;
-      font-size: 3rem;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.06rem;
     }
   }
 

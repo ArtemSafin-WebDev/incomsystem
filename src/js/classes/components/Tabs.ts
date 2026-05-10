@@ -21,6 +21,7 @@ class Tabs extends Component {
   private activeIndex = -1;
   private rootSelector: string;
   private onTabChange?: TabsOptions["onTabChange"];
+  private readonly btnHandlers = new Map<HTMLButtonElement, EventListener>();
 
   constructor(element: HTMLElement, options: TabsOptions) {
     super(element);
@@ -34,10 +35,13 @@ class Tabs extends Component {
     this.setActive(0);
 
     this.btns.forEach((btn, btnIndex) => {
-      btn.addEventListener("click", (event) => {
+      const handler: EventListener = (event) => {
         event.preventDefault();
         this.setActive(btnIndex);
-      });
+      };
+
+      this.btnHandlers.set(btn, handler);
+      btn.addEventListener("click", handler);
     });
   }
 
@@ -64,6 +68,14 @@ class Tabs extends Component {
     if (newItem) {
       this.onTabChange?.(oldItem ?? null, newItem, index);
     }
+  }
+
+  public destroy() {
+    this.btnHandlers.forEach((handler, btn) => {
+      btn.removeEventListener("click", handler);
+    });
+    this.btnHandlers.clear();
+    this.unregister();
   }
 }
 

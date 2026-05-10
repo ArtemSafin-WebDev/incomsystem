@@ -1,4 +1,5 @@
 @use "tools/media" as mq;
+@use "tools/typography" as type;
 
 @layer sections {
   .production-and-services-page {
@@ -21,20 +22,10 @@
   .production-and-services-page__title {
     margin-top: 4rem;
     color: var(--text-color);
-    font-family: var(--rf-dewi);
-    font-size: 12rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.48rem;
+    @include type.page-title;
 
     @include mq.down(sm) {
       margin-top: 0;
-      font-size: 3rem;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.06rem;
-      text-transform: uppercase;
     }
   }
 

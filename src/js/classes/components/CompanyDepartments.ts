@@ -1,5 +1,6 @@
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
+import { MOBILE_BREAKPOINT } from "../../constants/breakpoints";
 import Component from "../Component";
 import Tabs from "./Tabs";
 
@@ -10,6 +11,7 @@ class CompanyDepartments extends Component {
   private readonly prevButton: HTMLButtonElement | null;
   private readonly nextButton: HTMLButtonElement | null;
   private slider: Swiper | null = null;
+  private tabs: Tabs | null = null;
 
   constructor(element: HTMLElement) {
     super(element);
@@ -39,7 +41,7 @@ class CompanyDepartments extends Component {
       return;
     }
 
-    new Tabs(this.element, {
+    this.tabs = new Tabs(this.element, {
       selectors: {
         root: ".js-company-departments",
         btn: ".js-tabs-btn",
@@ -56,6 +58,8 @@ class CompanyDepartments extends Component {
   }
 
   public destroy() {
+    this.tabs?.destroy();
+    this.tabs = null;
     this.unmountSlider();
     this.unregister();
   }
@@ -78,7 +82,10 @@ class CompanyDepartments extends Component {
   private scrollTabIntoView(index: number) {
     const button = this.tabButtons[index];
 
-    if (!button || !window.matchMedia("(max-width: 576px)").matches) {
+    if (
+      !button ||
+      !window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches
+    ) {
       return;
     }
 

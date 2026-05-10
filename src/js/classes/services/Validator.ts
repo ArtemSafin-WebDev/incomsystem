@@ -6,6 +6,8 @@ interface ValidationError {
   message: string;
 }
 
+type TextFieldElement = HTMLInputElement | HTMLTextAreaElement;
+
 type Locale = {
   requiredField: string;
   emailField: string;
@@ -43,7 +45,7 @@ const defaultLocalization: Localization = {
 class Validator {
   public errors: ValidationError[] = [];
   private form: HTMLFormElement;
-  private textFields: HTMLInputElement[];
+  private textFields: TextFieldElement[];
   private fileFields: HTMLInputElement[];
   private selects: HTMLElement[];
   private checkboxes: HTMLInputElement[];
@@ -72,7 +74,7 @@ class Validator {
 
     this.textFields = Array.from(
       form.querySelectorAll(
-        'input[type="text"], input[type="email"], input[type="tel"]'
+        'input[type="text"], input[type="email"], input[type="tel"], textarea'
       )
     );
     this.fileFields = Array.from(form.querySelectorAll('input[type="file"]'));
@@ -234,7 +236,7 @@ class Validator {
     return null;
   }
 
-  private validateTextField(field: HTMLInputElement): ValidationError | null {
+  private validateTextField(field: TextFieldElement): ValidationError | null {
     const value = field.value.trim();
     this.clearErrorsFor(field);
 
@@ -267,7 +269,7 @@ class Validator {
   }
 
   private getTextFieldError(
-    field: HTMLInputElement,
+    field: TextFieldElement,
     value: string
   ): ValidationError | null {
     const msg = this.localization[this.locale];
@@ -319,7 +321,7 @@ class Validator {
   }
 
   private showFieldMessage(
-    field: HTMLInputElement,
+    field: TextFieldElement,
     error: ValidationError | null
   ): void {
     const parent = field.parentElement?.parentElement;

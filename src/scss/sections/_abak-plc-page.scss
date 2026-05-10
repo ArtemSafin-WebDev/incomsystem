@@ -1,7 +1,8 @@
 @use "tools/media" as mq;
+@use "tools/typography" as type;
 
 @layer sections {
-  .abak-plc-hero {
+  .product-page-hero {
     padding-top: 16rem;
     padding-bottom: 12.8rem;
     background-color: #fff;
@@ -13,7 +14,7 @@
     }
   }
 
-  .abak-plc-hero .breadcrumbs {
+  .product-page-hero .breadcrumbs {
     margin-bottom: 4rem;
 
     @include mq.down(sm) {
@@ -21,24 +22,12 @@
     }
   }
 
-  .abak-plc-hero__title {
+  .product-page-hero__title {
     color: var(--text-color);
-    font-family: var(--rf-dewi);
-    font-size: 12rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.48rem;
-    text-transform: uppercase;
-
-    @include mq.down(sm) {
-      font-size: 2.8rem;
-      line-height: 1.1;
-      letter-spacing: 0;
-    }
+    @include type.page-title;
   }
 
-  .abak-plc-banner {
+  .product-page-banner {
     position: relative;
     aspect-ratio: 1920 / 400;
     overflow: hidden;
@@ -49,7 +38,7 @@
     }
   }
 
-  .abak-plc-banner::after {
+  .product-page-banner::after {
     content: "";
     position: absolute;
     left: 0;
@@ -61,7 +50,7 @@
     pointer-events: none;
   }
 
-  .abak-plc-banner__image {
+  .product-page-banner__image {
     position: absolute;
     left: 0;
     top: 0;
@@ -70,7 +59,7 @@
     object-fit: cover;
   }
 
-  .abak-plc-banner__text {
+  .product-page-banner__text {
     position: relative;
     z-index: 2;
     max-width: 67.8rem;
@@ -91,7 +80,7 @@
     }
   }
 
-  .abak-plc-modules {
+  .product-page-modules {
     padding-top: 15rem;
     padding-bottom: 15rem;
     background-color: #f2f2fa;
@@ -103,7 +92,7 @@
     }
   }
 
-  .abak-plc-modules__filters {
+  .product-page-modules__filters {
     display: flex;
     align-items: flex-end;
     gap: 2rem;
@@ -114,11 +103,11 @@
     }
   }
 
-  .abak-plc-modules__filter {
+  .product-page-modules__filter {
     width: calc((100% - 14rem) / 4);
   }
 
-  .abak-plc-modules__filter-label {
+  .product-page-modules__filter-label {
     margin-bottom: 1.5rem;
     color: var(--text-color);
     font-family: var(--inter);
@@ -127,7 +116,7 @@
     line-height: 1.05;
   }
 
-  .abak-plc-modules__list {
+  .product-page-modules__list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 6rem;
@@ -152,7 +141,7 @@
     }
   }
 
-  .abak-plc-modules__item {
+  .product-page-modules__item {
     position: relative;
     min-width: 0;
 
@@ -167,7 +156,7 @@
     }
   }
 
-  .abak-plc-modules__item:not(:nth-child(4n))::after {
+  .product-page-modules__item:not(:nth-child(4n))::after {
     content: "";
     position: absolute;
     top: 0;
@@ -181,7 +170,7 @@
     }
   }
 
-  .abak-plc-module-card {
+  .product-page-module-card {
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -193,7 +182,7 @@
     }
   }
 
-  .abak-plc-module-card__image-link {
+  .product-page-module-card__image-link {
     display: block;
     aspect-ratio: 405 / 297;
     overflow: hidden;
@@ -201,7 +190,7 @@
     background-color: #d8dce4;
   }
 
-  .abak-plc-module-card__image {
+  .product-page-module-card__image {
     width: 100%;
     height: 100%;
     border-radius: 0.5rem;
@@ -209,7 +198,7 @@
     transition: transform 0.4s;
   }
 
-  .abak-plc-module-card__content {
+  .product-page-module-card__content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -220,7 +209,7 @@
     }
   }
 
-  .abak-plc-module-card__title {
+  .product-page-module-card__title {
     margin-bottom: 4rem;
     font-family: var(--inter);
     font-size: 2.2rem;
@@ -235,7 +224,7 @@
     }
   }
 
-  .abak-plc-module-card__text {
+  .product-page-module-card__text {
     font-family: var(--inter);
     font-size: 1.4rem;
     font-weight: 500;
@@ -248,8 +237,8 @@
     }
   }
 
-  .abak-plc-module-card__button,
-  .abak-plc-modules__more {
+  .product-page-module-card__button,
+  .product-page-modules__more {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -279,11 +268,11 @@
     }
   }
 
-  .abak-plc-module-card__button {
+  .product-page-module-card__button {
     align-self: flex-start;
   }
 
-  .abak-plc-module-card__button-arrow {
+  .product-page-module-card__button-arrow {
     width: 1.2rem;
     height: 1.2rem;
     color: var(--primary-color);
@@ -291,7 +280,7 @@
     transition: color 0.2s;
   }
 
-  .abak-plc-modules__more {
+  .product-page-modules__more {
     display: flex;
     width: 44.6rem;
     max-width: 100%;
@@ -304,7 +293,7 @@
     }
   }
 
-  .abak-plc-numbered {
+  .product-page-numbered {
     padding-top: 4rem;
     padding-bottom: 15rem;
     background-color: #fff;
@@ -316,12 +305,12 @@
     }
   }
 
-  .abak-plc-numbered--dark {
+  .product-page-numbered--dark {
     background-color: #222233;
     color: #fff;
   }
 
-  .abak-plc-numbered__caption {
+  .product-page-numbered__caption {
     margin-bottom: 4rem;
     font-family: var(--inter);
     font-size: 1.4rem;
@@ -334,29 +323,22 @@
     }
   }
 
-  .abak-plc-numbered__title {
+  .product-page-numbered__title {
     margin-bottom: 8rem;
-    font-family: var(--rf-dewi);
-    font-size: 6rem;
-    font-weight: 600;
-    line-height: 1.2;
-    letter-spacing: -0.12rem;
-    text-transform: uppercase;
+    @include type.section-title;
 
     @include mq.down(sm) {
       margin-bottom: 4rem;
-      font-size: 3rem;
       line-height: 1.1;
-      letter-spacing: 0;
     }
   }
 
-  .abak-plc-numbered--dark .abak-plc-numbered__title {
+  .product-page-numbered--dark .product-page-numbered__title {
     color: #fff;
   }
 
-  .abak-plc-numbered__list {
-    counter-reset: abak-plc-numbered;
+  .product-page-numbered__list {
+    counter-reset: product-page-numbered;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 6rem;
@@ -368,8 +350,8 @@
     }
   }
 
-  .abak-plc-numbered__item {
-    counter-increment: abak-plc-numbered;
+  .product-page-numbered__item {
+    counter-increment: product-page-numbered;
     position: relative;
     padding-right: 3rem;
     font-family: var(--inter);
@@ -391,11 +373,11 @@
     }
   }
 
-  .abak-plc-numbered__item::before {
+  .product-page-numbered__item::before {
     content: none;
   }
 
-  .abak-plc-numbered__item:nth-child(n + 5):nth-child(4n + 1)::before {
+  .product-page-numbered__item:nth-child(n + 5):nth-child(4n + 1)::before {
     content: "";
     position: absolute;
     top: -8rem;
@@ -410,7 +392,7 @@
     }
   }
 
-  .abak-plc-numbered__item::after {
+  .product-page-numbered__item::after {
     content: "";
     position: absolute;
     left: -3rem;
@@ -425,11 +407,11 @@
     }
   }
 
-  .abak-plc-numbered__item:nth-child(4n + 1)::after {
+  .product-page-numbered__item:nth-child(4n + 1)::after {
     content: none;
   }
 
-  .abak-plc-numbered__number {
+  .product-page-numbered__number {
     display: block;
     margin-bottom: 2rem;
     color: var(--primary-color);
@@ -445,21 +427,21 @@
     }
   }
 
-  .abak-plc-numbered__number::before {
-    content: counter(abak-plc-numbered, decimal-leading-zero);
+  .product-page-numbered__number::before {
+    content: counter(product-page-numbered, decimal-leading-zero);
   }
 
-  .abak-plc-numbered--dark .abak-plc-numbered__title {
+  .product-page-numbered--dark .product-page-numbered__title {
     margin-bottom: 14rem;
   }
 
-  .abak-plc-numbered--dark
-    .abak-plc-numbered__item:nth-child(n + 5):nth-child(4n + 1)::before,
-  .abak-plc-numbered--dark .abak-plc-numbered__item::after {
+  .product-page-numbered--dark
+    .product-page-numbered__item:nth-child(n + 5):nth-child(4n + 1)::before,
+  .product-page-numbered--dark .product-page-numbered__item::after {
     background-color: rgba(255, 255, 255, 0.2);
   }
 
-  .abak-plc-topics {
+  .product-page-topics {
     padding-top: 15rem;
     padding-bottom: 15rem;
     background-color: #fff;
@@ -470,7 +452,7 @@
     }
   }
 
-  .abak-plc-company {
+  .product-page-company {
     margin-top: 15rem;
     margin-bottom: 0;
     min-height: auto;
@@ -491,18 +473,18 @@
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .abak-plc-module-card__image-link:hover .abak-plc-module-card__image {
+    .product-page-module-card__image-link:hover .product-page-module-card__image {
       transform: scale(1.04);
     }
 
-    .abak-plc-module-card__button:hover,
-    .abak-plc-modules__more:hover {
+    .product-page-module-card__button:hover,
+    .product-page-modules__more:hover {
       border-color: var(--primary-color);
       background-color: var(--primary-color);
       color: #fff;
     }
 
-    .abak-plc-module-card__button:hover .abak-plc-module-card__button-arrow {
+    .product-page-module-card__button:hover .product-page-module-card__button-arrow {
       color: #fff;
     }
   }

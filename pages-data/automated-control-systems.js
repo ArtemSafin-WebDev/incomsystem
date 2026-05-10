@@ -318,11 +318,6 @@ export default {
           items: getPressCenterItemsByTab("all"),
         },
         {
-          key: "articles",
-          label: "Статьи",
-          items: getPressCenterItemsByTab("articles"),
-        },
-        {
           key: "news",
           label: "Новости",
           items: getPressCenterItemsByTab("news"),
@@ -336,6 +331,11 @@ export default {
           key: "gallery",
           label: "Галерея",
           items: getPressCenterItemsByTab("gallery"),
+        },
+        {
+          key: "articles",
+          label: "Статьи",
+          items: getPressCenterItemsByTab("articles"),
         },
       ],
     },
