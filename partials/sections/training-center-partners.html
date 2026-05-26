@@ -1,0 +1,36 @@
+<section class="training-center-partners js-simple-slider" aria-labelledby="training-center-partners-title">
+    <div class="container">
+        <h2 class="training-center-partners__title" id="training-center-partners-title">{{trainingCenterPartners.title}}</h2>
+
+        <div class="training-center-partners__slider swiper js-simple-slider-track">
+            <ul class="training-center-partners__list swiper-wrapper">
+                {{#each trainingCenterPartners.items}}
+                <li class="training-center-partners__item swiper-slide">
+                    <article class="training-partner-card">
+                        <a class="training-partner-card__media" href="{{this.href}}" aria-label="{{this.ariaLabel}}">
+                            <img class="training-partner-card__image" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
+                            <span class="training-partner-card__overlay" aria-hidden="true"></span>
+                            {{#if this.isVideo}}
+                            <span class="training-partner-card__play" aria-hidden="true">
+                                <svg width="42" height="65">
+                                    <use xlink:href="#play-triangle"></use>
+                                </svg>
+                            </span>
+                            {{/if}}
+                        </a>
+                        <h3 class="training-partner-card__title">{{this.title}}</h3>
+                    </article>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        {{> components/slider-navigation
+        theme="light"
+        className="training-center-partners__navigation"
+        ariaLabel=trainingCenterPartners.navigationAriaLabel
+        prevLabel=trainingCenterPartners.previousSlideLabel
+        nextLabel=trainingCenterPartners.nextSlideLabel
+        }}
+    </div>
+</section>

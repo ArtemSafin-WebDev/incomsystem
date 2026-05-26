@@ -18,6 +18,10 @@ import ProductionAndServices from "../classes/components/ProductionAndServices";
 import ProductionAndServicesPage from "../classes/components/ProductionAndServicesPage";
 import RealisedProjects from "../classes/components/RealisedProjects";
 import SimpleSlider from "../classes/components/SimpleSlider";
+import ScrollReveal from "../classes/components/ScrollReveal";
+import TrainingCenterCourses from "../classes/components/TrainingCenterCourses";
+
+const SKIP_SCROLL_REVEAL_SELECTOR = ".js-about-company";
 
 export default function sections() {
   const header = document.querySelector<HTMLElement>(".page-header");
@@ -83,6 +87,8 @@ export default function sections() {
   );
   const simpleSliderSections =
     document.querySelectorAll<HTMLElement>(".js-simple-slider");
+  const trainingCenterCoursesSections =
+    document.querySelectorAll<HTMLElement>(".js-training-center-courses");
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
@@ -151,4 +157,18 @@ export default function sections() {
   simpleSliderSections.forEach((section) => {
     new SimpleSlider(section);
   });
+
+  trainingCenterCoursesSections.forEach((section) => {
+    new TrainingCenterCourses(section);
+  });
+
+  document
+    .querySelectorAll<HTMLElement>(".page-main section")
+    .forEach((section) => {
+      if (section.matches(SKIP_SCROLL_REVEAL_SELECTOR)) {
+        return;
+      }
+
+      new ScrollReveal(section);
+    });
 }

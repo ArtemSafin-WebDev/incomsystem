@@ -1,0 +1,58 @@
+<section class="training-center-courses js-training-center-courses" aria-labelledby="training-center-courses-title">
+    <div class="container">
+        <h2 class="training-center-courses__title" id="training-center-courses-title">{{trainingCenterCourses.title}}</h2>
+
+        <ul class="training-center-courses__list">
+            {{#each trainingCenterCourses.items}}
+            <li class="training-center-courses__item js-training-course">
+                <article class="training-course-card">
+                    <div class="training-course-card__media">
+                        <img class="training-course-card__image" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
+                    </div>
+
+                    <div class="training-course-card__content">
+                        <p class="training-course-card__duration">
+                            <svg width="20" height="20" aria-hidden="true">
+                                <use xlink:href="#training-calendar"></use>
+                            </svg>
+                            <span>{{this.duration}}</span>
+                        </p>
+
+                        <h3 class="training-course-card__title">{{this.title}}</h3>
+                        <p class="training-course-card__description">{{this.description}}</p>
+
+                        <div class="training-course-card__details" hidden>
+                            {{#each this.details}}
+                            <div class="training-course-card__detail">
+                                <h4 class="training-course-card__detail-title">{{this.title}}</h4>
+                                <p class="training-course-card__detail-text">{{this.text}}</p>
+                            </div>
+                            {{/each}}
+                        </div>
+
+                        <div class="training-course-card__actions">
+                            <a class="training-course-card__button training-course-card__button--primary" href="{{this.signupHref}}">{{../trainingCenterCourses.signupText}}</a>
+
+                            <button class="training-course-card__button training-course-card__button--outline js-training-course-toggle"
+                                type="button"
+                                aria-expanded="false"
+                                data-open-text="{{../trainingCenterCourses.collapseText}}"
+                                data-closed-text="{{../trainingCenterCourses.detailsText}}">
+                                <span>{{../trainingCenterCourses.detailsText}}</span>
+                                <svg class="training-course-card__button-icon" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="#arrows/right"></use>
+                                </svg>
+                            </button>
+
+                            <a class="training-course-card__button training-course-card__button--download" href="{{this.programHref}}" download>
+                                <span>{{../trainingCenterCourses.downloadText}}</span>
+                                <span class="training-course-card__pdf" aria-hidden="true">PDF</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

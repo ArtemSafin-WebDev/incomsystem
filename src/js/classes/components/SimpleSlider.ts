@@ -7,6 +7,7 @@ class SimpleSlider extends Component {
   private readonly prevButton: HTMLButtonElement | null;
   private readonly nextButton: HTMLButtonElement | null;
   private slider: Swiper | null = null;
+  private resizeFrame = 0;
 
   constructor(element: HTMLElement) {
     super(element);
@@ -27,6 +28,8 @@ class SimpleSlider extends Component {
   }
 
   public destroy() {
+    window.removeEventListener("resize", this.handleResize);
+    cancelAnimationFrame(this.resizeFrame);
     this.unmountSlider();
     this.unregister();
   }
@@ -41,6 +44,7 @@ class SimpleSlider extends Component {
     this.slider = new Swiper(this.sliderElement, {
       modules: [Navigation],
       slidesPerView: "auto",
+      spaceBetween: this.getSpaceBetween(),
       speed: 600,
       watchOverflow: false,
       navigation: {
@@ -48,6 +52,46 @@ class SimpleSlider extends Component {
         nextEl: this.nextButton,
       },
     });
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  private readonly handleResize = () => {
+    cancelAnimationFrame(this.resizeFrame);
+
+    this.resizeFrame = requestAnimationFrame(() => {
+      if (!this.slider) {
+        return;
+      }
+
+      this.slider.params.spaceBetween = this.getSpaceBetween();
+      this.slider.update();
+    });
+  };
+
+  private getSpaceBetween(): number {
+    const value = getComputedStyle(this.element)
+      .getPropertyValue("--simple-slider-space-between")
+      .trim();
+
+    if (!value) {
+      return 0;
+    }
+
+    return this.resolveCssLength(value);
+  }
+
+  private resolveCssLength(value: string): number {
+    const probe = document.createElement("div");
+    probe.style.position = "absolute";
+    probe.style.visibility = "hidden";
+    probe.style.pointerEvents = "none";
+    probe.style.width = value;
+    this.element.append(probe);
+
+    const width = probe.getBoundingClientRect().width;
+    probe.remove();
+
+    return width;
   }
 
   private unmountSlider() {

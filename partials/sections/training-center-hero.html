@@ -1,0 +1,21 @@
+<section class="training-center-hero" aria-labelledby="training-center-hero-title">
+    <div class="container">
+        {{> components/breadcrumbs trainingCenterHero.breadcrumbs }}
+        <h1 class="training-center-hero__title" id="training-center-hero-title">{{{trainingCenterHero.title}}}</h1>
+    </div>
+
+    <a class="training-center-hero__video" href="{{trainingCenterHero.videoHref}}" aria-label="{{trainingCenterHero.videoAriaLabel}}">
+        <picture class="training-center-hero__poster">
+            <img class="training-center-hero__poster-image"
+                src="{{trainingCenterHero.poster}}"
+                alt="{{trainingCenterHero.posterAlt}}">
+        </picture>
+        <span class="training-center-hero__video-overlay" aria-hidden="true"></span>
+        <span class="training-center-hero__play" aria-hidden="true">
+            <svg width="59" height="91">
+                <use xlink:href="#play-triangle"></use>
+            </svg>
+            <span>{{trainingCenterHero.videoText}}</span>
+        </span>
+    </a>
+</section>

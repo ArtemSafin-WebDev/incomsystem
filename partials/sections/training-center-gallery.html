@@ -1,0 +1,20 @@
+<section class="training-center-gallery js-simple-slider" aria-label="{{trainingCenterGallery.ariaLabel}}">
+    <div class="container">
+        <div class="training-center-gallery__slider swiper js-simple-slider-track">
+            <ul class="training-center-gallery__list swiper-wrapper">
+                {{#each trainingCenterGallery.slides}}
+                <li class="training-center-gallery__item swiper-slide">
+                    <img class="training-center-gallery__image" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        {{> components/slider-navigation
+        className="training-center-gallery__navigation"
+        ariaLabel=trainingCenterGallery.navigationAriaLabel
+        prevLabel=trainingCenterGallery.previousSlideLabel
+        nextLabel=trainingCenterGallery.nextSlideLabel
+        }}
+    </div>
+</section>

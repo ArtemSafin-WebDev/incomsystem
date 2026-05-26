@@ -83,7 +83,7 @@ const contactUsFields = [
     name: "message",
     label: "Сообщение",
     placeholder: "Сообщение",
-    isTextarea: true,
+    type: "text",
     required: true,
   },
 ];

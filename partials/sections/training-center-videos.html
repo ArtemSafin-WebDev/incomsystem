@@ -1,0 +1,37 @@
+<section class="training-center-videos js-simple-slider" aria-labelledby="training-center-videos-title">
+    <div class="container">
+        <h2 class="training-center-videos__title" id="training-center-videos-title">{{trainingCenterVideos.title}}</h2>
+
+        <div class="training-center-videos__slider swiper js-simple-slider-track">
+            <ul class="training-center-videos__list swiper-wrapper">
+                {{#each trainingCenterVideos.items}}
+                <li class="training-center-videos__item swiper-slide">
+                    <article class="training-video-card">
+                        <a class="training-video-card__media" href="{{this.href}}" aria-label="{{this.ariaLabel}}">
+                            <img class="training-video-card__image" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
+                            <span class="training-video-card__overlay" aria-hidden="true"></span>
+                            <span class="training-video-card__play" aria-hidden="true">
+                                <svg width="59" height="91">
+                                    <use xlink:href="#play-triangle"></use>
+                                </svg>
+                            </span>
+                        </a>
+
+                        <div class="training-video-card__content">
+                            <h3 class="training-video-card__title">{{this.title}}</h3>
+                            <p class="training-video-card__text">{{this.text}}</p>
+                        </div>
+                    </article>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        {{> components/slider-navigation
+        className="training-center-videos__navigation"
+        ariaLabel=trainingCenterVideos.navigationAriaLabel
+        prevLabel=trainingCenterVideos.previousSlideLabel
+        nextLabel=trainingCenterVideos.nextSlideLabel
+        }}
+    </div>
+</section>
