@@ -133,18 +133,25 @@
 
   .training-center-gallery__list {
     display: flex;
+    list-style: none;
   }
 
-  .training-center-gallery__item {
+  .training-center-gallery__slide {
     flex: 0 0 auto;
     width: calc((100% - (var(--simple-slider-space-between) * 3)) / 4);
     aspect-ratio: 1;
-    border-radius: 0.5rem;
-    overflow: hidden;
 
     @include mq.down(sm) {
       width: 12rem;
     }
+  }
+
+  .training-center-gallery__item {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
   }
 
   .training-center-gallery__image {
@@ -756,7 +763,7 @@
   .training-video-card {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3.2rem;
 
     @include mq.down(sm) {
       gap: 2rem;
@@ -776,7 +783,7 @@
     display: flex;
     max-width: 31rem;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.2rem;
     @include mq.down(sm) {
       gap: 1rem;
     }

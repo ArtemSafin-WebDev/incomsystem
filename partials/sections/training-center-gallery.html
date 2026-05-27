@@ -3,8 +3,10 @@
         <div class="training-center-gallery__slider swiper js-simple-slider-track">
             <ul class="training-center-gallery__list swiper-wrapper">
                 {{#each trainingCenterGallery.slides}}
-                <li class="training-center-gallery__item swiper-slide">
-                    <img class="training-center-gallery__image" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
+                <li class="training-center-gallery__slide swiper-slide">
+                    <a class="training-center-gallery__item" href="{{this.image}}">
+                        <img class="training-center-gallery__image" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
+                    </a>
                 </li>
                 {{/each}}
             </ul>
