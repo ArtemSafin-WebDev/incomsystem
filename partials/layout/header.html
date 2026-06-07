@@ -25,13 +25,34 @@
                 </button>
             </div>
             <div class="page-header__middle-wrapper">
-                <div class="page-header__products">
-                    <a href="#" class="page-header__products-btn">
+                <div class="page-header__products js-header-products-menu">
+                    <button class="page-header__products-btn js-header-products-menu-toggle" type="button"
+                        aria-expanded="false" aria-controls="header-products-menu">
                         Продукция и услуги
-                        <svg width="14" height="14" aria-hidden="true">
+                        <svg class="page-header__products-btn-icon page-header__products-btn-icon--menu" width="24"
+                            height="24" aria-hidden="true">
                             <use xlink:href="#menu"></use>
                         </svg>
-                    </a>
+                        <svg class="page-header__products-btn-icon page-header__products-btn-icon--close" width="24"
+                            height="24" aria-hidden="true">
+                            <use xlink:href="#dropdown-close"></use>
+                        </svg>
+                    </button>
+                    {{#with (lookup mobileMenu.links 0)}}
+                    <div class="page-header__products-menu js-header-products-menu-panel" id="header-products-menu"
+                        aria-hidden="true" inert>
+                        <p class="page-header__products-menu-title">{{label}}</p>
+                        <ul class="page-header__products-menu-list">
+                            {{#each items}}
+                            <li class="page-header__products-menu-item">
+                                <a href="{{href}}" class="page-header__products-menu-link js-header-products-menu-link">
+                                    {{label}}
+                                </a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    {{/with}}
                 </div>
                 <div class="page-header__search">
                     <a href="#" class="page-header__search-btn">

@@ -9,6 +9,7 @@ import CompanyLeadership from "../classes/components/CompanyLeadership";
 import CompanyReviews from "../classes/components/CompanyReviews";
 import HarshConditions from "../classes/components/HarshConditions";
 import CompactHeader from "../classes/components/CompactHeader";
+import HeaderProductsMenu from "../classes/components/HeaderProductsMenu";
 import IntroBackgroundVideo from "../classes/components/IntroBackgroundVideo";
 import MobileMenu from "../classes/components/MobileMenu";
 import OtherArticles from "../classes/components/OtherArticles";
@@ -25,6 +26,9 @@ const SKIP_SCROLL_REVEAL_SELECTOR = ".js-about-company";
 
 export default function sections() {
   const header = document.querySelector<HTMLElement>(".page-header");
+  const headerProductsMenus = document.querySelectorAll<HTMLElement>(
+    ".js-header-products-menu"
+  );
   const mobileMenu = document.querySelector<HTMLElement>(".js-mobile-menu");
   const introBackgrounds =
     document.querySelectorAll<HTMLElement>(".js-intro-bg");
@@ -32,6 +36,10 @@ export default function sections() {
   if (header) {
     new CompactHeader(header);
   }
+
+  headerProductsMenus.forEach((menu) => {
+    new HeaderProductsMenu(menu);
+  });
 
   if (mobileMenu) {
     new MobileMenu(mobileMenu);

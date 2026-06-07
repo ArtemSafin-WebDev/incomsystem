@@ -203,12 +203,13 @@
   }
 
   .page-header__products-btn {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 28rem;
     padding-inline: 3rem;
-    padding-block: 2.8rem;
+    padding-block: 3.16rem;
     text-align: left;
     gap: 2rem;
     border-radius: 5rem;
@@ -237,7 +238,97 @@
     }
 
     .page-header--compact & {
-      padding-block: 1.7rem;
+      padding-block: 2.16rem;
+    }
+  }
+
+  .page-header__products-btn-icon {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease;
+  }
+
+  .page-header__products-btn-icon--close {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .page-header__products.is-open {
+    .page-header__products-btn-icon--menu {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .page-header__products-btn-icon--close {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .page-header__products-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 3rem);
+    z-index: 1;
+    width: 28.7rem;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 7.4rem 0 rgba(0, 0, 0, 0.15);
+    color: var(--text-color);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0s linear;
+
+    &[aria-hidden="true"] {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-1rem);
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0s linear 0.2s;
+    }
+  }
+
+  .page-header__products-menu-title {
+    padding: 2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.8;
+    opacity: 0.5;
+  }
+
+  .page-header__products-menu-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-header__products-menu-link {
+    display: block;
+    padding: 2rem;
+    font-family: var(--imb-plex-sans);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: uppercase;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--primary-color);
+      color: #fff;
     }
   }
 

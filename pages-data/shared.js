@@ -8,15 +8,15 @@ export const mobileMenuLinks = [
         href: "/abak-plc.html",
       },
       {
-        label: "Аналитические системы",
-        href: "/production-and-services.html",
-      },
-      {
         label: "Автоматизированные системы управления",
         href: "/automated-control-systems.html",
       },
       {
         label: "Система измерений и блочное оборудование",
+        href: "/production-and-services.html",
+      },
+      {
+        label: "Аналитические системы",
         href: "/production-and-services.html",
       },
       {
