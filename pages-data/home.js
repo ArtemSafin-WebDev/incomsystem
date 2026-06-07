@@ -1,3 +1,5 @@
+import { mobileMenu } from "./shared.js";
+
 const pressCenterItems = [
   {
     title:
@@ -126,29 +128,6 @@ const engineeringCenterDocuments = [
     size: "1.2 Мб",
     href: "#",
     downloadText: "Скачать",
-  },
-];
-
-const mobileMenuLinks = [
-  {
-    label: "Продукция и услуги",
-    href: "#",
-  },
-  {
-    label: "Проекты",
-    href: "#",
-  },
-  {
-    label: "О компании",
-    href: "#",
-  },
-  {
-    label: "Документация",
-    href: "#",
-  },
-  {
-    label: "Контакты",
-    href: "#",
   },
 ];
 
@@ -355,21 +334,7 @@ export default {
       logo: "/images/incomsystem.svg",
       logoAlt: "Инкомсистем",
     },
-    mobileMenu: {
-      logoHref: "#",
-      logoSrc: "/images/shared/logo.svg",
-      logoAlt: "Инкомсистем",
-      searchPlaceholder: "Поиск",
-      menuAriaLabel: "Мобильное меню",
-      links: mobileMenuLinks,
-      socials: mobileMenuSocials,
-      ctaText: "связаться с нами",
-      ctaHref: "#",
-      phoneHref: "#",
-      phoneAriaLabel: "Позвонить",
-      openAriaLabel: "Открыть меню",
-      closeAriaLabel: "Закрыть меню",
-    },
+    mobileMenu,
     footer: {
       caption: "Контакты",
       mapImage: "/images/footer/map.webp",

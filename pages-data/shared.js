@@ -1,27 +1,107 @@
 export const mobileMenuLinks = [
   {
     label: "Продукция и услуги",
-    href: "#",
-  },
-  {
-    label: "Проекты",
-    href: "#",
+    id: "products",
+    items: [
+      {
+        label: "Контроллеры АБАК",
+        href: "/abak-plc.html",
+      },
+      {
+        label: "Аналитические системы",
+        href: "/production-and-services.html",
+      },
+      {
+        label: "Автоматизированные системы управления",
+        href: "/automated-control-systems.html",
+      },
+      {
+        label: "Система измерений и блочное оборудование",
+        href: "/production-and-services.html",
+      },
+      {
+        label: "Метрология и сервис",
+        href: "/production-and-services.html",
+      },
+      {
+        label: "Сульфинертное нанопокрытие Incomsteel",
+        href: "/production-and-services.html",
+      },
+    ],
   },
   {
     label: "О компании",
-    href: "#",
+    id: "about",
+    items: [
+      {
+        label: "О нас",
+        href: "/about-company.html",
+      },
+      {
+        label: "Учебный центр",
+        href: "/training-center.html",
+      },
+      {
+        label: "Сотрудничество",
+        href: "/cooperation.html",
+      },
+      {
+        label: "Пресс центр",
+        href: "/press-center.html",
+      },
+      {
+        label: "Карьера",
+        href: "/career.html",
+      },
+      {
+        label: "Реализованные проекты",
+        href: "/realised-projects.html",
+      },
+      {
+        label: "ИТ-аккредитация",
+        href: "#",
+      },
+    ],
   },
   {
     label: "Документация",
-    href: "#",
+    href: "/documentation.html",
   },
   {
     label: "Контакты",
-    href: "#",
+    href: "/contacts.html",
   },
 ];
 
 export const mobileMenuSocials = [
+  {
+    href: "#",
+    label: "Habr",
+    icon: "social/menu-habr",
+  },
+  {
+    href: "#",
+    label: "Telegram",
+    icon: "social/menu-telegram",
+  },
+  {
+    href: "#",
+    label: "ВКонтакте",
+    icon: "social/menu-vkontakte",
+  },
+  {
+    href: "#",
+    label: "Дзен",
+    icon: "social/menu-dzen",
+  },
+  {
+    href: "#",
+    label: "Чат",
+    icon: "social/menu-hz",
+  },
+];
+
+export const footerSocials = [
   {
     href: "#",
     label: "Telegram",
@@ -43,11 +123,23 @@ export const mobileMenu = {
   links: mobileMenuLinks,
   socials: mobileMenuSocials,
   ctaText: "связаться с нами",
-  ctaHref: "#",
-  phoneHref: "#",
+  ctaHref: "/contacts.html",
+  phoneHref: "tel:+78432125010",
   phoneAriaLabel: "Позвонить",
   openAriaLabel: "Открыть меню",
   closeAriaLabel: "Закрыть меню",
+  contactAriaLabel: "Контакты для связи",
+  closeContactAriaLabel: "Закрыть контакты",
+  contactLinks: [
+    {
+      label: "+7 843 212-50-10",
+      href: "tel:+78432125010",
+    },
+    {
+      label: "mail@incomsystem.ru",
+      href: "mailto:mail@incomsystem.ru",
+    },
+  ],
 };
 
 export const contactUsFields = [
@@ -183,7 +275,7 @@ export const footer = {
   phoneRaw: "+78432125010",
   email: "info@incomsteel.ru",
   socialsAriaLabel: "Социальные сети",
-  socials: mobileMenuSocials,
+  socials: footerSocials,
   copyright: "©1991-2025 АО «Научно-инженерный центр «ИНКОМСИСТЕМ»",
   policyText: "Политика в отношении обработки персональных данных",
   policyLink: "https://incomsystem.ru/upload/uf/baa/pol.pdf",

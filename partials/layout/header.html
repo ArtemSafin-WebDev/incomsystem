@@ -9,11 +9,13 @@
                     class="page-header__logo-compact page-header__logo-compact--blue">
             </a>
             <div class="page-header__mobile-actions">
-                <a href="#" class="page-header__mobile-btn page-header__mobile-btn--phone" aria-label="Позвонить">
+                <button type="button"
+                    class="page-header__mobile-btn page-header__mobile-btn--phone js-mobile-contact-toggle"
+                    aria-expanded="false" aria-controls="mobile-contact-panel" aria-label="Позвонить">
                     <svg width="24" height="24" aria-hidden="true">
                         <use xlink:href="#phone"></use>
                     </svg>
-                </a>
+                </button>
                 <button type="button" class="page-header__mobile-btn page-header__mobile-btn--menu js-mobile-menu-toggle"
                     aria-expanded="false" aria-controls="mobile-menu-panel"
                     aria-label="Открыть меню" data-open-label="Открыть меню">
@@ -77,3 +79,22 @@
         </div>
     </div>
 </header>
+<div class="mobile-contact js-mobile-contact" aria-hidden="true">
+    <button type="button" class="mobile-contact__backdrop js-mobile-contact-close"
+        aria-label="{{mobileMenu.closeContactAriaLabel}}"></button>
+    <div class="mobile-contact__panel" id="mobile-contact-panel">
+        <button type="button" class="mobile-contact__close js-mobile-contact-close"
+            aria-label="{{mobileMenu.closeContactAriaLabel}}">
+            <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="#dropdown-close"></use>
+            </svg>
+        </button>
+        <ul class="mobile-contact__list" aria-label="{{mobileMenu.contactAriaLabel}}">
+            {{#each mobileMenu.contactLinks}}
+            <li class="mobile-contact__item">
+                <a href="{{href}}" class="mobile-contact__link">{{label}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
