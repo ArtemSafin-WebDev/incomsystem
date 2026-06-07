@@ -12,6 +12,14 @@ dist
 dist-ssr
 *.local
 
+# Agent/browser generated artifacts
+.playwright-mcp/
+.playwright-cli/
+output/playwright/
+playwright-report/
+test-results/
+/*.png
+
 # Editor directories and files
 
 .idea
