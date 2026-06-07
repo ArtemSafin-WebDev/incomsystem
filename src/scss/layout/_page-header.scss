@@ -535,6 +535,11 @@
     }
   }
 
+  .page-header__contacts {
+    position: relative;
+    flex-shrink: 0;
+  }
+
   .page-header__phone {
     display: grid;
     place-items: center;
@@ -563,6 +568,65 @@
     .page-header--compact & {
       height: 6rem;
       border-radius: 5rem;
+    }
+  }
+
+  .page-header__contacts-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 3rem);
+    z-index: 1;
+    width: 28.7rem;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 7.4rem 0 rgba(0, 0, 0, 0.15);
+    color: var(--text-color);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0s linear;
+
+    &[aria-hidden="true"] {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-1rem);
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0s linear 0.2s;
+    }
+
+    .page-header--compact & {
+      top: calc(100% + 2rem);
+    }
+  }
+
+  .page-header__contacts-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-header__contacts-link {
+    display: block;
+    padding: 2rem;
+    font-family: var(--imb-plex-sans);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: uppercase;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--primary-color);
+      color: #fff;
     }
   }
 

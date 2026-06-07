@@ -9,6 +9,7 @@ import CompanyLeadership from "../classes/components/CompanyLeadership";
 import CompanyReviews from "../classes/components/CompanyReviews";
 import HarshConditions from "../classes/components/HarshConditions";
 import CompactHeader from "../classes/components/CompactHeader";
+import HeaderContactsMenu from "../classes/components/HeaderContactsMenu";
 import HeaderProductsMenu from "../classes/components/HeaderProductsMenu";
 import IntroBackgroundVideo from "../classes/components/IntroBackgroundVideo";
 import MobileMenu from "../classes/components/MobileMenu";
@@ -29,6 +30,9 @@ export default function sections() {
   const headerProductsMenus = document.querySelectorAll<HTMLElement>(
     ".js-header-products-menu"
   );
+  const headerContactsMenus = document.querySelectorAll<HTMLElement>(
+    ".js-header-contacts"
+  );
   const mobileMenu = document.querySelector<HTMLElement>(".js-mobile-menu");
   const introBackgrounds =
     document.querySelectorAll<HTMLElement>(".js-intro-bg");
@@ -39,6 +43,10 @@ export default function sections() {
 
   headerProductsMenus.forEach((menu) => {
     new HeaderProductsMenu(menu);
+  });
+
+  headerContactsMenus.forEach((menu) => {
+    new HeaderContactsMenu(menu);
   });
 
   if (mobileMenu) {

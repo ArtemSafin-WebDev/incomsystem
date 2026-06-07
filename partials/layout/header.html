@@ -106,11 +106,27 @@
                         {{/with}}
                     </ul>
                 </nav>
-                <a href="{{mobileMenu.phoneHref}}" class="page-header__phone">
-                    <svg width="14" height="14" aria-hidden="true">
-                        <use xlink:href="#phone"></use>
-                    </svg>
-                </a>
+                <div class="page-header__contacts js-header-contacts">
+                    <button class="page-header__phone js-header-contacts-toggle" type="button"
+                        aria-expanded="false" aria-controls="header-contacts-menu"
+                        aria-label="{{mobileMenu.phoneAriaLabel}}">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#phone"></use>
+                        </svg>
+                    </button>
+                    <div class="page-header__contacts-menu js-header-contacts-panel" id="header-contacts-menu"
+                        aria-hidden="true" inert>
+                        <ul class="page-header__contacts-list" aria-label="{{mobileMenu.contactAriaLabel}}">
+                            {{#each mobileMenu.contactLinks}}
+                            <li class="page-header__contacts-item">
+                                <a href="{{href}}" class="page-header__contacts-link js-header-contacts-link">
+                                    {{label}}
+                                </a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
                 <a href="{{mobileMenu.ctaHref}}" class="page-header__cta">
                     {{mobileMenu.ctaText}}
                 </a>
