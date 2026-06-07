@@ -65,36 +65,54 @@
             <div class="page-header__right-wrapper">
                 <nav class="page-header__nav">
                     <ul class="page-header__nav-list">
-                        <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
-                                О компании
-                                <svg width="14" height="14" aria-hidden="true">
-                                    <use xlink:href="#plus"></use>
+                        {{#with (lookup mobileMenu.links 1)}}
+                        <li class="page-header__nav-list-item page-header__nav-list-item--dropdown js-header-products-menu">
+                            <button class="page-header__nav-link page-header__nav-toggle js-header-products-menu-toggle"
+                                type="button" aria-expanded="false" aria-controls="header-about-menu">
+                                {{label}}
+                                <svg class="page-header__nav-link-icon" width="15" height="9" aria-hidden="true">
+                                    <use xlink:href="#header-dropdown-arrow"></use>
                                 </svg>
-                            </a>
+                            </button>
+                            <div class="page-header__nav-dropdown js-header-products-menu-panel" id="header-about-menu"
+                                aria-hidden="true" inert>
+                                <p class="page-header__nav-dropdown-title">{{label}}</p>
+                                <ul class="page-header__nav-dropdown-list">
+                                    {{#each items}}
+                                    <li class="page-header__nav-dropdown-item">
+                                        <a href="{{href}}"
+                                            class="page-header__nav-dropdown-link js-header-products-menu-link">
+                                            {{label}}
+                                        </a>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
                         </li>
+                        {{/with}}
+                        {{#with (lookup mobileMenu.links 2)}}
                         <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
-                                Документация
-                                <svg width="14" height="14" aria-hidden="true">
-                                    <use xlink:href="#plus"></use>
-                                </svg>
+                            <a href="{{href}}" class="page-header__nav-link">
+                                {{label}}
                             </a>
                         </li>
+                        {{/with}}
+                        {{#with (lookup mobileMenu.links 3)}}
                         <li class="page-header__nav-list-item">
-                            <a href="#" class="page-header__nav-link">
-                                Контакты
+                            <a href="{{href}}" class="page-header__nav-link">
+                                {{label}}
                             </a>
                         </li>
+                        {{/with}}
                     </ul>
                 </nav>
-                <a href="#" class="page-header__phone">
+                <a href="{{mobileMenu.phoneHref}}" class="page-header__phone">
                     <svg width="14" height="14" aria-hidden="true">
                         <use xlink:href="#phone"></use>
                     </svg>
                 </a>
-                <a href="#" class="page-header__cta">
-                    связаться с нами
+                <a href="{{mobileMenu.ctaHref}}" class="page-header__cta">
+                    {{mobileMenu.ctaText}}
                 </a>
             </div>
         </div>
