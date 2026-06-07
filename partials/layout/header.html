@@ -9,6 +9,31 @@
                     class="page-header__logo-compact page-header__logo-compact--blue">
             </a>
             <div class="page-header__mobile-actions">
+                <div class="page-header__search page-header__search--mobile js-page-header-search">
+                    <button type="button" class="page-header__search-btn js-page-header-search-toggle"
+                        aria-expanded="false" aria-controls="header-mobile-search-dropdown"
+                        aria-label="{{mobileMenu.headerSearchOpenAriaLabel}}"
+                        data-open-label="{{mobileMenu.headerSearchOpenAriaLabel}}"
+                        data-close-label="{{mobileMenu.headerSearchCloseAriaLabel}}">
+                        <svg width="14" height="14" aria-hidden="true">
+                            <use xlink:href="#search"></use>
+                        </svg>
+                    </button>
+                    <form class="page-header__search-dropdown js-page-header-search-form"
+                        id="header-mobile-search-dropdown" role="search" method="get" aria-hidden="true" inert>
+                        <label class="page-header__search-label" for="header-mobile-search-input">
+                            {{mobileMenu.headerSearchLabel}}
+                        </label>
+                        <div class="page-header__search-form-row">
+                            <input class="page-header__search-input js-page-header-search-input"
+                                id="header-mobile-search-input" type="search" name="q"
+                                placeholder="{{mobileMenu.headerSearchPlaceholder}}">
+                            <button type="submit" class="page-header__search-submit">
+                                {{mobileMenu.headerSearchSubmitText}}
+                            </button>
+                        </div>
+                    </form>
+                </div>
                 <button type="button"
                     class="page-header__mobile-btn page-header__mobile-btn--phone js-mobile-contact-toggle"
                     aria-expanded="false" aria-controls="mobile-contact-panel" aria-label="Позвонить">
@@ -54,12 +79,30 @@
                     </div>
                     {{/with}}
                 </div>
-                <div class="page-header__search">
-                    <a href="#" class="page-header__search-btn">
+                <div class="page-header__search js-page-header-search">
+                    <button type="button" class="page-header__search-btn js-page-header-search-toggle"
+                        aria-expanded="false" aria-controls="header-search-dropdown"
+                        aria-label="{{mobileMenu.headerSearchOpenAriaLabel}}"
+                        data-open-label="{{mobileMenu.headerSearchOpenAriaLabel}}"
+                        data-close-label="{{mobileMenu.headerSearchCloseAriaLabel}}">
                         <svg width="14" height="14" aria-hidden="true">
                             <use xlink:href="#search"></use>
                         </svg>
-                    </a>
+                    </button>
+                    <form class="page-header__search-dropdown js-page-header-search-form"
+                        id="header-search-dropdown" role="search" method="get" aria-hidden="true" inert>
+                        <label class="page-header__search-label" for="header-search-input">
+                            {{mobileMenu.headerSearchLabel}}
+                        </label>
+                        <div class="page-header__search-form-row">
+                            <input class="page-header__search-input js-page-header-search-input"
+                                id="header-search-input" type="search" name="q"
+                                placeholder="{{mobileMenu.headerSearchPlaceholder}}">
+                            <button type="submit" class="page-header__search-submit">
+                                {{mobileMenu.headerSearchSubmitText}}
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="page-header__right-wrapper">

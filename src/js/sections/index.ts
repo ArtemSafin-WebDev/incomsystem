@@ -11,6 +11,7 @@ import HarshConditions from "../classes/components/HarshConditions";
 import CompactHeader from "../classes/components/CompactHeader";
 import HeaderContactsMenu from "../classes/components/HeaderContactsMenu";
 import HeaderProductsMenu from "../classes/components/HeaderProductsMenu";
+import HeaderSearch from "../classes/components/HeaderSearch";
 import IntroBackgroundVideo from "../classes/components/IntroBackgroundVideo";
 import MobileMenu from "../classes/components/MobileMenu";
 import OtherArticles from "../classes/components/OtherArticles";
@@ -33,6 +34,9 @@ export default function sections() {
   const headerContactsMenus = document.querySelectorAll<HTMLElement>(
     ".js-header-contacts"
   );
+  const headerSearches = document.querySelectorAll<HTMLElement>(
+    ".js-page-header-search"
+  );
   const mobileMenu = document.querySelector<HTMLElement>(".js-mobile-menu");
   const introBackgrounds =
     document.querySelectorAll<HTMLElement>(".js-intro-bg");
@@ -47,6 +51,10 @@ export default function sections() {
 
   headerContactsMenus.forEach((menu) => {
     new HeaderContactsMenu(menu);
+  });
+
+  headerSearches.forEach((search) => {
+    new HeaderSearch(search);
   });
 
   if (mobileMenu) {
