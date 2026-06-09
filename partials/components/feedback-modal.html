@@ -1,0 +1,69 @@
+<div class="feedback-modal{{#if modal.modifier}} feedback-modal--{{modal.modifier}}{{/if}} js-feedback-modal" id="{{modal.id}}" aria-hidden="true" inert>
+    <button type="button" class="feedback-modal__backdrop js-feedback-modal-close"
+        aria-label="{{modal.closeAriaLabel}}"></button>
+
+    <div class="feedback-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="{{modal.id}}-title">
+        <picture class="feedback-modal__bg-picture">
+            <source media="(max-width: 576px)" srcset="{{modal.backgroundMobile}}">
+            <img class="feedback-modal__bg" src="{{modal.background}}" alt="">
+        </picture>
+
+        <button type="button" class="feedback-modal__close js-feedback-modal-close"
+            aria-label="{{modal.closeAriaLabel}}">
+            <svg width="15" height="15" aria-hidden="true">
+                <use xlink:href="#close"></use>
+            </svg>
+        </button>
+
+        <div class="feedback-modal__content">
+            {{#if modal.isSuccess}}
+            <div class="feedback-modal__head feedback-modal__head--success">
+                <h2 class="feedback-modal__title" id="{{modal.id}}-title">{{{modal.title}}}</h2>
+                <p class="feedback-modal__description">{{modal.description}}</p>
+            </div>
+            {{else}}
+            <div class="feedback-modal__head">
+                <h2 class="feedback-modal__title" id="{{modal.id}}-title">{{{modal.title}}}</h2>
+                <p class="feedback-modal__description">{{modal.description}}</p>
+            </div>
+
+            <form class="contact-us__form feedback-modal__form js-form"
+                action="{{modal.formAction}}"
+                data-success-modal="#feedback-success-modal"
+                method="post">
+                <div class="contact-us__form-rows feedback-modal__form-rows">
+                    {{#each modal.fields}}
+                    <div class="contact-us__form-row feedback-modal__form-row">
+                        <label class="contact-us__form-label" for="{{this.id}}">{{this.label}}</label>
+
+                        <div class="contact-us__form-control">
+                            <input class="contact-us__form-input"
+                                id="{{this.id}}"
+                                name="{{this.name}}"
+                                type="{{this.type}}"
+                                placeholder="{{this.placeholder}}"
+                                {{#if this.autocomplete}}autocomplete="{{this.autocomplete}}"{{/if}}
+                                {{#if this.required}}required{{/if}}>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+
+                <div class="contact-us__form-footer feedback-modal__form-footer">
+                    <button class="btn contact-us__form-submit feedback-modal__form-submit" type="submit">
+                        {{modal.submitText}}
+                    </button>
+
+                    <p class="contact-us__form-policy feedback-modal__form-policy">
+                        {{{modal.policyText}}}
+                        <a class="contact-us__form-policy-link"
+                            href="{{modal.policyLinkHref}}"
+                            target="_blank"
+                            rel="noreferrer noopener">{{modal.policyLinkText}}</a>
+                    </p>
+                </div>
+            </form>
+            {{/if}}
+        </div>
+    </div>
+</div>

@@ -13,6 +13,8 @@ class AJAXForm extends Component {
   private isSubmitting = false;
   private successModal: HTMLElement | null = null;
   private errorModal: HTMLElement | null = null;
+  private readonly openModalEventName = "feedback-modal:open";
+  private readonly closeModalEventName = "feedback-modal:close";
 
   constructor(
     form: HTMLFormElement,
@@ -64,8 +66,10 @@ class AJAXForm extends Component {
       });
       if (!res.ok) throw new Error(`Response is not ok: ${res.status}`);
       if (this.successModal) {
-        this.successModal.classList.add("active");
-        document.body.classList.add("modal-open");
+        this.closeParentModal();
+        this.successModal.dispatchEvent(
+          new CustomEvent(this.openModalEventName)
+        );
       }
       this.element.classList.add("form-sent");
       (this.element as HTMLFormElement).reset();
@@ -79,6 +83,12 @@ class AJAXForm extends Component {
       this.isSubmitting = false;
       if (this.submitBtn) this.submitBtn.disabled = false;
     }
+  }
+
+  private closeParentModal() {
+    const parentModal = this.element.closest<HTMLElement>(".js-feedback-modal");
+
+    parentModal?.dispatchEvent(new CustomEvent(this.closeModalEventName));
   }
 
   destroy() {

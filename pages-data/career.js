@@ -229,8 +229,9 @@ const careerContactUs = {
   backgroundMobile: "/images/contact-us/bg-mobile.webp",
   formAction: "#",
   submitText: "Отправить резюме",
-  policyText: "Нажимая кнопку, вы даете согласие на обработку&nbsp;",
-  policyLinkText: "персональных данных.",
+  policyText:
+    "Нажимая «Отправить», Вы даете свое согласие на&nbsp;обработку персональных данных и принимаете&nbsp;",
+  policyLinkText: "условия политики конфиденциальности",
   policyLinkHref: "https://incomsystem.ru/upload/uf/baa/pol.pdf",
   fields: [
     {

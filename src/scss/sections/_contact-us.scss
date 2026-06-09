@@ -28,21 +28,6 @@
     }
   }
 
-  .contact-us__caption {
-    font-family: var(--inter);
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1;
-    color: var(--text-color);
-    margin-bottom: 4rem;
-
-    @include mq.down(sm) {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-  }
-
   .contact-us__body {
     position: relative;
     border-radius: 0.5rem;

@@ -170,7 +170,7 @@
                         </ul>
                     </div>
                 </div>
-                <a href="{{mobileMenu.ctaHref}}" class="page-header__cta">
+                <a href="{{mobileMenu.ctaHref}}" class="page-header__cta js-feedback-modal-open">
                     {{mobileMenu.ctaText}}
                 </a>
             </div>
@@ -196,3 +196,5 @@
         </ul>
     </div>
 </div>
+{{> components/feedback-modal modal=mobileMenu.feedbackModal }}
+{{> components/feedback-modal modal=mobileMenu.feedbackSuccessModal }}

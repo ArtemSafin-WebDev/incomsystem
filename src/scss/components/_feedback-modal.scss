@@ -1,0 +1,220 @@
+@use "tools/media" as mq;
+@use "tools/typography" as type;
+
+@layer sections {
+  .feedback-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.2s,
+      visibility 0.2s;
+
+    &.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @include mq.down(sm) {
+      padding: 1.6rem;
+      align-items: flex-start;
+    }
+  }
+
+  .feedback-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 60%);
+  }
+
+  .feedback-modal__dialog {
+    position: relative;
+    width: min(100%, 137.5rem);
+    overflow: hidden;
+    border-radius: 0.5rem;
+    color: #fff;
+
+    @include mq.down(sm) {
+      width: 100%;
+    }
+  }
+
+  .feedback-modal--success .feedback-modal__dialog {
+    width: min(100%, 40.5rem);
+  }
+
+  .feedback-modal__bg-picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .feedback-modal__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+
+  .feedback-modal__close {
+    position: absolute;
+    z-index: 2;
+    top: 1.6rem;
+    right: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    padding: 0.45rem;
+    color: #fff;
+
+    svg {
+      width: 1.5rem;
+      fill: currentcolor;
+    }
+  }
+
+  .feedback-modal__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 4rem;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 3.2rem;
+      padding: 4rem 2.1rem;
+    }
+  }
+
+  .feedback-modal__head {
+    display: flex;
+    flex: 0 0 28rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+
+    @include mq.down(sm) {
+      flex: 0 1 auto;
+      gap: 3rem;
+      width: 100%;
+    }
+  }
+
+  .feedback-modal__title {
+    @include type.section-title;
+  }
+
+  .feedback-modal--success .feedback-modal__title {
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .feedback-modal__description {
+    width: 100%;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    white-space: nowrap;
+
+    @include mq.down(sm) {
+      white-space: normal;
+    }
+  }
+
+  .feedback-modal--success .feedback-modal__content {
+    justify-content: flex-start;
+    padding: 4rem;
+  }
+
+  .feedback-modal__head--success {
+    flex: 0 1 auto;
+    gap: 3rem;
+    width: 100%;
+  }
+
+  .feedback-modal--success .feedback-modal__description {
+    text-align: center;
+    white-space: normal;
+  }
+
+  .feedback-modal .feedback-modal__form {
+    flex: 0 0 77rem;
+    gap: 4rem;
+
+    @include mq.down(sm) {
+      flex: 0 1 auto;
+      gap: 0;
+      margin-top: 0;
+      width: 100%;
+    }
+  }
+
+  .feedback-modal .feedback-modal__form-row {
+    grid-template-columns: 34.5rem minmax(0, 1fr);
+    gap: 2rem;
+    padding-block: 2.4rem;
+
+    @include mq.down(sm) {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding-block: 2.4rem;
+    }
+  }
+
+  .feedback-modal .feedback-modal__form-footer {
+    grid-template-columns: 34.5rem minmax(0, 1fr);
+    gap: 4rem;
+    margin-top: 0;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .feedback-modal .feedback-modal__form-submit {
+    width: 100%;
+    padding-block: 3rem;
+    white-space: nowrap;
+
+    @include mq.down(sm) {
+      order: 2;
+      padding-block: 2.1rem;
+    }
+  }
+
+  .feedback-modal .feedback-modal__form-policy {
+    font-size: 1.4rem;
+    line-height: 1.4;
+
+    @include mq.down(sm) {
+      order: 1;
+      line-height: 1.5;
+    }
+  }
+}

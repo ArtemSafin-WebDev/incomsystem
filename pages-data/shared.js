@@ -114,6 +114,78 @@ export const footerSocials = [
   },
 ];
 
+export const feedbackModalFields = [
+  {
+    id: "feedback-name",
+    name: "name",
+    label: "Имя *",
+    placeholder: "Имя",
+    type: "text",
+    autocomplete: "name",
+    required: true,
+  },
+  {
+    id: "feedback-company",
+    name: "company",
+    label: "Компания",
+    placeholder: "Компания",
+    type: "text",
+    autocomplete: "organization",
+  },
+  {
+    id: "feedback-phone",
+    name: "phone",
+    label: "Телефон *",
+    placeholder: "Телефон",
+    type: "tel",
+    autocomplete: "tel",
+    required: true,
+  },
+  {
+    id: "feedback-email",
+    name: "email",
+    label: "Электронная почта *",
+    placeholder: "mail@company.ru",
+    type: "email",
+    autocomplete: "email",
+    required: true,
+  },
+  {
+    id: "feedback-message",
+    name: "message",
+    label: "Сообщение",
+    placeholder: "Сообщение",
+    type: "text",
+  },
+];
+
+export const feedbackModal = {
+  id: "feedback-modal",
+  title: "Напишите <br>нам",
+  description: "Наши специалисты свяжутся с вами",
+  background: "/images/contact-us/bg.webp",
+  backgroundMobile: "/images/contact-us/bg-mobile.webp",
+  formAction: "#",
+  submitText: "Отправить заявку",
+  policyText:
+    "Нажимая «Отправить заявку», Вы даете свое согласие на&nbsp;обработку персональных данных и принимаете&nbsp;",
+  policyLinkText: "условия политики конфиденциальности",
+  policyLinkHref: "https://incomsystem.ru/upload/uf/baa/pol.pdf",
+  closeAriaLabel: "Закрыть форму обратной связи",
+  fields: feedbackModalFields,
+};
+
+export const feedbackSuccessModal = {
+  id: "feedback-success-modal",
+  modifier: "success",
+  isSuccess: true,
+  title: "Спасибо!",
+  description: "Ваша заявка успешно отправлена",
+  background: "/images/contact-us/bg.webp",
+  backgroundMobile: "/images/contact-us/bg-mobile.webp",
+  closeAriaLabel: "Закрыть сообщение об успешной отправке",
+};
+
 export const mobileMenu = {
   logoHref: "/",
   logoSrc: "/images/shared/logo.svg",
@@ -128,7 +200,9 @@ export const mobileMenu = {
   links: mobileMenuLinks,
   socials: mobileMenuSocials,
   ctaText: "связаться с нами",
-  ctaHref: "/contacts.html",
+  ctaHref: "#feedback-modal",
+  feedbackModal,
+  feedbackSuccessModal,
   phoneHref: "tel:+78432125010",
   phoneAriaLabel: "Позвонить",
   openAriaLabel: "Открыть меню",
@@ -164,7 +238,6 @@ export const contactUsFields = [
     placeholder: "Компания",
     type: "text",
     autocomplete: "organization",
-    required: true,
   },
   {
     id: "contact-phone",
@@ -202,8 +275,9 @@ export const contactUs = {
   backgroundMobile: "/images/contact-us/bg-mobile.webp",
   formAction: "#",
   submitText: "Отправить",
-  policyText: "Нажимая кнопку, вы даете согласие на обработку&nbsp;",
-  policyLinkText: "персональных данных.",
+  policyText:
+    "Нажимая «Отправить», Вы даете свое согласие на&nbsp;обработку персональных данных и принимаете&nbsp;",
+  policyLinkText: "условия политики конфиденциальности",
   policyLinkHref: "https://incomsystem.ru/upload/uf/baa/pol.pdf",
   fields: contactUsFields,
 };

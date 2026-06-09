@@ -9,6 +9,7 @@ import CompanyLeadership from "../classes/components/CompanyLeadership";
 import CompanyReviews from "../classes/components/CompanyReviews";
 import HarshConditions from "../classes/components/HarshConditions";
 import CompactHeader from "../classes/components/CompactHeader";
+import FeedbackModal from "../classes/components/FeedbackModal";
 import HeaderContactsMenu from "../classes/components/HeaderContactsMenu";
 import HeaderProductsMenu from "../classes/components/HeaderProductsMenu";
 import HeaderSearch from "../classes/components/HeaderSearch";
@@ -38,6 +39,8 @@ export default function sections() {
     ".js-page-header-search"
   );
   const mobileMenu = document.querySelector<HTMLElement>(".js-mobile-menu");
+  const feedbackModals =
+    document.querySelectorAll<HTMLElement>(".js-feedback-modal");
   const introBackgrounds =
     document.querySelectorAll<HTMLElement>(".js-intro-bg");
 
@@ -60,6 +63,8 @@ export default function sections() {
   if (mobileMenu) {
     new MobileMenu(mobileMenu);
   }
+
+  feedbackModals.forEach((modal) => new FeedbackModal(modal));
 
   introBackgrounds.forEach((section) => {
     new IntroBackgroundVideo(section);
