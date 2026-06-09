@@ -12,7 +12,9 @@
             <h2 class="production-and-services__title">{{{productionAndServices.title}}}</h2>
 
             <div class="production-and-services__list-wrapper">
+                {{#if productionAndServices.caption}}
                 <p class="production-and-services__caption">{{productionAndServices.caption}}</p>
+                {{/if}}
                 <ul class="production-and-services__list">
                     {{#each productionAndServices.items}}
                     {{> components/cards/production-and-services-item item=this }}
