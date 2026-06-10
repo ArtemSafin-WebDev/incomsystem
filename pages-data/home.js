@@ -282,6 +282,47 @@ export default {
         },
       ],
     },
+    homeVideos: {
+      title:
+        "Научный потенциал, тесные связи с проектными институтами, инновационные решения, позволили Инкомсистем создать безупречную репутацию, которой доверяют ключевые заказчики нефтегазовой отрасли",
+      navigationAriaLabel: "Навигация по видео",
+      previousSlideLabel: "Предыдущее видео",
+      nextSlideLabel: "Следующее видео",
+      items: [
+        {
+          caption: "Решения НИЦ «ИНКОМСИСТЕМ» на РМЭФ-2026",
+          image: "/images/home-videos/1.webp",
+          mobileImage: "/images/home-videos/mobile-source.webp",
+          imageAlt:
+            "Стенд Инкомсистем с оборудованием АБАК на отраслевом мероприятии",
+          videoHref: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+          videoType: "youtube",
+          ariaLabel:
+            "Открыть видео «Решения НИЦ Инкомсистем на РМЭФ-2026»",
+        },
+        {
+          caption: "Решения НИЦ «ИНКОМСИСТЕМ» на РМЭФ-2026",
+          image: "/images/home-videos/2.webp",
+          mobileImage: "/images/home-videos/mobile-source.webp",
+          imageAlt: "Промышленный контроллер АБАК крупным планом",
+          videoHref: "https://www.youtube.com/watch?v=ysz5S6PUM-U",
+          videoType: "youtube",
+          ariaLabel:
+            "Открыть тестовое видео о промышленных решениях Инкомсистем",
+        },
+        {
+          caption: "Решения НИЦ «ИНКОМСИСТЕМ» на РМЭФ-2026",
+          image: "/images/home-videos/1.webp",
+          mobileImage: "/images/home-videos/mobile-source.webp",
+          imageAlt:
+            "Демонстрация оборудования Инкомсистем на выставочном стенде",
+          videoHref: "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+          videoType: "youtube",
+          ariaLabel:
+            "Открыть тестовое видео с демонстрацией оборудования Инкомсистем",
+        },
+      ],
+    },
     contactUs: {
       caption: "Форма обратной связи",
       title: "Свяжитесь <br>с нами",

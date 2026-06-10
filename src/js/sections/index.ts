@@ -13,6 +13,7 @@ import FeedbackModal from "../classes/components/FeedbackModal";
 import HeaderContactsMenu from "../classes/components/HeaderContactsMenu";
 import HeaderProductsMenu from "../classes/components/HeaderProductsMenu";
 import HeaderSearch from "../classes/components/HeaderSearch";
+import HomeVideos from "../classes/components/HomeVideos";
 import IntroBackgroundVideo from "../classes/components/IntroBackgroundVideo";
 import MobileMenu from "../classes/components/MobileMenu";
 import OtherArticles from "../classes/components/OtherArticles";
@@ -106,6 +107,8 @@ export default function sections() {
   const harshConditionsSections = document.querySelectorAll<HTMLElement>(
     ".js-harsh-conditions"
   );
+  const homeVideosSections =
+    document.querySelectorAll<HTMLElement>(".js-home-videos");
   const realisedProjectsSections = document.querySelectorAll<HTMLElement>(
     ".js-realised-projects"
   );
@@ -169,6 +172,10 @@ export default function sections() {
 
   harshConditionsSections.forEach((section) => {
     new HarshConditions(section);
+  });
+
+  homeVideosSections.forEach((section) => {
+    new HomeVideos(section);
   });
 
   realisedProjectsSections.forEach((section) => {

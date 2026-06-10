@@ -1,0 +1,44 @@
+<section class="home-videos js-home-videos" aria-labelledby="home-videos-title">
+    <div class="container">
+        <h2 class="home-videos__title" id="home-videos-title">{{homeVideos.title}}</h2>
+
+        <div class="home-videos__slider swiper js-home-videos-slider">
+            <ul class="home-videos__list swiper-wrapper">
+                {{#each homeVideos.items}}
+                <li class="home-videos__item swiper-slide">
+                    <article class="home-video-card">
+                        <p class="home-video-card__caption">{{this.caption}}</p>
+
+                        <a class="home-video-card__media"
+                            href="{{this.videoHref}}"
+                            data-fancybox="home-videos"
+                            data-type="{{this.videoType}}"
+                            data-caption="{{this.caption}}"
+                            aria-label="{{this.ariaLabel}}">
+                            <picture>
+                                {{#if this.mobileImage}}
+                                <source media="(max-width: 767px)" srcset="{{this.mobileImage}}">
+                                {{/if}}
+                                <img class="home-video-card__image" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
+                            </picture>
+                            <span class="home-video-card__overlay" aria-hidden="true"></span>
+                            <span class="home-video-card__play" aria-hidden="true">
+                                <svg width="31" height="48">
+                                    <use xlink:href="#play-triangle"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </article>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        {{> components/slider-navigation
+        className="home-videos__navigation"
+        ariaLabel=homeVideos.navigationAriaLabel
+        prevLabel=homeVideos.previousSlideLabel
+        nextLabel=homeVideos.nextSlideLabel
+        }}
+    </div>
+</section>
