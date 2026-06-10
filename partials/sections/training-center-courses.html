@@ -31,7 +31,7 @@
                         </div>
 
                         <div class="training-course-card__actions">
-                            <a class="training-course-card__button training-course-card__button--primary" href="{{this.signupHref}}">{{../trainingCenterCourses.signupText}}</a>
+                            <a class="training-course-card__button training-course-card__button--primary js-feedback-modal-open" href="{{this.signupHref}}" data-course-title="{{this.title}}">{{../trainingCenterCourses.signupText}}</a>
 
                             <button class="training-course-card__button training-course-card__button--outline js-training-course-toggle"
                                 type="button"
@@ -39,8 +39,8 @@
                                 data-open-text="{{../trainingCenterCourses.collapseText}}"
                                 data-closed-text="{{../trainingCenterCourses.detailsText}}">
                                 <span>{{../trainingCenterCourses.detailsText}}</span>
-                                <svg class="training-course-card__button-icon" width="16" height="16" aria-hidden="true">
-                                    <use xlink:href="#arrows/right"></use>
+                                <svg class="training-course-card__button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                                    <path d="M7.99805 11.0605L13.0586 6L11.998 4.93945L7.99805 8.93945L3.99805 4.93945L2.9375 6L7.99805 11.0605Z" />
                                 </svg>
                             </button>
 

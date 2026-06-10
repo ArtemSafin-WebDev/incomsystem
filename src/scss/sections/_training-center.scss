@@ -13,18 +13,12 @@
     }
   }
 
-  .training-center-hero .breadcrumbs {
-    @include mq.down(sm) {
-      display: none;
-    }
-  }
-
   .training-center-hero__title {
     margin-top: 3.7rem;
     @include type.page-title;
 
     @include mq.down(sm) {
-      margin-top: 0;
+      margin-top: 2.4rem;
       max-width: 27rem;
       font-size: 3rem;
       font-weight: 700;
@@ -434,6 +428,9 @@
       width: 100%;
       min-width: 0;
       padding-inline: 2rem;
+      font-size: 1.2rem;
+      min-height: auto;
+      padding-block: 1.8rem;
     }
   }
 
@@ -467,6 +464,7 @@
 
     @include mq.down(sm) {
       padding-inline: 1.2rem;
+      gap: 0.8rem;
     }
   }
 
@@ -506,7 +504,7 @@
     height: 1.6rem;
     color: var(--primary-color);
     fill: currentColor;
-    transform: rotate(90deg);
+    transform: rotate(0deg);
     transition:
       color 0.2s,
       transform 0.2s;
@@ -514,7 +512,7 @@
 
   .training-course-card.is-open .training-course-card__button-icon,
   .training-center-courses__item.is-open .training-course-card__button-icon {
-    transform: rotate(-90deg);
+    transform: rotate(180deg);
   }
 
   .training-center-partners {

@@ -4,6 +4,9 @@ class FeedbackModal extends Component {
   private readonly openButtons: HTMLAnchorElement[];
   private readonly closeButtons: HTMLButtonElement[];
   private readonly dialog: HTMLElement | null;
+  private readonly courseTitleElement: HTMLElement | null;
+  private readonly courseInput: HTMLInputElement | null;
+  private readonly defaultCourseTitle: string;
   private readonly focusableSelector =
     'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
   private previouslyFocusedElement: HTMLElement | null = null;
@@ -15,6 +18,16 @@ class FeedbackModal extends Component {
     this.dialog = this.element.querySelector<HTMLElement>(
       ".feedback-modal__dialog"
     );
+    this.courseTitleElement = this.element.querySelector<HTMLElement>(
+      ".js-feedback-modal-course-title"
+    );
+    this.courseInput = this.element.querySelector<HTMLInputElement>(
+      ".js-feedback-modal-course-input"
+    );
+    this.defaultCourseTitle =
+      this.courseTitleElement?.dataset.defaultTitle ??
+      this.courseTitleElement?.textContent?.trim() ??
+      "";
     this.openButtons = Array.from(
       document.querySelectorAll<HTMLAnchorElement>(".js-feedback-modal-open")
     );
@@ -76,6 +89,7 @@ class FeedbackModal extends Component {
     }
 
     event.preventDefault();
+    this.applyCourseTitle(target.dataset.courseTitle);
     this.open();
   };
 
@@ -84,6 +98,7 @@ class FeedbackModal extends Component {
   };
 
   private readonly handleOpenEvent = () => {
+    this.applyCourseTitle();
     this.open();
   };
 
@@ -127,6 +142,26 @@ class FeedbackModal extends Component {
     this.syncState();
     this.previouslyFocusedElement?.focus();
     this.previouslyFocusedElement = null;
+  }
+
+  private applyCourseTitle(courseTitle?: string) {
+    if (!this.courseTitleElement && !this.courseInput) {
+      return;
+    }
+
+    const title = courseTitle?.trim() || this.defaultCourseTitle;
+
+    if (!title) {
+      return;
+    }
+
+    if (this.courseTitleElement) {
+      this.courseTitleElement.textContent = title;
+    }
+
+    if (this.courseInput) {
+      this.courseInput.value = title;
+    }
   }
 
   private syncState() {

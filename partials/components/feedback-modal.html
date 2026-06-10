@@ -23,7 +23,7 @@
             </div>
             {{else}}
             <div class="feedback-modal__head">
-                <h2 class="feedback-modal__title" id="{{modal.id}}-title">{{{modal.title}}}</h2>
+                <h2 class="feedback-modal__title{{#if modal.hasDynamicTitle}} js-feedback-modal-course-title{{/if}}" id="{{modal.id}}-title"{{#if modal.defaultCourseTitle}} data-default-title="{{modal.defaultCourseTitle}}"{{/if}}>{{{modal.title}}}</h2>
                 <p class="feedback-modal__description">{{modal.description}}</p>
             </div>
 
@@ -31,6 +31,13 @@
                 action="{{modal.formAction}}"
                 data-success-modal="#feedback-success-modal"
                 method="post">
+                {{#if modal.courseFieldName}}
+                <input class="js-feedback-modal-course-input"
+                    type="hidden"
+                    name="{{modal.courseFieldName}}"
+                    value="{{modal.defaultCourseTitle}}">
+                {{/if}}
+
                 <div class="contact-us__form-rows feedback-modal__form-rows">
                     {{#each modal.fields}}
                     <div class="contact-us__form-row feedback-modal__form-row">
