@@ -95,7 +95,7 @@ const engineeringCenterNavigation = [
     href: "#",
   },
   {
-    label: "Проекты",
+    label: "Реализованные проекты",
     href: "#",
     active: true,
   },
