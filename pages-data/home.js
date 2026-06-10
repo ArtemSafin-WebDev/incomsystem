@@ -130,19 +130,6 @@ const engineeringCenterDocuments = [
   },
 ];
 
-const mobileMenuSocials = [
-  {
-    href: "#",
-    label: "Telegram",
-    icon: "social/telegram",
-  },
-  {
-    href: "#",
-    label: "ВКонтакте",
-    icon: "social/vk",
-  },
-];
-
 export default {
   "/index.html": {
     title: "Главная страница",
@@ -320,7 +307,6 @@ export default {
     },
     mobileMenu,
     footer: {
-      caption: "Контакты",
       mapImage: "/images/footer/map.webp",
       mapImageMobile: "/images/footer/map-mobile.webp",
       mapPin: "/images/footer/pin.svg",
@@ -340,18 +326,7 @@ export default {
       phoneRaw: "+78432125010",
       email: "info@incomsteel.ru",
       socialsAriaLabel: "Социальные сети",
-      socials: [
-        {
-          href: "#",
-          label: "Telegram",
-          icon: "social/telegram",
-        },
-        {
-          href: "#",
-          label: "ВКонтакте",
-          icon: "social/vk",
-        },
-      ],
+      socials: mobileMenu.socials,
       copyright: "©1991-2025 АО «Научно-инженерный центр «ИНКОМСИСТЕМ»",
       policyText: "Политика в отношении обработки персональных данных",
       policyLink: "https://incomsystem.ru/upload/uf/baa/pol.pdf",

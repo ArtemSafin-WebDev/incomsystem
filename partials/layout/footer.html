@@ -11,10 +11,21 @@
 
     <div class="container page-footer__container">
         <div class="page-footer__head">
-            <p class="page-footer__caption">{{footer.caption}}</p>
-
             <a class="page-footer__map-link" href="{{footer.mapLinkHref}}" target="_blank"
                 rel="noreferrer noopener">{{footer.mapLinkText}}</a>
+
+            <ul class="page-footer__social-list page-footer__social-list--desktop"
+                aria-label="{{footer.socialsAriaLabel}}">
+                {{#each footer.socials}}
+                <li>
+                    <a class="page-footer__social-link" href="{{this.href}}" aria-label="{{this.label}}">
+                        <svg width="60" height="60" aria-hidden="true">
+                            <use xlink:href="#{{this.icon}}"></use>
+                        </svg>
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
         </div>
 
         <div class="page-footer__content">
@@ -44,11 +55,12 @@
                         </a>
                     </div>
 
-                    <ul class="page-footer__social-list" aria-label="{{footer.socialsAriaLabel}}">
+                    <ul class="page-footer__social-list page-footer__social-list--mobile"
+                        aria-label="{{footer.socialsAriaLabel}}">
                         {{#each footer.socials}}
                         <li>
                             <a class="page-footer__social-link" href="{{this.href}}" aria-label="{{this.label}}">
-                                <svg width="24" height="24" aria-hidden="true">
+                                <svg width="60" height="60" aria-hidden="true">
                                     <use xlink:href="#{{this.icon}}"></use>
                                 </svg>
                             </a>

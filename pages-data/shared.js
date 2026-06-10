@@ -101,18 +101,7 @@ export const mobileMenuSocials = [
   },
 ];
 
-export const footerSocials = [
-  {
-    href: "#",
-    label: "Telegram",
-    icon: "social/telegram",
-  },
-  {
-    href: "#",
-    label: "ВКонтакте",
-    icon: "social/vk",
-  },
-];
+export const footerSocials = mobileMenuSocials;
 
 export const feedbackModalFields = [
   {
@@ -334,7 +323,6 @@ export const engineeringCenter = {
 };
 
 export const footer = {
-  caption: "Контакты",
   mapImage: "/images/footer/map.webp",
   mapImageMobile: "/images/footer/map-mobile.webp",
   mapPin: "/images/footer/pin.svg",
