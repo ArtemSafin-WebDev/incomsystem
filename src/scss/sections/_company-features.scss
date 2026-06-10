@@ -183,6 +183,49 @@
     --company-feature-card-number-color: var(--primary-color);
   }
 
+  .company-features--about-company {
+    .company-features__intro {
+      margin-bottom: 9rem;
+
+      @include mq.down(sm) {
+        margin-bottom: 4rem;
+      }
+    }
+
+    .company-features__title {
+      @include mq.down(sm) {
+        width: calc(100vw - var(--container-padding));
+        max-width: none;
+      }
+    }
+
+    .company-feature-card__main::before {
+      content: none;
+    }
+
+    .company-feature-card__title {
+      max-width: 34.5rem;
+
+      @include mq.down(sm) {
+        max-width: 20.8rem;
+      }
+    }
+
+    .company-feature-card__description {
+      @include mq.down(sm) {
+        margin-top: 0;
+        align-self: flex-start;
+        max-width: 23.8rem;
+      }
+    }
+
+    .company-features__hint {
+      @include mq.down(sm) {
+        align-self: flex-start;
+      }
+    }
+  }
+
   .company-feature-card {
     display: flex;
     flex-direction: column;

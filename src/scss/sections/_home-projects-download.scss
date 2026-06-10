@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .home-projects-download {
     background-color: var(--primary-color);
@@ -36,5 +38,10 @@
   .home-projects-download + .contact-us--reference-request {
     padding-top: 12rem;
     padding-bottom: 15rem;
+
+    @include mq.down(sm) {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
   }
 }

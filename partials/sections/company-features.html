@@ -2,7 +2,9 @@
     <div class="container">
         <div class="company-features__grid">
             <div class="company-features__intro">
+                {{#if companyFeatures.caption}}
                 <p class="company-features__caption">{{companyFeatures.caption}}</p>
+                {{/if}}
                 <h2 class="company-features__title{{#if companyFeatures.titleClassName}} {{companyFeatures.titleClassName}}{{/if}}">{{{companyFeatures.title}}}</h2>
             </div>
 

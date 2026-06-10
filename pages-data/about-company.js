@@ -8,9 +8,7 @@ import {
 const awardsItems = Array.from({ length: 6 }, () => ({
   title: "100 Лучших Товаров России",
   image: "/images/press-center/1.webp",
-  tag: "Награды",
-  date: "9.01.2025",
-  href: "#",
+  imageAlt: "Производственное оборудование Инкомсистем",
 }));
 
 const leadershipProfiles = [
@@ -84,6 +82,12 @@ const companyDepartmentsItems = [
   slides: companyDepartmentsSlides.map((slide) => ({ ...slide })),
 }));
 
+const aboutCompanyContactUs = {
+  ...contactUs,
+  title: "Напишите <br>нам",
+  description: "Наши специалисты свяжутся с вами",
+};
+
 export default {
   "/about-company.html": {
     title: "О компании",
@@ -135,7 +139,7 @@ export default {
       ],
     },
     companyFeatures: {
-      caption: "Компания",
+      className: "company-features--about-company",
       title:
         "Начиная с 1991 года специалистами Центра внедрены сотни информационно-управляющих систем, обеспечивающих автоматизированное управление и&nbsp;противоаварийную защиту на&nbsp;предприятиях нефтегазодобычи и&nbsp;нефтехимии",
       showHint: true,
@@ -305,42 +309,42 @@ export default {
       items: [
         {
           company: "Акционерное общество “Газпром Газэнергосеть”",
-          href: "#",
+          href: "/images/company-reviews/review-letter.webp",
           logo: "/images/company-reviews/gazprom.svg",
           image: "/images/company-reviews/review-letter.webp",
           imageAlt: "Письменный отзыв компании Газпром Газэнергосеть",
         },
         {
           company: "Акционерное общество “Башнефть”",
-          href: "#",
+          href: "/images/company-reviews/review-letter.webp",
           logo: "/images/company-reviews/bashneft.svg",
           image: "/images/company-reviews/review-letter.webp",
           imageAlt: "Письменный отзыв компании Башнефть",
         },
         {
           company: "Акционерное общество “Газпром Газэнергосеть”",
-          href: "#",
+          href: "/images/company-reviews/review-letter.webp",
           logo: "/images/company-reviews/gazprom.svg",
           image: "/images/company-reviews/review-letter.webp",
           imageAlt: "Письменный отзыв компании Газпром Газэнергосеть",
         },
         {
           company: "Акционерное общество “Газпром Газэнергосеть”",
-          href: "#",
+          href: "/images/company-reviews/review-letter.webp",
           logo: "/images/company-reviews/gazprom.svg",
           image: "/images/company-reviews/review-letter.webp",
           imageAlt: "Письменный отзыв компании Газпром Газэнергосеть",
         },
         {
           company: "Акционерное общество “Газпром Газэнергосеть”",
-          href: "#",
+          href: "/images/company-reviews/review-letter.webp",
           logo: "/images/company-reviews/gazprom.svg",
           image: "/images/company-reviews/review-letter.webp",
           imageAlt: "Письменный отзыв компании Газпром Газэнергосеть",
         },
       ],
     },
-    contactUs,
+    contactUs: aboutCompanyContactUs,
     engineeringCenter,
     mobileMenu,
     footer,

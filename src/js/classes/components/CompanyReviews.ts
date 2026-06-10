@@ -1,3 +1,4 @@
+import { Fancybox } from "@fancyapps/ui";
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
 import Component from "../Component";
@@ -24,10 +25,12 @@ class CompanyReviews extends Component {
     }
 
     this.mountSlider();
+    this.mountFancybox();
   }
 
   public destroy() {
     this.unmountSlider();
+    Fancybox.unbind(this.element, "[data-fancybox='company-reviews']");
     this.unregister();
   }
 
@@ -51,6 +54,12 @@ class CompanyReviews extends Component {
         prevEl: this.prevButton,
         nextEl: this.nextButton,
       },
+    });
+  }
+
+  private mountFancybox() {
+    Fancybox.bind(this.element, "[data-fancybox='company-reviews']", {
+      dragToClose: false,
     });
   }
 

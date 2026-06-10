@@ -1,4 +1,10 @@
-<a class="company-review-card" href="{{item.href}}">
+<a class="company-review-card"
+    href="{{item.href}}"
+    data-fancybox="company-reviews"
+    data-thumb="{{item.image}}"
+    data-thumb-alt="{{item.imageAlt}}"
+    data-caption="{{item.company}}"
+    aria-label="Открыть отзыв: {{item.company}}">
     <div class="company-review-card__company">
         <p class="company-review-card__company-name">{{item.company}}</p>
 
