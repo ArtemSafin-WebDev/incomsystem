@@ -415,47 +415,6 @@
     }
   }
 
-  .page-header__mobile-actions .page-header__search {
-    @include mq.down(sm) {
-      display: block;
-    }
-  }
-
-  .page-header__mobile-actions .page-header__search-btn {
-    @include mq.down(sm) {
-      width: 5rem;
-      height: 5rem;
-      color: #fff;
-
-      &::before {
-        width: 3.8rem;
-        height: 3.8rem;
-      }
-
-      svg {
-        width: 2.4rem;
-        height: 2.4rem;
-        fill: currentColor;
-      }
-
-      .page-header--compact &,
-      .page-header--compact-theme & {
-        background: #f2f2fa;
-        color: var(--text-color);
-      }
-
-      .page-header--compact .page-header__search.is-open &,
-      .page-header--compact-theme .page-header__search.is-open &,
-      .page-header--compact &:hover,
-      .page-header--compact &:focus-visible,
-      .page-header--compact-theme &:hover,
-      .page-header--compact-theme &:focus-visible {
-        background: var(--primary-color);
-        color: #fff;
-      }
-    }
-  }
-
   .page-header__search-dropdown {
     position: absolute;
     left: 0;
