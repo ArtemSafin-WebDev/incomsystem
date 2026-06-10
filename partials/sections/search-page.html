@@ -1,0 +1,32 @@
+<section class="search-page{{#if searchPage.className}} {{searchPage.className}}{{/if}}">
+    <div class="container">
+        <h1 class="search-page__title">{{searchPage.title}}</h1>
+
+        {{#if searchPage.isEmpty}}
+        <div class="search-page__empty">
+            <p class="search-page__empty-message">{{searchPage.emptyMessage}}</p>
+
+            <a class="search-page__empty-link" href="{{searchPage.emptyLinkHref}}">
+                {{searchPage.emptyLinkText}}
+            </a>
+        </div>
+        {{else}}
+        <div class="search-page__results">
+            <h2 class="search-page__results-title">{{searchPage.resultsTitle}}</h2>
+
+            <ul class="search-page__list" aria-label="{{searchPage.resultsAriaLabel}}">
+                {{#each searchPage.results}}
+                <li class="search-page__item">
+                    <a class="search-page__link" href="{{this.href}}">
+                        <span class="search-page__link-text">{{this.title}}</span>
+                        <svg class="search-page__link-icon" width="16" height="16" aria-hidden="true">
+                            <use xlink:href="#arrows/search-link-arrow"></use>
+                        </svg>
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/if}}
+    </div>
+</section>

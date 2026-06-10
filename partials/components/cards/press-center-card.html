@@ -4,7 +4,15 @@
     </span>
 
     <div class="press-center-card__meta">
-        <span class="press-center-card__tag">{{item.tag}}</span>
+        <span class="press-center-card__tags">
+            {{#if item.tags}}
+            {{#each item.tags}}
+            <span class="press-center-card__tag">{{this}}</span>
+            {{/each}}
+            {{else}}
+            <span class="press-center-card__tag">{{item.tag}}</span>
+            {{/if}}
+        </span>
         <time class="press-center-card__date" {{#if item.datetime}}datetime="{{item.datetime}}"{{else}}datetime="2025-01-09"{{/if}}>{{item.date}}</time>
     </div>
 

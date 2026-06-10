@@ -9,7 +9,7 @@
 
     @include mq.down(sm) {
       padding-top: 8rem;
-      padding-bottom: 8rem;
+      padding-bottom: 4rem;
     }
   }
 
@@ -43,7 +43,8 @@
 
     @include mq.down(sm) {
       grid-column: 1 / -1;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
+      font-size: 3rem;
     }
   }
 
@@ -61,7 +62,7 @@
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      gap: 2rem;
+      gap: 0;
       border-bottom: none;
       padding-bottom: 0;
       margin-bottom: 4rem;
@@ -69,7 +70,7 @@
   }
 
   .press-center__tabs {
-    grid-column: 1 / 7;
+    grid-column: 1 / -1;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -79,6 +80,7 @@
       grid-column: auto;
       width: auto;
       flex-wrap: nowrap;
+      align-items: center;
       overflow-x: auto;
       overflow-y: hidden;
       overscroll-behavior-x: contain;
@@ -123,48 +125,28 @@
     text-underline-offset: 0.25rem;
 
     @include mq.down(sm) {
-      padding: 1.3rem 1rem;
+      height: 4rem;
+      min-width: 10rem;
+      padding: 1rem 3rem;
       border-width: 0.2rem;
       font-size: 1.2rem;
       letter-spacing: 0.12rem;
       text-underline-offset: 0.2rem;
-      min-width: 10rem;
     }
 
     &.active {
       border-color: var(--primary-color);
       text-decoration: none;
     }
+
+    &:not(.active):hover,
+    &:not(.active):focus-visible {
+      color: var(--primary-color);
+    }
   }
 
   .press-center__tabs-hint {
     display: none;
-
-    @include mq.down(sm) {
-      display: inline-flex;
-      align-items: flex-end;
-      gap: 0.5rem;
-      font-family: var(--inter);
-      font-size: 0.8rem;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 1.3;
-      letter-spacing: -0.024rem;
-      color: var(--text-color);
-    }
-  }
-
-  .press-center__top-link {
-    grid-column: 8 / 9;
-    justify-self: end;
-    color: var(--primary-color);
-    font-family: var(--inter);
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: 0.14rem;
-    text-transform: uppercase;
 
     @include mq.down(sm) {
       display: none;
@@ -210,7 +192,11 @@
 
     @include mq.down(sm) {
       min-width: 0;
-      width: 100%;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+      padding: 0 var(--container-padding);
     }
   }
 
@@ -262,17 +248,7 @@
     display: none;
 
     @include mq.down(sm) {
-      display: inline-flex;
-      align-items: flex-end;
-      gap: 0.5rem;
-      margin-top: 2rem;
-      font-family: var(--inter);
-      font-size: 0.8rem;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 1.3;
-      letter-spacing: -0.024rem;
-      color: var(--text-color);
+      display: none;
     }
   }
 
@@ -299,10 +275,12 @@
     max-width: 100%;
 
     @include mq.down(sm) {
-      margin-top: 4rem;
+      height: 6rem;
+      margin-top: 3rem;
       grid-column: auto;
       justify-self: stretch;
-      width: auto;
+      width: 34.3rem;
+      max-width: 100%;
     }
   }
 }

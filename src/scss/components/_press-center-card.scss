@@ -11,6 +11,7 @@
 
     @include mq.down(sm) {
       min-height: auto;
+      gap: 0;
     }
   }
 
@@ -34,8 +35,20 @@
     gap: 2rem;
 
     @include mq.down(sm) {
-      gap: 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 1.6rem;
+      padding-top: 3rem;
+      margin-bottom: 4rem;
     }
+  }
+
+  .press-center-card__tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .press-center-card__tag {
@@ -83,7 +96,7 @@
       font-size: 2rem;
       letter-spacing: -0.06rem;
       margin-top: 0;
-      margin-bottom: 2.4rem;
+      margin-bottom: 0;
     }
   }
 }
