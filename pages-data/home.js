@@ -43,49 +43,94 @@ const getPressCenterItemsByTab = (tab) =>
     ? pressCenterItems
     : pressCenterItems.filter((item) => item.tabs.includes(tab));
 
+const referenceDirectionOptions = [
+  {
+    id: "home-reference-direction-analytics",
+    label: "Аналитические системы",
+    value: "analytics-systems",
+  },
+  {
+    id: "home-reference-direction-control",
+    label: "Автоматизированные системы управления",
+    value: "automated-control-systems",
+  },
+  {
+    id: "home-reference-direction-measurement",
+    label: "Системы измерений и блочное оборудование",
+    value: "measurement-systems-and-block-equipment",
+  },
+  {
+    id: "home-reference-direction-plc",
+    label: "Контроллеры АБАК",
+    value: "abak-controllers",
+  },
+];
+
+const referenceProductOptions = [
+  {
+    id: "home-reference-product-measurement",
+    label: "Система измерений",
+    value: "measurement-system",
+  },
+  {
+    id: "home-reference-product-block-equipment",
+    label: "Блочное оборудование",
+    value: "block-equipment",
+  },
+  {
+    id: "home-reference-product-flow-metering",
+    label: "Узел коммерческого учета",
+    value: "commercial-metering-unit",
+  },
+  {
+    id: "home-reference-product-service",
+    label: "Сервисное сопровождение",
+    value: "service-support",
+  },
+];
+
 const contactUsFields = [
   {
-    id: "contact-name",
-    name: "name",
-    label: "Имя",
-    placeholder: "Имя",
-    type: "text",
-    autocomplete: "name",
+    isSelect: true,
+    label: "Выберите направление",
+    name: "direction",
+    placeholder: "Аналитические системы",
+    ariaLabel: "Выберите направление",
+    className: "contact-us__select",
     required: true,
+    hideRequiredMark: true,
+    options: referenceDirectionOptions,
   },
   {
-    id: "contact-company",
-    name: "company",
-    label: "Компания",
-    placeholder: "Компания",
-    type: "text",
-    autocomplete: "organization",
+    isSelect: true,
+    label: "Выберите продукт",
+    name: "product",
+    placeholder: "Система измерений",
+    ariaLabel: "Выберите продукт",
+    className: "contact-us__select",
+    required: true,
+    hideRequiredMark: true,
+    options: referenceProductOptions,
   },
   {
-    id: "contact-phone",
+    id: "home-reference-phone",
     name: "phone",
     label: "Телефон",
     placeholder: "Телефон",
     type: "tel",
     autocomplete: "tel",
     required: true,
+    hideRequiredMark: true,
   },
   {
-    id: "contact-email",
+    id: "home-reference-email",
     name: "email",
     label: "Электронная почта",
     placeholder: "mail@company.ru",
     type: "email",
     autocomplete: "email",
     required: true,
-  },
-  {
-    id: "contact-message",
-    name: "message",
-    label: "Сообщение",
-    placeholder: "Сообщение",
-    type: "text",
-    required: true,
+    hideRequiredMark: true,
   },
 ];
 
@@ -284,6 +329,16 @@ export default {
         },
       ],
     },
+    homeProjectsDownload: {
+      text: "Скачать файл с выполненными проектами в формате PDF",
+      document: {
+        title: "Выполненные проекты",
+        type: "PDF",
+        size: "1.2 Мб",
+        href: "#",
+        downloadText: "Скачать",
+      },
+    },
     pressCenter: {
       title: "Пресс-центр",
       scrollHintText: "Листайте влево/вправо",
@@ -359,15 +414,16 @@ export default {
       ],
     },
     contactUs: {
-      caption: "Форма обратной связи",
-      title: "Свяжитесь <br>с нами",
-      description: "Если есть вопросы — напишите нам",
+      className: "contact-us--reference-request",
+      caption: "Референс лист",
+      title: "Запрос <br>референс <br>листа",
+      description: "",
       background: "/images/contact-us/bg.webp",
       backgroundMobile: "/images/contact-us/bg-mobile.webp",
       formAction: "#",
-      submitText: "Отправить",
+      submitText: "Запросить",
       policyText:
-        "Нажимая «Отправить», Вы даете свое согласие на&nbsp;обработку персональных данных и принимаете&nbsp;",
+        "Нажимая «Запросить», Вы даете свое согласие на&nbsp;обработку персональных данных и принимаете&nbsp;",
       policyLinkText: "условия политики конфиденциальности",
       policyLinkHref: "https://incomsystem.ru/upload/uf/baa/pol.pdf",
       fields: contactUsFields,

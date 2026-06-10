@@ -1,0 +1,40 @@
+@layer sections {
+  .home-projects-download {
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+
+  .home-projects-download__content {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 2rem;
+    padding-top: 3.8rem;
+    padding-bottom: 6.1rem;
+  }
+
+  .home-projects-download__text {
+    grid-column: 1 / 4;
+    max-width: 67.8rem;
+    font-family: var(--rf-dewi);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.06rem;
+    text-wrap: balance;
+  }
+
+  .home-projects-download__card {
+    grid-column: 7 / -1;
+  }
+
+  .home-projects-download .engineering-doc-card__title {
+    max-width: 15rem;
+    letter-spacing: 0;
+  }
+
+  .home-projects-download + .contact-us--reference-request {
+    padding-top: 12rem;
+    padding-bottom: 15rem;
+  }
+}

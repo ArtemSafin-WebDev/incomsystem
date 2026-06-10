@@ -8,8 +8,14 @@
 
             <div class="contact-us__content">
                 <div class="contact-us__head">
-                    <h2 class="contact-us__title">Напишите <br>нам</h2>
+                    <h2 class="contact-us__title">{{#if contactUs.title}}{{{contactUs.title}}}{{else}}Напишите <br>нам{{/if}}</h2>
+                    {{#if contactUs.description}}
+                    <p class="contact-us__description">{{contactUs.description}}</p>
+                    {{else}}
+                    {{#unless contactUs.title}}
                     <p class="contact-us__description">Наши специалисты свяжутся с вами</p>
+                    {{/unless}}
+                    {{/if}}
 
                     {{#if contactUs.contacts}}
                     <div class="contact-us__contacts">
@@ -42,7 +48,7 @@
                                 <textarea class="contact-us__form-textarea"
                                     id="{{this.id}}"
                                     name="{{this.name}}"
-                                    placeholder="{{this.placeholder}}{{#if this.required}}*{{/if}}"
+                                    placeholder="{{this.placeholder}}{{#if this.required}}{{#unless this.hideRequiredMark}}*{{/unless}}{{/if}}"
                                     rows="1"
                                     {{#if this.required}}required{{/if}}></textarea>
                                 {{else}}
@@ -54,7 +60,7 @@
                                     {{#if this.accept}}accept="{{this.accept}}"{{/if}}
                                     {{#if this.required}}required{{/if}}>
                                 <span class="contact-us__form-file-value contact-us__form-file-value--placeholder"
-                                    data-placeholder="{{this.placeholder}}{{#if this.required}}*{{/if}}">{{this.placeholder}}{{#if this.required}}*{{/if}}</span>
+                                    data-placeholder="{{this.placeholder}}{{#if this.required}}{{#unless this.hideRequiredMark}}*{{/unless}}{{/if}}">{{this.placeholder}}{{#if this.required}}{{#unless this.hideRequiredMark}}*{{/unless}}{{/if}}</span>
                                 {{else}}
                                 {{#if this.isSelect}}
                                 {{> components/select select=this }}
@@ -63,7 +69,7 @@
                                     id="{{this.id}}"
                                     name="{{this.name}}"
                                     type="{{this.type}}"
-                                    placeholder="{{this.placeholder}}{{#if this.required}}*{{/if}}"
+                                    placeholder="{{this.placeholder}}{{#if this.required}}{{#unless this.hideRequiredMark}}*{{/unless}}{{/if}}"
                                     {{#if this.autocomplete}}autocomplete="{{this.autocomplete}}"{{/if}}
                                     {{#if this.required}}required{{/if}}>
                                 {{/if}}
