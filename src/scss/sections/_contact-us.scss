@@ -431,7 +431,7 @@
     letter-spacing: -0.042rem;
 
     @include mq.down(sm) {
-      line-height: 1.5rem;
+      line-height: 1.4;
       order: 1;
     }
   }
