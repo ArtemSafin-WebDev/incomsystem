@@ -178,13 +178,10 @@
     color: var(--primary-color);
 
     svg {
-      width: 1.1693rem;
-      height: 1.0182rem;
+      width: 0.9rem;
+      height: 1.5rem;
       fill: currentColor;
-      transition:
-        width 0.2s,
-        height 0.2s,
-        color 0.2s;
+      transition: color 0.2s;
     }
   }
 
@@ -242,18 +239,8 @@
   .production-and-services__item.is-active .production-and-services__icon {
     color: #fff;
 
-    svg {
-      width: 2.4rem;
-      height: 2.1rem;
-    }
-
     @include mq.down(sm) {
       color: var(--primary-color);
-
-      svg {
-        width: 1.1693rem;
-        height: 1.0182rem;
-      }
     }
   }
 }

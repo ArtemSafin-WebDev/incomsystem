@@ -1,0 +1,163 @@
+@use "tools/media" as mq;
+@use "tools/typography" as type;
+
+@layer sections {
+  .realised-projects-industries {
+    background-color: #fff;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+
+    @include mq.down(sm) {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  .realised-projects-industries__title {
+    max-width: 85rem;
+    margin-bottom: 13.2rem;
+    @include type.section-title;
+
+    @include mq.down(sm) {
+      max-width: none;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .realised-projects-industries__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8rem 2rem;
+
+    @include mq.down(sm) {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.6rem;
+    }
+  }
+
+  .realised-projects-industries__card {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    aspect-ratio: 910 / 532;
+    border-radius: 0.5rem;
+    background-color: var(--text-color);
+    color: #fff;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(34, 34, 51, 0.65);
+      pointer-events: none;
+    }
+
+    &--primary {
+      background-color: var(--primary-color);
+
+      &::after {
+        content: none;
+      }
+    }
+
+    @include mq.down(sm) {
+      aspect-ratio: 343 / 260;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        .realised-projects-industries__image {
+          transform: scale(1.04);
+        }
+      }
+
+      &:not(.realised-projects-industries__card--primary):hover {
+        .realised-projects-industries__link {
+          background-color: var(--primary-color);
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .realised-projects-industries__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .realised-projects-industries__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 4rem;
+
+    @include mq.down(sm) {
+      padding: 2rem 1.6rem;
+    }
+  }
+
+  .realised-projects-industries__name {
+    max-width: 76.7rem;
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: uppercase;
+
+    @include mq.down(sm) {
+      max-width: none;
+      font-size: 2rem;
+    }
+  }
+
+  .realised-projects-industries__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: max-content;
+    max-width: 100%;
+    border-radius: 4rem;
+    padding: 2.2rem 3rem;
+    background-color: #fff;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    @include mq.down(sm) {
+      gap: 1rem;
+      padding: 1.8rem 2.4rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.11rem;
+    }
+  }
+}

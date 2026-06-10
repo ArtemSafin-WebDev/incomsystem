@@ -249,6 +249,41 @@ export default {
         },
       ],
     },
+    realisedProjectsIndustries: {
+      title: "Реализованные проекты <br>по отраслям",
+      detailsText: "Подробнее",
+      items: [
+        {
+          title: "Нефтегазовая отрасль",
+          href: "#",
+        },
+        {
+          title: "Химическая отрасль",
+          image: "/images/realised-projects-industries/chemical.webp",
+          href: "#",
+        },
+        {
+          title: "Металлургическая отрасль",
+          image: "/images/realised-projects-industries/metallurgy.webp",
+          href: "#",
+        },
+        {
+          title: "Горнодобывающая отрасль",
+          image: "/images/realised-projects-industries/mining.webp",
+          href: "#",
+        },
+        {
+          title: "Сельскохозяйственная отрасль",
+          image: "/images/realised-projects-industries/agriculture.webp",
+          href: "#",
+        },
+        {
+          title: "Энергетика",
+          image: "/images/realised-projects-industries/energy.webp",
+          href: "#",
+        },
+      ],
+    },
     pressCenter: {
       title: "Пресс-центр",
       scrollHintText: "Листайте влево/вправо",

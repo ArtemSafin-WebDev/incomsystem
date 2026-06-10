@@ -1,0 +1,27 @@
+<section class="realised-projects-industries">
+    <div class="container">
+        <h2 class="realised-projects-industries__title">{{{realisedProjectsIndustries.title}}}</h2>
+
+        <ul class="realised-projects-industries__list">
+            {{#each realisedProjectsIndustries.items}}
+            <li class="realised-projects-industries__item">
+                <a class="realised-projects-industries__card {{#unless image}}realised-projects-industries__card--primary{{/unless}}"
+                    href="{{href}}">
+                    {{#if image}}
+                    <img class="realised-projects-industries__image" src="{{image}}" alt="">
+                    {{/if}}
+                    <span class="realised-projects-industries__content">
+                        <span class="realised-projects-industries__name">{{title}}</span>
+                        <span class="realised-projects-industries__link">
+                            <span>{{../realisedProjectsIndustries.detailsText}}</span>
+                            <svg width="16" height="16" aria-hidden="true">
+                                <use xlink:href="#arrows/industry-link-arrow"></use>
+                            </svg>
+                        </span>
+                    </span>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>
