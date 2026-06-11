@@ -160,6 +160,7 @@
   }
 
   .company-reviews__navigation {
+    grid-column: 2;
     justify-self: center;
 
     .slider-navigation__button {
@@ -179,6 +180,7 @@
   }
 
   .company-reviews__footer-spacer {
+    grid-column: 3;
     min-height: 1.4rem;
 
     @include mq.down(sm) {

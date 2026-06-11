@@ -158,7 +158,7 @@
     line-height: 1;
 
     @include mq.down(sm) {
-      font-family: var(--rf-dewi);
+      font-family: var(--inter-tight);
       font-size: 1.4rem;
       line-height: 1.05;
       letter-spacing: -0.014rem;

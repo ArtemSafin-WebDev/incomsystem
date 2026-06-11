@@ -33,29 +33,6 @@ const directionOptions = [
   },
 ];
 
-const productOptions = [
-  {
-    id: "reference-product-measurement",
-    label: "Система измерений",
-    value: "measurement-system",
-  },
-  {
-    id: "reference-product-block-equipment",
-    label: "Блочное оборудование",
-    value: "block-equipment",
-  },
-  {
-    id: "reference-product-flow-metering",
-    label: "Узел коммерческого учета",
-    value: "commercial-metering-unit",
-  },
-  {
-    id: "reference-product-service",
-    label: "Сервисное сопровождение",
-    value: "service-support",
-  },
-];
-
 const realisedProjectsContactUs = {
   ...contactUs,
   className: "contact-us--reference-request",
@@ -73,18 +50,8 @@ const realisedProjectsContactUs = {
       className: "contact-us__select",
       useAltArrow: true,
       required: true,
+      hideRequiredMark: true,
       options: directionOptions,
-    },
-    {
-      isSelect: true,
-      label: "Выберите продукт",
-      name: "product",
-      placeholder: "Система измерений",
-      ariaLabel: "Выберите продукт",
-      className: "contact-us__select",
-      useAltArrow: true,
-      required: true,
-      options: productOptions,
     },
     {
       id: "reference-request-phone",
@@ -103,6 +70,15 @@ const realisedProjectsContactUs = {
       type: "email",
       autocomplete: "email",
       required: true,
+    },
+    {
+      id: "reference-request-message",
+      name: "message",
+      label: "Сообщение",
+      placeholder: "Сообщение",
+      type: "text",
+      required: true,
+      isTextarea: true,
     },
   ],
 };

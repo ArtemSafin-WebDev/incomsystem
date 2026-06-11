@@ -76,29 +76,6 @@ const referenceDirectionOptions = [
   },
 ];
 
-const referenceProductOptions = [
-  {
-    id: "home-reference-product-measurement",
-    label: "Система измерений",
-    value: "measurement-system",
-  },
-  {
-    id: "home-reference-product-block-equipment",
-    label: "Блочное оборудование",
-    value: "block-equipment",
-  },
-  {
-    id: "home-reference-product-flow-metering",
-    label: "Узел коммерческого учета",
-    value: "commercial-metering-unit",
-  },
-  {
-    id: "home-reference-product-service",
-    label: "Сервисное сопровождение",
-    value: "service-support",
-  },
-];
-
 const referenceRequestFields = [
   {
     isSelect: true,
@@ -112,17 +89,6 @@ const referenceRequestFields = [
     options: referenceDirectionOptions,
   },
   {
-    isSelect: true,
-    label: "Выберите продукт",
-    name: "product",
-    placeholder: "Система измерений",
-    ariaLabel: "Выберите продукт",
-    className: "contact-us__select",
-    required: true,
-    hideRequiredMark: true,
-    options: referenceProductOptions,
-  },
-  {
     id: "home-reference-phone",
     name: "phone",
     label: "Телефон",
@@ -130,7 +96,6 @@ const referenceRequestFields = [
     type: "tel",
     autocomplete: "tel",
     required: true,
-    hideRequiredMark: true,
   },
   {
     id: "home-reference-email",
@@ -140,7 +105,15 @@ const referenceRequestFields = [
     type: "email",
     autocomplete: "email",
     required: true,
-    hideRequiredMark: true,
+  },
+  {
+    id: "home-reference-message",
+    name: "message",
+    label: "Сообщение",
+    placeholder: "Сообщение",
+    type: "text",
+    required: true,
+    isTextarea: true,
   },
 ];
 

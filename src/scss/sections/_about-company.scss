@@ -59,7 +59,7 @@
 
     @include mq.down(sm) {
       width: auto;
-      font-family: var(--rf-dewi);
+      font-family: var(--inter-tight);
       font-size: 1.4rem;
       letter-spacing: -0.014rem;
     }
@@ -89,7 +89,7 @@
   }
 
   .about-company__stats-value {
-    font-family: var(--rf-dewi);
+    font-family: var(--inter-tight);
     font-size: 12rem;
     font-style: normal;
     font-weight: 300;

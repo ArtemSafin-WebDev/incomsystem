@@ -1,7 +1,7 @@
 @use "tools/media" as mq;
 
 @mixin page-title {
-  font-family: var(--rf-dewi);
+  font-family: var(--inter-tight);
   font-size: 12rem;
   font-style: normal;
   font-weight: 600;
@@ -19,7 +19,7 @@
 }
 
 @mixin page-title-mobile {
-  font-family: var(--rf-dewi);
+  font-family: var(--inter-tight);
   font-size: 2.6rem;
   font-style: normal;
   font-weight: 700;
@@ -35,7 +35,7 @@
   $mobile-line-height: 1.1,
   $mobile-letter-spacing: 0
 ) {
-  font-family: var(--rf-dewi);
+  font-family: var(--inter-tight);
   font-size: 6rem;
   font-style: normal;
   font-weight: 600;
@@ -53,7 +53,7 @@
 }
 
 @mixin section-title {
-  font-family: var(--rf-dewi);
+  font-family: var(--inter-tight);
   font-size: 6rem;
   font-style: normal;
   font-weight: 600;
