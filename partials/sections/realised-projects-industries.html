@@ -5,8 +5,7 @@
         <ul class="realised-projects-industries__list">
             {{#each realisedProjectsIndustries.items}}
             <li class="realised-projects-industries__item">
-                <a class="realised-projects-industries__card {{#unless image}}realised-projects-industries__card--primary{{/unless}}"
-                    href="{{href}}">
+                <a class="realised-projects-industries__card" href="{{href}}">
                     {{#if image}}
                     <img class="realised-projects-industries__image" src="{{image}}" alt="">
                     {{/if}}

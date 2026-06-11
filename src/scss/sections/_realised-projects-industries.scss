@@ -55,14 +55,6 @@
       pointer-events: none;
     }
 
-    &--primary {
-      background-color: var(--primary-color);
-
-      &::after {
-        content: none;
-      }
-    }
-
     @include mq.down(sm) {
       aspect-ratio: 343 / 260;
     }
@@ -74,7 +66,7 @@
         }
       }
 
-      &:not(.realised-projects-industries__card--primary):hover {
+      &:hover {
         .realised-projects-industries__link {
           background-color: var(--primary-color);
           color: #fff;

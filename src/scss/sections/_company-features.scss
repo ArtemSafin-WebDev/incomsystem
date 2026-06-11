@@ -219,11 +219,6 @@
       }
     }
 
-    .company-features__hint {
-      @include mq.down(sm) {
-        align-self: flex-start;
-      }
-    }
   }
 
   .company-feature-card {
@@ -294,40 +289,6 @@
       margin-top: auto;
       align-self: flex-end;
       max-width: none;
-    }
-  }
-
-  .company-features__hint {
-    display: none;
-
-    @include mq.down(sm) {
-      display: inline-flex;
-      align-items: flex-end;
-      gap: 0.5rem;
-      margin-top: 2rem;
-      font-family: var(--inter);
-      font-size: 0.8rem;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 1.3;
-      letter-spacing: -0.024rem;
-      color: var(--text-color);
-    }
-  }
-
-  .company-features__hint-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-
-    svg {
-      width: 1.5rem;
-      height: 1.5rem;
-      display: block;
-      flex-shrink: 0;
     }
   }
 

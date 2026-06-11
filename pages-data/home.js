@@ -1,4 +1,4 @@
-import { mobileMenu } from "./shared.js";
+import { contactUs as baseContactUs, mobileMenu } from "./shared.js";
 
 const pressCenterItems = [
   {
@@ -45,9 +45,9 @@ const getPressCenterItemsByTab = (tab) =>
 
 const referenceDirectionOptions = [
   {
-    id: "home-reference-direction-analytics",
-    label: "Аналитические системы",
-    value: "analytics-systems",
+    id: "home-reference-direction-plc",
+    label: "Контроллеры АБАК",
+    value: "abak-controllers",
   },
   {
     id: "home-reference-direction-control",
@@ -60,9 +60,19 @@ const referenceDirectionOptions = [
     value: "measurement-systems-and-block-equipment",
   },
   {
-    id: "home-reference-direction-plc",
-    label: "Контроллеры АБАК",
-    value: "abak-controllers",
+    id: "home-reference-direction-analytics",
+    label: "Аналитические системы",
+    value: "analytics-systems",
+  },
+  {
+    id: "home-reference-direction-incomsteel",
+    label: "Сульфинертное нанопокрытие incomsteel",
+    value: "sulfinert-nanocoating-incomsteel",
+  },
+  {
+    id: "home-reference-direction-metrology",
+    label: "Метрология и сервис",
+    value: "metrology-and-service",
   },
 ];
 
@@ -89,7 +99,7 @@ const referenceProductOptions = [
   },
 ];
 
-const contactUsFields = [
+const referenceRequestFields = [
   {
     isSelect: true,
     label: "Выберите направление",
@@ -264,7 +274,6 @@ export default {
       allProjectsText: "Все проекты",
       allProjectsHref: "#",
       detailsText: "Подробнее",
-      scrollHintText: "Листайте влево/вправо",
       projects: [
         {
           year: "2018—2019",
@@ -300,6 +309,7 @@ export default {
       items: [
         {
           title: "Нефтегазовая отрасль",
+          image: "/images/realised-projects-industries/oil-gas.webp",
           href: "#",
         },
         {
@@ -330,7 +340,7 @@ export default {
       ],
     },
     homeProjectsDownload: {
-      text: "Скачать файл с выполненными проектами в формате PDF",
+      text: "Скачать файл в формате PDF",
       document: {
         title: "Выполненные проекты",
         type: "PDF",
@@ -341,7 +351,6 @@ export default {
     },
     pressCenter: {
       title: "Пресс-центр",
-      scrollHintText: "Листайте влево/вправо",
       buttonText: "В пресс-центр",
       buttonHref: "#",
       tabs: [
@@ -413,7 +422,7 @@ export default {
         },
       ],
     },
-    contactUs: {
+    referenceRequestContactUs: {
       className: "contact-us--reference-request",
       caption: "Референс лист",
       title: "Запрос <br>референс <br>листа",
@@ -426,7 +435,12 @@ export default {
         "Нажимая «Запросить», Вы даете свое согласие на&nbsp;обработку персональных данных и принимаете&nbsp;",
       policyLinkText: "условия политики конфиденциальности",
       policyLinkHref: "https://incomsystem.ru/upload/uf/baa/pol.pdf",
-      fields: contactUsFields,
+      fields: referenceRequestFields,
+    },
+    contactUs: {
+      ...baseContactUs,
+      title: "Напишите <br>нам",
+      description: "Наши специалисты свяжутся с вами",
     },
     engineeringCenter: {
       copyright: "© 1991—2025",

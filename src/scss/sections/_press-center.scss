@@ -145,14 +145,6 @@
     }
   }
 
-  .press-center__tabs-hint {
-    display: none;
-
-    @include mq.down(sm) {
-      display: none;
-    }
-  }
-
   .press-center__panels {
     grid-column: 1 / -1;
     margin-bottom: 12rem;
@@ -241,30 +233,6 @@
       &:last-child {
         margin-right: 0;
       }
-    }
-  }
-
-  .press-center__cards-hint {
-    display: none;
-
-    @include mq.down(sm) {
-      display: none;
-    }
-  }
-
-  .press-center__hint-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-
-    svg {
-      width: 1.5rem;
-      height: 1.5rem;
-      display: block;
-      flex-shrink: 0;
     }
   }
 

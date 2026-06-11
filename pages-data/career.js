@@ -305,7 +305,6 @@ export default {
     careerStudents: {
       title: "Для студентов:",
       ariaLabel: "Возможности для студентов в НИЦ «Инкомсистем»",
-      scrollHintText: "Листайте влево/вправо",
       buttonText: "Подробнее о взаимодействии с вузами",
       buttonHref: "#",
       items: [
@@ -346,9 +345,7 @@ export default {
       caption: "Почему мы",
       title: "8 причин выбрать нашу компанию",
       titleClassName: "company-features__title--mobile-large",
-      showHint: true,
       showEmblem: false,
-      scrollHintText: "Листайте влево/вправо",
       items: [
         {
           title: "Конкурентная и&nbsp;стабильная оплата",
@@ -428,7 +425,6 @@ export default {
     },
     pressCenter: {
       title: "Новости",
-      scrollHintText: "Листайте влево/вправо",
       buttonText: "В пресс-центр",
       buttonHref: "#",
       tabs: [

@@ -2,9 +2,9 @@ import { contactUs, engineeringCenter, footer, mobileMenu } from "./shared.js";
 
 const directionOptions = [
   {
-    id: "reference-direction-analytics",
-    label: "Аналитические системы",
-    value: "analytics-systems",
+    id: "reference-direction-plc",
+    label: "Контроллеры АБАК",
+    value: "abak-controllers",
   },
   {
     id: "reference-direction-control",
@@ -17,9 +17,19 @@ const directionOptions = [
     value: "measurement-systems-and-block-equipment",
   },
   {
-    id: "reference-direction-plc",
-    label: "Контроллеры АБАК",
-    value: "abak-controllers",
+    id: "reference-direction-analytics",
+    label: "Аналитические системы",
+    value: "analytics-systems",
+  },
+  {
+    id: "reference-direction-incomsteel",
+    label: "Сульфинертное нанопокрытие incomsteel",
+    value: "sulfinert-nanocoating-incomsteel",
+  },
+  {
+    id: "reference-direction-metrology",
+    label: "Метрология и сервис",
+    value: "metrology-and-service",
   },
 ];
 

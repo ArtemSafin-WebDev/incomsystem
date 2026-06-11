@@ -220,6 +220,20 @@
     }
   }
 
+  .page-footer__section-text--link {
+    transition: color 0.2s;
+
+    &:focus-visible {
+      color: var(--primary-color);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
   .page-footer__section-text + .page-footer__section-text {
     margin-top: 2rem;
     @include mq.down(sm) {

@@ -28,8 +28,12 @@
                         value="{{this.value}}"
                         {{#if this.checked}}checked{{/if}}>
                     <span class="select__option-content">
+                        <span class="select__option-mark" aria-hidden="true">
+                            <svg width="16" height="16" aria-hidden="true">
+                                <use xlink:href="#select-check"></use>
+                            </svg>
+                        </span>
                         <span class="select__option-text">{{this.label}}</span>
-                        <span class="select__option-mark" aria-hidden="true"></span>
                     </span>
                 </label>
             </li>

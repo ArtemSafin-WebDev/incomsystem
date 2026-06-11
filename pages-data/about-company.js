@@ -142,9 +142,7 @@ export default {
       className: "company-features--about-company",
       title:
         "Начиная с 1991 года специалистами Центра внедрены сотни информационно-управляющих систем, обеспечивающих автоматизированное управление и&nbsp;противоаварийную защиту на&nbsp;предприятиях нефтегазодобычи и&nbsp;нефтехимии",
-      showHint: true,
       showEmblem: true,
-      scrollHintText: "Листайте влево/вправо",
       items: [
         {
           title: "Более 30 лет опыта в&nbsp;ключевых отраслях",
@@ -294,7 +292,6 @@ export default {
     companyDepartments: {
       ariaLabel: "Производственные процессы департаментов компании",
       tabsAriaLabel: "Выбор департамента компании",
-      scrollHintText: "Листайте влево/вправо",
       navigationAriaLabel: "Навигация по фотографиям департамента",
       previousSlideLabel: "Предыдущая фотография",
       nextSlideLabel: "Следующая фотография",
@@ -302,7 +299,6 @@ export default {
     },
     companyReviews: {
       title: "Отзывы",
-      countLabel: "98 отзывов",
       navigationAriaLabel: "Навигация слайдера с отзывами клиентов",
       previousSlideLabel: "Предыдущий отзыв",
       nextSlideLabel: "Следующий отзыв",

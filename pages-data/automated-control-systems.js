@@ -306,7 +306,6 @@ export default {
     },
     pressCenter: {
       title: "Новости направления",
-      scrollHintText: "Листайте влево/вправо",
       buttonText: "Все новости",
       buttonHref: "#",
       tabs: [
@@ -344,7 +343,6 @@ export default {
       allProjectsText: "Все проекты",
       allProjectsHref: "#",
       detailsText: "Подробнее",
-      scrollHintText: "Листайте влево/вправо",
       projects: [
         {
           year: "2018—2019",

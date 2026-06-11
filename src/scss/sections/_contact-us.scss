@@ -385,8 +385,9 @@
     color: var(--text-color);
   }
 
-  .contact-us__select .select__input:checked + .select__option-content {
-    color: var(--primary-color);
+  .contact-us__select .select__option:hover,
+  .contact-us__select .select__option:focus-within {
+    color: #fff;
   }
 
   .contact-us__form-footer {

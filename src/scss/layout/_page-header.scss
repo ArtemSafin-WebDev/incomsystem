@@ -168,6 +168,9 @@
     height: 5rem;
     border-radius: 50%;
     flex-shrink: 0;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
 
     svg {
       width: 2.4rem;
@@ -180,10 +183,36 @@
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 
+    &:focus-visible {
+      background: #fff;
+      color: var(--primary-color);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background: #fff;
+        color: var(--primary-color);
+      }
+    }
+
     .page-header--compact &,
     .page-header--compact-theme & {
       background: #f2f2fa;
       color: var(--text-color);
+    }
+
+    .page-header--compact &:focus-visible,
+    .page-header--compact-theme &:focus-visible {
+      background: var(--primary-color);
+      color: #fff;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .page-header--compact &:hover,
+      .page-header--compact-theme &:hover {
+        background: var(--primary-color);
+        color: #fff;
+      }
     }
   }
 
@@ -749,6 +778,20 @@
       height: 6rem;
       border-radius: 5rem;
     }
+
+    &:hover,
+    &:focus-visible {
+      background: #fff;
+      color: var(--primary-color);
+    }
+
+    .page-header--compact &:hover,
+    .page-header--compact &:focus-visible,
+    .page-header--compact-theme &:hover,
+    .page-header--compact-theme &:focus-visible {
+      background: var(--primary-color);
+      color: #fff;
+    }
   }
 
   .page-header__contacts-menu {
@@ -835,6 +878,20 @@
 
     .page-header--compact & {
       padding-block: 2.3rem;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background: var(--primary-color);
+      color: #fff;
+    }
+
+    .page-header--compact &:hover,
+    .page-header--compact &:focus-visible,
+    .page-header--compact-theme &:hover,
+    .page-header--compact-theme &:focus-visible {
+      background: #fff;
+      color: var(--primary-color);
     }
   }
 }
