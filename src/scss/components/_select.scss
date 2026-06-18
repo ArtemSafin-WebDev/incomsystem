@@ -6,6 +6,10 @@
     color: var(--text-color);
   }
 
+  .select.active {
+    z-index: 40;
+  }
+
   .select__button {
     position: relative;
     display: flex;
@@ -65,6 +69,16 @@
     transform: rotate(180deg);
   }
 
+  .select.active .select__button {
+    border-color: var(--primary-color);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .select:not(.active) .select__button:hover {
+      border-color: var(--text-color);
+    }
+  }
+
   .select__reset {
     position: absolute;
     right: 3rem;
@@ -84,11 +98,11 @@
     }
   }
 
-  .select.choice-selected .select__reset {
+  .select--clearable.choice-selected .select__reset {
     display: block;
   }
 
-  .select.choice-selected .select__arrow {
+  .select--clearable.choice-selected .select__arrow {
     opacity: 0;
   }
 
@@ -148,15 +162,12 @@
       line-height: 1.05;
     }
 
-    &:hover {
-      color: #fff;
-      background-color: var(--primary-color);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #fff;
+        background-color: var(--primary-color);
+      }
     }
-  }
-
-  .select__option:focus-within {
-    color: #fff;
-    background-color: var(--primary-color);
   }
 
   .select__option-content {
@@ -205,10 +216,11 @@
     }
   }
 
-  .select__option:hover .select__option-mark,
-  .select__option:focus-within .select__option-mark {
-    border-color: #fff;
-    color: #fff;
+  @media (hover: hover) and (pointer: fine) {
+    .select__option:hover .select__option-mark {
+      border-color: #fff;
+      color: #fff;
+    }
   }
 
   .select__input:checked + .select__option-content {
@@ -217,5 +229,50 @@
 
   .select__input:checked + .select__option-content .select__option-mark svg {
     opacity: 1;
+  }
+
+  .select__item--apply {
+    padding: 1.6rem 3rem;
+    background-color: #fff;
+
+    @include mq.down(sm) {
+      padding: 1.6rem 2rem;
+    }
+  }
+
+  .select__apply {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 5.6rem;
+    padding: 1.8rem 3rem;
+    border: 0.3rem solid var(--primary-color);
+    border-radius: 5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      border-color 0.2s,
+      background-color 0.2s;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: #005fbd;
+        background-color: #005fbd;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+      border-color: #005fbd;
+      background-color: #005fbd;
+    }
   }
 }

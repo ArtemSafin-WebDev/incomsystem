@@ -19,6 +19,7 @@ import MobileMenu from "../classes/components/MobileMenu";
 import OtherArticles from "../classes/components/OtherArticles";
 import OtherProjects from "../classes/components/OtherProjects";
 import PressCenter from "../classes/components/PressCenter";
+import PressCenterFilters from "../classes/components/PressCenterFilters";
 import ProductionAndServices from "../classes/components/ProductionAndServices";
 import ProductionAndServicesPage from "../classes/components/ProductionAndServicesPage";
 import RealisedProjects from "../classes/components/RealisedProjects";
@@ -74,6 +75,9 @@ export default function sections() {
   const pressCenterSections = document.querySelectorAll<HTMLElement>(
     ".js-press-center"
   );
+  const pressCenterFilters = document.querySelectorAll<HTMLElement>(
+    ".js-press-center-filters"
+  );
   const articleGalleries = document.querySelectorAll<HTMLElement>(
     ".js-article-gallery"
   );
@@ -124,6 +128,10 @@ export default function sections() {
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
+  });
+
+  pressCenterFilters.forEach((form) => {
+    new PressCenterFilters(form);
   });
 
   articleGalleries.forEach((gallery) => {

@@ -5,9 +5,12 @@ class Select extends Component {
   private btn: HTMLButtonElement | null;
   private btnTextElement: HTMLSpanElement | null = null;
   private choices: HTMLInputElement[];
+  private optionLabels: HTMLLabelElement[] = [];
   private placeholderText: string = "";
+  private applyBtns: HTMLButtonElement[] = [];
   private resetBtns: HTMLButtonElement[] = [];
   private multiSelect = false;
+  private clickedRadioWasChecked = false;
   private form: HTMLFormElement | null = null;
   private handler: () => void;
   private initiallyCheckedValues: string[] = [];
@@ -25,6 +28,9 @@ class Select extends Component {
     }
 
     this.form = this.element.closest("form");
+    this.applyBtns = Array.from(
+      this.element.querySelectorAll<HTMLButtonElement>(".js-select-apply")
+    );
     this.resetBtns = Array.from(this.element.querySelectorAll(".js-reset-btn"));
     if (this.btn) {
       this.btnTextElement =
@@ -34,6 +40,9 @@ class Select extends Component {
       this.element.querySelectorAll<HTMLInputElement>(
         'input[type="radio"], input[type="checkbox"]'
       )
+    );
+    this.optionLabels = Array.from(
+      this.element.querySelectorAll<HTMLLabelElement>(".select__option")
     );
 
     this.initiallyCheckedValues = this.choices
@@ -52,6 +61,10 @@ class Select extends Component {
     this.choices.forEach((choice) =>
       choice.addEventListener("change", this.handler)
     );
+    this.optionLabels.forEach((label) => {
+      label.addEventListener("pointerdown", this.handleOptionPointerDown);
+      label.addEventListener("click", this.handleOptionClick);
+    });
 
     const dataPlaceholder = this.element.getAttribute("data-placeholder");
 
@@ -72,6 +85,9 @@ class Select extends Component {
     this.resetBtns.forEach((btn) => {
       btn.addEventListener("click", this.handleResetBtnClick);
     });
+    this.applyBtns.forEach((btn) => {
+      btn.addEventListener("click", this.handleApplyBtnClick);
+    });
 
     this.handleFormReset = () => {
       this.reset();
@@ -87,14 +103,25 @@ class Select extends Component {
     this.choices.forEach((choice) =>
       choice.removeEventListener("change", this.handler)
     );
+    this.optionLabels.forEach((label) => {
+      label.removeEventListener("pointerdown", this.handleOptionPointerDown);
+      label.removeEventListener("click", this.handleOptionClick);
+    });
     this.choices = Array.from(
       this.element.querySelectorAll<HTMLInputElement>(
         'input[type="radio"], input[type="checkbox"]'
       )
     );
+    this.optionLabels = Array.from(
+      this.element.querySelectorAll<HTMLLabelElement>(".select__option")
+    );
     this.choices.forEach((choice) =>
       choice.addEventListener("change", this.handler)
     );
+    this.optionLabels.forEach((label) => {
+      label.addEventListener("pointerdown", this.handleOptionPointerDown);
+      label.addEventListener("click", this.handleOptionClick);
+    });
     this.refreshSelectionText();
   };
 
@@ -118,10 +145,17 @@ class Select extends Component {
     this.choices.forEach((choice) =>
       choice.removeEventListener("change", this.handler)
     );
+    this.optionLabels.forEach((label) => {
+      label.removeEventListener("pointerdown", this.handleOptionPointerDown);
+      label.removeEventListener("click", this.handleOptionClick);
+    });
     this.btn?.removeEventListener("click", this.handleBtnClick);
     document.removeEventListener("select:update", this.update);
     this.resetBtns.forEach((btn) => {
       btn.removeEventListener("click", this.handleResetBtnClick);
+    });
+    this.applyBtns.forEach((btn) => {
+      btn.removeEventListener("click", this.handleApplyBtnClick);
     });
     this.form?.removeEventListener("reset", this.handleFormReset);
     this.unregister();
@@ -149,15 +183,8 @@ class Select extends Component {
     const activeChoices = this.choices.filter((choice) => choice.checked);
     if (activeChoices.length) {
       this.element.classList.add("choice-selected");
-      const choicesText = activeChoices.map((choice) => {
-        const textElement =
-          choice.parentElement?.querySelector<HTMLElement>(
-            ".select__option-text"
-          ) ?? choice.parentElement?.querySelector("span:last-of-type");
-        return textElement?.textContent?.trim();
-      });
       if (this.btnTextElement) {
-        this.btnTextElement.textContent = choicesText.join(", ");
+        this.btnTextElement.textContent = `Выбрано: ${activeChoices.length}`;
       }
     } else {
       this.element.classList.remove("choice-selected");
@@ -201,6 +228,32 @@ class Select extends Component {
 
   private handleSingleSelection = () => {
     this.updateSingleSelectionText();
+    this.close();
+  };
+
+  private handleOptionPointerDown = (event: PointerEvent) => {
+    if (this.multiSelect) return;
+    const option = event.currentTarget as HTMLElement;
+    const radio = option.querySelector<HTMLInputElement>('input[type="radio"]');
+    this.clickedRadioWasChecked = Boolean(radio?.checked);
+  };
+
+  private handleOptionClick = (event: MouseEvent) => {
+    if (this.multiSelect || !this.clickedRadioWasChecked) return;
+
+    const option = event.currentTarget as HTMLElement;
+    const radio = option.querySelector<HTMLInputElement>('input[type="radio"]');
+
+    if (!radio?.checked) return;
+
+    event.preventDefault();
+    radio.checked = false;
+    this.clickedRadioWasChecked = false;
+    this.updateSingleSelectionText();
+    this.close();
+  };
+
+  private handleApplyBtnClick = () => {
     this.close();
   };
 

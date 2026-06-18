@@ -1,4 +1,4 @@
-<div class="select js-select{{#if select.className}} {{select.className}}{{/if}}" data-placeholder="{{select.placeholder}}{{#if select.required}}{{#unless select.hideRequiredMark}}*{{/unless}}{{/if}}"{{#if select.required}} data-required-select{{/if}}>
+<div class="select js-select{{#if select.clearable}} select--clearable{{/if}}{{#if select.className}} {{select.className}}{{/if}}" data-placeholder="{{select.placeholder}}{{#if select.required}}{{#unless select.hideRequiredMark}}*{{/unless}}{{/if}}"{{#if select.required}} data-required-select{{/if}}>
     <button class="select__button" type="button" aria-label="{{select.ariaLabel}}">
         <span class="select__button-text js-btn-text">{{select.placeholder}}{{#if select.required}}{{#unless select.hideRequiredMark}}*{{/unless}}{{/if}}</span>
         <span class="select__arrow" aria-hidden="true">
@@ -24,7 +24,7 @@
                     <input class="select__input"
                         id="{{this.id}}"
                         name="{{../select.name}}"
-                        type="radio"
+                        type="{{#if ../select.multiple}}checkbox{{else}}radio{{/if}}"
                         value="{{this.value}}"
                         {{#if this.checked}}checked{{/if}}>
                     <span class="select__option-content">
@@ -38,6 +38,11 @@
                 </label>
             </li>
             {{/each}}
+            {{#if select.applyText}}
+            <li class="select__item select__item--apply">
+                <button class="select__apply js-select-apply" type="button">{{select.applyText}}</button>
+            </li>
+            {{/if}}
         </ul>
     </div>
 </div>

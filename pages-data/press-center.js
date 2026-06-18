@@ -73,33 +73,17 @@ const pressCenterPageItems = [
   },
 ];
 
-const pressCenterContactUs = {
-  ...contactUs,
-  className: "contact-us--press-center-subscribe",
-  caption: "Подписка",
-  title: "Подписывайтесь",
-  description: "чтобы быть в курсе наших новостей",
-  submitText: "Подписаться",
-  fields: [
-    {
-      id: "press-center-subscribe-email",
-      name: "email",
-      label: "Электронная почта",
-      placeholder: "mail@company.ru",
-      type: "email",
-      autocomplete: "email",
-      required: true,
-    },
-  ],
-};
-
 export default {
   "/press-center.html": {
     title: "Пресс-центр",
     headerCompactTheme: true,
     mobileMenu,
     footer,
-    contactUs: pressCenterContactUs,
+    contactUs: {
+      ...contactUs,
+      title: "Напишите <br>нам",
+      description: "Наши специалисты свяжутся с вами",
+    },
     engineeringCenter: {
       ...engineeringCenter,
       className: "engineering-center--press-center",
@@ -119,15 +103,12 @@ export default {
       },
       title: "Пресс-центр",
       hero: {
-        image: "/images/press-center/banner.webp",
-        imageAlt:
-          "Участники чемпионата «Профессионалы» на трибунах в Санкт-Петербурге",
+        image: "/images/press-center/hero-metrologist.webp",
+        imageAlt: "Поздравление Инкомсистем с днем метролога",
         tags: ["События", "Выставка"],
-        date: "9.01.2025",
-        datetime: "2025-01-09",
-        title: "Чемпионат «Профессионалы»: итоги финала в Санкт-Петербурге",
-        text:
-          "В Санкт-Петербурге завершился финал Чемпионата по профессиональному мастерству «Профессионалы», который проходил с 26 по 30 ноября на площадке КВЦ «Экспофорум»",
+        date: "4 мая 2026",
+        datetime: "2026-05-04",
+        title: "НИЦ «ИНКОМСИСТЕМ» – ЧЕМПИОН КАЗАНСКОГО МАРАФОНА-2026!",
         href: "#",
         linkText: "Подробнее",
       },
@@ -140,34 +121,9 @@ export default {
         },
         selects: [
           {
-            label: "Поиск по году",
-            name: "year",
-            placeholder: "2023",
-            ariaLabel: "Выберите год",
-            clearable: true,
-            clearAriaLabel: "Очистить выбранный год",
-            options: [
-              {
-                id: "press-center-year-2025",
-                label: "2025",
-                value: "2025",
-              },
-              {
-                id: "press-center-year-2024",
-                label: "2024",
-                value: "2024",
-              },
-              {
-                id: "press-center-year-2023",
-                label: "2023",
-                value: "2023",
-              },
-            ],
-          },
-          {
             label: "Рубрика",
             name: "category",
-            placeholder: "Выберите рубрику",
+            placeholder: "Выставка",
             ariaLabel: "Выберите рубрику",
             clearable: true,
             clearAriaLabel: "Очистить рубрику",
@@ -176,7 +132,6 @@ export default {
                 id: "press-center-category-exhibition",
                 label: "Выставка",
                 value: "exhibition",
-                checked: true,
               },
               {
                 id: "press-center-category-events",
@@ -190,9 +145,37 @@ export default {
               },
             ],
           },
+          {
+            label: "Поиск по году",
+            name: "year",
+            placeholder: "2023",
+            ariaLabel: "Выберите год",
+            multiple: true,
+            clearable: true,
+            clearAriaLabel: "Очистить выбранный год",
+            applyText: "Применить фильтр",
+            options: [
+              {
+                id: "press-center-year-2023",
+                label: "2023",
+                value: "2023",
+              },
+              {
+                id: "press-center-year-2024",
+                label: "2024",
+                value: "2024",
+              },
+              {
+                id: "press-center-year-2025",
+                label: "2025",
+                value: "2025",
+              },
+            ],
+          },
         ],
-        countText: "Всего 8 новостей",
+        countText: "Сбросить все фильтры",
       },
+      foundText: "Найдено: 6",
       categoriesAriaLabel: "Категории пресс-центра",
       categories: [
         {
@@ -218,8 +201,45 @@ export default {
         },
       ],
       items: pressCenterPageItems,
-      moreHref: "#",
-      moreText: "Загрузить еще",
+      pagination: {
+        ariaLabel: "Пагинация новостей",
+        items: [
+          {
+            label: "1",
+            href: "#",
+            ariaLabel: "Перейти на страницу 1",
+          },
+          {
+            label: "2",
+            active: true,
+          },
+          {
+            label: "3",
+            href: "#",
+            ariaLabel: "Перейти на страницу 3",
+          },
+          {
+            label: "4",
+            href: "#",
+            ariaLabel: "Перейти на страницу 4",
+          },
+          {
+            label: "5",
+            href: "#",
+            ariaLabel: "Перейти на страницу 5",
+          },
+          {
+            label: "6",
+            href: "#",
+            ariaLabel: "Перейти на страницу 6",
+          },
+          {
+            label: "7",
+            href: "#",
+            ariaLabel: "Перейти на страницу 7",
+          },
+        ],
+      },
     },
   },
 };
