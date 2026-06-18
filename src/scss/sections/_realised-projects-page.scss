@@ -19,62 +19,32 @@
 
   .realised-projects-page__title {
     margin-top: 3rem;
-    margin-bottom: 7.8rem;
+    margin-bottom: 4.4rem;
     color: var(--text-color);
     @include type.page-title;
 
     @include mq.down(sm) {
       margin-top: 0;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
   }
 
-  .realised-projects-page__banner {
-    background-color: var(--primary-color);
-    color: #fff;
-  }
-
-  .realised-projects-page__banner-content {
-    display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    gap: 2rem;
-    padding-top: 3.8rem;
-    padding-bottom: 6.1rem;
-
-    @include mq.down(sm) {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-    }
-  }
-
-  .realised-projects-page__banner-text {
-    grid-column: 1 / 4;
-    max-width: 67.8rem;
-    font-family: var(--inter-tight);
-    font-size: 3rem;
+  .realised-projects-page__intro {
+    max-width: 117.6rem;
+    margin-bottom: 8rem;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 2.2rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.2;
-    letter-spacing: -0.06rem;
-    text-wrap: balance;
+    letter-spacing: -0.066rem;
 
     @include mq.down(sm) {
-      grid-column: auto;
+      margin-bottom: 4rem;
       max-width: none;
-      font-size: 2rem;
-      line-height: 1.15;
-      letter-spacing: -0.04rem;
-      text-wrap: balance;
-    }
-  }
-
-  .realised-projects-page__banner-card {
-    grid-column: 7 / -1;
-
-    @include mq.down(sm) {
-      grid-column: auto;
+      font-size: 1.6rem;
+      letter-spacing: -0.048rem;
     }
   }
 }

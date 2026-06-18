@@ -85,7 +85,7 @@ const realisedProjectsContactUs = {
 
 export default {
   "/realised-projects.html": {
-    title: "Реализованные проекты",
+    title: "Реализованные проекты по отраслям",
     headerCompactTheme: true,
     mobileMenu,
     footer,
@@ -100,21 +100,58 @@ export default {
             href: "/",
           },
           {
-            label: "Реализованные проекты",
+            label: "Реализованные проекты по отраслям",
           },
         ],
       },
-      title: "Реализованные проекты",
-      banner: {
-        text: "Скачать файл с выполненными проектами в формате.",
-        document: {
-          title: "Выполненные проекты",
-          type: "PDF",
-          size: "1.2 Мб",
-          href: "#",
-          downloadText: "Скачать",
-        },
+      title: "Реализованные проекты по отраслям",
+      intro:
+        "Система измерений количества и показателей качества природного газа предназначена для автоматизированного измерения с нормированной точностью расхода и количества газа при выполнении торговых операций и взаиморасчетов между Покупателем и Продавцом, а также оплаты услуг и налогов государству.",
+    },
+    homeProjectsDownload: {
+      text: "Скачать файл в формате PDF",
+      document: {
+        title: "Выполненные проекты",
+        type: "PDF",
+        size: "1.2 Мб",
+        href: "#",
+        downloadText: "Скачать",
       },
+    },
+    realisedProjectsIndustries: {
+      detailsText: "Подробнее",
+      items: [
+        {
+          title: "Нефтегазовая отрасль",
+          image: "/images/realised-projects-industries/oil-gas.webp",
+          href: "#",
+        },
+        {
+          title: "Химическая отрасль",
+          image: "/images/realised-projects-industries/chemical.webp",
+          href: "#",
+        },
+        {
+          title: "Металлургическая отрасль",
+          image: "/images/realised-projects-industries/metallurgy.webp",
+          href: "#",
+        },
+        {
+          title: "Горнодобывающая отрасль",
+          image: "/images/realised-projects-industries/mining.webp",
+          href: "#",
+        },
+        {
+          title: "Сельскохозяйственная отрасль",
+          image: "/images/realised-projects-industries/agriculture.webp",
+          href: "#",
+        },
+        {
+          title: "Энергетика",
+          image: "/images/realised-projects-industries/energy.webp",
+          href: "#",
+        },
+      ],
     },
   },
 };

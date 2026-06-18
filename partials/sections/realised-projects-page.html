@@ -3,17 +3,9 @@
         {{> components/breadcrumbs realisedProjectsPage.breadcrumbs }}
 
         <h1 class="realised-projects-page__title">{{realisedProjectsPage.title}}</h1>
-    </div>
 
-    <div class="realised-projects-page__banner">
-        <div class="container">
-            <div class="realised-projects-page__banner-content">
-                <p class="realised-projects-page__banner-text">{{realisedProjectsPage.banner.text}}</p>
-
-                <div class="realised-projects-page__banner-card">
-                    {{> components/cards/engineering-doc-card doc=realisedProjectsPage.banner.document }}
-                </div>
-            </div>
-        </div>
+        {{#if realisedProjectsPage.intro}}
+        <p class="realised-projects-page__intro">{{realisedProjectsPage.intro}}</p>
+        {{/if}}
     </div>
 </section>

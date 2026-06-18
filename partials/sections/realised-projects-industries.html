@@ -1,6 +1,8 @@
 <section class="realised-projects-industries">
     <div class="container">
+        {{#if realisedProjectsIndustries.title}}
         <h2 class="realised-projects-industries__title">{{{realisedProjectsIndustries.title}}}</h2>
+        {{/if}}
 
         <ul class="realised-projects-industries__list">
             {{#each realisedProjectsIndustries.items}}

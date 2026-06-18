@@ -190,14 +190,14 @@
   .hero__title {
     font-family: var(--inter-tight);
     font-size: 4rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.2;
-    letter-spacing: -0.08rem;
+    // letter-spacing: -0.08rem;
     text-transform: uppercase;
 
     @include mq.down(sm) {
       font-size: 3rem;
-      letter-spacing: -0.06rem;
+      // letter-spacing: -0.06rem;
     }
   }
 
