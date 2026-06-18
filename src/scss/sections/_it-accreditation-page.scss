@@ -1,12 +1,22 @@
+@use "tools/media" as mq;
+
 @layer sections {
   .it-accreditation-hero {
     padding-top: 16rem;
     background-color: #fff;
     color: #222233;
+
+    @include mq.down(sm) {
+      padding-top: 9.4rem;
+    }
   }
 
   .it-accreditation-hero .breadcrumbs {
     margin-bottom: 3rem;
+
+    @include mq.down(sm) {
+      margin-bottom: 2rem;
+    }
   }
 
   .it-accreditation-hero__stage {
@@ -20,6 +30,12 @@
       #0074e8;
     color: #fff;
     overflow: visible;
+
+    @include mq.down(sm) {
+      --it-accreditation-image-overlap: 1.6rem;
+
+      padding-top: 4rem;
+    }
   }
 
   .it-accreditation-hero__stage > .container {
@@ -34,6 +50,13 @@
     font-weight: 500;
     line-height: 1;
     letter-spacing: 0;
+
+    @include mq.down(sm) {
+      max-width: none;
+      font-size: 3rem;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
   }
 
   .it-accreditation-hero__picture {
@@ -46,6 +69,12 @@
     aspect-ratio: 1840 / 900;
     overflow: hidden;
     background-color: #001326;
+
+    @include mq.down(sm) {
+      margin-top: 3rem;
+      border-radius: 0.5rem;
+      aspect-ratio: 343 / 300;
+    }
   }
 
   .it-accreditation-hero__image {
@@ -59,12 +88,23 @@
     padding-top: 13.7rem;
     padding-bottom: 16rem;
     background-color: #fff;
+
+    @include mq.down(sm) {
+      padding-top: 5.6rem;
+      padding-bottom: 5.6rem;
+    }
   }
 
   .it-accreditation-content__grid {
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     gap: 7.2rem 2rem;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+    }
   }
 
   .it-accreditation-content__article,
@@ -74,6 +114,10 @@
 
   .it-accreditation-content .article-content > p + ol {
     margin-top: 8rem;
+
+    @include mq.down(sm) {
+      margin-top: 4rem;
+    }
   }
 
   .it-accreditation-content .article-content :is(p, li) {
@@ -88,6 +132,13 @@
     border-radius: 0.5rem;
     background-color: #f2f2fa;
     color: #222233;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 2rem;
+    }
   }
 
   .it-accreditation-details__title {
@@ -98,6 +149,11 @@
     font-weight: 500;
     line-height: 1.4;
     letter-spacing: 0;
+
+    @include mq.down(sm) {
+      font-size: 2.4rem;
+      line-height: 1.15;
+    }
   }
 
   .it-accreditation-details__list {
@@ -106,6 +162,11 @@
     flex-direction: column;
     gap: 3.2rem;
     max-width: 63.8rem;
+
+    @include mq.down(sm) {
+      gap: 2.4rem;
+      max-width: none;
+    }
   }
 
   .it-accreditation-details__item {
@@ -122,6 +183,10 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+    }
   }
 
   .it-accreditation-details__value {
@@ -132,6 +197,10 @@
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0;
-  }
 
+    @include mq.down(sm) {
+      font-size: 1.6rem;
+      overflow-wrap: anywhere;
+    }
+  }
 }
