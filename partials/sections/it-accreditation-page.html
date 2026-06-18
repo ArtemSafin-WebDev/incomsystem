@@ -1,0 +1,42 @@
+<section class="it-accreditation-hero">
+    <div class="container">
+        {{> components/breadcrumbs itAccreditation.breadcrumbs }}
+    </div>
+
+    <div class="it-accreditation-hero__stage">
+        <div class="container">
+            <h1 class="it-accreditation-hero__title">{{itAccreditation.title}}</h1>
+
+            <picture class="it-accreditation-hero__picture">
+                <img class="it-accreditation-hero__image"
+                    src="{{itAccreditation.heroImage.src}}"
+                    alt="{{itAccreditation.heroImage.alt}}">
+            </picture>
+        </div>
+    </div>
+</section>
+
+<section class="it-accreditation-content">
+    <div class="container">
+        <div class="it-accreditation-content__grid">
+            <article class="article-content it-accreditation-content__article">
+                {{{itAccreditation.contentHtml}}}
+            </article>
+
+            <section class="it-accreditation-details" aria-labelledby="it-accreditation-details-title">
+                <h2 class="it-accreditation-details__title" id="it-accreditation-details-title">
+                    {{itAccreditation.details.title}}
+                </h2>
+
+                <dl class="it-accreditation-details__list">
+                    {{#each itAccreditation.details.items}}
+                    <div class="it-accreditation-details__item">
+                        <dt class="it-accreditation-details__term">{{this.term}}</dt>
+                        <dd class="it-accreditation-details__value">{{this.value}}</dd>
+                    </div>
+                    {{/each}}
+                </dl>
+            </section>
+        </div>
+    </div>
+</section>

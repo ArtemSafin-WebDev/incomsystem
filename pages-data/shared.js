@@ -59,7 +59,7 @@ export const mobileMenuLinks = [
       },
       {
         label: "ИТ-аккредитация",
-        href: "#",
+        href: "/it-accreditation.html",
       },
     ],
   },

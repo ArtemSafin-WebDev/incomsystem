@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const IGNORE_SELECTOR =
   "[data-scroll-reveal-ignore], .breadcrumbs, .select, .mobile-menu, [aria-hidden='true'], [hidden]";
+const CMS_CONTENT_SELECTOR = ".article-content";
 
 const COLLECTION_ITEM_SELECTOR = [
   "ul[class*='__list'] > li",
@@ -25,9 +26,6 @@ const TEXT_SELECTOR = [
   "[class*='__text'] > p",
   "[class*='__text'] > ul",
   "[class*='__text'] > ol",
-  ".article-content > p",
-  ".article-content > ul",
-  ".article-content > ol",
 ].join(", ");
 
 const ACTION_SELECTOR = [
@@ -67,14 +65,24 @@ class ScrollReveal extends Component {
 
     const collectionItems = this.getCollectionItems();
     const titleElements = this.getScopedElements<HTMLElement>("h1, h2").filter(
-      (element) => !this.isInsideAny(element, collectionItems)
+      (element) =>
+        !this.isInsideCmsContent(element) &&
+        !this.isInsideAny(element, collectionItems)
     );
     const textElements = this.getScopedElements<HTMLElement>(
       TEXT_SELECTOR
-    ).filter((element) => !this.isInsideAny(element, collectionItems));
+    ).filter(
+      (element) =>
+        !this.isInsideCmsContent(element) &&
+        !this.isInsideAny(element, collectionItems)
+    );
     const actionElements = this.getScopedElements<HTMLElement>(
       ACTION_SELECTOR
-    ).filter((element) => !this.isInsideAny(element, collectionItems));
+    ).filter(
+      (element) =>
+        !this.isInsideCmsContent(element) &&
+        !this.isInsideAny(element, collectionItems)
+    );
 
     if (
       !titleElements.length &&
@@ -238,7 +246,9 @@ class ScrollReveal extends Component {
   }
 
   private getCollectionItems() {
-    const items = this.getScopedElements<HTMLElement>(COLLECTION_ITEM_SELECTOR);
+    const items = this.getScopedElements<HTMLElement>(
+      COLLECTION_ITEM_SELECTOR
+    ).filter((item) => !this.isInsideCmsContent(item));
 
     return items.filter(
       (item) => !items.some((other) => other !== item && other.contains(item))
@@ -264,6 +274,10 @@ class ScrollReveal extends Component {
     return containers.some(
       (container) => container !== element && container.contains(element)
     );
+  }
+
+  private isInsideCmsContent(element: HTMLElement) {
+    return Boolean(element.closest(CMS_CONTENT_SELECTOR));
   }
 
   private isInitiallyVisible() {

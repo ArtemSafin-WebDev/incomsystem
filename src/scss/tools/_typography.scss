@@ -4,16 +4,16 @@
   font-family: var(--inter-tight);
   font-size: 12rem;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.48rem;
+  letter-spacing: 0;
   text-wrap: balance;
 
   @include mq.down(sm) {
     font-size: 2.6rem;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
-    letter-spacing: -0.06rem;
+    letter-spacing: 0;
     text-transform: uppercase;
   }
 }
@@ -22,9 +22,9 @@
   font-family: var(--inter-tight);
   font-size: 2.6rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.2;
-  letter-spacing: -0.06rem;
+  letter-spacing: 0;
   text-wrap: balance;
   text-transform: uppercase;
 }
@@ -56,16 +56,16 @@
   font-family: var(--inter-tight);
   font-size: 6rem;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.12rem;
+  letter-spacing: 0;
   text-transform: uppercase;
   text-wrap: balance;
 
   @include mq.down(sm) {
     font-size: 2.6rem;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
-    letter-spacing: -0.06rem;
+    letter-spacing: 0;
   }
 }
