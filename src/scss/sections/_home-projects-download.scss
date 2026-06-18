@@ -21,6 +21,14 @@
     }
   }
 
+  .realised-projects-page + .home-projects-download .home-projects-download__content {
+    @include mq.down(sm) {
+      gap: 2.8rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+
   .home-projects-download__text {
     grid-column: 1 / 4;
     max-width: 67.8rem;
@@ -44,6 +52,13 @@
     }
   }
 
+  .realised-projects-page + .home-projects-download .home-projects-download__text {
+    @include mq.down(sm) {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+  }
+
   .home-projects-download__card {
     grid-column: 7 / -1;
 
@@ -59,6 +74,14 @@
     @include mq.down(sm) {
       padding-top: 4rem;
       padding-bottom: 4rem;
+    }
+  }
+
+  .realised-projects-page + .home-projects-download .engineering-doc-card {
+    @include mq.down(sm) {
+      min-height: 13.6rem;
+      height: auto;
+      aspect-ratio: auto;
     }
   }
 }

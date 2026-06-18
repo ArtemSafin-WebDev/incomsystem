@@ -7,13 +7,7 @@
     background-color: #fff;
 
     @include mq.down(sm) {
-      padding-top: 12rem;
-    }
-  }
-
-  .realised-projects-page .breadcrumbs {
-    @include mq.down(sm) {
-      display: none;
+      padding-top: 10.8rem;
     }
   }
 
@@ -24,8 +18,8 @@
     @include type.page-title;
 
     @include mq.down(sm) {
-      margin-top: 0;
-      margin-bottom: 3rem;
+      margin-top: 2rem;
+      margin-bottom: 2.6rem;
     }
   }
 
@@ -41,7 +35,7 @@
     letter-spacing: -0.066rem;
 
     @include mq.down(sm) {
-      margin-bottom: 4rem;
+      margin-bottom: 3.6rem;
       max-width: none;
       font-size: 1.6rem;
       letter-spacing: -0.048rem;
