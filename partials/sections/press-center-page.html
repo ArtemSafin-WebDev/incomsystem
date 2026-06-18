@@ -67,6 +67,11 @@
             <p class="press-center-page-news__found">{{pressCenterPage.foundText}}</p>
             {{/if}}
 
+            {{#if pressCenterPage.noResultsText}}
+            <p class="press-center-page-news__empty">{{pressCenterPage.noResultsText}}</p>
+            {{/if}}
+
+            {{#if pressCenterPage.items}}
             <ul class="press-center-page-news__list">
                 {{#each pressCenterPage.items}}
                 <li class="press-center-page-news__item">
@@ -74,8 +79,11 @@
                 </li>
                 {{/each}}
             </ul>
+            {{/if}}
         </div>
 
+        {{#if pressCenterPage.pagination}}
         {{> components/pagination pagination=pressCenterPage.pagination }}
+        {{/if}}
     </div>
 </section>

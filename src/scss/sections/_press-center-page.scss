@@ -403,6 +403,20 @@
     }
   }
 
+  .press-center-page-news__empty {
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.06rem;
+
+    @include mq.down(sm) {
+      font-size: 2rem;
+      letter-spacing: -0.04rem;
+    }
+  }
+
   .press-center-page-news__categories {
     margin-top: 4rem;
 
