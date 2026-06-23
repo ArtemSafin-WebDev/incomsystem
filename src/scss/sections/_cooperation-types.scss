@@ -3,6 +3,7 @@
 @layer sections {
   .cooperation-types {
     margin-bottom: 15rem;
+    overflow: hidden;
 
     @include mq.down(sm) {
       margin-bottom: 8rem;
@@ -10,24 +11,74 @@
   }
 
   .cooperation-types__list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .cooperation-types__item {
-    padding-top: 4rem;
-    border-top: 1px solid #dfdfdf;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8rem 2rem;
 
     @include mq.down(sm) {
-      padding-top: 2rem;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2rem;
     }
   }
 
-  .cooperation-types__item + .cooperation-types__item {
-    margin-top: 4rem;
+  .cooperation-types__item {
+    display: flex;
+    min-width: 0;
+  }
+
+  .cooperation-types__logos {
+    width: 100vw;
+    margin-top: 12rem;
+    margin-left: calc(50% - 50vw);
+    overflow: hidden;
 
     @include mq.down(sm) {
-      margin-top: 2rem;
+      margin-top: 5rem;
+    }
+  }
+
+  .cooperation-types__logos-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: cooperation-logos-marquee 34s linear infinite;
+
+    @include mq.down(sm) {
+      animation-duration: 24s;
+    }
+  }
+
+  .cooperation-types__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    height: 18rem;
+    padding-inline: 3.2rem;
+
+    @include mq.down(sm) {
+      height: 10rem;
+      padding-inline: 1.8rem;
+    }
+
+    img {
+      display: block;
+      width: var(--logo-width);
+      height: auto;
+
+      @include mq.down(sm) {
+        width: calc(var(--logo-width) * 0.65);
+      }
+    }
+  }
+
+  @keyframes cooperation-logos-marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
     }
   }
 }

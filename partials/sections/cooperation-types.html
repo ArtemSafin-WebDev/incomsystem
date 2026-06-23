@@ -8,4 +8,19 @@
             {{/each}}
         </ul>
     </div>
+
+    <div class="cooperation-types__logos" aria-label="{{cooperationTypes.logosAriaLabel}}">
+        <div class="cooperation-types__logos-track">
+            {{#each cooperationTypes.logos}}
+            <div class="cooperation-types__logo">
+                <img src="{{this.src}}" alt="{{this.alt}}" style="--logo-width: {{this.width}}rem;">
+            </div>
+            {{/each}}
+            {{#each cooperationTypes.logos}}
+            <div class="cooperation-types__logo" aria-hidden="true">
+                <img src="{{this.src}}" alt="" style="--logo-width: {{this.width}}rem;">
+            </div>
+            {{/each}}
+        </div>
+    </div>
 </section>

@@ -27,7 +27,8 @@ import SimpleSlider from "../classes/components/SimpleSlider";
 import ScrollReveal from "../classes/components/ScrollReveal";
 import TrainingCenterCourses from "../classes/components/TrainingCenterCourses";
 
-const SKIP_SCROLL_REVEAL_SELECTOR = ".js-about-company";
+const SKIP_SCROLL_REVEAL_SELECTOR =
+  ".js-about-company, [data-scroll-reveal-ignore]";
 
 export default function sections() {
   const header = document.querySelector<HTMLElement>(".page-header");

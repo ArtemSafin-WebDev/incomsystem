@@ -88,18 +88,10 @@
     min-height: 54rem;
   }
 
-  .contact-us--cooperation .contact-us__head {
-    grid-column: 1 / 5;
-  }
-
   .contact-us--reference-request .contact-us__head {
     grid-column: 1 / 5;
     max-width: 42.5rem;
     gap: 0;
-  }
-
-  .contact-us--cooperation .contact-us__title {
-    text-wrap: initial;
   }
 
   .contact-us__head {

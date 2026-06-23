@@ -2,108 +2,92 @@
 
 @layer components {
   .cooperation-card {
-    display: grid;
-    grid-template-columns: 44.5rem 44.5rem minmax(0, 1fr) 7.5rem;
-    gap: 2rem;
-    align-items: start;
-
-    @include mq.down(sm) {
-      grid-template-columns: minmax(0, 1fr) auto;
-      grid-template-rows: auto auto auto auto auto;
-      grid-template-areas:
-        "media media"
-        "meta logos"
-        "title title"
-        "description description"
-        "link link";
-      gap: 2rem;
-    }
-  }
-
-  .cooperation-card__media {
-    aspect-ratio: 445 / 262;
-
-    @include mq.down(sm) {
-      grid-area: media;
-      aspect-ratio: 300 / 175;
-      margin-bottom: 1.5rem;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-  }
-
-  .cooperation-card__meta {
-    font-family: var(--inter);
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    color: var(--text-color);
-
-    @include mq.down(sm) {
-      grid-area: meta;
-      align-self: center;
-      font-size: 1.2rem;
-    }
-  }
-
-  .cooperation-card__content {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 4rem;
-    min-height: 26rem;
-    max-width: 52.8rem;
+    width: 100%;
+    aspect-ratio: 91 / 26;
+    padding: 2.4rem;
+    overflow: hidden;
+    border: 1px solid rgb(34 34 34 / 20%);
+    background-color: #fff;
+    color: #223;
+    text-decoration: none;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: var(--primary-color);
+        border-radius: 0.5rem;
+        background-color: var(--primary-color);
+        color: #fff;
+
+        .cooperation-card__link {
+          border-color: #fff;
+          background-color: #fff;
+          color: var(--primary-color);
+        }
+
+        .cooperation-card__hover-image {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
 
     @include mq.down(sm) {
-      display: contents;
+      aspect-ratio: 343 / 220;
+      padding: 1.8rem;
     }
   }
 
-  .cooperation-card__content-top {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
+  .cooperation-card:focus-visible {
+    outline: 0.3rem solid var(--primary-color);
+    outline-offset: 0.3rem;
+  }
 
-    @include mq.down(sm) {
-      display: contents;
+  .cooperation-card:focus-visible {
+    border-color: var(--primary-color);
+    border-radius: 0.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+
+    .cooperation-card__link {
+      border-color: #fff;
+      background-color: #fff;
+      color: var(--primary-color);
+    }
+
+    .cooperation-card__hover-image {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
   .cooperation-card__title {
+    position: relative;
+    z-index: 1;
     font-family: var(--inter);
     font-size: 3rem;
     font-style: normal;
     font-weight: 500;
     line-height: 1.2;
-    letter-spacing: -0.09rem;
-    color: var(--text-color);
+    letter-spacing: 0;
+    color: currentColor;
 
     @include mq.down(sm) {
-      grid-area: title;
-      font-size: 2rem;
-      letter-spacing: -0.06rem;
-    }
-  }
-
-  .cooperation-card__description {
-    font-family: var(--inter);
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.4;
-    color: var(--text-color);
-
-    @include mq.down(sm) {
-      grid-area: description;
+      max-width: 24rem;
+      font-size: 2.4rem;
     }
   }
 
   .cooperation-card__link {
+    position: relative;
+    z-index: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -112,28 +96,24 @@
     padding: 1.7rem 3rem;
     border: 1px solid rgb(34 34 34 / 20%);
     border-radius: 4rem;
+    background-color: transparent;
     color: var(--text-color);
     font-family: var(--inter);
     font-size: 1.4rem;
     font-style: normal;
     font-weight: 700;
     line-height: 1.05;
-    letter-spacing: 0.14rem;
+    letter-spacing: 0;
     text-transform: uppercase;
     transition:
-      background-color 0.2s,
-      border-color 0.2s,
-      color 0.2s;
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease,
+      opacity 0.3s ease;
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
-        color: #fff;
-
-        svg {
-          color: #fff;
-        }
+        opacity: 0.85;
       }
     }
 
@@ -142,53 +122,35 @@
       height: 1.6rem;
       fill: currentColor;
       color: var(--primary-color);
-      transition: color 0.2s;
+      transition: color 0.3s ease;
     }
 
     @include mq.down(sm) {
-      grid-area: link;
-      width: auto;
-      justify-content: center;
-      margin-top: 0.5rem;
-      padding: 2.1rem 3rem;
-      justify-self: stretch;
+      padding: 1.5rem 2.4rem;
+      font-size: 1.2rem;
     }
   }
 
-  .cooperation-card__logos {
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
-
-    @include mq.down(sm) {
-      grid-area: logos;
-      flex-direction: row;
-      gap: 0.8rem;
-      justify-self: end;
-    }
-  }
-
-  .cooperation-card__logo {
-    width: 7.5rem;
-    height: 7.5rem;
-    border: 1px solid #dfdfdf;
-    border-radius: 50%;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-
-    @include mq.down(sm) {
-      width: 5rem;
-      height: 5rem;
-    }
-  }
-
-  .cooperation-card__logo-image {
+  .cooperation-card__hover-image {
+    position: absolute;
+    right: 1.6rem;
+    bottom: 1.5rem;
+    z-index: 0;
     display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: auto;
+    height: 13.4rem;
+    opacity: 0;
+    mix-blend-mode: lighten;
+    pointer-events: none;
+    transform: translateY(1.2rem);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+
+    @include mq.down(sm) {
+      right: 1.2rem;
+      bottom: 1.2rem;
+      height: 9rem;
+    }
   }
 }

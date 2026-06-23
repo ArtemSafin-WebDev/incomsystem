@@ -1,69 +1,77 @@
 import { engineeringCenter, footer, mobileMenu } from "./shared.js";
 
-const cooperationLogos = [
+const cooperationMarqueeLogos = [
   {
-    src: "/images/cooperation/logos/gazprom.svg",
-    alt: "Газпром",
+    src: "/images/cooperation/logos-marquee/lukoil.svg",
+    alt: "Лукойл",
+    width: 24.7,
   },
   {
-    src: "/images/cooperation/logos/bashneft.svg",
-    alt: "Башнефть",
+    src: "/images/cooperation/logos-marquee/rosneft.svg",
+    alt: "Роснефть",
+    width: 30.2,
   },
   {
-    src: "/images/cooperation/logos/gazprom.svg",
-    alt: "Газпром",
+    src: "/images/cooperation/logos-marquee/novatek.svg",
+    alt: "Новатэк",
+    width: 27.1,
+  },
+  {
+    src: "/images/cooperation/logos-marquee/sibur.svg",
+    alt: "Сибур",
+    width: 19.2,
+  },
+  {
+    src: "/images/cooperation/logos-marquee/tatneft.svg",
+    alt: "Татнефть",
+    width: 26.4,
+  },
+  {
+    src: "/images/cooperation/logos-marquee/irkutsk-oil.svg",
+    alt: "Иркутская нефтяная компания",
+    width: 21.3,
+  },
+  {
+    src: "/images/cooperation/logos-marquee/russian-railways.svg",
+    alt: "Российские железные дороги",
+    width: 17.7,
+  },
+  {
+    src: "/images/cooperation/logos-marquee/alrosa.svg",
+    alt: "Алроса",
+    width: 21.6,
+  },
+  {
+    src: "/images/cooperation/logos-marquee/surgutneftegas.svg",
+    alt: "Сургутнефтегаз",
+    width: 20.3,
   },
 ];
 
 const cooperationItems = [
   {
-    image: "/images/cooperation/cards/2.webp",
-    imageAlt: "Представитель заказчика на объекте",
-    meta: "145 заказчиков",
     title: "Заказчики",
-    description:
-      "Центр активно сотрудничает с ведущими проектными институтами нефтегазовой отрасли.",
     href: "#",
-    logosAriaLabel: "Логотипы заказчиков",
-    logos: cooperationLogos,
+    hoverImage: "/images/cooperation/hover/customers.webp",
   },
   {
-    image: "/images/cooperation/cards/1.webp",
-    imageAlt: "Партнер компании",
-    meta: "25 партнеров",
     title: "Партнеры",
-    description:
-      "Центр активно сотрудничает с ведущими проектными институтами нефтегазовой отрасли.",
     href: "#",
-    logosAriaLabel: "Логотипы партнеров",
-    logos: cooperationLogos,
+    hoverImage: "/images/cooperation/hover/partners.webp",
   },
   {
-    image: "/images/cooperation/cards/3.webp",
-    imageAlt: "Системный интегратор АБАК",
-    meta: "9 организаций",
     title: "Системные интеграторы АБАК",
-    description:
-      "Центр активно сотрудничает с ведущими проектными институтами нефтегазовой отрасли.",
     href: "#",
-    logosAriaLabel: "Логотипы системных интеграторов",
-    logos: cooperationLogos,
+    hoverImage: "/images/cooperation/hover/integrators.webp",
   },
   {
-    image: "/images/cooperation/cards/4.webp",
-    imageAlt: "Представитель университета",
-    meta: "5 организаций",
     title: "Сотрудничество с ВУЗами",
-    description:
-      "Центр активно сотрудничает с ведущими проектными институтами нефтегазовой отрасли.",
     href: "#",
-    logosAriaLabel: "Логотипы вузов-партнеров",
-    logos: cooperationLogos,
+    hoverImage: "/images/cooperation/hover/universities.webp",
   },
 ];
 
 const cooperationContactUs = {
-  className: "contact-us--cooperation",
   caption: "Форма обратной связи",
   title: "Станьте партнером <br>НИИ Инкомсистем",
   description: "Если есть вопросы - напишите нам",
@@ -129,7 +137,7 @@ export default {
     mobileMenu,
     footer,
     engineeringCenter,
-    careerHero: {
+    cooperationHero: {
       breadcrumbs: {
         ariaLabel: "Хлебные крошки",
         items: [
@@ -142,19 +150,15 @@ export default {
           },
         ],
       },
-      title: "НИЦ «Инкомсистем»<br>приглашает к сотрудничеству",
-      image: "/images/career/hero.webp",
-      imageMobile: "/images/career/hero-mobile.webp",
-      imageAlt: "Команда НИЦ Инкомсистем обсуждает сотрудничество",
+      title: "НИЦ «<span>Инкомсистем</span>»<br>приглашает к сотрудничеству",
       description:
         "Центр активно сотрудничает с ведущими проектными институтами нефтегазовой отрасли.",
-      videoHref: "#",
-      videoText: "Смотреть видео о компании",
-      videoTextMobile: "Смотреть видео",
     },
     cooperationTypes: {
       detailsText: "Подробнее",
+      logosAriaLabel: "Логотипы компаний-партнеров",
       items: cooperationItems,
+      logos: cooperationMarqueeLogos,
     },
     contactUs: cooperationContactUs,
   },
