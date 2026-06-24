@@ -31,21 +31,36 @@
     margin-top: 12rem;
     margin-left: calc(50% - 50vw);
     overflow: hidden;
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
 
     @include mq.down(sm) {
       margin-top: 4rem;
     }
   }
 
+  .cooperation-types__logos.is-dragging {
+    cursor: grabbing;
+  }
+
   .cooperation-types__logos-track {
+    --cooperation-logos-duration: 34s;
+
     display: flex;
     width: max-content;
     will-change: transform;
-    animation: cooperation-logos-marquee 34s linear infinite;
+    animation: cooperation-logos-marquee var(--cooperation-logos-duration)
+      linear infinite;
 
     @include mq.down(sm) {
-      animation-duration: 22s;
+      --cooperation-logos-duration: 22s;
     }
+  }
+
+  .cooperation-types__logos.is-marquee-ready
+    .cooperation-types__logos-track {
+    animation: none;
   }
 
   .cooperation-types__logo {
@@ -65,6 +80,7 @@
       display: block;
       width: var(--logo-width);
       height: auto;
+      pointer-events: none;
 
       @include mq.down(sm) {
         width: calc(var(--logo-width) * 0.56);

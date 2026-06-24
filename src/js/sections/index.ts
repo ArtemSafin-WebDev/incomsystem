@@ -7,6 +7,7 @@ import CompanyHistory from "../classes/components/CompanyHistory";
 import CompanyDepartments from "../classes/components/CompanyDepartments";
 import CompanyLeadership from "../classes/components/CompanyLeadership";
 import CompanyReviews from "../classes/components/CompanyReviews";
+import DraggableMarquee from "../classes/components/DraggableMarquee";
 import HarshConditions from "../classes/components/HarshConditions";
 import CompactHeader from "../classes/components/CompactHeader";
 import FeedbackModal from "../classes/components/FeedbackModal";
@@ -126,6 +127,8 @@ export default function sections() {
     document.querySelectorAll<HTMLElement>(".js-simple-slider");
   const trainingCenterCoursesSections =
     document.querySelectorAll<HTMLElement>(".js-training-center-courses");
+  const draggableMarquees =
+    document.querySelectorAll<HTMLElement>(".js-draggable-marquee");
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
@@ -205,6 +208,10 @@ export default function sections() {
 
   trainingCenterCoursesSections.forEach((section) => {
     new TrainingCenterCourses(section);
+  });
+
+  draggableMarquees.forEach((marquee) => {
+    new DraggableMarquee(marquee);
   });
 
   document

@@ -9,8 +9,8 @@
         </ul>
     </div>
 
-    <div class="cooperation-types__logos" aria-label="{{cooperationTypes.logosAriaLabel}}">
-        <div class="cooperation-types__logos-track">
+    <div class="cooperation-types__logos js-draggable-marquee" aria-label="{{cooperationTypes.logosAriaLabel}}">
+        <div class="cooperation-types__logos-track js-draggable-marquee-track">
             {{#each cooperationTypes.logos}}
             <div class="cooperation-types__logo">
                 <img src="{{this.src}}" alt="{{this.alt}}" style="--logo-width: {{this.width}}rem;">
