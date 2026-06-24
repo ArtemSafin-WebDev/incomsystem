@@ -8,14 +8,14 @@
     color: var(--text-color);
 
     @include mq.down(sm) {
-      padding-top: 14rem;
+      padding-top: 12rem;
       margin-bottom: 6rem;
     }
   }
 
   .cooperation-hero .breadcrumbs {
     @include mq.down(sm) {
-      display: none;
+      font-size: 1.2rem;
     }
   }
 
@@ -24,20 +24,18 @@
     font-family: var(--inter-tight);
     font-size: 12rem;
     font-style: normal;
-    font-weight: 600;
-    line-height: 1.08;
+    font-weight: 500;
+    line-height: 1;
     letter-spacing: 0;
     color: #223;
-
+    text-wrap: balance;
     span {
       text-transform: uppercase;
     }
 
     @include mq.down(sm) {
-      margin-top: 0;
-      font-size: 3.8rem;
-      font-weight: 600;
-      line-height: 1.1;
+      margin-top: 2.4rem;
+      font-size: 3rem;
     }
   }
 
@@ -54,8 +52,9 @@
     color: #223;
 
     @include mq.down(sm) {
-      margin-top: 3rem;
-      font-size: 1.8rem;
+      margin-top: 2.4rem;
+      font-size: 1.6rem;
+      line-height: 1.25;
     }
   }
 }
