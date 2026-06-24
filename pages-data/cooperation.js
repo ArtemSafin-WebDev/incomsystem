@@ -126,6 +126,7 @@ const cooperationContactUs = {
       placeholder: "Сообщение",
       type: "text",
       required: true,
+      isTextarea: true,
     },
   ],
 };

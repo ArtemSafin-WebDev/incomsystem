@@ -1,4 +1,10 @@
-import { contactUs, engineeringCenter, mobileMenu } from "./shared.js";
+import {
+  contactUs,
+  engineeringCenter,
+  footer,
+  mobileMenu,
+  mobileMenuSocials,
+} from "./shared.js";
 
 const contacts = [
   {
@@ -6,7 +12,6 @@ const contacts = [
     items: [
       {
         text: "Республика Татарстан,<br>Казань, ул. Восстания,<br>зд. 104И",
-        note: "(ранее ул.Восстания, 100, корпус 13)",
       },
     ],
   },
@@ -16,11 +21,11 @@ const contacts = [
       {
         text: "+7 (843) 212-50-10",
         href: "tel:+78432125010",
-        note: "(тех. поддержка)",
       },
       {
         text: "+7 (800) 234-55-19",
         href: "tel:+78002345519",
+        note: "(тех. поддержка)",
       },
     ],
   },
@@ -32,34 +37,19 @@ const contacts = [
         href: "mailto:mail@incomsystem.ru",
       },
       {
-        text: "marketing@incomsystem.ru",
-        href: "mailto:marketing@incomsystem.ru",
-      },
-      {
         text: "sales.abak@incomsystem.ru",
         href: "mailto:sales.abak@incomsystem.ru",
+      },
+      {
+        text: "support.abak@incomsystem.ru",
+        href: "mailto:support.abak@incomsystem.ru",
+        note: "(тех. поддержка)",
       },
     ],
   },
   {
-    title: "График работы",
-    items: [
-      {
-        text: "Пн-Пт 8:00 - 17:00",
-      },
-    ],
-    socials: [
-      {
-        href: "#",
-        label: "Telegram",
-        icon: "social/telegram",
-      },
-      {
-        href: "#",
-        label: "ВКонтакте",
-        icon: "social/vk",
-      },
-    ],
+    title: "Соц сети и мессенджеры",
+    socials: mobileMenuSocials,
   },
 ];
 
@@ -120,13 +110,25 @@ const partnerDetails = [
   },
 ];
 
+const contactsContactUs = {
+  ...contactUs,
+  title: "Напишите <br>нам",
+  description: "Наши специалисты свяжутся с вами",
+};
+
+const contactsFooter = {
+  ...footer,
+  email: "mail@incomsystem.ru",
+};
+
 export default {
   "/contacts.html": {
     title: "Контакты",
     headerCompactTheme: true,
     mobileMenu,
-    contactUs,
+    contactUs: contactsContactUs,
     engineeringCenter,
+    footer: contactsFooter,
     contactsPage: {
       title: "Контакты",
       infoAriaLabel: "Контактная информация",
@@ -156,9 +158,7 @@ export default {
         buttonText: "Карточка партнера",
         details: partnerDetails,
         document: {
-          title: "Реквизиты<br>центра",
-          type: "PDF",
-          size: "1.2 Мб",
+          title: "Реквизиты",
           href: "#",
           downloadText: "Скачать",
         },

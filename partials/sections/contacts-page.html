@@ -9,6 +9,7 @@
             <section class="contacts-page__info-item">
                 <h2 class="contacts-page__info-title">{{this.title}}</h2>
 
+                {{#if this.items}}
                 <div class="contacts-page__info-content">
                     {{#each this.items}}
                     {{#if this.href}}
@@ -21,13 +22,14 @@
                     {{/if}}
                     {{/each}}
                 </div>
+                {{/if}}
 
                 {{#if this.socials}}
                 <ul class="contacts-page__socials" aria-label="{{../contactsPage.socialsAriaLabel}}">
                     {{#each this.socials}}
                     <li>
                         <a class="contacts-page__social-link" href="{{this.href}}" aria-label="{{this.label}}">
-                            <svg width="24" height="24" aria-hidden="true">
+                            <svg width="60" height="60" aria-hidden="true">
                                 <use xlink:href="#{{this.icon}}"></use>
                             </svg>
                         </a>
@@ -56,7 +58,10 @@
                 id="partner-card-button"
                 aria-expanded="false"
                 aria-controls="partner-card-panel">
-                {{contactsPage.partner.buttonText}}
+                <span>{{contactsPage.partner.buttonText}}</span>
+                <svg class="contacts-page__partner-button-icon" width="16" height="16" aria-hidden="true">
+                    <use xlink:href="#menu-chevron"></use>
+                </svg>
             </button>
 
             <div class="contacts-page__partner-dropdown js-accordion-dropdown"
@@ -78,11 +83,13 @@
                         <div class="contacts-page__document-body">
                             <div class="contacts-page__document-top">
                                 <h2 class="contacts-page__document-title">{{{contactsPage.partner.document.title}}}</h2>
+                                {{#if contactsPage.partner.document.type}}
                                 <p class="contacts-page__document-meta">
                                     <span>{{contactsPage.partner.document.type}}</span>
                                     <span>·</span>
                                     <span>{{contactsPage.partner.document.size}}</span>
                                 </p>
+                                {{/if}}
                             </div>
 
                             <span class="contacts-page__document-download">{{contactsPage.partner.document.downloadText}}</span>

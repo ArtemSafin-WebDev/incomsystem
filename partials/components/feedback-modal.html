@@ -40,10 +40,18 @@
 
                 <div class="contact-us__form-rows feedback-modal__form-rows">
                     {{#each modal.fields}}
-                    <div class="contact-us__form-row feedback-modal__form-row">
+                    <div class="contact-us__form-row feedback-modal__form-row {{#if this.isTextarea}}contact-us__form-row--message{{/if}}">
                         <label class="contact-us__form-label" for="{{this.id}}">{{this.label}}</label>
 
                         <div class="contact-us__form-control">
+                            {{#if this.isTextarea}}
+                            <textarea class="contact-us__form-textarea"
+                                id="{{this.id}}"
+                                name="{{this.name}}"
+                                placeholder="{{this.placeholder}}"
+                                rows="3"
+                                {{#if this.required}}required{{/if}}></textarea>
+                            {{else}}
                             <input class="contact-us__form-input"
                                 id="{{this.id}}"
                                 name="{{this.name}}"
@@ -51,6 +59,7 @@
                                 placeholder="{{this.placeholder}}"
                                 {{#if this.autocomplete}}autocomplete="{{this.autocomplete}}"{{/if}}
                                 {{#if this.required}}required{{/if}}>
+                            {{/if}}
                         </div>
                     </div>
                     {{/each}}

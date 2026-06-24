@@ -194,6 +194,18 @@
     border-top: 0;
   }
 
+  .contact-us__form-row--message {
+    align-items: flex-start;
+  }
+
+  .contact-us__form-row--message .contact-us__form-label {
+    margin-top: 0.48rem;
+
+    @include mq.down(sm) {
+      margin-top: 0.1rem;
+    }
+  }
+
   .contact-us__form-label {
     font-family: var(--inter);
     font-size: 1.4rem;
@@ -277,7 +289,7 @@
   }
 
   .contact-us__form-textarea {
-    height: 8rem;
+    height: 3lh;
     field-sizing: fixed;
   }
 
@@ -446,6 +458,7 @@
     line-height: 1.2;
 
     @include mq.down(sm) {
+      flex: 0 0 100%;
       grid-column: 1 / -1;
     }
   }

@@ -194,6 +194,7 @@ const trainingContactUs = {
       placeholder: "Сообщение",
       type: "text",
       required: true,
+      isTextarea: true,
     },
   ],
 };

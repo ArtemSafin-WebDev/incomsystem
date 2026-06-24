@@ -145,6 +145,7 @@ export const feedbackModalFields = [
     label: "Сообщение",
     placeholder: "Сообщение",
     type: "text",
+    isTextarea: true,
   },
 ];
 
@@ -253,6 +254,7 @@ export const contactUsFields = [
     placeholder: "Сообщение",
     type: "text",
     required: true,
+    isTextarea: true,
   },
 ];
 
