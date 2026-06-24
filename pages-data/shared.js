@@ -324,6 +324,15 @@ export const engineeringCenter = {
   logoAlt: "Инкомсистем",
 };
 
+export const cookieBanner = {
+  ariaLabel: "Уведомление об использовании cookie",
+  text: "Мы используем файлы cookie, чтобы обеспечить <br>наилучшее качество просмотра этого веб-сайта.",
+  rejectText: "Отклонить все",
+  acceptText: "Принять",
+  closeAriaLabel: "Закрыть уведомление об использовании cookie",
+  storageKey: "incomsystem-cookie-consent",
+};
+
 export const footer = {
   mapImage: "/images/footer/map.webp",
   mapImageMobile: "/images/footer/map-mobile.webp",
