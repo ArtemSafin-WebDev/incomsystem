@@ -1,0 +1,26 @@
+<article class="industry-project-card">
+    <a class="industry-project-card__media" href="{{project.href}}" aria-label="{{project.title}}">
+        <img src="{{project.image}}" alt="{{project.imageAlt}}" loading="lazy">
+    </a>
+
+    <div class="industry-project-card__content">
+        <div class="industry-project-card__body">
+            <ul class="industry-project-card__tags" aria-label="{{project.tagsAriaLabel}}">
+                {{#each project.tags}}
+                <li class="industry-project-card__tag{{#if this.hasMarker}} industry-project-card__tag--marked{{/if}}">
+                    {{this.label}}
+                </li>
+                {{/each}}
+            </ul>
+
+            <h2 class="industry-project-card__title">{{project.title}}</h2>
+        </div>
+
+        <a class="industry-project-card__link" href="{{project.href}}">
+            <span>{{detailsText}}</span>
+            <svg width="16" height="16" aria-hidden="true">
+                <use xlink:href="#arrows/details-chevron"></use>
+            </svg>
+        </a>
+    </div>
+</article>

@@ -1,0 +1,180 @@
+@use "tools/media" as mq;
+
+@layer components {
+  .industry-project-card {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 2rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(34, 34, 34, 0.2);
+    color: var(--text-color);
+
+    @include mq.down(sm) {
+      grid-template-columns: 1fr;
+      gap: 2.4rem;
+      padding-top: 2.4rem;
+    }
+  }
+
+  .industry-project-card__media {
+    display: block;
+    grid-column: 1 / span 3;
+    overflow: hidden;
+    aspect-ratio: 678 / 396;
+    border-radius: 0.5rem;
+    background-color: #f2f2fa;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover img {
+        transform: scale(1.04);
+      }
+    }
+
+    @include mq.down(sm) {
+      grid-column: auto;
+    }
+  }
+
+  .industry-project-card__content {
+    display: flex;
+    grid-column: 5 / -1;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4rem;
+
+    @include mq.down(sm) {
+      grid-column: auto;
+    }
+  }
+
+  .industry-project-card__body {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4rem;
+
+    @include mq.down(sm) {
+      gap: 2.4rem;
+    }
+  }
+
+  .industry-project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem 2.4rem;
+
+    @include mq.down(sm) {
+      gap: 1rem;
+    }
+  }
+
+  .industry-project-card__tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 100%;
+    border-radius: 5rem;
+    padding: 1rem 1.5rem;
+    background-color: #f2f2fa;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1;
+
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+      line-height: 1.2;
+    }
+  }
+
+  .industry-project-card__tag--marked::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+  }
+
+  .industry-project-card__title {
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.09rem;
+    text-wrap: balance;
+
+    @include mq.down(sm) {
+      font-size: 2rem;
+      line-height: 1.25;
+      letter-spacing: -0.04rem;
+    }
+  }
+
+  .industry-project-card__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    min-height: 6rem;
+    border: 1px solid rgba(34, 34, 34, 0.2);
+    border-radius: 4rem;
+    padding: 1.7rem 3rem;
+    color: var(--text-color);
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.14rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:
+      border-color 0.2s,
+      background-color 0.2s,
+      color 0.2s;
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      flex-shrink: 0;
+      color: var(--primary-color);
+      fill: currentColor;
+    }
+
+    @include mq.down(sm) {
+      min-height: 4.8rem;
+      padding: 1.4rem 2.2rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.11rem;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: var(--primary-color);
+        background-color: var(--primary-color);
+        color: #fff;
+
+        svg {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@use "tools/media" as mq;
+
+@layer sections {
+  .realised-projects-industry {
+    background-color: #fff;
+    padding-top: 14.9rem;
+    padding-bottom: 12rem;
+
+    @include mq.down(sm) {
+      padding-top: 4rem;
+      padding-bottom: 5rem;
+    }
+  }
+
+  .realised-projects-industry__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include mq.down(sm) {
+      gap: 3.2rem;
+    }
+  }
+
+  .realised-projects-industry .pagination {
+    margin-top: 12rem;
+
+    @include mq.down(sm) {
+      margin-top: 5rem;
+    }
+  }
+}

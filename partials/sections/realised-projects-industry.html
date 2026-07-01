@@ -1,0 +1,15 @@
+<section class="realised-projects-industry">
+    <div class="container">
+        <ul class="realised-projects-industry__list">
+            {{#each realisedProjectsIndustry.projects}}
+            <li class="realised-projects-industry__item">
+                {{> components/cards/industry-project-card project=this detailsText=../realisedProjectsIndustry.detailsText }}
+            </li>
+            {{/each}}
+        </ul>
+
+        {{#if realisedProjectsIndustry.pagination}}
+        {{> components/pagination pagination=realisedProjectsIndustry.pagination }}
+        {{/if}}
+    </div>
+</section>

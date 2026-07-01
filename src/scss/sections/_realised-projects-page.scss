@@ -15,11 +15,24 @@
     margin-top: 3rem;
     margin-bottom: 4.4rem;
     color: var(--text-color);
+    text-wrap: balance;
     @include type.page-title;
 
     @include mq.down(sm) {
       margin-top: 2rem;
       margin-bottom: 2.6rem;
+    }
+  }
+
+  .realised-projects-page--industry {
+    @include mq.down(sm) {
+      .breadcrumbs {
+        display: none;
+      }
+
+      .realised-projects-page__title {
+        margin-top: 0;
+      }
     }
   }
 
