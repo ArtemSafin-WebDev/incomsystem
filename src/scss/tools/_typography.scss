@@ -30,22 +30,22 @@
 }
 
 @mixin detail-title(
-  $desktop-letter-spacing: -0.24rem,
+  $desktop-letter-spacing: 0,
   $mobile-size: 2.6rem,
-  $mobile-line-height: 1.1,
+  $mobile-line-height: 1.2,
   $mobile-letter-spacing: 0
 ) {
   font-family: var(--inter-tight);
   font-size: 6rem;
   font-style: normal;
-  font-weight: 600;
-  line-height: 1;
+  font-weight: 500;
+  line-height: 1.1;
   letter-spacing: $desktop-letter-spacing;
   text-wrap: balance;
 
   @include mq.down(sm) {
     font-size: $mobile-size;
-    font-weight: 700;
+    font-weight: 500;
     line-height: $mobile-line-height;
     letter-spacing: $mobile-letter-spacing;
     text-transform: uppercase;
@@ -57,7 +57,7 @@
   font-size: 6rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: 0;
   text-transform: uppercase;
   text-wrap: balance;
