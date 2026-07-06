@@ -5,11 +5,35 @@ import {
   mobileMenu,
 } from "./shared.js";
 
-const awardsItems = Array.from({ length: 6 }, () => ({
-  title: "100 Лучших Товаров России",
-  image: "/images/press-center/1.webp",
-  imageAlt: "Производственное оборудование Инкомсистем",
-}));
+const awardsItems = [
+  {
+    title: "100 Лучших Товаров России",
+    image: "/images/about-company/awards/1.webp",
+    imageAlt: "Диплом 100 Лучших Товаров России",
+  },
+  {
+    title: "100 Лучших Товаров России",
+    image: "/images/about-company/awards/2.webp",
+    imageAlt: "Диплом 100 Лучших Товаров России",
+  },
+  {
+    title: "100 Лучших Товаров России",
+    image: "/images/about-company/awards/3.webp",
+    imageAlt: "Диплом 100 Лучших Товаров России",
+  },
+  {
+    title: "100 Лучших Товаров России",
+    image: "/images/about-company/awards/4.webp",
+    imageAlt: "Вертикальный диплом 100 Лучших Товаров России",
+    className: "award-card--vertical",
+  },
+  {
+    title: "100 Лучших Товаров России",
+    image: "/images/about-company/awards/5.webp",
+    imageAlt: "Вертикальный дипломант 100 Лучших Товаров России",
+    className: "award-card--vertical",
+  },
+];
 
 const leadershipProfiles = [
   {
