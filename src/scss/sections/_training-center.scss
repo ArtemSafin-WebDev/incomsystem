@@ -184,15 +184,15 @@
     font-family: var(--inter-tight);
     font-size: 3rem;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.2;
-    letter-spacing: -0.06rem;
+    letter-spacing: 0;
     color: #222233;
 
     @include mq.down(sm) {
       font-size: 2rem;
       line-height: 1.2;
-      letter-spacing: -0.04rem;
+      letter-spacing: 0;
     }
   }
 
@@ -230,9 +230,8 @@
 
     @include mq.down(sm) {
       font-size: 3rem;
-      font-weight: 700;
+      font-weight: 500;
       line-height: 1.2;
-      letter-spacing: -0.06rem;
     }
   }
 

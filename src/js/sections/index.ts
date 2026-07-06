@@ -27,6 +27,7 @@ import RealisedProjects from "../classes/components/RealisedProjects";
 import SimpleSlider from "../classes/components/SimpleSlider";
 import ScrollReveal from "../classes/components/ScrollReveal";
 import TrainingCenterCourses from "../classes/components/TrainingCenterCourses";
+import UniversityCooperation from "../classes/components/UniversityCooperation";
 
 const SKIP_SCROLL_REVEAL_SELECTOR =
   ".js-about-company, [data-scroll-reveal-ignore]";
@@ -127,6 +128,9 @@ export default function sections() {
     document.querySelectorAll<HTMLElement>(".js-simple-slider");
   const trainingCenterCoursesSections =
     document.querySelectorAll<HTMLElement>(".js-training-center-courses");
+  const universityCooperationPages = document.querySelectorAll<HTMLElement>(
+    ".js-university-cooperation-page"
+  );
   const draggableMarquees =
     document.querySelectorAll<HTMLElement>(".js-draggable-marquee");
 
@@ -208,6 +212,10 @@ export default function sections() {
 
   trainingCenterCoursesSections.forEach((section) => {
     new TrainingCenterCourses(section);
+  });
+
+  universityCooperationPages.forEach((page) => {
+    new UniversityCooperation(page);
   });
 
   draggableMarquees.forEach((marquee) => {

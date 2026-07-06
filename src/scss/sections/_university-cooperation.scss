@@ -1,0 +1,269 @@
+@use "tools/media" as mq;
+@use "tools/typography" as type;
+
+@layer sections {
+  .university-cooperation-page {
+    --university-media-slider-space-between: 0rem;
+  }
+
+  .university-cooperation-page .training-center-hero__video {
+    @include mq.down(sm) {
+      height: 28rem;
+    }
+  }
+
+  .university-cooperation-page .training-center-hero__title {
+    @include mq.down(sm) {
+      max-width: none;
+      font-size: 2.6rem;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+  }
+
+  .university-cooperation-page .training-center-gallery__navigation {
+    margin-top: 6rem;
+
+    @include mq.down(sm) {
+      margin-top: 2rem;
+    }
+  }
+
+  .university-cooperation-about {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    background: #fff;
+    color: #222233;
+
+    @include mq.down(sm) {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  .university-cooperation-about__text {
+    max-width: 134rem;
+    margin-inline: auto;
+    text-align: center;
+
+    @include mq.down(sm) {
+      max-width: none;
+      text-align: left;
+    }
+  }
+
+  .university-cooperation-institutions {
+    padding-top: 4rem;
+    padding-bottom: 15rem;
+    background: #f2f2fa;
+    color: #222233;
+    overflow: hidden;
+
+    @include mq.down(sm) {
+      padding-bottom: 8rem;
+    }
+  }
+
+  .university-cooperation-institutions__title {
+    @include type.section-title;
+  }
+
+  .university-cooperation-institutions__list {
+    margin-top: 12rem;
+    list-style: none;
+
+    @include mq.down(sm) {
+      margin-top: 4rem;
+    }
+  }
+
+  .university-cooperation-institutions__item + .university-cooperation-institutions__item {
+    margin-top: 8rem;
+    padding-top: 8rem;
+    border-top: 1px solid rgba(34, 34, 51, 0.12);
+
+    @include mq.down(sm) {
+      margin-top: 5rem;
+      padding-top: 5rem;
+    }
+  }
+
+  .university-institution-card {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 2rem;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }
+
+  .university-institution-card__media-block {
+    grid-column: 1 / 4;
+    min-width: 0;
+
+    @include mq.down(sm) {
+      order: 2;
+    }
+  }
+
+  .university-institution-card__slider {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
+  .university-institution-card__slides {
+    display: flex;
+    list-style: none;
+  }
+
+  .university-institution-card__slide {
+    flex: 0 0 auto;
+    width: 100%;
+    aspect-ratio: 677 / 350;
+
+    @include mq.down(sm) {
+      width: 100%;
+      aspect-ratio: 343 / 220;
+    }
+  }
+
+  .university-media-card {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #fff;
+    color: #fff;
+  }
+
+  .university-media-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .university-media-card__image--logo {
+    width: 72%;
+    height: 58%;
+    object-fit: contain;
+  }
+
+  .university-media-card__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 34, 51, 0.5);
+    pointer-events: none;
+  }
+
+  .university-media-card__play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 5.9rem;
+    height: 9.1rem;
+    transform: translate(-50%, -50%);
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1px;
+    }
+
+    @include mq.down(sm) {
+      width: 3rem;
+      height: 4.6rem;
+    }
+  }
+
+  .university-institution-card__navigation {
+    margin-top: 4rem;
+
+    @include mq.down(sm) {
+      margin-top: 2rem;
+    }
+  }
+
+  .university-institution-card__content {
+    grid-column: 5 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 0.1rem;
+
+    @include mq.down(sm) {
+      order: 1;
+    }
+  }
+
+  .university-institution-card__location {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 5rem;
+    padding: 1rem 1.5rem;
+    background: #fff;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1;
+
+    svg {
+      width: 1.8rem;
+      height: 1.8rem;
+      color: var(--primary-color);
+      fill: currentColor;
+    }
+  }
+
+  .university-institution-card__title {
+    margin-top: 4rem;
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0;
+
+    @include mq.down(sm) {
+      margin-top: 2rem;
+      font-size: 2.2rem;
+    }
+  }
+
+  .university-institution-card__text {
+    max-width: 80rem;
+    margin-top: 4rem;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.4;
+
+    @include mq.down(sm) {
+      max-width: none;
+      margin-top: 2rem;
+    }
+  }
+
+  .university-cooperation-page .contact-us--university-cooperation {
+    padding-top: 15rem;
+
+    @include mq.down(sm) {
+      padding-top: 8rem;
+    }
+  }
+}

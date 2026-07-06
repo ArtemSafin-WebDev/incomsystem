@@ -1,0 +1,57 @@
+<section class="university-cooperation-institutions" aria-labelledby="university-cooperation-institutions-title">
+    <div class="container">
+        <h2 class="university-cooperation-institutions__title" id="university-cooperation-institutions-title">{{universityCooperationInstitutions.title}}</h2>
+
+        <ul class="university-cooperation-institutions__list">
+            {{#each universityCooperationInstitutions.items}}
+            <li class="university-cooperation-institutions__item js-university-institution">
+                <article class="university-institution-card">
+                    <div class="university-institution-card__media-block">
+                        <div class="university-institution-card__slider swiper js-university-media-slider">
+                            <ul class="university-institution-card__slides swiper-wrapper">
+                                {{#each this.slides}}
+                                <li class="university-institution-card__slide swiper-slide">
+                                    <a class="university-media-card{{#if this.isVideo}} university-media-card--video{{/if}}{{#if this.isLogo}} university-media-card--logo{{/if}}"
+                                        href="{{this.href}}"
+                                        aria-label="{{this.ariaLabel}}"
+                                        data-fancybox="{{../../universityCooperationInstitutions.fancyboxGroup}}"
+                                        {{#if this.fancyboxType}}data-type="{{this.fancyboxType}}"{{/if}}>
+                                        <img class="university-media-card__image{{#if this.isLogo}} university-media-card__image--logo{{/if}}" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
+                                        {{#if this.isVideo}}
+                                        <span class="university-media-card__overlay" aria-hidden="true"></span>
+                                        <span class="university-media-card__play" aria-hidden="true">
+                                            <svg width="59" height="91">
+                                                <use xlink:href="#play-triangle"></use>
+                                            </svg>
+                                        </span>
+                                        {{/if}}
+                                    </a>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+
+                        {{> components/slider-navigation
+                        className="university-institution-card__navigation"
+                        ariaLabel=this.navigationAriaLabel
+                        prevLabel=this.previousSlideLabel
+                        nextLabel=this.nextSlideLabel
+                        }}
+                    </div>
+
+                    <div class="university-institution-card__content">
+                        <p class="university-institution-card__location">
+                            <svg width="18" height="18" aria-hidden="true">
+                                <use xlink:href="#location"></use>
+                            </svg>
+                            <span>{{this.location}}</span>
+                        </p>
+                        <h3 class="university-institution-card__title">{{this.title}}</h3>
+                        <p class="university-institution-card__text">{{this.text}}</p>
+                    </div>
+                </article>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

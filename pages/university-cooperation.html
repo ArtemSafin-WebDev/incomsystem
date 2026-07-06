@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {{> layout/meta }}
+</head>
+
+<body>
+  {{> layout/header }}
+  {{> components/mobile-menu mobileMenu=mobileMenu }}
+  <main class="page-main university-cooperation-page js-university-cooperation-page">
+    {{> sections/training-center-hero trainingCenterHero=trainingCenterHero }}
+    {{> sections/training-center-gallery trainingCenterGallery=trainingCenterGallery }}
+    {{> sections/university-cooperation-about universityCooperationAbout=universityCooperationAbout }}
+    {{> sections/university-cooperation-institutions universityCooperationInstitutions=universityCooperationInstitutions }}
+    {{> sections/training-center-partners trainingCenterPartners=trainingCenterPartners }}
+    {{> sections/contact-us contactUs=contactUs }}
+    {{> sections/engineering-center engineeringCenter=engineeringCenter }}
+  </main>
+  {{> layout/footer }}
+
+  <script type="module" src="/src/js/main.ts"></script>
+</body>
+
+</html>

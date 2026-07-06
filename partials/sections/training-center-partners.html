@@ -7,7 +7,7 @@
                 {{#each trainingCenterPartners.items}}
                 <li class="training-center-partners__item swiper-slide">
                     <article class="training-partner-card">
-                        <a class="training-partner-card__media" href="{{this.href}}" aria-label="{{this.ariaLabel}}">
+                        <a class="training-partner-card__media" href="{{this.href}}" aria-label="{{this.ariaLabel}}"{{#if ../fancyboxGroup}} data-fancybox="{{../fancyboxGroup}}"{{/if}}{{#if this.fancyboxType}} data-type="{{this.fancyboxType}}"{{/if}}>
                             <img class="training-partner-card__image" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
                             <span class="training-partner-card__overlay" aria-hidden="true"></span>
                             {{#if this.isVideo}}

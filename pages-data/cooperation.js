@@ -66,7 +66,7 @@ const cooperationItems = [
   },
   {
     title: "Сотрудничество с ВУЗами",
-    href: "#",
+    href: "/university-cooperation.html",
     hoverImage: "/images/cooperation/hover/universities.webp",
   },
 ];

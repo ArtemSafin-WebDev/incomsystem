@@ -46,7 +46,7 @@ class SimpleSlider extends Component {
       slidesPerView: "auto",
       spaceBetween: this.getSpaceBetween(),
       speed: 600,
-      watchOverflow: false,
+      watchOverflow: true,
       navigation: {
         prevEl: this.prevButton,
         nextEl: this.nextButton,

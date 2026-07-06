@@ -1,3 +1,5 @@
+@use "tools/media" as mq;
+
 @layer components {
   .breadcrumbs {
     font-family: var(--inter);
@@ -14,6 +16,11 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 0.8rem;
+
+    @include mq.down(sm) {
+      flex-wrap: nowrap;
+      overflow: hidden;
+    }
   }
 
   .breadcrumbs__item {
@@ -21,8 +28,18 @@
     align-items: center;
     gap: 0.8rem;
 
+    @include mq.down(sm) {
+      flex: none;
+
+      &:last-child {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+    }
+
     &:not(:first-child)::before {
       content: "/";
+      flex: none;
       color: currentColor;
       opacity: 0.8;
     }
@@ -40,7 +57,23 @@
     }
   }
 
+  .breadcrumbs__link,
   .breadcrumbs__current {
     color: currentColor;
+
+    @include mq.down(sm) {
+      white-space: nowrap;
+    }
+  }
+
+  .breadcrumbs__item:last-child {
+    .breadcrumbs__link,
+    .breadcrumbs__current {
+      @include mq.down(sm) {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
   }
 }
