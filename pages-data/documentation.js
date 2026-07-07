@@ -1,10 +1,9 @@
-import { contactUs, engineeringCenter, footer, mobileMenu } from "./shared.js";
-
-const documentationContactUs = {
-  ...contactUs,
-  title: "Напишите <br>нам",
-  description: "Наши специалисты свяжутся с вами",
-};
+import {
+  engineeringCenter,
+  footer,
+  mobileMenu,
+  partnershipContactUs,
+} from "./shared.js";
 
 const cardLinkText = "Смотреть все документы";
 
@@ -14,7 +13,7 @@ export default {
     headerCompactTheme: true,
     mobileMenu,
     footer,
-    contactUs: documentationContactUs,
+    contactUs: partnershipContactUs,
     engineeringCenter,
     documentationPage: {
       breadcrumbs: {

@@ -1,0 +1,37 @@
+<section class="system-integrators-page" data-scroll-reveal-ignore>
+    <div class="container">
+        {{> components/breadcrumbs systemIntegratorsPage.breadcrumbs }}
+
+        <h1 class="system-integrators-page__title">{{systemIntegratorsPage.title}}</h1>
+        <p class="system-integrators-page__description">{{systemIntegratorsPage.description}}</p>
+
+        <ul class="system-integrators-page__list">
+            {{#each systemIntegratorsPage.items}}
+            <li class="system-integrators-page__item">
+                <article class="system-integrators-page__card">
+                    <div class="system-integrators-page__logo">
+                        <img src="{{this.logo.src}}" alt="{{this.logo.alt}}">
+                    </div>
+
+                    <div class="system-integrators-page__content">
+                        <div class="system-integrators-page__text">
+                            <h2 class="system-integrators-page__name">{{this.title}}</h2>
+                            <div class="system-integrators-page__copy">
+                                {{#each this.description}}
+                                <p>{{this}}</p>
+                                {{/each}}
+                            </div>
+                        </div>
+
+                        {{#if this.href}}
+                        <a class="system-integrators-page__link" href="{{this.href}}" target="_blank" rel="noreferrer noopener">
+                            {{this.linkText}}
+                        </a>
+                        {{/if}}
+                    </div>
+                </article>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

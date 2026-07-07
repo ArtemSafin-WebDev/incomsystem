@@ -32,7 +32,6 @@ const universityCooperationContactUs = {
   caption: "Форма обратной связи",
   title: "Станьте партнером<br>НИЦ «Инкомсистем»",
   description: "Наши специалисты свяжутся с вами",
-  className: "contact-us--university-cooperation",
   background: "/images/contact-us/bg.webp",
   backgroundMobile: "/images/contact-us/bg-mobile.webp",
   formAction: "#",

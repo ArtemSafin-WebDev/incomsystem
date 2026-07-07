@@ -61,7 +61,7 @@ const cooperationItems = [
   },
   {
     title: "Системные интеграторы АБАК",
-    href: "#",
+    href: "/system-integrators.html",
     hoverImage: "/images/cooperation/hover/integrators.webp",
   },
   {

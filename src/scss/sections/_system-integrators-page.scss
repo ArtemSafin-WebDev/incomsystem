@@ -1,0 +1,184 @@
+@use "tools/media" as mq;
+@use "tools/typography" as type;
+
+@layer sections {
+  .system-integrators-page {
+    padding-top: 16rem;
+    padding-bottom: 4rem;
+    background-color: #fff;
+    color: #223;
+
+    @include mq.down(sm) {
+      padding-top: 10.4rem;
+      padding-bottom: 3.2rem;
+    }
+  }
+
+  .system-integrators-page .breadcrumbs {
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .system-integrators-page__title {
+    max-width: 164rem;
+    margin-top: 3.2rem;
+    @include type.page-title;
+
+    @include mq.down(sm) {
+      margin-top: 2.4rem;
+    }
+  }
+
+  .system-integrators-page__description {
+    width: 90.5rem;
+    max-width: 100%;
+    margin-top: 8rem;
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #223;
+
+    @include mq.down(sm) {
+      margin-top: 2.4rem;
+      font-size: 1.6rem;
+      line-height: 1.25;
+    }
+  }
+
+  .system-integrators-page__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 12.5rem;
+
+    @include mq.down(sm) {
+      gap: 3.2rem;
+      margin-top: 4.8rem;
+    }
+  }
+
+  .system-integrators-page__item {
+    border-top: 1px solid #ccc;
+    padding-top: 4rem;
+
+    @include mq.down(sm) {
+      padding-top: 2rem;
+    }
+  }
+
+  .system-integrators-page__card {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: start;
+
+    @include mq.down(sm) {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+    }
+  }
+
+  .system-integrators-page__logo {
+    display: grid;
+    grid-column: 1 / 4;
+    place-items: center;
+    aspect-ratio: 678 / 399;
+    min-width: 0;
+    overflow: hidden;
+    padding: 6.4rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+
+    @include mq.down(sm) {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      padding: 3.2rem;
+    }
+  }
+
+  .system-integrators-page__logo img {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .system-integrators-page__content {
+    grid-column: 5 / -1;
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: flex-start;
+
+    @include mq.down(sm) {
+      width: 100%;
+      gap: 2.4rem;
+    }
+  }
+
+  .system-integrators-page__text {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include mq.down(sm) {
+      gap: 1.6rem;
+    }
+  }
+
+  .system-integrators-page__name {
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0;
+
+    @include mq.down(sm) {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+  }
+
+  .system-integrators-page__copy {
+    display: flex;
+    width: 67.8rem;
+    max-width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+
+    @include mq.down(sm) {
+      width: 100%;
+      gap: 1.4rem;
+    }
+  }
+
+  .system-integrators-page__link {
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 0.2rem;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: #0059b3;
+      }
+    }
+  }
+}

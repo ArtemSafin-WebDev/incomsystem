@@ -89,6 +89,14 @@
     }
   }
 
+  .university-cooperation-page .training-center-partners {
+    padding-bottom: 19rem;
+
+    @include mq.down(sm) {
+      padding-bottom: 12.8rem;
+    }
+  }
+
   .university-institution-card {
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -259,11 +267,4 @@
     }
   }
 
-  .university-cooperation-page .contact-us--university-cooperation {
-    padding-top: 15rem;
-
-    @include mq.down(sm) {
-      padding-top: 8rem;
-    }
-  }
 }

@@ -273,6 +273,12 @@ export const contactUs = {
   fields: contactUsFields,
 };
 
+export const partnershipContactUs = {
+  ...contactUs,
+  title: "Станьте партнером<br>НИЦ «Инкомсистем»",
+  description: "Наши специалисты свяжутся с вами",
+};
+
 export const referenceDirectionOptions = [
   {
     id: "reference-direction-plc",
