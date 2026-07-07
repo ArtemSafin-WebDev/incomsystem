@@ -99,33 +99,17 @@ const albumItems = [
   },
 ];
 
-const galleryContactUs = {
-  ...contactUs,
-  className: "contact-us--press-center-subscribe",
-  caption: "Подписка",
-  title: "Подписывайтесь",
-  description: "чтобы быть в курсе наших новостей",
-  submitText: "Подписаться",
-  fields: [
-    {
-      id: "gallery-subscribe-email",
-      name: "email",
-      label: "Электронная почта",
-      placeholder: "mail@company.ru",
-      type: "email",
-      autocomplete: "email",
-      required: true,
-    },
-  ],
-};
-
 export default {
   "/gallery.html": {
     title: "Парусная регата - 2024",
     headerCompactTheme: true,
     mobileMenu,
     footer,
-    contactUs: galleryContactUs,
+    contactUs: {
+      ...contactUs,
+      title: "Напишите <br>нам",
+      description: "Наши специалисты свяжутся с вами",
+    },
     engineeringCenter: {
       ...engineeringCenter,
       className: "engineering-center--press-center",
@@ -151,8 +135,8 @@ export default {
         image: "/images/news-detail/regatta/banner.webp",
         imageAlt: "Парусная регата на акватории в Казани",
         tags: ["События", "Выставка"],
-        date: "9.01.2025",
-        datetime: "2025-01-09",
+        date: "9 октября 2025",
+        datetime: "2025-10-09",
         title: "Парусная регата - 2024",
       },
       gallery: {
@@ -161,12 +145,12 @@ export default {
         items: galleryItems,
       },
     },
-    otherAlbums: {
+    otherArticles: {
       title: "Другие альбомы",
       ariaLabel: "Навигация по другим альбомам",
       prevLabel: "Предыдущие альбомы",
       nextLabel: "Следующие альбомы",
-      items: albumItems,
+      items: [...albumItems, ...albumItems],
     },
   },
 };

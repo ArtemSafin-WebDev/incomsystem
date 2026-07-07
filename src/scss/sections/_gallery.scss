@@ -3,74 +3,87 @@
 @layer sections {
   .gallery-hero {
     padding-top: 16rem;
+    padding-bottom: 13.1rem;
     background-color: #fff;
 
     @include mq.down(sm) {
-      padding-top: 12rem;
+      margin-top: 8.5rem;
+      padding-top: 0;
+      padding-bottom: 4rem;
     }
   }
 
   .gallery-hero .breadcrumbs {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 
     @include mq.down(sm) {
       display: none;
     }
   }
 
-  .gallery-hero__banner {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    aspect-ratio: 1840 / 890;
-    border-radius: 0.5rem;
-    overflow: hidden;
+  .gallery-hero__stage {
+    background:
+      url("/images/news-detail/regatta/1512515269.webp") 0 -0.168px / 111.146% 100.031% no-repeat,
+      #fff;
     color: #fff;
 
     @include mq.down(sm) {
-      aspect-ratio: 343 / 500;
-      padding: 2.8rem 2.1rem 2rem;
+      padding-top: 4rem;
     }
   }
 
-  .gallery-hero__image,
-  .gallery-hero__overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
+  .gallery-hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    padding-top: 7.3rem;
+
+    @include mq.down(sm) {
+      gap: 3rem;
+      padding-top: 0;
+    }
+  }
+
+  .gallery-hero__head {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+
+    @include mq.down(sm) {
+      gap: 3.2rem;
+    }
+  }
+
+  .gallery-hero__media {
     width: 100%;
-    height: 100%;
-    border-radius: inherit;
+    aspect-ratio: 1840 / 900;
+    margin-bottom: -13.1rem;
+    overflow: hidden;
+
+    @include mq.down(sm) {
+      aspect-ratio: 343 / 250;
+      margin-bottom: -4rem;
+    }
   }
 
   .gallery-hero__image {
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-  }
-
-  .gallery-hero__overlay {
-    background-color: rgba(34, 34, 51, 0.75);
-  }
-
-  .gallery-hero__top,
-  .gallery-hero__title {
-    position: relative;
-    z-index: 1;
+    object-position: bottom center;
   }
 
   .gallery-hero__top {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 4rem;
-    padding: 4rem;
+    align-items: center;
+    gap: 4.8rem;
 
     @include mq.down(sm) {
       flex-direction: column;
-      justify-content: flex-start;
-      gap: 2rem;
+      align-items: flex-start;
+      gap: 1.6rem;
       width: 100%;
-      padding: 0;
     }
   }
 
@@ -91,7 +104,8 @@
     justify-content: center;
     padding: 1rem 1.5rem;
     border-radius: 5rem;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: #fff;
+    color: var(--text-color);
     font-family: var(--inter);
     font-size: 1.4rem;
     font-weight: 500;
@@ -116,17 +130,16 @@
   }
 
   .gallery-hero__title {
-    text-wrap: balance;
-    margin: 0 4rem 4rem;
+    width: min(100%, 125.5rem);
     font-family: var(--inter-tight);
     font-size: 6rem;
     font-style: normal;
-    font-weight: 600;
-    line-height: 0.9;
+    font-weight: 500;
+    line-height: 1;
     letter-spacing: -0.24rem;
+    text-wrap: balance;
 
     @include mq.down(sm) {
-      margin: 0;
       font-size: 3.2rem;
       line-height: 1;
       letter-spacing: -0.128rem;
@@ -155,7 +168,7 @@
     }
   }
 
-  .gallery-card {
+  .gallery-grid__item {
     grid-column: span 2;
     border-radius: 0.5rem;
     overflow: hidden;
@@ -173,7 +186,7 @@
     }
   }
 
-  .gallery-card--wide {
+  .gallery-grid__item--wide {
     grid-column: span 4;
     aspect-ratio: 910 / 445;
 
@@ -181,6 +194,14 @@
       grid-column: span 1;
       aspect-ratio: 1;
     }
+  }
+
+  .gallery-card {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
   }
 
   .gallery-card__image {

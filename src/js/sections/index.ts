@@ -11,6 +11,7 @@ import DraggableMarquee from "../classes/components/DraggableMarquee";
 import HarshConditions from "../classes/components/HarshConditions";
 import CompactHeader from "../classes/components/CompactHeader";
 import FeedbackModal from "../classes/components/FeedbackModal";
+import Gallery from "../classes/components/Gallery";
 import HeaderContactsMenu from "../classes/components/HeaderContactsMenu";
 import HeaderProductsMenu from "../classes/components/HeaderProductsMenu";
 import HeaderSearch from "../classes/components/HeaderSearch";
@@ -91,6 +92,7 @@ export default function sections() {
   const careerGallerySections = document.querySelectorAll<HTMLElement>(
     ".js-career-gallery"
   );
+  const gallerySections = document.querySelectorAll<HTMLElement>(".js-gallery");
   const careerStudentsSections = document.querySelectorAll<HTMLElement>(
     ".js-career-students"
   );
@@ -156,6 +158,10 @@ export default function sections() {
 
   careerGallerySections.forEach((section) => {
     new CareerGallery(section);
+  });
+
+  gallerySections.forEach((section) => {
+    new Gallery(section);
   });
 
   careerStudentsSections.forEach((section) => {

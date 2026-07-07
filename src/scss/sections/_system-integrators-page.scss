@@ -4,13 +4,13 @@
 @layer sections {
   .system-integrators-page {
     padding-top: 16rem;
-    padding-bottom: 4rem;
+    padding-bottom: 11rem;
     background-color: #fff;
     color: #223;
 
     @include mq.down(sm) {
       padding-top: 10.4rem;
-      padding-bottom: 3.2rem;
+      padding-bottom: 3.8rem;
     }
   }
 
