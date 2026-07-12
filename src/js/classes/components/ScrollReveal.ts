@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 const IGNORE_SELECTOR =
   "[data-scroll-reveal-ignore], .breadcrumbs, .select, .mobile-menu, [aria-hidden='true'], [hidden]";
 const CMS_CONTENT_SELECTOR = ".article-content";
+const MOBILE_MEDIA_QUERY = "(max-width: 576px)";
 
 const COLLECTION_ITEM_SELECTOR = [
   "ul[class*='__list'] > li",
@@ -58,6 +59,8 @@ class ScrollReveal extends Component {
   private initAnimation() {
     if (
       window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      (this.element.hasAttribute("data-scroll-reveal-mobile-ignore") &&
+        window.matchMedia(MOBILE_MEDIA_QUERY).matches) ||
       this.isInitiallyVisible()
     ) {
       return;
