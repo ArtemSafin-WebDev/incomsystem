@@ -1,32 +1,4 @@
-<section class="gallery-hero">
-    <div class="container">
-        {{> components/breadcrumbs gallery.breadcrumbs }}
-    </div>
-
-    <div class="gallery-hero__stage">
-        <div class="container">
-            <article class="gallery-hero__content">
-                <div class="gallery-hero__head">
-                    <div class="gallery-hero__top">
-                        <ul class="gallery-hero__tags">
-                            {{#each gallery.hero.tags}}
-                            <li class="gallery-hero__tag">{{this}}</li>
-                            {{/each}}
-                        </ul>
-
-                        <time class="gallery-hero__date" datetime="{{gallery.hero.datetime}}">{{gallery.hero.date}}</time>
-                    </div>
-
-                    <h1 class="gallery-hero__title">{{gallery.hero.title}}</h1>
-                </div>
-
-                <div class="gallery-hero__media">
-                    <img class="gallery-hero__image" src="{{gallery.hero.image}}" alt="{{gallery.hero.imageAlt}}">
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
+{{> sections/gallery-hero gallery=gallery }}
 
 <section class="gallery-grid js-gallery">
     <div class="container">

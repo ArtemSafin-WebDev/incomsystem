@@ -1,41 +1,4 @@
-<section class="news-detail-hero{{#if newsDetail.hero.isPlain}} news-detail-hero--plain{{/if}}">
-    <div class="container">
-        {{> components/breadcrumbs newsDetail.breadcrumbs }}
-
-        {{#if newsDetail.hero.isPlain}}
-        <div class="news-detail-hero__simple-top">
-            <ul class="news-detail-hero__tags">
-                {{#each newsDetail.hero.tags}}
-                <li class="news-detail-hero__tag">{{this}}</li>
-                {{/each}}
-            </ul>
-
-            <time class="news-detail-hero__date" datetime="{{newsDetail.hero.datetime}}">{{newsDetail.hero.date}}</time>
-        </div>
-
-        <div class="news-detail-hero__simple-body">
-            <h1 class="news-detail-hero__title">{{newsDetail.hero.title}}</h1>
-        </div>
-        {{else}}
-        <article class="news-detail-hero__banner">
-            <img class="news-detail-hero__image" src="{{newsDetail.hero.image}}" alt="{{newsDetail.hero.imageAlt}}">
-            <div class="news-detail-hero__overlay" aria-hidden="true"></div>
-
-            <div class="news-detail-hero__top">
-                <ul class="news-detail-hero__tags">
-                    {{#each newsDetail.hero.tags}}
-                    <li class="news-detail-hero__tag">{{this}}</li>
-                    {{/each}}
-                </ul>
-
-                <time class="news-detail-hero__date" datetime="{{newsDetail.hero.datetime}}">{{newsDetail.hero.date}}</time>
-            </div>
-
-            <h1 class="news-detail-hero__title">{{newsDetail.hero.title}}</h1>
-        </article>
-        {{/if}}
-    </div>
-</section>
+{{> sections/gallery-hero gallery=newsDetail }}
 
 <section class="news-detail-content">
     <div class="container">
@@ -60,6 +23,14 @@
                 <li>Компания НИЦ «Инкомсистем» выступила спонсором конкурса, обеспечив чемпионат оборудованием, технической поддержкой, а также ценными призами для участников, экспертов и победителей соревнований.</li>
                 <li>15 комплектов оборудования было использовано для отработки навыков конкурсантов в компетенции «Промышленная автоматика».</li>
             </ul>
+
+            <blockquote class="article-snippet article-snippet--quote">
+                <p>Компания НИЦ «Инкомсистем» выступила спонсором конкурса, обеспечив чемпионат оборудованием, технической поддержкой, а также ценными призами для участников, экспертов и победителей соревнований.</p>
+                <footer class="article-snippet__quote-author">
+                    <cite>Иванов Иван Иванович</cite>
+                    <span>Советник директора</span>
+                </footer>
+            </blockquote>
 
             <div class="article-snippet article-snippet--company">
                 <div class="article-snippet__logo" aria-hidden="true">
@@ -100,8 +71,10 @@
             <p>В Санкт-Петербурге завершился финал Чемпионата по профессиональному мастерству «Профессионалы», который проходил с 26 по 30 ноября на площадке КВЦ «Экспофорум». Мероприятие впечатляет масштабами, ведь в финале встретились более 900 лучших студентов профессиональных учебных заведений со всей России, из дружественных стран, а также учащиеся старших классов, молодые специалисты, успешно прошедшие отборочные этапы на межрегиональном уровне.</p>
 
             <div class="article-snippet article-snippet--media-right">
-                <p>В Санкт-Петербурге завершился финал Чемпионата по профессиональному мастерству «Профессионалы», который проходил с 26 по 30 ноября на площадке КВЦ «Экспофорум». Мероприятие впечатляет масштабами, ведь в финале встретились более 900 лучших студентов профессиональных учебных заведений со всей России, из дружественных стран, а также учащиеся старших классов, молодые специалисты, успешно прошедшие отборочные этапы на межрегиональном уровне.</p>
-                <p>Участники соревнований второй год подряд выполняли задания на оборудовании ведущих российских компаний, в том числе на контроллерном оборудовании АБАК ПЛК производства НИЦ «Инкомсистем».</p>
+                <div class="article-snippet__content">
+                    <p>В Санкт-Петербурге завершился финал Чемпионата по профессиональному мастерству «Профессионалы», который проходил с 26 по 30 ноября на площадке КВЦ «Экспофорум». Мероприятие впечатляет масштабами, ведь в финале встретились более 900 лучших студентов профессиональных учебных заведений со всей России, из дружественных стран, а также учащиеся старших классов, молодые специалисты, успешно прошедшие отборочные этапы на межрегиональном уровне.</p>
+                    <p>Участники соревнований второй год подряд выполняли задания на оборудовании ведущих российских компаний, в том числе на контроллерном оборудовании АБАК ПЛК производства НИЦ «Инкомсистем».</p>
+                </div>
                 <img src="{{newsDetail.sideImage.src}}" alt="{{newsDetail.sideImage.alt}}">
             </div>
 

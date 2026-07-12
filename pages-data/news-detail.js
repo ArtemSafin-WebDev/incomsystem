@@ -75,26 +75,6 @@ const galleryImages = Array.from({ length: 8 }, (_, index) => ({
   alt: `Участники финала чемпионата «Профессионалы», фото ${index + 1}`,
 }));
 
-const newsDetailContactUs = {
-  ...contactUs,
-  className: "contact-us--press-center-subscribe",
-  caption: "Подписка",
-  title: "Подписывайтесь",
-  description: "чтобы быть в курсе наших новостей",
-  submitText: "Подписаться",
-  fields: [
-    {
-      id: "news-detail-subscribe-email",
-      name: "email",
-      label: "Электронная почта",
-      placeholder: "mail@company.ru",
-      type: "email",
-      autocomplete: "email",
-      required: true,
-    },
-  ],
-};
-
 const newsDetailContent = {
   breadcrumbs: {
     ariaLabel: "Хлебные крошки",
@@ -131,8 +111,8 @@ const newsDetailContent = {
 
 const newsDetailHero = {
   tags: ["События", "Выставка"],
-  date: "9.01.2025",
-  datetime: "2025-01-09",
+  date: "9 октября 2025",
+  datetime: "2025-10-09",
   title: "Чемпионат «Профессионалы»: итоги финала в Санкт-Петербурге",
 };
 
@@ -142,7 +122,11 @@ export default {
     headerCompactTheme: true,
     mobileMenu,
     footer,
-    contactUs: newsDetailContactUs,
+    contactUs: {
+      ...contactUs,
+      title: "Напишите <br>нам",
+      description: "Наши специалисты свяжутся с вами",
+    },
     engineeringCenter: {
       ...engineeringCenter,
       className: "engineering-center--press-center",
@@ -154,31 +138,6 @@ export default {
         image: "/images/news-detail/banner.webp",
         imageAlt:
           "Участники чемпионата «Профессионалы» на трибунах в Санкт-Петербурге",
-      },
-    },
-    otherArticles: {
-      title: "Другие статьи",
-      ariaLabel: "Навигация по другим статьям",
-      prevLabel: "Предыдущие статьи",
-      nextLabel: "Следующие статьи",
-      items: otherArticleItems,
-    },
-  },
-  "/news-detail-no-image.html": {
-    title: "Чемпионат «Профессионалы»: итоги финала в Санкт-Петербурге",
-    headerCompactTheme: true,
-    mobileMenu,
-    footer,
-    contactUs: newsDetailContactUs,
-    engineeringCenter: {
-      ...engineeringCenter,
-      className: "engineering-center--press-center",
-    },
-    newsDetail: {
-      ...newsDetailContent,
-      hero: {
-        ...newsDetailHero,
-        isPlain: true,
       },
     },
     otherArticles: {

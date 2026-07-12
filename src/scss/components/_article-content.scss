@@ -51,7 +51,7 @@
     :is(h2, h3) {
       font-family: var(--inter-tight);
       font-style: normal;
-      font-weight: 600;
+      font-weight: 500;
       line-height: 1;
       color: #222233;
       text-wrap: balance;
@@ -59,12 +59,10 @@
 
     h2 {
       font-size: 4.2rem;
-      letter-spacing: -0.168rem;
 
       @include mq.down(sm) {
         font-size: 2.4rem;
         line-height: 1.04;
-        letter-spacing: -0.096rem;
       }
     }
 
@@ -87,8 +85,16 @@
       color: var(--primary-color);
       font-weight: 600;
       text-decoration: underline;
+      text-decoration-color: currentColor;
       text-decoration-skip-ink: none;
       text-underline-offset: 0.2rem;
+      transition: text-decoration-color 0.25s ease;
+
+      @media (hover: hover) {
+        &:hover {
+          text-decoration-color: transparent;
+        }
+      }
     }
 
     :is(ol, ul) {
@@ -238,13 +244,114 @@
       font-family: var(--inter);
       font-size: 3rem;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 500;
       line-height: 1.4;
       color: #222233;
 
       @include mq.down(sm) {
         font-size: 1.4rem;
         line-height: 1.2;
+      }
+    }
+  }
+
+  @scope (.article-snippet--quote) {
+    :scope {
+      position: relative;
+      margin-inline: 0;
+      padding: 13.6rem 13.3rem;
+      border-radius: 0.5rem;
+      background-color: #f2f2fa;
+      color: #222233;
+
+      @include mq.down(sm) {
+        padding: 6rem 3rem;
+      }
+    }
+
+    :scope::before,
+    :scope::after {
+      content: "";
+      position: absolute;
+      width: 7.2rem;
+      height: 7.2rem;
+      pointer-events: none;
+
+      @include mq.down(sm) {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    :scope::before {
+      left: 6.4rem;
+      top: 6.4rem;
+      border-left: 0.2rem solid var(--primary-color);
+      border-top: 0.2rem solid var(--primary-color);
+
+      @include mq.down(sm) {
+        left: 2rem;
+        top: 2rem;
+      }
+    }
+
+    :scope::after {
+      right: 6.4rem;
+      bottom: 6.4rem;
+      border-right: 0.2rem solid var(--primary-color);
+      border-bottom: 0.2rem solid var(--primary-color);
+
+      @include mq.down(sm) {
+        right: 2rem;
+        bottom: 2rem;
+      }
+    }
+
+    :scope > p {
+      margin: 0;
+      font-family: var(--inter);
+      font-size: 3rem;
+      font-weight: 500;
+      line-height: 1.4;
+
+      @include mq.down(sm) {
+        font-size: 1.6rem;
+        line-height: 1.2;
+      }
+    }
+
+    .article-snippet__quote-author {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-top: 6.4rem;
+
+      @include mq.down(sm) {
+        margin-top: 3rem;
+      }
+    }
+
+    .article-snippet__quote-author cite {
+      font-family: var(--inter);
+      font-size: 2.2rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1;
+
+      @include mq.down(sm) {
+        font-size: 1.4rem;
+      }
+    }
+
+    .article-snippet__quote-author span {
+      font-family: var(--inter);
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 1;
+
+      @include mq.down(sm) {
+        font-size: 1.2rem;
       }
     }
   }
@@ -373,8 +480,11 @@
       }
     }
 
-    :scope > p {
+    .article-snippet__content {
       grid-column: 1 / 2;
+    }
+
+    .article-snippet__content > p {
       margin: 0;
       font-family: var(--inter);
       font-size: 2.2rem;
@@ -391,7 +501,7 @@
       }
     }
 
-    :scope > p + p {
+    .article-snippet__content > p + p {
       margin-top: 3rem;
 
       @include mq.down(sm) {
@@ -401,7 +511,7 @@
 
     :scope > img {
       grid-column: 2 / 3;
-      grid-row: 1 / 3;
+      grid-row: 1;
       width: 100%;
       height: auto;
       border-radius: 0.5rem;

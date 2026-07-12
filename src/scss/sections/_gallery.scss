@@ -58,6 +58,7 @@
     width: 100%;
     aspect-ratio: 1840 / 900;
     margin-bottom: -13.1rem;
+    border-radius: 0.5rem;
     overflow: hidden;
 
     @include mq.down(sm) {
