@@ -135,6 +135,7 @@ export default {
       ...newsDetailContent,
       hero: {
         ...newsDetailHero,
+        disableTitleAnimation: true,
         image: "/images/news-detail/banner.webp",
         imageAlt:
           "Участники чемпионата «Профессионалы» на трибунах в Санкт-Петербурге",

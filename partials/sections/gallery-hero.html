@@ -17,7 +17,7 @@
                         <time class="gallery-hero__date" datetime="{{gallery.hero.datetime}}">{{gallery.hero.date}}</time>
                     </div>
 
-                    <h1 class="gallery-hero__title">{{gallery.hero.title}}</h1>
+                    <h1 class="gallery-hero__title"{{#if gallery.hero.disableTitleAnimation}} data-scroll-reveal-ignore{{/if}}>{{gallery.hero.title}}</h1>
                 </div>
 
                 <div class="gallery-hero__media">

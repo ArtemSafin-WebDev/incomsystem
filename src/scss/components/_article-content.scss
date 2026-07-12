@@ -63,6 +63,7 @@
       @include mq.down(sm) {
         font-size: 2.4rem;
         line-height: 1.04;
+        overflow-wrap: anywhere;
       }
     }
 
@@ -206,8 +207,8 @@
       @include mq.down(sm) {
         flex-direction: column;
         align-items: flex-start;
-        gap: 1rem;
-        padding: 1.4rem 2.15rem;
+        gap: 2rem;
+        padding: 2rem;
         text-align: left;
         min-height: auto;
       }
@@ -265,7 +266,7 @@
       color: #222233;
 
       @include mq.down(sm) {
-        padding: 6rem 3rem;
+        padding: 6rem 2rem;
       }
     }
 
@@ -315,7 +316,7 @@
       line-height: 1.4;
 
       @include mq.down(sm) {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         line-height: 1.2;
       }
     }
@@ -482,6 +483,7 @@
 
     .article-snippet__content {
       grid-column: 1 / 2;
+      min-width: 0;
     }
 
     .article-snippet__content > p {
@@ -510,6 +512,7 @@
     }
 
     :scope > img {
+      display: block;
       grid-column: 2 / 3;
       grid-row: 1;
       width: 100%;
