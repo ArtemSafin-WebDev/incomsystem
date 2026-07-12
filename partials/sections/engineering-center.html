@@ -1,5 +1,6 @@
 <section class="engineering-center{{#if engineeringCenter.className}} {{engineeringCenter.className}}{{/if}}">
     <div class="container">
+        {{#if engineeringCenter.documents}}
         <div class="engineering-center__top">
             <div class="engineering-center__docs">
                 <ul class="engineering-center__docs-list">
@@ -11,6 +12,7 @@
                 </ul>
             </div>
         </div>
+        {{/if}}
 
         <nav class="engineering-center__nav" aria-label="{{engineeringCenter.navigationAriaLabel}}">
             <ul class="engineering-center__nav-list">

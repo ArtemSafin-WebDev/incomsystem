@@ -49,6 +49,11 @@
     min-height: 119.8rem;
   }
 
+  .engineering-center--without-documents {
+    padding-top: 4rem;
+    min-height: auto;
+  }
+
   .engineering-center__top {
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));

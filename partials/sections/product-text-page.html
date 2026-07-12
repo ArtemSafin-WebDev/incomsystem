@@ -1,0 +1,105 @@
+<section class="product-text-page-hero">
+    <div class="container">
+        {{> components/breadcrumbs productTextPage.breadcrumbs }}
+
+        <h1 class="product-text-page-hero__title">{{productTextPage.title}}</h1>
+    </div>
+</section>
+
+<section class="product-text-page">
+    <div class="container">
+        <article class="product-text-page__content article-content">
+            <div class="article-snippet product-text-page__lead">
+                <p>{{productTextPage.lead}}</p>
+            </div>
+
+            <h2 class="product-text-page__intro-title">{{productTextPage.lead}}</h2>
+
+            {{#each productTextPage.paragraphs}}
+            <p>{{#if this.strongText}}<strong>{{this.strongText}}</strong> {{/if}}{{this.text}}</p>
+            {{/each}}
+
+            {{#if productTextPage.orderedItems}}
+            <ol>
+                {{#each productTextPage.orderedItems}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ol>
+            {{/if}}
+
+            {{#if productTextPage.unorderedItems}}
+            <ul>
+                {{#each productTextPage.unorderedItems}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            {{/if}}
+
+            <div class="article-snippet product-text-page-gallery js-simple-slider" aria-label="{{productTextPage.gallery.ariaLabel}}">
+                <div class="product-text-page-gallery__slider swiper js-simple-slider-track">
+                    <ul class="product-text-page-gallery__list swiper-wrapper">
+                        {{#each productTextPage.gallery.images}}
+                        <li class="product-text-page-gallery__item swiper-slide">
+                            <img class="product-text-page-gallery__image" src="{{this.src}}" alt="{{this.alt}}" loading="lazy">
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+                {{> components/slider-navigation className="product-text-page-gallery__navigation" ariaLabel=productTextPage.gallery.ariaLabel prevLabel=productTextPage.gallery.prevLabel nextLabel=productTextPage.gallery.nextLabel }}
+            </div>
+
+            <nav class="article-snippet product-text-page__topics" aria-label="{{productTextPage.topicsAriaLabel}}">
+                <ul class="product-text-page__topics-list">
+                    {{#each productTextPage.topics}}
+                    <li class="product-text-page__topics-item js-accordion">
+                        <button class="product-text-page__topics-button js-accordion-btn"
+                            type="button"
+                            id="{{this.id}}-button"
+                            aria-expanded="false"
+                            aria-controls="{{this.id}}-panel">
+                            <span>{{this.label}}</span>
+                            <span class="product-text-page__topics-icon" aria-hidden="true">
+                                <svg width="15" height="9" aria-hidden="true">
+                                    <use xlink:href="#arrows/accordion-chevron"></use>
+                                </svg>
+                            </span>
+                        </button>
+
+                        <div class="product-text-page__topics-dropdown js-accordion-dropdown"
+                            id="{{this.id}}-panel"
+                            role="region"
+                            aria-labelledby="{{this.id}}-button"
+                            aria-hidden="true">
+                            <div class="product-text-page__topics-dropdown-inner">
+                                <div class="product-text-page__topics-content">
+                                    {{#each this.paragraphs}}
+                                    <p>{{{this}}}</p>
+                                    {{/each}}
+
+                                    {{#if this.orderedItems}}
+                                    <ol>
+                                        {{#each this.orderedItems}}
+                                        <li>{{this}}</li>
+                                        {{/each}}
+                                    </ol>
+                                    {{/if}}
+
+                                    {{#if this.unorderedItems}}
+                                    <ul>
+                                        {{#each this.unorderedItems}}
+                                        <li>{{this}}</li>
+                                        {{/each}}
+                                    </ul>
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </nav>
+        </article>
+    </div>
+</section>
+
