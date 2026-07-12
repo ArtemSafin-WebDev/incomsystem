@@ -52,6 +52,16 @@
   .engineering-center--without-documents {
     padding-top: 4rem;
     min-height: auto;
+
+    @include mq.down(sm) {
+      padding-top: 2.1rem;
+    }
+  }
+
+  .engineering-center--without-documents .engineering-center__branding {
+    @include mq.down(sm) {
+      margin-top: 0;
+    }
   }
 
   .engineering-center__top {

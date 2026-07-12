@@ -18,7 +18,7 @@
     margin-bottom: 7rem;
 
     @include mq.down(sm) {
-      display: none;
+      margin-bottom: 3rem;
     }
   }
 
@@ -72,6 +72,10 @@
   .product-text-page__intro-title {
     padding-bottom: 4rem;
     border-bottom: 0.3rem solid var(--primary-color);
+
+    @include mq.down(sm) {
+      border-bottom-width: 1px;
+    }
   }
 
   .product-text-page__content > .product-text-page__intro-title {
@@ -324,5 +328,9 @@
 
   .product-text-categories .other-articles__navigation {
     margin-top: 12.2rem;
+
+    @include mq.down(sm) {
+      margin-top: 4rem;
+    }
   }
 }
