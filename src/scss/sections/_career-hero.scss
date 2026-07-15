@@ -10,24 +10,14 @@
     margin-bottom: 15rem;
 
     @include mq.down(sm) {
-      padding-top: 14rem;
+      padding-top: 10rem;
       margin-bottom: 8rem;
-    }
-  }
-
-  .career-hero .breadcrumbs {
-    @include mq.down(sm) {
-      display: none;
     }
   }
 
   .career-hero__title {
     margin-top: 3.7rem;
     @include type.page-title;
-
-    @include mq.down(sm) {
-      margin-top: 0;
-    }
   }
 
   .career-hero__caption {
@@ -110,7 +100,7 @@
     font-family: var(--inter-tight);
     font-size: 3rem;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.06rem;
 

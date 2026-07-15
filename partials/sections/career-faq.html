@@ -3,31 +3,33 @@
         <h2 class="career-faq__title" id="career-faq-title">{{{careerFaq.title}}}</h2>
 
         <div class="career-faq__content">
+            {{#if careerFaq.counterText}}
             <p class="career-faq__counter">{{careerFaq.counterText}}</p>
+            {{/if}}
 
-            <ul class="career-faq__list" aria-label="{{careerFaq.ariaLabel}}">
+            <ul class="career-faq__list product-text-page__topics-list" aria-label="{{careerFaq.ariaLabel}}">
                 {{#each careerFaq.items}}
-                <li class="career-faq__item js-accordion">
-                    <button class="career-faq__button js-accordion-btn"
+                <li class="product-text-page__topics-item js-accordion{{#if isOpen}} active{{/if}}">
+                    <button class="product-text-page__topics-button js-accordion-btn"
                         type="button"
                         id="{{id}}-button"
-                        aria-expanded="false"
+                        aria-expanded="{{#if isOpen}}true{{else}}false{{/if}}"
                         aria-controls="{{id}}-panel">
-                        <span class="career-faq__question">{{{question}}}</span>
-                        <span class="career-faq__icon" aria-hidden="true">
-                            <svg width="12" height="12" aria-hidden="true">
-                                <use xlink:href="#arrows/right"></use>
+                        <span>{{{question}}}</span>
+                        <span class="product-text-page__topics-icon" aria-hidden="true">
+                            <svg width="15" height="9" aria-hidden="true">
+                                <use xlink:href="#arrows/accordion-chevron"></use>
                             </svg>
                         </span>
                     </button>
 
-                    <div class="career-faq__dropdown js-accordion-dropdown"
+                    <div class="product-text-page__topics-dropdown js-accordion-dropdown"
                         id="{{id}}-panel"
                         role="region"
                         aria-labelledby="{{id}}-button"
-                        aria-hidden="true">
-                        <div class="career-faq__dropdown-inner">
-                            <div class="career-faq__answer">
+                        aria-hidden="{{#if isOpen}}false{{else}}true{{/if}}">
+                        <div class="product-text-page__topics-dropdown-inner">
+                            <div class="product-text-page__topics-content">
                                 <p>{{{answer}}}</p>
                             </div>
                         </div>

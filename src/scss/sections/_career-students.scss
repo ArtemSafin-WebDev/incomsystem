@@ -12,24 +12,19 @@
     padding-bottom: 11rem;
     background: var(--primary-color);
     color: #fff;
+    margin-bottom: 15rem;
 
-    &:has(+ .company-leadership) {
-      padding-bottom: 47rem;
-      margin-bottom: calc(-1 * (47rem - 11rem));
+    & + .career-success-stories {
+      padding-top: 0;
     }
-
     @include mq.down(sm) {
       --career-students-overlap: 20rem;
 
       margin-top: calc((var(--career-students-overlap, 0) + 8rem) * -1);
       padding-top: 25rem;
-      padding-bottom: 25rem;
+      padding-bottom: 4rem;
       overflow: hidden;
-
-      &:has(+ .company-leadership) {
-        padding-bottom: 25rem;
-        margin-bottom: -22rem;
-      }
+      margin-bottom: 6rem;
     }
   }
 
@@ -37,7 +32,7 @@
     @include type.section-title;
 
     @include mq.down(sm) {
-      margin-bottom: 6.1rem;
+      margin-bottom: 3.2rem;
     }
   }
 
@@ -52,8 +47,8 @@
   .career-students__list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6rem 2rem;
-    margin-top: 11.2rem;
+    gap: 8rem 2rem;
+    margin-top: 5.6rem;
 
     @include mq.down(sm) {
       display: flex;
@@ -78,111 +73,72 @@
   }
 
   .career-students-card {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2rem;
+    position: relative;
+    min-height: 53.2rem;
+    padding: 4rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-sizing: border-box;
 
     @include mq.down(sm) {
       display: flex;
       flex-direction: column;
       width: 22.5rem;
       flex-grow: 1;
-      min-height: 22rem;
-    }
-  }
-
-  .career-students-card__content {
-    display: flex;
-    min-height: 37rem;
-    flex-direction: column;
-    justify-content: space-between;
-
-    @include mq.down(sm) {
-      order: 1;
-
-      min-height: auto;
+      min-height: 30rem;
       padding: 2rem;
-      justify-content: flex-start;
-      gap: 4rem;
-      box-sizing: border-box;
-      flex-grow: 1;
-    }
-  }
-
-  .career-students-card__heading {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 34.5rem;
-
-    @include mq.down(sm) {
-      max-width: none;
-    }
-  }
-
-  .career-students-card__index {
-    color: rgba(255, 255, 255, 0.5);
-    font-family: var(--ibm-plex-mono);
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -0.028rem;
-
-    @include mq.down(sm) {
-      color: #80b7ee;
     }
   }
 
   .career-students-card__title {
+    position: relative;
+    z-index: 2;
+    max-width: 76.7rem;
     font-family: var(--inter);
     font-size: 3rem;
     font-style: normal;
     font-weight: 500;
     line-height: 1.2;
-    letter-spacing: -0.06rem;
-
-    @include mq.down(sm) {
-      max-width: 20.8rem;
-      font-size: 2rem;
-      letter-spacing: -0.04rem;
-      text-wrap: initial;
-    }
-  }
-
-  .career-students-card__description {
-    max-width: 32.5rem;
-    font-family: var(--inter);
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.4;
-
+    letter-spacing: -0.09rem;
+    text-wrap: balance;
     @include mq.down(sm) {
       max-width: none;
-      margin-top: auto;
+      font-size: 2rem;
+      letter-spacing: -0.04rem;
+      text-wrap: revert;
     }
   }
 
   .career-students-card__media {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    border-radius: 0.5rem;
     background: rgba(255, 255, 255, 0.08);
-
-    @include mq.down(sm) {
-      display: none;
-    }
   }
 
   .career-students-card__image {
     display: block;
     width: 100%;
-    height: 37rem;
+    height: 100%;
     object-fit: cover;
+  }
 
-    @include mq.down(sm) {
-      height: 24rem;
-    }
+  .career-students-card__overlay {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      167.87deg,
+      rgba(34, 34, 51, 0.85) 23.22%,
+      rgba(34, 34, 51, 0) 105.18%
+    );
+    pointer-events: none;
   }
 
   .career-students__btn.btn {
@@ -196,6 +152,7 @@
       width: auto;
       margin-top: 4rem;
       padding: 1.6rem 1rem;
+      text-wrap: balance;
     }
   }
 

@@ -49,7 +49,6 @@ const careerSuccessStoriesItems = [
     position: "Менеджер по продажам",
     image: "/images/about-company/company-leadership/1.webp",
     imageAlt: "Сотрудник компании",
-    duration: "3:39",
     videoHref: "#",
     videoAriaLabel: "Смотреть историю успеха Ивана Петрова",
   },
@@ -58,7 +57,6 @@ const careerSuccessStoriesItems = [
     position: "Менеджер по продажам",
     image: "/images/about-company/company-leadership/2.webp",
     imageAlt: "Сотрудник компании",
-    duration: "3:39",
     videoHref: "#",
     videoAriaLabel: "Смотреть историю успеха Петра Иванова",
   },
@@ -67,7 +65,6 @@ const careerSuccessStoriesItems = [
     position: "Менеджер по продажам",
     image: "/images/about-company/company-leadership/3.webp",
     imageAlt: "Сотрудник компании",
-    duration: "3:39",
     videoHref: "#",
     videoAriaLabel: "Смотреть историю успеха Елены Смирновой",
   },
@@ -76,7 +73,6 @@ const careerSuccessStoriesItems = [
     position: "Менеджер по продажам",
     image: "/images/about-company/company-leadership/1.webp",
     imageAlt: "Сотрудник компании",
-    duration: "3:39",
     videoHref: "#",
     videoAriaLabel: "Смотреть историю успеха Ивана Петрова",
   },
@@ -85,7 +81,6 @@ const careerSuccessStoriesItems = [
     position: "Менеджер по продажам",
     image: "/images/about-company/company-leadership/2.webp",
     imageAlt: "Сотрудник компании",
-    duration: "3:39",
     videoHref: "#",
     videoAriaLabel: "Смотреть историю успеха Петра Иванова",
   },
@@ -177,6 +172,7 @@ const careerVacanciesItems = [
 const careerFaqItems = [
   {
     id: "career-faq-minimum-wage",
+    isOpen: true,
     question:
       "Памятка о минимальной заработной плате труда в Республике Татарстан с 1 января 2022 года",
     answer:
@@ -192,43 +188,17 @@ const careerFaqItems = [
     question: "Вопрос 3",
     answer: "Ответ на вопрос будет добавлен позже.",
   },
-  {
-    id: "career-faq-question-4",
-    question: "Вопрос 4",
-    answer: "Ответ на вопрос будет добавлен позже.",
-  },
-  {
-    id: "career-faq-question-5",
-    question: "Вопрос 5",
-    answer: "Ответ на вопрос будет добавлен позже.",
-  },
-  {
-    id: "career-faq-question-6",
-    question: "Вопрос 6",
-    answer: "Ответ на вопрос будет добавлен позже.",
-  },
 ];
 
 const careerContactUs = {
   className: "contact-us--career",
   caption: "Форма обратной связи",
-  title: "Не нашли <br>подходящей <br>вакансии",
-  description: "Отправьте свое резюме или свяжитесь с hr-отделом",
-  contacts: [
-    {
-      className: "contact-us__contact--phone",
-      href: "tel:+78432125010",
-      text: "+7 (843) 212-50-10",
-    },
-    {
-      href: "mailto:hr@incomsystem.ru",
-      text: "hr@incomsystem.ru",
-    },
-  ],
+  title: "Не нашли <br>подходящей <br>вакансии?",
+  description: "Отправьте свое резюме и наши специалисты свяжутся с вами",
   background: "/images/contact-us/bg.webp",
   backgroundMobile: "/images/contact-us/bg-mobile.webp",
   formAction: "#",
-  submitText: "Отправить резюме",
+  submitText: "Отправить",
   policyText:
     "Нажимая «Отправить», Вы даете свое согласие на&nbsp;обработку персональных данных и принимаете&nbsp;",
   policyLinkText: "условия политики конфиденциальности",
@@ -291,8 +261,7 @@ export default {
           },
         ],
       },
-      title: "Карьера в НИЦ «Инкомсистем»",
-      caption: "Создана в 1991 году",
+      title: "Карьера в НИЦ «ИНКОМСИСТЕМ»",
       image: "/images/career/hero.webp",
       imageMobile: "/images/career/hero-mobile.webp",
       imageAlt: "",
@@ -309,40 +278,30 @@ export default {
       buttonHref: "#",
       items: [
         {
-          index: "01",
-          title: "Индивидуальный график",
-          text: "для совмещения с&nbsp;учёбой.",
+          title: "Индивидуальный график для совмещения с&nbsp;учёбой",
           image: "/images/career/students/1.webp",
-          imageAlt: "Студенты с учебными материалами возле учебного корпуса",
+          imageAlt: "Студентка составляет учебный план за ноутбуком",
         },
         {
-          index: "02",
-          title: "Участие в&nbsp;семинарах",
-          text: "в&nbsp;конференциях, выставках.",
+          title: "Участие в&nbsp;семинарах в&nbsp;конференциях, выставках",
           image: "/images/career/students/2.webp",
-          imageAlt: "Участники семинара слушают выступление спикера",
+          imageAlt: "Конференц-зал с мультимедийным оборудованием",
         },
         {
-          index: "03",
-          title: "Участие<br>в&nbsp;R&amp;D проектах",
-          text: "(НИОКР, ОКР, патенты).",
+          title: "Участие в&nbsp;R&amp;D проектах (НИОКР, ОКР, патенты)",
           image: "/images/career/students/3.webp",
-          imageAlt:
-            "Студенты и наставник работают с лабораторным оборудованием",
-          mediaFirst: true,
+          imageAlt: "Работа с лабораторным оборудованием",
         },
         {
-          index: "04",
-          title: "Стажировки<br>в&nbsp;Центре компетенций",
-          text: "(промышленные контроллеры АБАК, АСУТП).",
+          title:
+            "Стажировки в&nbsp;Центре компетенций (промышленные контроллеры АБАК, АСУТП)",
           image: "/images/career/students/4.webp",
-          imageAlt: "Молодые специалисты обсуждают проект в офисе",
-          mediaFirst: true,
+          imageAlt: "Учебный класс Центра компетенций НИЦ «Инкомсистем»",
         },
       ],
     },
     companyFeatures: {
-      caption: "Почему мы",
+      className: "company-features--career",
       title: "8 причин выбрать нашу компанию",
       titleClassName: "company-features__title--mobile-large",
       showEmblem: false,
@@ -352,7 +311,8 @@ export default {
           text: "Мы предлагаем привлекательную заработную плату, официальное трудоустройство и&nbsp;гибкую систему мотивации, где ваш доход напрямую зависит от&nbsp;ваших результатов.",
         },
         {
-          title: "Реальные возможности для карьерного роста",
+          title:
+            "Реальные<br class=\"company-feature-card__desktop-break\">возможности для<br class=\"company-feature-card__desktop-break\">карьерного роста",
           text: "Мы инвестируем в&nbsp;ваше обучение и&nbsp;развитие, предоставляя возможности повышения квалификации, карьерного продвижения и&nbsp;участия в&nbsp;интересных проектах.",
           className: "company-features__item--theme-dark",
         },
@@ -366,12 +326,14 @@ export default {
           className: "company-features__item--theme-soft",
         },
         {
-          title: "Сильная корпоративная культура и&nbsp;сплоченный коллектив",
+          title:
+            "Сильная<br class=\"company-feature-card__desktop-break\">корпоративная<br class=\"company-feature-card__desktop-break\">культура и&nbsp;сплоченный<br class=\"company-feature-card__desktop-break\">коллектив",
           text: "У нас создана благоприятная атмосфера, где ценятся взаимопомощь, командная работа и&nbsp;внерабочие мероприятия, объединяющие сотрудников.",
           className: "company-features__item--theme-soft",
         },
         {
-          title: "Активная поддержка здорового образа жизни",
+          title:
+            "Активная поддержка<br class=\"company-feature-card__desktop-break\">здорового образа<br class=\"company-feature-card__desktop-break\">жизни",
           text: "Мы поддерживаем спорт и&nbsp;ЗОЖ, предоставляя возможности для занятий различными видами спорта и&nbsp;участия в&nbsp;корпоративных соревнованиях.",
         },
         {
@@ -418,13 +380,12 @@ export default {
       items: careerVacanciesItems,
     },
     careerFaq: {
-      title: "Часто<br>задаваемые<br>вопросы",
-      counterText: "6 вопросов",
+      title: "Часто задаваемые вопросы",
       ariaLabel: "Часто задаваемые вопросы о работе в НИЦ «Инкомсистем»",
       items: careerFaqItems,
     },
     pressCenter: {
-      title: "Новости",
+      title: "Пресс-центр",
       buttonText: "В пресс-центр",
       buttonHref: "#",
       tabs: [

@@ -251,7 +251,10 @@
     text-transform: uppercase;
     font-family: var(--imb-plex-sans);
     color: var(--text-color);
-    transition: padding 0.2s;
+    transition:
+      background-color 0.2s,
+      color 0.2s,
+      padding 0.2s;
 
     svg {
       width: 2.4rem;
@@ -268,6 +271,20 @@
 
     .page-header--compact & {
       padding-block: 2.16rem;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background: #fff;
+      color: var(--primary-color);
+    }
+
+    .page-header--compact &:hover,
+    .page-header--compact &:focus-visible,
+    .page-header--compact-theme &:hover,
+    .page-header--compact-theme &:focus-visible {
+      background: #005bb5;
+      color: #fff;
     }
   }
 
@@ -866,16 +883,16 @@
 
     &:hover,
     &:focus-visible {
-      background: var(--primary-color);
-      color: #fff;
+      background: #fff;
+      color: var(--primary-color);
     }
 
     .page-header--compact &:hover,
     .page-header--compact &:focus-visible,
     .page-header--compact-theme &:hover,
     .page-header--compact-theme &:focus-visible {
-      background: #fff;
-      color: var(--primary-color);
+      background: #005bb5;
+      color: #fff;
     }
   }
 }

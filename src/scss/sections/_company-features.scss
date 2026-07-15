@@ -36,7 +36,7 @@
     @include mq.down(sm) {
       grid-column: auto;
       gap: 1rem;
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -53,7 +53,6 @@
   }
 
   .company-features__title {
-    // text-wrap: balance;
     font-family: var(--inter-tight);
     font-size: 6rem;
     font-style: normal;
@@ -64,17 +63,12 @@
 
     @include mq.down(sm) {
       max-width: none;
-      font-size: 2rem;
+      font-size: 2.6rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
       letter-spacing: 0;
-
-      &--mobile-large {
-        font-size: 3rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 120%;
-        letter-spacing: 0;
-        text-wrap: balance;
-      }
+      text-wrap: balance;
     }
   }
 
@@ -194,8 +188,9 @@
 
     .company-features__title {
       @include mq.down(sm) {
-        width: calc(100vw - var(--container-padding));
+        font-size: 2rem;
         max-width: none;
+        text-wrap: pretty;
       }
     }
 
@@ -218,7 +213,20 @@
         max-width: 23.8rem;
       }
     }
+  }
 
+  .company-features--career {
+    .company-feature-card__main::before {
+      content: none;
+    }
+
+    .company-feature-card__title {
+      max-width: 34.5rem;
+
+      @include mq.down(sm) {
+        max-width: 20.8rem;
+      }
+    }
   }
 
   .company-feature-card {
@@ -276,6 +284,12 @@
     }
   }
 
+  .company-feature-card__desktop-break {
+    @include mq.down(sm) {
+      display: none;
+    }
+  }
+
   .company-feature-card__description {
     max-width: 32.5rem;
     margin-top: auto;
@@ -305,7 +319,7 @@
 
     @include mq.down(sm) {
       grid-column: auto;
-      margin-top: 8rem;
+      margin-top: 4rem;
       width: 10rem;
       align-self: center;
     }

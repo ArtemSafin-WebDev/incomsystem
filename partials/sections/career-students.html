@@ -7,25 +7,11 @@
                 {{#each careerStudents.items}}
                 <li class="career-students__item swiper-slide">
                     <article class="career-students-card">
-                        {{#if mediaFirst}}
                         <div class="career-students-card__media">
                             <img class="career-students-card__image" src="{{image}}" alt="{{imageAlt}}" loading="lazy">
                         </div>
-                        {{/if}}
-
-                        <div class="career-students-card__content">
-                            <div class="career-students-card__heading">
-                                <p class="career-students-card__index">{{index}}</p>
-                                <h3 class="career-students-card__title">{{{title}}}</h3>
-                            </div>
-                            <p class="career-students-card__description">{{{text}}}</p>
-                        </div>
-
-                        {{#unless mediaFirst}}
-                        <div class="career-students-card__media">
-                            <img class="career-students-card__image" src="{{image}}" alt="{{imageAlt}}" loading="lazy">
-                        </div>
-                        {{/unless}}
+                        <span class="career-students-card__overlay" aria-hidden="true"></span>
+                        <h3 class="career-students-card__title">{{{title}}}</h3>
                     </article>
                 </li>
                 {{/each}}
