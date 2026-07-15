@@ -375,7 +375,6 @@ export default {
     careerVacancies: {
       title: "Вакансии",
       ariaLabel: "Открытые вакансии НИЦ «Инкомсистем»",
-      counterText: "4 из 32 вакансий",
       buttonText: "Загрузить еще",
       items: careerVacanciesItems,
     },
