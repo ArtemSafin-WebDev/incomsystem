@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import Component from "../Component";
 
 class CareerGallery extends Component {
@@ -51,10 +51,14 @@ class CareerGallery extends Component {
 
     this.unmountSlider();
     this.slider = new Swiper(this.sliderElement, {
-      modules: [Navigation],
+      modules: [Autoplay, Navigation],
       slidesPerView: 1,
       speed: 600,
       loop: this.slideCount > 1,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
       navigation: {
         prevEl: this.prevButton,
         nextEl: this.nextButton,
