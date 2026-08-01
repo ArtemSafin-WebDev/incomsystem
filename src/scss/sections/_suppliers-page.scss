@@ -1,0 +1,339 @@
+@use "tools/media" as mq;
+@use "tools/typography" as type;
+
+@layer sections {
+  .suppliers-page {
+    background-color: #fff;
+    color: #223;
+  }
+
+  .suppliers-page__intro {
+    padding-top: 16rem;
+
+    @include mq.down(sm) {
+      padding-top: 10.4rem;
+    }
+  }
+
+  .suppliers-page__intro .breadcrumbs {
+    @include mq.down(sm) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .suppliers-page__title {
+    margin-top: 3.2rem;
+    max-width: 164rem;
+    @include type.page-title;
+
+    @include mq.down(sm) {
+      margin-top: 2.4rem;
+    }
+  }
+
+  .suppliers-page__hero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 192 / 89;
+    margin-top: 12rem;
+    overflow: hidden;
+    background-color: #223;
+
+    @include mq.down(sm) {
+      aspect-ratio: 4 / 5;
+      margin-top: 4.8rem;
+    }
+  }
+
+  .suppliers-page__hero-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @include mq.down(sm) {
+      object-position: 63% center;
+    }
+  }
+
+  .suppliers-page__hero-shade {
+    position: absolute;
+    inset: 0;
+    background: rgb(34 34 51 / 50%);
+  }
+
+  .suppliers-page__hero-description {
+    position: absolute;
+    z-index: 1;
+    top: 4rem;
+    left: max(4rem, calc((100% - 192rem) / 2 + 4rem));
+    width: 91rem;
+    max-width: calc(100% - 8rem);
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.06rem;
+    color: #fff;
+
+    @include mq.down(sm) {
+      top: 2rem;
+      left: var(--container-padding);
+      width: calc(100% - (var(--container-padding) * 2));
+      max-width: none;
+      font-size: 1.6rem;
+      line-height: 1.3;
+      letter-spacing: -0.02rem;
+    }
+  }
+
+  .suppliers-page__section-title {
+    @include type.section-title;
+  }
+
+  .suppliers-documents {
+    padding-block: 4rem 6.5rem;
+    background-color: #f2f2fa;
+
+    @include mq.down(sm) {
+      padding-block: 4.8rem;
+    }
+  }
+
+  .suppliers-documents__list {
+    margin-top: 11rem;
+
+    @include mq.down(sm) {
+      margin-top: 4rem;
+    }
+  }
+
+  .suppliers-documents__link {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 3.2rem;
+    padding-block: 2.4rem;
+    border-bottom: 1px solid #ccc;
+    color: inherit;
+
+    @include mq.down(sm) {
+      align-items: center;
+      gap: 1.6rem;
+      padding-block: 2rem;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 0.4rem;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover .suppliers-page__action {
+        border-color: var(--primary-color);
+        background-color: var(--primary-color);
+        color: #fff;
+      }
+
+      &:hover .suppliers-page__action-type {
+        color: inherit;
+      }
+    }
+  }
+
+  .suppliers-documents__name {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--inter);
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.06rem;
+
+    @include mq.down(sm) {
+      font-size: 1.7rem;
+      line-height: 1.25;
+      letter-spacing: -0.02rem;
+    }
+  }
+
+  .suppliers-page__action {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    min-height: 6rem;
+    padding: 1.7rem 3rem;
+    border: 1px solid rgb(34 34 34 / 20%);
+    border-radius: 4rem;
+    font-family: var(--inter);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.14rem;
+    text-transform: uppercase;
+    color: #222;
+    transition:
+      background-color 0.2s,
+      border-color 0.2s,
+      color 0.2s;
+
+    @include mq.down(sm) {
+      min-height: 4.6rem;
+      gap: 1rem;
+      padding: 1.3rem 1.8rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.08rem;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: var(--primary-color);
+        background-color: var(--primary-color);
+        color: #fff;
+      }
+    }
+  }
+
+  .suppliers-page__action-type {
+    color: var(--primary-color);
+    transition: color 0.2s;
+
+    .suppliers-page__action:hover & {
+      @media (hover: hover) and (pointer: fine) {
+        color: inherit;
+      }
+    }
+  }
+
+  .suppliers-page__action-arrow {
+    flex: 0 0 auto;
+    fill: var(--primary-color);
+    transition: fill 0.2s;
+
+    .suppliers-page__action:hover & {
+      @media (hover: hover) and (pointer: fine) {
+        fill: currentcolor;
+      }
+    }
+  }
+
+  .suppliers-routes {
+    padding-block: 15rem;
+
+    @include mq.down(sm) {
+      padding-block: 6rem;
+    }
+  }
+
+  .suppliers-routes__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4rem;
+    margin-top: 12rem;
+
+    @include mq.down(sm) {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      margin-top: 4rem;
+    }
+  }
+
+  .suppliers-routes__item {
+    position: relative;
+    min-width: 0;
+  }
+
+  .suppliers-routes__item:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -2rem;
+    width: 1px;
+    background-color: #ccc;
+
+    @include mq.down(sm) {
+      top: -2rem;
+      right: 0;
+      bottom: auto;
+      left: 0;
+      width: 100%;
+      height: 1px;
+    }
+  }
+
+  .suppliers-route-card {
+    display: flex;
+    min-width: 0;
+    min-height: 53.7rem;
+    flex-direction: column;
+
+    @include mq.down(sm) {
+      min-height: auto;
+    }
+  }
+
+  .suppliers-route-card__preview {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 546.667 / 297;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: #223;
+  }
+
+  .suppliers-route-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+
+    @media (hover: hover) and (pointer: fine) {
+      .suppliers-route-card__preview:hover & {
+        transform: scale(1.025);
+      }
+    }
+  }
+
+  .suppliers-route-card__title {
+    margin-top: 4rem;
+    font-family: var(--inter);
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.066rem;
+
+    @include mq.down(sm) {
+      margin-top: 2rem;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      letter-spacing: -0.02rem;
+    }
+  }
+
+  .suppliers-route-card__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2.4rem;
+    margin-top: auto;
+
+    @include mq.down(sm) {
+      gap: 1.2rem;
+      padding-top: 2.4rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .suppliers-route-card__image {
+      transition: none;
+    }
+  }
+}

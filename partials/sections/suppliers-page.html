@@ -1,0 +1,76 @@
+<div class="suppliers-page js-suppliers-page">
+    <section class="suppliers-page__intro">
+        <div class="container">
+            {{> components/breadcrumbs suppliersPage.breadcrumbs }}
+
+            <h1 class="suppliers-page__title">{{{suppliersPage.title}}}</h1>
+        </div>
+
+        <div class="suppliers-page__hero">
+            <img class="suppliers-page__hero-image" src="{{suppliersPage.hero.image}}" alt="">
+            <div class="suppliers-page__hero-shade" aria-hidden="true"></div>
+            <p class="suppliers-page__hero-description">{{suppliersPage.hero.description}}</p>
+        </div>
+    </section>
+
+    <section class="suppliers-documents">
+        <div class="container">
+            <h2 class="suppliers-page__section-title">{{suppliersPage.documents.title}}</h2>
+
+            <ul class="suppliers-documents__list">
+                {{#each suppliersPage.documents.items}}
+                <li class="suppliers-documents__item">
+                    <a class="suppliers-documents__link" href="{{this.href}}"{{#if this.download}} download{{/if}}>
+                        <h3 class="suppliers-documents__name">{{this.title}}</h3>
+                        <span class="suppliers-page__action">
+                            <span>{{this.downloadText}}</span>
+                            <span class="suppliers-page__action-type">{{this.type}}</span>
+                        </span>
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+
+    <section class="suppliers-routes">
+        <div class="container">
+            <h2 class="suppliers-page__section-title">{{suppliersPage.routes.title}}</h2>
+
+            <ul class="suppliers-routes__list">
+                {{#each suppliersPage.routes.items}}
+                <li class="suppliers-routes__item">
+                    <article class="suppliers-route-card">
+                        <a class="suppliers-route-card__preview"
+                            href="{{this.image}}"
+                            data-fancybox="supplier-routes"
+                            data-caption="{{this.title}}"
+                            aria-label="{{this.viewText}}: {{this.title}}">
+                            <img class="suppliers-route-card__image" src="{{this.image}}" alt="{{this.alt}}" loading="lazy">
+                        </a>
+
+                        <h3 class="suppliers-route-card__title">{{this.title}}</h3>
+
+                        <div class="suppliers-route-card__actions">
+                            <button class="suppliers-page__action"
+                                type="button"
+                                data-fancybox-delegate="supplier-routes"
+                                data-fancybox-index="{{@index}}">
+                                <span>{{this.viewText}}</span>
+                                <svg class="suppliers-page__action-arrow" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="#arrows/search-link-arrow"></use>
+                                </svg>
+                            </button>
+
+                            <a class="suppliers-page__action" href="{{this.image}}" download>
+                                <span>{{this.downloadText}}</span>
+                                <span class="suppliers-page__action-type">{{this.type}}</span>
+                            </a>
+                        </div>
+                    </article>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+</div>

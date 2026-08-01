@@ -28,6 +28,7 @@ import SimpleSlider from "../classes/components/SimpleSlider";
 import ScrollReveal from "../classes/components/ScrollReveal";
 import TrainingCenterCourses from "../classes/components/TrainingCenterCourses";
 import UniversityCooperation from "../classes/components/UniversityCooperation";
+import SuppliersRoutes from "../classes/components/SuppliersRoutes";
 
 const SKIP_SCROLL_REVEAL_SELECTOR =
   ".js-about-company, [data-scroll-reveal-ignore]";
@@ -132,6 +133,8 @@ export default function sections() {
   );
   const draggableMarquees =
     document.querySelectorAll<HTMLElement>(".js-draggable-marquee");
+  const suppliersPages =
+    document.querySelectorAll<HTMLElement>(".js-suppliers-page");
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
@@ -219,6 +222,10 @@ export default function sections() {
 
   draggableMarquees.forEach((marquee) => {
     new DraggableMarquee(marquee);
+  });
+
+  suppliersPages.forEach((page) => {
+    new SuppliersRoutes(page);
   });
 
   document
