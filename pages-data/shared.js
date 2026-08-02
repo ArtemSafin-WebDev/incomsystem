@@ -9,7 +9,7 @@ export const mobileMenuLinks = [
       },
       {
         label: "Автоматизированные системы управления",
-        href: "/automated-control-systems.html",
+        href: "/product-category.html",
       },
       {
         label: "Система измерений и блочное оборудование",

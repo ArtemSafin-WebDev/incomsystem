@@ -19,7 +19,7 @@ class OtherArticles extends Component {
     this.nextButton =
       this.element.querySelector<HTMLButtonElement>(".js-slider-next");
 
-    if (!this.sliderElement || !this.prevButton || !this.nextButton) {
+    if (!this.sliderElement) {
       return;
     }
 
@@ -32,20 +32,25 @@ class OtherArticles extends Component {
   }
 
   private mountSlider() {
-    if (!this.sliderElement || !this.prevButton || !this.nextButton) {
+    if (!this.sliderElement) {
       return;
     }
 
     this.unmountSlider();
 
+    const navigation =
+      this.prevButton && this.nextButton
+        ? {
+            prevEl: this.prevButton,
+            nextEl: this.nextButton,
+          }
+        : false;
+
     this.slider = new Swiper(this.sliderElement, {
       modules: [Navigation],
       slidesPerView: "auto",
       speed: 600,
-      navigation: {
-        prevEl: this.prevButton,
-        nextEl: this.nextButton,
-      },
+      navigation,
     });
   }
 

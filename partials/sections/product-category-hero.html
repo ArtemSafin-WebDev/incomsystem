@@ -1,0 +1,15 @@
+<section class="product-category-hero" aria-labelledby="product-category-title">
+    <div class="container">
+        {{> components/breadcrumbs productCategory.breadcrumbs }}
+
+        <h1 class="product-category-hero__title" id="product-category-title">{{productCategory.title}}</h1>
+
+        <ul class="product-category-hero__list">
+            {{#each productCategory.services}}
+            <li class="product-category-hero__item">
+                {{> components/cards/product-category-card item=this detailsText=../productCategory.detailsText }}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

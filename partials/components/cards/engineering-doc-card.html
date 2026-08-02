@@ -4,12 +4,18 @@
             <h3 class="engineering-doc-card__title">{{doc.title}}</h3>
         </div>
 
+        {{#if doc.downloadText}}
         <span class="engineering-doc-card__download">{{doc.downloadText}}</span>
+        {{/if}}
     </div>
 
-    <span class="engineering-doc-card__icon" aria-hidden="true">
+    <span class="engineering-doc-card__icon{{#if doc.iconImage}} engineering-doc-card__icon--image{{/if}}" aria-hidden="true">
+        {{#if doc.iconImage}}
+        <img src="{{doc.iconImage}}" alt="">
+        {{else}}
         <svg width="60" height="60">
             <use xlink:href="#pdf"></use>
         </svg>
+        {{/if}}
     </span>
 </a>

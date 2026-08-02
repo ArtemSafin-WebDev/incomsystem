@@ -9,7 +9,7 @@ const products = [
   {
     title: "Автоматизированные системы управления",
     image: "/images/production-and-services-page/2.webp",
-    href: "/automated-control-systems.html",
+    href: "/product-category.html",
   },
   {
     title: "Системы измерений и блочное оборудование",

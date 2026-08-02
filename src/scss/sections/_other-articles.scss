@@ -90,4 +90,13 @@
       margin-top: 4rem;
     }
   }
+
+  .other-articles__button {
+    width: min(44.6rem, 100%);
+    margin: 13rem auto 0;
+
+    @include mq.down(sm) {
+      margin-top: 4rem;
+    }
+  }
 }

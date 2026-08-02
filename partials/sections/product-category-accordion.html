@@ -1,0 +1,30 @@
+<section class="product-category-accordion" aria-label="{{accordion.ariaLabel}}">
+    <div class="container">
+        <ul class="product-category-accordion__list">
+            {{#each accordion.items}}
+            <li class="product-category-accordion__item js-accordion">
+                <button class="product-category-accordion__button js-accordion-btn"
+                    type="button"
+                    id="{{this.id}}-button"
+                    aria-expanded="false"
+                    aria-controls="{{this.id}}-panel">
+                    <span>{{this.title}}</span>
+                    <svg class="product-category-accordion__icon" width="15" height="9" aria-hidden="true">
+                        <use xlink:href="#arrows/accordion-chevron"></use>
+                    </svg>
+                </button>
+
+                <div class="product-category-accordion__dropdown js-accordion-dropdown"
+                    id="{{this.id}}-panel"
+                    role="region"
+                    aria-labelledby="{{this.id}}-button"
+                    aria-hidden="true">
+                    <div class="product-category-accordion__dropdown-inner">
+                        <div class="product-category-accordion__content">{{{this.content}}}</div>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</section>

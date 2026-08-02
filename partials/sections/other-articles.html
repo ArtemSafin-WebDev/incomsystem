@@ -12,6 +12,10 @@
             </ul>
         </div>
 
+        {{#if otherArticles.buttonText}}
+        <a class="btn btn--dark-text other-articles__button" href="{{otherArticles.buttonHref}}">{{otherArticles.buttonText}}</a>
+        {{else}}
         {{> components/slider-navigation className="other-articles__navigation" ariaLabel=otherArticles.ariaLabel prevLabel=otherArticles.prevLabel nextLabel=otherArticles.nextLabel }}
+        {{/if}}
     </div>
 </section>

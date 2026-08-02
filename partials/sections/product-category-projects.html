@@ -1,0 +1,15 @@
+<section class="product-category-projects" aria-labelledby="product-category-projects-title">
+    <div class="container">
+        <h2 class="product-category-projects__title" id="product-category-projects-title">{{projects.title}}</h2>
+
+        <ul class="product-category-projects__list">
+            {{#each projects.items}}
+            <li class="product-category-projects__item">
+                {{> components/cards/industry-project-card project=this detailsText=../projects.detailsText }}
+            </li>
+            {{/each}}
+        </ul>
+
+        <a class="btn btn--dark-text product-category-projects__button" href="{{projects.buttonHref}}">{{projects.buttonText}}</a>
+    </div>
+</section>

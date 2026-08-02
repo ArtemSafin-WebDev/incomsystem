@@ -1,0 +1,23 @@
+<section class="product-category-cycle" aria-labelledby="product-category-cycle-title">
+    <div class="container">
+        <h2 class="product-category-cycle__title" id="product-category-cycle-title">{{cycle.title}}</h2>
+    </div>
+
+    <div class="product-category-cycle__marquee js-draggable-marquee" aria-label="{{cycle.ariaLabel}}">
+        <div class="product-category-cycle__track js-draggable-marquee-track">
+            {{#each cycle.groups}}
+            <ol class="product-category-cycle__group"{{#if @last}} aria-hidden="true"{{/if}}>
+                {{#each this.items}}
+                <li class="product-category-cycle__item">
+                    <article class="product-category-cycle__card">
+                        <h3 class="product-category-cycle__card-title">{{this.title}}</h3>
+                        <img class="product-category-cycle__card-image" src="{{this.image}}" alt="" draggable="false">
+                    </article>
+                    <span class="product-category-cycle__point" aria-hidden="true"></span>
+                </li>
+                {{/each}}
+            </ol>
+            {{/each}}
+        </div>
+    </div>
+</section>
