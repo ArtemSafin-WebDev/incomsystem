@@ -29,7 +29,7 @@ const products = [
   {
     title: "Метрология и сервис",
     image: "/images/production-and-services-page/6.webp",
-    href: "#",
+    href: "/metrology-and-service.html",
   },
 ];
 

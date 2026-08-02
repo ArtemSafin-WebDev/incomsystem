@@ -29,6 +29,42 @@
     }
   }
 
+  .product-category-hero--grouped .breadcrumbs {
+    margin-bottom: 2rem;
+
+    @include mq.down(sm) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .product-category-hero--grouped .product-category-hero__title {
+    margin-bottom: 12rem;
+
+    @include mq.down(sm) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  .product-category-hero__groups {
+    display: flex;
+    flex-direction: column;
+    gap: 12rem;
+
+    @include mq.down(sm) {
+      gap: 8rem;
+    }
+  }
+
+  .product-category-hero__group-title {
+    margin-bottom: 5rem;
+    color: var(--text-color);
+    @include type.section-title;
+
+    @include mq.down(sm) {
+      margin-bottom: 3rem;
+    }
+  }
+
   .product-category-hero__list {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));

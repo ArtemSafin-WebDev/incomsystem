@@ -13,7 +13,7 @@
     }
   }
 
-  .product-category-card__image-link {
+  .product-category-card__image-wrapper {
     display: block;
     height: 29.7rem;
     border-radius: 0.5rem;
@@ -102,18 +102,24 @@
     transition: color 0.2s;
   }
 
+  .product-category-card:focus-visible {
+    border-radius: 0.5rem;
+    outline: 0.3rem solid var(--primary-color);
+    outline-offset: 0.3rem;
+  }
+
   @media (hover: hover) and (pointer: fine) {
-    .product-category-card__image-link:hover .product-category-card__image {
+    .product-category-card:hover .product-category-card__image {
       transform: scale(1.04);
     }
 
-    .product-category-card__button:hover {
+    .product-category-card:hover .product-category-card__button {
       border-color: var(--primary-color);
       background-color: var(--primary-color);
       color: #fff;
     }
 
-    .product-category-card__button:hover .product-category-card__button-arrow {
+    .product-category-card:hover .product-category-card__button-arrow {
       color: #fff;
     }
   }

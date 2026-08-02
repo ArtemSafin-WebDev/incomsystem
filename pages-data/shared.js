@@ -21,7 +21,7 @@ export const mobileMenuLinks = [
       },
       {
         label: "Метрология и сервис",
-        href: "/production-and-services.html",
+        href: "/metrology-and-service.html",
       },
       {
         label: "Сульфинертное нанопокрытие Incomsteel",

@@ -1,0 +1,23 @@
+<section class="product-category-hero product-category-hero--grouped" aria-labelledby="metrology-and-service-title">
+    <div class="container">
+        {{> components/breadcrumbs productCategory.breadcrumbs }}
+
+        <h1 class="product-category-hero__title" id="metrology-and-service-title">{{productCategory.title}}</h1>
+
+        <div class="product-category-hero__groups">
+            {{#each productCategory.serviceGroups}}
+            <section class="product-category-hero__group" aria-labelledby="{{this.id}}">
+                <h2 class="product-category-hero__group-title" id="{{this.id}}">{{this.title}}</h2>
+
+                <ul class="product-category-hero__list">
+                    {{#each this.items}}
+                    <li class="product-category-hero__item">
+                        {{> components/cards/product-category-card item=this detailsText=../../productCategory.detailsText }}
+                    </li>
+                    {{/each}}
+                </ul>
+            </section>
+            {{/each}}
+        </div>
+    </div>
+</section>
