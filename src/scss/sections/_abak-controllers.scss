@@ -1,0 +1,121 @@
+@use "tools/media" as mq;
+
+@layer sections {
+  .abak-controllers-hero {
+    --abak-hero-intro-max-height: 120rem;
+
+    padding-top: 16rem;
+    background-color: #fff;
+
+    @include mq.up(sm) {
+      display: flex;
+      min-height: min(
+        100svh,
+        calc(var(--abak-hero-intro-max-height) + 20.6rem)
+      );
+      flex-direction: column;
+    }
+
+    @include mq.down(sm) {
+      padding-top: 17rem;
+    }
+  }
+
+  .abak-controllers-hero__breadcrumbs {
+    padding-bottom: 2.6rem;
+
+    @include mq.down(sm) {
+      display: none;
+    }
+  }
+
+  .abak-controllers-hero__intro {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    background-color: #222233;
+
+    @include mq.up(sm) {
+      flex: 1 0 auto;
+      max-height: var(--abak-hero-intro-max-height);
+    }
+
+    @include mq.down(sm) {
+      flex-direction: column;
+      overflow: visible;
+      background-color: #fff;
+    }
+  }
+
+  .abak-controllers-hero__media {
+    position: relative;
+    display: grid;
+    flex: 1 1 auto;
+    min-width: 0;
+
+    @include mq.down(sm) {
+      display: contents;
+    }
+  }
+
+  .abak-controllers-hero__title {
+    grid-area: 1 / 1;
+    align-self: start;
+    margin: 4.7rem 0 0 7.6rem;
+    z-index: 3;
+    color: #fff;
+    font-family: var(--inter-tight);
+    font-size: 12rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.48rem;
+
+    @include mq.down(sm) {
+      position: relative;
+      order: 1;
+      width: 22rem;
+      margin: 0 1.6rem 2.6rem;
+      color: var(--text-color);
+      font-size: 3rem;
+      line-height: 1.14;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  .abak-controllers-hero__picture {
+    position: relative;
+    z-index: 1;
+    display: block;
+    grid-area: 1 / 1;
+    width: 100%;
+    aspect-ratio: 1668 / 765;
+
+    @include mq.up(sm) {
+      height: 100%;
+      aspect-ratio: auto;
+    }
+
+    @include mq.down(sm) {
+      position: relative;
+      order: 3;
+      height: 40rem;
+      aspect-ratio: auto;
+    }
+  }
+
+  .abak-controllers-hero__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include mq.down(sm) {
+    .abak-controllers-body .page-header__mobile-btn--phone {
+      display: none;
+    }
+  }
+}

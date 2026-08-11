@@ -1,0 +1,67 @@
+<section class="catalog-menu__panel catalog-menu__panel--level-{{panel.level}}{{#if panel.mobileUppercase}} catalog-menu__panel--mobile-uppercase{{/if}} js-catalog-menu-panel"
+  id="catalog-panel-{{panel.id}}" data-panel-id="{{panel.id}}" data-parent-panel="{{panel.parentId}}"
+  data-level="{{panel.level}}" aria-hidden="{{#unless panel.isRoot}}true{{else}}false{{/unless}}"{{#unless panel.isRoot}} inert{{/unless}}>
+  <header class="catalog-menu__panel-header">
+    <div class="catalog-menu__panel-heading">
+      {{#unless panel.isRoot}}
+      <button class="catalog-menu__back js-catalog-menu-back" type="button" aria-label="{{menu.backAriaLabel}}">
+        <svg width="20" height="20" aria-hidden="true">
+          <use xlink:href="#catalog-back"></use>
+        </svg>
+      </button>
+      {{/unless}}
+      <h2 class="catalog-menu__panel-title">{{panel.title}}</h2>
+    </div>
+
+    <button class="catalog-menu__close js-catalog-menu-close" type="button" aria-label="{{menu.closeAriaLabel}}">
+      <svg width="12" height="12" aria-hidden="true">
+        <use xlink:href="#catalog-close"></use>
+      </svg>
+    </button>
+  </header>
+
+  <ul class="catalog-menu__list">
+    {{#each panel.items}}
+    <li class="catalog-menu__item">
+      {{#if this.targetPanel}}
+      <button class="catalog-menu__link js-catalog-menu-target" type="button"
+        data-target-panel="{{this.targetPanel}}" aria-controls="catalog-panel-{{this.targetPanel}}">
+        <span class="catalog-menu__link-content">
+          <span class="catalog-menu__link-label">{{this.label}}</span>
+          {{#if this.image}}
+          <img class="catalog-menu__product-image" src="{{this.image}}" alt="{{this.imageAlt}}">
+          {{/if}}
+        </span>
+        <span class="catalog-menu__arrow" aria-hidden="true">
+          <svg class="catalog-menu__arrow-desktop" width="7" height="12">
+            <use xlink:href="#catalog-chevron"></use>
+          </svg>
+          <svg class="catalog-menu__arrow-mobile" width="24" height="24">
+            <use xlink:href="#catalog-chevron-mobile"></use>
+          </svg>
+        </span>
+      </button>
+      {{else}}
+      <a class="catalog-menu__link js-catalog-menu-leaf" href="{{this.href}}">
+        <span class="catalog-menu__link-content">
+          <span class="catalog-menu__link-label">{{this.label}}</span>
+          {{#if this.image}}
+          <img class="catalog-menu__product-image" src="{{this.image}}" alt="{{this.imageAlt}}">
+          {{/if}}
+        </span>
+        {{#if this.hasArrow}}
+        <span class="catalog-menu__arrow" aria-hidden="true">
+          <svg class="catalog-menu__arrow-desktop" width="7" height="12">
+            <use xlink:href="#catalog-chevron"></use>
+          </svg>
+          <svg class="catalog-menu__arrow-mobile" width="24" height="24">
+            <use xlink:href="#catalog-chevron-mobile"></use>
+          </svg>
+        </span>
+        {{/if}}
+      </a>
+      {{/if}}
+    </li>
+    {{/each}}
+  </ul>
+</section>

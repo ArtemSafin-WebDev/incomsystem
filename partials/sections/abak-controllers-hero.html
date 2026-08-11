@@ -1,0 +1,19 @@
+<section class="abak-controllers-hero">
+  <div class="container abak-controllers-hero__breadcrumbs">
+    {{> components/breadcrumbs abakControllers.breadcrumbs }}
+  </div>
+
+  <div class="abak-controllers-hero__intro">
+    {{> components/catalog-menu catalogMenu=abakControllers.catalogMenu }}
+
+    <div class="abak-controllers-hero__media">
+      <h1 class="abak-controllers-hero__title">{{abakControllers.title}}</h1>
+
+      <picture class="abak-controllers-hero__picture">
+        <source media="(max-width: 576px)" srcset="{{abakControllers.heroImageMobile}}">
+        <img class="abak-controllers-hero__image" src="{{abakControllers.heroImage}}"
+          alt="{{abakControllers.heroImageAlt}}">
+      </picture>
+    </div>
+  </div>
+</section>

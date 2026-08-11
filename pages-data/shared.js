@@ -5,7 +5,7 @@ export const mobileMenuLinks = [
     items: [
       {
         label: "Контроллеры АБАК",
-        href: "/abak-plc.html",
+        href: "/abak-controllers.html",
       },
       {
         label: "Автоматизированные системы управления",

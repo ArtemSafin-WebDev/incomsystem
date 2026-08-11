@@ -4,7 +4,7 @@ const products = [
   {
     title: "Контроллеры АБАК",
     image: "/images/production-and-services-page/1.webp",
-    href: "/abak-plc.html",
+    href: "/abak-controllers.html",
   },
   {
     title: "Автоматизированные системы управления",

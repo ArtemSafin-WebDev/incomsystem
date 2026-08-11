@@ -3,6 +3,7 @@ import ArticleGallery from "../classes/components/ArticleGallery";
 import Awards from "../classes/components/Awards";
 import CareerGallery from "../classes/components/CareerGallery";
 import CareerStudents from "../classes/components/CareerStudents";
+import CatalogMenu from "../classes/components/CatalogMenu";
 import CompanyHistory from "../classes/components/CompanyHistory";
 import CompanyDepartments from "../classes/components/CompanyDepartments";
 import CompanyLeadership from "../classes/components/CompanyLeadership";
@@ -135,6 +136,8 @@ export default function sections() {
     document.querySelectorAll<HTMLElement>(".js-draggable-marquee");
   const suppliersPages =
     document.querySelectorAll<HTMLElement>(".js-suppliers-page");
+  const catalogMenus =
+    document.querySelectorAll<HTMLElement>(".js-catalog-menu");
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
@@ -226,6 +229,10 @@ export default function sections() {
 
   suppliersPages.forEach((page) => {
     new SuppliersRoutes(page);
+  });
+
+  catalogMenus.forEach((menu) => {
+    new CatalogMenu(menu);
   });
 
   document

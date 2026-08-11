@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {{> layout/meta }}
+</head>
+
+<body class="abak-controllers-body">
+  {{> layout/header }}
+  {{> components/mobile-menu mobileMenu=mobileMenu }}
+
+  <main class="page-main">
+    {{> sections/abak-controllers-hero abakControllers=abakControllers }}
+  </main>
+
+  {{> layout/footer }}
+
+  <script type="module" src="/src/js/main.ts"></script>
+</body>
+
+</html>
