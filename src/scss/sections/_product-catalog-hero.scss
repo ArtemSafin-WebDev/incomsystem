@@ -1,8 +1,8 @@
 @use "tools/media" as mq;
 
 @layer sections {
-  .abak-controllers-hero {
-    --abak-hero-intro-max-height: 120rem;
+  .product-catalog-hero {
+    --product-catalog-hero-intro-max-height: 120rem;
 
     padding-top: 16rem;
     background-color: #fff;
@@ -11,7 +11,7 @@
       display: flex;
       min-height: min(
         100svh,
-        calc(var(--abak-hero-intro-max-height) + 20.6rem)
+        calc(var(--product-catalog-hero-intro-max-height) + 20.6rem)
       );
       flex-direction: column;
     }
@@ -21,7 +21,7 @@
     }
   }
 
-  .abak-controllers-hero__breadcrumbs {
+  .product-catalog-hero__breadcrumbs {
     padding-bottom: 2.6rem;
 
     @include mq.down(sm) {
@@ -29,7 +29,7 @@
     }
   }
 
-  .abak-controllers-hero__intro {
+  .product-catalog-hero__intro {
     position: relative;
     display: flex;
     overflow: hidden;
@@ -37,7 +37,7 @@
 
     @include mq.up(sm) {
       flex: 1 0 auto;
-      max-height: var(--abak-hero-intro-max-height);
+      max-height: var(--product-catalog-hero-intro-max-height);
     }
 
     @include mq.down(sm) {
@@ -47,7 +47,7 @@
     }
   }
 
-  .abak-controllers-hero__media {
+  .product-catalog-hero__media {
     position: relative;
     display: grid;
     flex: 1 1 auto;
@@ -58,7 +58,7 @@
     }
   }
 
-  .abak-controllers-hero__title {
+  .product-catalog-hero__title {
     grid-area: 1 / 1;
     align-self: start;
     margin: 4.7rem 0 0 7.6rem;
@@ -83,7 +83,7 @@
     }
   }
 
-  .abak-controllers-hero__picture {
+  .product-catalog-hero__picture {
     position: relative;
     z-index: 1;
     display: block;
@@ -103,7 +103,7 @@
     }
   }
 
-  .abak-controllers-hero__image {
+  .product-catalog-hero__image {
     position: absolute;
     left: 0;
     top: 0;
@@ -113,7 +113,7 @@
   }
 
   @include mq.down(sm) {
-    .abak-controllers-body .page-header__mobile-btn--phone {
+    .product-catalog-page-body .page-header__mobile-btn--phone {
       display: none;
     }
   }

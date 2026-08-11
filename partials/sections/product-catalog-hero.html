@@ -1,0 +1,19 @@
+<section class="product-catalog-hero">
+  <div class="container product-catalog-hero__breadcrumbs">
+    {{> components/breadcrumbs productCatalogHero.breadcrumbs }}
+  </div>
+
+  <div class="product-catalog-hero__intro">
+    {{> components/catalog-menu catalogMenu=productCatalogHero.catalogMenu }}
+
+    <div class="product-catalog-hero__media">
+      <h1 class="product-catalog-hero__title">{{productCatalogHero.title}}</h1>
+
+      <picture class="product-catalog-hero__picture">
+        <source media="(max-width: 576px)" srcset="{{productCatalogHero.imageMobile}}">
+        <img class="product-catalog-hero__image" src="{{productCatalogHero.image}}"
+          alt="{{productCatalogHero.imageAlt}}">
+      </picture>
+    </div>
+  </div>
+</section>

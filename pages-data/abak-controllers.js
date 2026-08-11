@@ -1,4 +1,7 @@
 import { footer, mobileMenu } from "./shared.js";
+import productCategoryPages from "./product-category.js";
+
+const productCategoryPage = productCategoryPages["/product-category.html"];
 
 const productImage =
   "/images/abak-controllers/catalog-menu/k2-fm-00-08-00.webp";
@@ -187,15 +190,16 @@ const catalogPanels = [
 
 export default {
   "/abak-controllers.html": {
+    ...productCategoryPage,
     title: "Контроллеры АБАК",
     headerCompactTheme: true,
     mobileMenu,
     footer,
-    abakControllers: {
+    productCatalogHero: {
       title: "Контроллеры АБАК",
-      heroImage: "/images/abak-controllers/hero/desktop.webp",
-      heroImageMobile: "/images/abak-controllers/hero/mobile.webp",
-      heroImageAlt: "Печатная плата электронного оборудования",
+      image: "/images/abak-controllers/hero/desktop.webp",
+      imageMobile: "/images/abak-controllers/hero/mobile.webp",
+      imageAlt: "Печатная плата электронного оборудования",
       breadcrumbs: {
         ariaLabel: "Хлебные крошки",
         items: [
@@ -214,7 +218,7 @@ export default {
       },
       catalogMenu: {
         rootPanelId: "catalog-root",
-        dialogId: "abak-catalog-dialog",
+        dialogId: "product-catalog-dialog",
         triggerLabel: "Каталог",
         dialogAriaLabel: "Каталог продукции АБАК",
         closeAriaLabel: "Закрыть каталог",
@@ -224,6 +228,24 @@ export default {
         level3Panels: catalogPanels.filter((panel) => panel.level === 3),
         level4Panels: catalogPanels.filter((panel) => panel.level === 4),
       },
+    },
+    productIntroGallery: {
+      titleId: "product-intro-gallery-title",
+      title:
+        "Направление автоматизированных систем управления (АСУ) является одним из первых направлений деятельности НИЦ «ИНКОМСИСТЕМ» с момента создания в 1991 г.",
+      navigationAriaLabel: "Навигация по фотографиям оборудования АБАК",
+      previousSlideLabel: "Показать предыдущую фотографию",
+      nextSlideLabel: "Показать следующую фотографию",
+      slides: [
+        {
+          image: "/images/abak-controllers/automated-systems/1.webp",
+          imageAlt: "Электронная плата контроллера АБАК",
+        },
+        {
+          image: "/images/abak-controllers/automated-systems/2.webp",
+          imageAlt: "Панель измерительно-вычислительного комплекса АБАК+",
+        },
+      ],
     },
   },
 };

@@ -5,12 +5,20 @@
   {{> layout/meta }}
 </head>
 
-<body class="abak-controllers-body">
+<body class="product-catalog-page-body">
   {{> layout/header }}
   {{> components/mobile-menu mobileMenu=mobileMenu }}
 
-  <main class="page-main">
-    {{> sections/abak-controllers-hero abakControllers=abakControllers }}
+  <main class="page-main product-category-page product-catalog-page">
+    {{> sections/product-catalog-hero productCatalogHero=productCatalogHero }}
+    {{> sections/product-intro-gallery productIntroGallery=productIntroGallery }}
+    {{> sections/home-projects-download homeProjectsDownload=homeProjectsDownload }}
+    {{> sections/product-category-accordion accordion=productCategory.accordion }}
+    {{> sections/product-category-cycle cycle=productCategory.cycle }}
+    {{> sections/product-category-projects projects=productCategory.projects }}
+    {{> sections/other-articles otherArticles=otherArticles }}
+    {{> sections/contact-us contactUs=contactUs }}
+    {{> sections/engineering-center engineeringCenter=engineeringCenter }}
   </main>
 
   {{> layout/footer }}

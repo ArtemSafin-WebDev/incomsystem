@@ -1,0 +1,30 @@
+<section class="product-intro-gallery js-simple-slider" aria-labelledby="{{productIntroGallery.titleId}}">
+  <div class="container">
+    <h2 class="product-intro-gallery__title" id="{{productIntroGallery.titleId}}">
+      {{productIntroGallery.title}}
+    </h2>
+
+    <div class="product-intro-gallery__gallery">
+      <div class="product-intro-gallery__slider swiper js-simple-slider-track">
+        <ul class="product-intro-gallery__list swiper-wrapper">
+          {{#each productIntroGallery.slides}}
+            <li class="product-intro-gallery__item swiper-slide">
+              <div class="product-intro-gallery__media">
+                <img class="product-intro-gallery__image" src="{{image}}" alt="{{imageAlt}}" width="3680"
+                  height="1800" loading="lazy" decoding="async">
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+
+      {{> components/slider-navigation
+        theme="light"
+        className="product-intro-gallery__navigation"
+        ariaLabel=productIntroGallery.navigationAriaLabel
+        prevLabel=productIntroGallery.previousSlideLabel
+        nextLabel=productIntroGallery.nextSlideLabel
+      }}
+    </div>
+  </div>
+</section>
