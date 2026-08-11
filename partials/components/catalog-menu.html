@@ -7,29 +7,31 @@
     </svg>
   </button>
 
-  <button class="catalog-menu__backdrop js-catalog-menu-close" type="button"
-    aria-label="{{catalogMenu.closeAriaLabel}}" tabindex="-1"></button>
+  <div class="catalog-menu__modal">
+    <button class="catalog-menu__backdrop js-catalog-menu-close" type="button"
+      aria-label="{{catalogMenu.closeAriaLabel}}" tabindex="-1"></button>
 
-  <div class="catalog-menu__surface" id="{{catalogMenu.dialogId}}" role="dialog"
-    aria-modal="true" aria-label="{{catalogMenu.dialogAriaLabel}}">
-    {{#each catalogMenu.level1Panels}}
-    {{> components/catalog-menu-panel panel=this menu=../catalogMenu }}
-    {{/each}}
-
-    <div class="catalog-menu__track catalog-menu__track--level-2 js-catalog-menu-track" data-level-track="2">
-      {{#each catalogMenu.level2Panels}}
+    <div class="catalog-menu__surface" id="{{catalogMenu.dialogId}}" role="dialog"
+      aria-modal="true" aria-label="{{catalogMenu.dialogAriaLabel}}">
+      {{#each catalogMenu.level1Panels}}
       {{> components/catalog-menu-panel panel=this menu=../catalogMenu }}
       {{/each}}
 
-      <div class="catalog-menu__track catalog-menu__track--level-3 js-catalog-menu-track" data-level-track="3">
-        {{#each catalogMenu.level3Panels}}
+      <div class="catalog-menu__track catalog-menu__track--level-2 js-catalog-menu-track" data-level-track="2">
+        {{#each catalogMenu.level2Panels}}
         {{> components/catalog-menu-panel panel=this menu=../catalogMenu }}
         {{/each}}
 
-        <div class="catalog-menu__track catalog-menu__track--level-4 js-catalog-menu-track" data-level-track="4">
-          {{#each catalogMenu.level4Panels}}
+        <div class="catalog-menu__track catalog-menu__track--level-3 js-catalog-menu-track" data-level-track="3">
+          {{#each catalogMenu.level3Panels}}
           {{> components/catalog-menu-panel panel=this menu=../catalogMenu }}
           {{/each}}
+
+          <div class="catalog-menu__track catalog-menu__track--level-4 js-catalog-menu-track" data-level-track="4">
+            {{#each catalogMenu.level4Panels}}
+            {{> components/catalog-menu-panel panel=this menu=../catalogMenu }}
+            {{/each}}
+          </div>
         </div>
       </div>
     </div>

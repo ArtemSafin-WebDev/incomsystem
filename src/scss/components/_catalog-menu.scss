@@ -10,7 +10,7 @@
     @include mq.down(sm) {
       position: relative;
       order: 2;
-      z-index: 400;
+      z-index: auto;
       width: auto;
       height: auto;
       margin: 0 1.6rem 2.6rem;
@@ -43,6 +43,34 @@
         width: 1.5rem;
         height: 0.9rem;
         fill: currentColor;
+      }
+
+    }
+  }
+
+  .catalog-menu__modal {
+    display: contents;
+
+    @include mq.down(sm) {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 250;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100dvh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      pointer-events: none;
+      scrollbar-width: none;
+
+      .catalog-menu.is-open & {
+        pointer-events: auto;
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
       }
     }
   }
@@ -106,15 +134,16 @@
     }
 
     @include mq.down(sm) {
-      position: fixed;
+      position: relative;
       left: 0;
-      top: 19.2rem;
+      top: auto;
       right: 0;
-      bottom: 0;
       z-index: 399;
       width: 100%;
       height: auto;
-      overflow: hidden;
+      margin-top: auto;
+      min-height: 55.8rem;
+      overflow: clip;
       border-radius: 1rem 1rem 0 0;
       background-color: #fff;
       box-shadow: 0 0 7.4rem rgba(0, 0, 0, 0.15);
@@ -168,9 +197,15 @@
     @include mq.down(sm) {
       left: 0;
       width: 100%;
-      padding: 0 2.4rem 3rem;
+      height: auto;
+      overflow: visible;
+      padding: 0 2.4rem;
       border-right: 0;
       animation: catalog-panel-in 0.2s ease both;
+
+      &.is-active {
+        position: relative;
+      }
     }
   }
 
@@ -247,6 +282,7 @@
     .catalog-menu__panel--level-2,
     .catalog-menu__panel--level-3,
     .catalog-menu__panel--level-4 {
+      position: absolute;
       left: 0;
       width: 100%;
     }

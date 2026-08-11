@@ -17,7 +17,7 @@
     }
 
     @include mq.down(sm) {
-      padding-top: 17rem;
+      padding-top: 12.6rem;
     }
   }
 
@@ -99,8 +99,7 @@
     @include mq.down(sm) {
       position: relative;
       order: 3;
-      height: 40rem;
-      aspect-ratio: auto;
+      aspect-ratio: 15 / 16;
     }
   }
 
