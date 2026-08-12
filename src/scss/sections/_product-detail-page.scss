@@ -831,7 +831,10 @@
     color: #fff;
 
     @include mq.down(sm) {
-      display: none;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      width: 6rem;
+      height: 6rem;
     }
   }
 
@@ -839,6 +842,11 @@
     width: 4rem;
     height: 4rem;
     fill: currentColor;
+
+    @include mq.down(sm) {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
   }
 
   .product-cart__count {
@@ -856,6 +864,12 @@
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 1;
+
+    @include mq.down(sm) {
+      width: 2.4rem;
+      height: 2.4rem;
+      font-size: 1.2rem;
+    }
   }
 
   @media (hover: hover) and (pointer: fine) {
