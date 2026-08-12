@@ -182,12 +182,15 @@ class FeedbackModal extends Component {
   }
 
   private focusInitialElement() {
+    const designatedElement = this.dialog?.querySelector<HTMLElement>(
+      "[data-modal-initial-focus]"
+    );
     const firstInput = this.dialog?.querySelector<HTMLInputElement>(
       ".contact-us__form-input"
     );
     const firstFocusable = this.getFocusableElements()[0];
 
-    (firstInput ?? firstFocusable ?? this.dialog)?.focus();
+    (designatedElement ?? firstInput ?? firstFocusable ?? this.dialog)?.focus();
   }
 
   private keepFocusInside(event: KeyboardEvent) {

@@ -68,6 +68,117 @@ const productDetailContactUs = {
   className: "contact-us--product-detail",
 };
 
+const productCartModalFields = [
+  {
+    id: "product-cart-name",
+    name: "name",
+    label: "Имя *",
+    placeholder: "Имя",
+    type: "text",
+    autocomplete: "given-name",
+    required: true,
+  },
+  {
+    id: "product-cart-surname",
+    name: "surname",
+    label: "Фамилия *",
+    placeholder: "Фамилия",
+    type: "text",
+    autocomplete: "family-name",
+    required: true,
+  },
+  {
+    id: "product-cart-company",
+    name: "company",
+    label: "Компания *",
+    placeholder: "Компания",
+    type: "text",
+    autocomplete: "organization",
+    required: true,
+  },
+  {
+    id: "product-cart-position",
+    name: "position",
+    label: "Должность *",
+    placeholder: "Должность",
+    type: "text",
+    autocomplete: "organization-title",
+    required: true,
+  },
+  {
+    id: "product-cart-phone",
+    name: "phone",
+    label: "Телефон *",
+    placeholder: "Телефон",
+    type: "tel",
+    autocomplete: "tel",
+    required: true,
+  },
+  {
+    id: "product-cart-email",
+    name: "email",
+    label: "Электронная почта *",
+    placeholder: "mail@company.ru",
+    type: "email",
+    autocomplete: "email",
+    required: true,
+  },
+  {
+    id: "product-cart-inn",
+    name: "inn",
+    label: "ИНН",
+    placeholder: "ИНН",
+    type: "text",
+    autocomplete: "off",
+  },
+  {
+    id: "product-cart-partner-card",
+    name: "partner-card",
+    label: "Прикрепить карточку партнера",
+    placeholder: "card.pdf",
+    accept: ".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.webp",
+    isFile: true,
+  },
+];
+
+const productCartModal = {
+  id: "product-cart-modal",
+  title: "Ваша<br>заявка",
+  description: "Для отправки сообщения, пожалуйста, заполните форму.",
+  background: "/images/product-cart-modal/bg.webp",
+  formAction: "#",
+  submitText: "Отправить",
+  deleteAllText: "Удалить все",
+  policyText:
+    "Нажимая «Отправить», Вы даете свое согласие на обработку персональных данных и принимаете ",
+  policyLinkText: "условия политики конфиденциальности",
+  policyLinkHref: "https://incomsystem.ru/upload/uf/baa/pol.pdf",
+  closeAriaLabel: "Закрыть корзину",
+  fields: productCartModalFields,
+  products: [
+    {
+      id: "cpu-10-00-00-1",
+      title: "Модуль CPU.10.00.00",
+      image: "/images/abak-plc/modules/7.webp",
+      imageAlt: "Модуль CPU.10.00.00",
+      quantity: 50,
+      decreaseLabel: "Уменьшить количество Модуль CPU.10.00.00",
+      increaseLabel: "Увеличить количество Модуль CPU.10.00.00",
+      deleteLabel: "Удалить Модуль CPU.10.00.00",
+    },
+    {
+      id: "cpu-10-00-00-2",
+      title: "Модуль CPU.10.00.00",
+      image: "/images/abak-plc/modules/7.webp",
+      imageAlt: "Модуль CPU.10.00.00",
+      quantity: 50,
+      decreaseLabel: "Уменьшить количество Модуль CPU.10.00.00",
+      increaseLabel: "Увеличить количество Модуль CPU.10.00.00",
+      deleteLabel: "Удалить Модуль CPU.10.00.00",
+    },
+  ],
+};
+
 export default {
   "/product-detail.html": {
     title: "Модуль CPU.10.00.00",
@@ -75,6 +186,7 @@ export default {
     mobileMenu,
     footer,
     contactUs: productDetailContactUs,
+    productCartModal,
     engineeringCenter,
     productDetailPage: {
       title: "Модуль CPU.10.00.00",
@@ -201,6 +313,7 @@ export default {
       ],
       documentationHoverImage: "/images/documentation/check-document.webp",
       cartAriaLabel: "Перейти к заказу, товаров: 2",
+      cartHref: "#product-cart-modal",
       cartCount: 2,
     },
     otherProducts: {

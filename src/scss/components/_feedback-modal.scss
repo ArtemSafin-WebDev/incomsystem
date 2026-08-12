@@ -120,6 +120,12 @@
 
   .feedback-modal__title {
     @include type.section-title;
+
+    @include mq.down(sm) {
+      br {
+        display: none;
+      }
+    }
   }
 
   .feedback-modal--success .feedback-modal__title {
