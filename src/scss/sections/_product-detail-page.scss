@@ -309,12 +309,19 @@
   }
 
   .catalog-menu--product-detail {
+    --product-detail-sticky-offset: calc(8.07rem + 1px);
+
     grid-column: 1;
     grid-row: 1;
-    height: 76.5rem;
+    position: sticky;
+    top: var(--product-detail-sticky-offset);
+    align-self: start;
+    height: calc(100dvh - var(--product-detail-sticky-offset));
     flex-basis: auto;
 
     @include mq.down(sm) {
+      position: relative;
+      top: auto;
       width: auto;
       height: auto;
       margin: 0;
