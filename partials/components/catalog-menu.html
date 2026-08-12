@@ -1,9 +1,9 @@
-<div class="catalog-menu js-catalog-menu" data-root-panel="{{catalogMenu.rootPanelId}}">
+<div class="catalog-menu js-catalog-menu{{#if className}} {{className}}{{/if}}" data-root-panel="{{catalogMenu.rootPanelId}}">
   <button class="catalog-menu__trigger js-catalog-menu-trigger" type="button" aria-expanded="false"
     aria-controls="{{catalogMenu.dialogId}}">
     <span>{{catalogMenu.triggerLabel}}</span>
     <svg width="15" height="9" aria-hidden="true">
-      <use xlink:href="#catalog-toggle"></use>
+      <use xlink:href="{{#if catalogMenu.triggerIcon}}{{catalogMenu.triggerIcon}}{{else}}#catalog-toggle{{/if}}"></use>
     </svg>
   </button>
 

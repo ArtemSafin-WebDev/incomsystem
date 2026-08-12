@@ -12,13 +12,7 @@
                 <ul class="documentation-page__cards documentation-page__list">
                     {{#each this.items}}
                     <li class="documentation-page__cards-item">
-                        <a class="documentation-page__card" href="{{this.href}}">
-                            <span class="documentation-page__card-title">{{this.title}}</span>
-                            <span class="documentation-page__card-link">{{this.linkText}}</span>
-                            <span class="documentation-page__card-illustration" aria-hidden="true">
-                                <img src="{{../../documentationPage.hoverImage}}" alt="">
-                            </span>
-                        </a>
+                        {{> components/cards/documentation-card card=this hoverImage=../../documentationPage.hoverImage }}
                     </li>
                     {{/each}}
                 </ul>

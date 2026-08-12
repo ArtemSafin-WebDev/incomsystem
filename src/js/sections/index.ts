@@ -23,6 +23,7 @@ import OtherArticles from "../classes/components/OtherArticles";
 import OtherProjects from "../classes/components/OtherProjects";
 import PressCenter from "../classes/components/PressCenter";
 import PressCenterFilters from "../classes/components/PressCenterFilters";
+import ProductDetail from "../classes/components/ProductDetail";
 import ProductionAndServices from "../classes/components/ProductionAndServices";
 import RealisedProjects from "../classes/components/RealisedProjects";
 import SimpleSlider from "../classes/components/SimpleSlider";
@@ -138,6 +139,8 @@ export default function sections() {
     document.querySelectorAll<HTMLElement>(".js-suppliers-page");
   const catalogMenus =
     document.querySelectorAll<HTMLElement>(".js-catalog-menu");
+  const productDetails =
+    document.querySelectorAll<HTMLElement>(".js-product-detail");
 
   pressCenterSections.forEach((section) => {
     new PressCenter(section);
@@ -233,6 +236,10 @@ export default function sections() {
 
   catalogMenus.forEach((menu) => {
     new CatalogMenu(menu);
+  });
+
+  productDetails.forEach((section) => {
+    new ProductDetail(section);
   });
 
   document

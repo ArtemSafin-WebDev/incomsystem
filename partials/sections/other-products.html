@@ -1,0 +1,35 @@
+<section class="other-products js-simple-slider">
+    <div class="container">
+        <h2 class="other-products__title">{{otherProducts.title}}</h2>
+
+        <div class="other-products__slider swiper js-simple-slider-track">
+            <ul class="other-products__list swiper-wrapper" data-scroll-reveal-ignore>
+                {{#each otherProducts.items}}
+                <li class="other-products__item swiper-slide">
+                    <article class="product-page-module-card">
+                        <a class="product-page-module-card__image-link" href="{{this.href}}" aria-label="{{this.title}}">
+                            <img class="product-page-module-card__image" src="{{this.image}}" alt="{{this.imageAlt}}" loading="lazy">
+                        </a>
+
+                        <div class="product-page-module-card__content">
+                            <div>
+                                <h3 class="product-page-module-card__title">{{this.title}}</h3>
+                                <p class="product-page-module-card__text">{{this.text}}</p>
+                            </div>
+
+                            <a class="product-page-module-card__button" href="{{this.href}}">
+                                <span>{{../otherProducts.detailsText}}</span>
+                                <svg class="product-page-module-card__button-arrow" width="16" height="16" aria-hidden="true">
+                                    <use xlink:href="#arrows/details-chevron"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        {{> components/slider-navigation className="other-products__navigation" ariaLabel=otherProducts.ariaLabel prevLabel=otherProducts.prevLabel nextLabel=otherProducts.nextLabel }}
+    </div>
+</section>

@@ -188,6 +188,19 @@ const catalogPanels = [
   ...catalogCategories.flatMap(createCategoryPanels),
 ];
 
+export const abakCatalogMenu = {
+  rootPanelId: "catalog-root",
+  dialogId: "product-catalog-dialog",
+  triggerLabel: "Каталог",
+  dialogAriaLabel: "Каталог продукции АБАК",
+  closeAriaLabel: "Закрыть каталог",
+  backAriaLabel: "Вернуться на предыдущий уровень",
+  level1Panels: catalogPanels.filter((panel) => panel.level === 1),
+  level2Panels: catalogPanels.filter((panel) => panel.level === 2),
+  level3Panels: catalogPanels.filter((panel) => panel.level === 3),
+  level4Panels: catalogPanels.filter((panel) => panel.level === 4),
+};
+
 export default {
   "/abak-controllers.html": {
     ...productCategoryPage,
@@ -216,18 +229,7 @@ export default {
           },
         ],
       },
-      catalogMenu: {
-        rootPanelId: "catalog-root",
-        dialogId: "product-catalog-dialog",
-        triggerLabel: "Каталог",
-        dialogAriaLabel: "Каталог продукции АБАК",
-        closeAriaLabel: "Закрыть каталог",
-        backAriaLabel: "Вернуться на предыдущий уровень",
-        level1Panels: catalogPanels.filter((panel) => panel.level === 1),
-        level2Panels: catalogPanels.filter((panel) => panel.level === 2),
-        level3Panels: catalogPanels.filter((panel) => panel.level === 3),
-        level4Panels: catalogPanels.filter((panel) => panel.level === 4),
-      },
+      catalogMenu: abakCatalogMenu,
     },
     productIntroGallery: {
       titleId: "product-intro-gallery-title",

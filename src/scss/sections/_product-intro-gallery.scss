@@ -60,6 +60,9 @@
     overflow: hidden;
     background-color: #fff;
 
+    @include mq.down(sm) {
+      aspect-ratio: 1 / 0.7;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -71,7 +74,6 @@
       background-color: rgba(0, 0, 0, 0.4);
       pointer-events: none;
     }
-
   }
 
   .product-intro-gallery__image {

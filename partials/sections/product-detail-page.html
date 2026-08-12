@@ -1,78 +1,188 @@
-<section class="product-detail-hero">
-    <div class="container">
+<section class="product-detail js-product-detail">
+    <div class="container product-detail__breadcrumbs">
         {{> components/breadcrumbs productDetailPage.breadcrumbs }}
-
-        <h1 class="product-detail-hero__title">{{productDetailPage.title}}</h1>
     </div>
-</section>
 
-<section class="product-detail-page">
-    <div class="container">
-        <article class="product-detail-page__content article-content">
-            <h2>{{productDetailPage.lead}}</h2>
+    <div class="product-detail__layout">
+        <div class="product-detail__mobile-navigation">
+            <a class="product-detail__back" href="{{productDetailPage.backHref}}" aria-label="{{productDetailPage.backAriaLabel}}">
+                <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="#catalog-back"></use>
+                </svg>
+            </a>
 
-            {{#each productDetailPage.paragraphs}}
-            <p>{{this}}</p>
-            {{/each}}
+            {{> components/catalog-menu catalogMenu=productDetailPage.catalogMenu className="catalog-menu--product-detail" }}
+        </div>
 
-            <nav class="article-snippet product-detail-page__topics" aria-label="Материалы раздела">
-                <ul class="product-detail-page__topics-list">
-                    {{#each productDetailPage.topics}}
-                    <li class="product-detail-page__topics-item js-accordion">
-                        <button class="product-detail-page__topics-button js-accordion-btn"
-                            type="button"
-                            id="{{this.id}}-button"
-                            aria-expanded="false"
-                            aria-controls="{{this.id}}-panel">
-                            <span>{{this.label}}</span>
-                            <span class="product-detail-page__topics-icon" aria-hidden="true">
-                                <svg width="12" height="12" aria-hidden="true">
-                                    <use xlink:href="#arrows/right"></use>
-                                </svg>
-                            </span>
-                        </button>
+        <div class="product-detail__main">
+            <div class="product-detail__intro">
+                <div class="product-detail__media">
+                    <img class="product-detail__image" src="{{productDetailPage.image}}" alt="{{productDetailPage.imageAlt}}">
+                </div>
 
-                        <div class="product-detail-page__topics-dropdown js-accordion-dropdown"
-                            id="{{this.id}}-panel"
-                            role="region"
-                            aria-labelledby="{{this.id}}-button"
-                            aria-hidden="true">
-                            <div class="product-detail-page__topics-dropdown-inner">
-                                <div class="product-detail-page__topics-content">
-                                    {{#each this.paragraphs}}
-                                    <p>{{this}}</p>
-                                    {{/each}}
-                                </div>
-                            </div>
+                <div class="product-detail__content">
+                    <div class="product-detail__heading">
+                        <h1 class="product-detail__title">{{productDetailPage.title}}</h1>
+                        <p class="product-detail__subtitle">{{productDetailPage.subtitle}}</p>
+                    </div>
+
+                    <p class="product-detail__description">{{productDetailPage.description}}</p>
+
+                    <form class="product-order" id="product-order" action="{{productDetailPage.order.action}}" method="post">
+                        <div class="product-order__quantity">
+                            <button class="product-order__quantity-button js-product-quantity-decrease" type="button" aria-label="{{productDetailPage.order.decreaseLabel}}">−</button>
+                            <input class="product-order__quantity-input js-product-quantity-input" type="number" name="quantity" min="1" value="{{productDetailPage.order.quantity}}" aria-label="Количество товара">
+                            <button class="product-order__quantity-button js-product-quantity-increase" type="button" aria-label="{{productDetailPage.order.increaseLabel}}">+</button>
                         </div>
-                    </li>
-                    {{/each}}
-                </ul>
-            </nav>
 
-            <div class="article-snippet product-detail-gallery js-simple-slider" aria-label="{{productDetailPage.gallery.ariaLabel}}">
-                <div class="product-detail-gallery__slider swiper js-simple-slider-track">
-                    <ul class="product-detail-gallery__list swiper-wrapper">
-                        {{#each productDetailPage.gallery.images}}
-                        <li class="product-detail-gallery__item swiper-slide">
-                            <img class="product-detail-gallery__image" src="{{this.src}}" alt="{{this.alt}}" loading="lazy">
+                        <button class="product-order__submit" type="submit">
+                            <span>{{productDetailPage.order.submitText}}</span>
+                            <svg class="product-order__submit-arrow" width="16" height="16" aria-hidden="true">
+                                <use xlink:href="#arrows/details-chevron"></use>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="product-detail__tabs" role="tablist" aria-label="Информация о товаре">
+                {{#each productDetailPage.tabs}}
+                <button class="product-detail__tab js-product-detail-tab{{#if @first}} active{{/if}}"
+                    type="button"
+                    role="tab"
+                    id="{{this.id}}-tab"
+                    aria-controls="{{this.id}}-panel"
+                    aria-selected="{{#if @first}}true{{else}}false{{/if}}"
+                    tabindex="{{#if @first}}0{{else}}-1{{/if}}">
+                    {{this.label}}
+                </button>
+                {{/each}}
+            </div>
+
+            <div class="product-detail__panels">
+                <section class="product-detail__panel js-product-detail-panel active"
+                    id="product-characteristics-panel"
+                    role="tabpanel"
+                    aria-labelledby="product-characteristics-tab"
+                    aria-hidden="false">
+                    <h2 class="product-detail__panel-title">{{productDetailPage.specifications.title}}</h2>
+
+                    <div class="product-specifications">
+                        <div class="product-specifications__scroll">
+                            <table class="product-specifications__table product-specifications__table--two-columns">
+                                <thead>
+                                    <tr>
+                                        {{#each productDetailPage.specifications.basic.headers}}
+                                        <th scope="col">{{this}}</th>
+                                        {{/each}}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each productDetailPage.specifications.basic.rows}}
+                                    <tr>
+                                        {{#each this}}
+                                        <td>{{this}}</td>
+                                        {{/each}}
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="product-specifications__scroll">
+                            <table class="product-specifications__table product-specifications__table--two-columns">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2" scope="colgroup">{{productDetailPage.specifications.currentConversion.title}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each productDetailPage.specifications.currentConversion.rows}}
+                                    <tr>
+                                        {{#each this}}
+                                        <td>{{this}}</td>
+                                        {{/each}}
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="product-specifications__scroll">
+                            <table class="product-specifications__table product-specifications__table--three-columns">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3" scope="colgroup">{{productDetailPage.specifications.indication.title}}</th>
+                                    </tr>
+                                    <tr>
+                                        {{#each productDetailPage.specifications.indication.headers}}
+                                        <th scope="col">{{this}}</th>
+                                        {{/each}}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each productDetailPage.specifications.indication.rows}}
+                                    <tr>
+                                        {{#each this}}
+                                        <td>{{this}}</td>
+                                        {{/each}}
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="product-detail__panel js-product-detail-panel"
+                    id="product-documents-panel"
+                    role="tabpanel"
+                    aria-labelledby="product-documents-tab"
+                    aria-hidden="true">
+                    <h2 class="product-detail__panel-title">{{productDetailPage.documents.title}}</h2>
+                    <ul class="documentation-page__cards product-detail__documents">
+                        {{#each productDetailPage.documents.items}}
+                        <li>
+                            {{> components/cards/documentation-card card=this hoverImage=@root.productDetailPage.documentationHoverImage }}
                         </li>
                         {{/each}}
                     </ul>
-                </div>
+                </section>
 
-                {{> components/slider-navigation className="product-detail-gallery__navigation" ariaLabel=productDetailPage.gallery.ariaLabel prevLabel=productDetailPage.gallery.prevLabel nextLabel=productDetailPage.gallery.nextLabel }}
+                <section class="product-detail__panel js-product-detail-panel"
+                    id="product-model-panel"
+                    role="tabpanel"
+                    aria-labelledby="product-model-tab"
+                    aria-hidden="true">
+                    <h2 class="product-detail__panel-title">{{productDetailPage.modelDocuments.title}}</h2>
+                    <ul class="documentation-page__cards product-detail__documents">
+                        {{#each productDetailPage.modelDocuments.items}}
+                        <li>
+                            {{> components/cards/documentation-card card=this hoverImage=@root.productDetailPage.documentationHoverImage }}
+                        </li>
+                        {{/each}}
+                    </ul>
+                </section>
             </div>
 
-            <div class="article-snippet article-snippet--company">
-                <div class="article-snippet__logo" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
-                        <path d="M30.2327 21.5627C24.5795 26.6098 20.8541 32.1109 20.8541 40C20.8541 45.3946 22.6785 49.407 25.6306 53.163L38.5188 43.4431V21.5627H46.2916V58.6749H38.5188V52.8092L30.7425 58.6699L30.7442 58.6749H20.2409C15.792 53.6474 13.0813 47.139 13.0812 40C13.0812 32.9721 15.7059 26.5567 20.0326 21.5627H30.2327Z" fill="#006FDD"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M41.3627 0C58.326 5.39664e-05 72.8902 9.88301 79.2717 24.0147C79.4815 24.4478 79.7091 24.9184 79.9492 25.4627C79.9628 25.4956 79.9863 25.5114 80 25.5446L79.9458 25.5872L79.9492 25.5905L73.6177 30.5356V30.5307L61.3495 40.1179L79.646 54.4161L79.6307 54.457L79.8509 54.6306C73.8089 69.4781 58.8636 79.9999 41.3627 80C18.5204 80 0.000114433 62.0915 0 40C0 17.9102 18.5203 0 41.3627 0ZM41.3627 7.38739C22.7659 7.38739 7.63566 22.0159 7.63566 40C7.63578 57.9858 22.766 72.6143 41.3627 72.6143C53.7502 72.6142 64.5316 66.2602 70.3758 56.6634L56.9744 46.1917V58.6749H49.2016V21.5627H56.9744V34.0442L70.4334 23.5266C64.5757 13.88 53.7451 7.38744 41.3627 7.38739Z" fill="#006FDD"/>
-                    </svg>
-                </div>
-                <p>{{productDetailPage.companySnippet}}</p>
+            <div class="product-detail__contacts">
+                {{#each productDetailPage.contacts}}
+                <article class="product-detail-contact">
+                    <h2 class="product-detail-contact__title">{{this.title}}</h2>
+                    <div class="product-detail-contact__links">
+                        <a class="product-detail-contact__link product-detail-contact__link--phone" href="{{this.phoneHref}}">{{this.phone}}</a>
+                        <a class="product-detail-contact__link" href="{{this.emailHref}}">{{this.email}}</a>
+                    </div>
+                </article>
+                {{/each}}
             </div>
-        </article>
+        </div>
     </div>
+
+    <a class="product-cart" href="#product-order" aria-label="{{productDetailPage.cartAriaLabel}}">
+        <svg class="product-cart__icon" width="40" height="40" aria-hidden="true">
+            <use xlink:href="#cart"></use>
+        </svg>
+        <span class="product-cart__count">{{productDetailPage.cartCount}}</span>
+    </a>
 </section>

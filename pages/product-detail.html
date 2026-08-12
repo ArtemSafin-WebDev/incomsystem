@@ -5,13 +5,13 @@
   {{> layout/meta }}
 </head>
 
-<body>
+<body class="product-detail-page-body">
   {{> layout/header }}
   {{> components/mobile-menu mobileMenu=mobileMenu }}
   <main class="page-main">
     {{> sections/product-detail-page productDetailPage=productDetailPage }}
+    {{> sections/other-products otherProducts=otherProducts }}
     {{> sections/contact-us contactUs=contactUs }}
-    {{> sections/other-categories otherCategories=otherCategories }}
     {{> sections/engineering-center engineeringCenter=engineeringCenter }}
   </main>
   {{> layout/footer }}

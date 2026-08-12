@@ -2,9 +2,32 @@
 
 @layer components {
   .catalog-menu {
+    --catalog-menu-grid-gap: 2rem;
+    --catalog-menu-grid-column-width: calc(
+      (
+          100vw - (var(--container-padding) * 2) -
+            (var(--catalog-menu-grid-gap) * 7)
+        ) / 8
+    );
+    --catalog-menu-level-1-width: calc(
+      var(--container-padding) + var(--catalog-menu-grid-column-width)
+    );
+    --catalog-menu-remaining-width: calc(
+      100vw - var(--catalog-menu-level-1-width)
+    );
+    --catalog-menu-level-2-width: calc(
+      var(--catalog-menu-remaining-width) / 46 * 10
+    );
+    --catalog-menu-level-3-width: calc(
+      var(--catalog-menu-remaining-width) / 46 * 17
+    );
+    --catalog-menu-level-4-width: calc(
+      var(--catalog-menu-remaining-width) / 46 * 19
+    );
+
     position: relative;
     z-index: 4;
-    flex: 0 0 17.8092%;
+    flex: 0 0 var(--catalog-menu-level-1-width);
     pointer-events: none;
 
     @include mq.down(sm) {
@@ -122,15 +145,22 @@
     }
 
     .catalog-menu[data-active-level="2"] &::before {
-      width: 200%;
+      width: calc(
+        var(--catalog-menu-level-1-width) +
+          var(--catalog-menu-level-2-width)
+      );
     }
 
     .catalog-menu[data-active-level="3"] &::before {
-      width: 369.8413%;
+      width: calc(
+        var(--catalog-menu-level-1-width) +
+          var(--catalog-menu-level-2-width) +
+          var(--catalog-menu-level-3-width)
+      );
     }
 
     .catalog-menu[data-active-level="4"] &::before {
-      width: 561.5079%;
+      width: 100vw;
     }
 
     @include mq.down(sm) {
@@ -170,6 +200,7 @@
       &::before {
         display: none;
       }
+
     }
   }
 
@@ -247,15 +278,15 @@
   }
 
   .catalog-menu__track--level-2 {
-    width: 100%;
+    width: var(--catalog-menu-level-2-width);
   }
 
   .catalog-menu__track--level-3 {
-    width: 169.8413%;
+    width: var(--catalog-menu-level-3-width);
   }
 
   .catalog-menu__track--level-4 {
-    width: 112.8505%;
+    width: var(--catalog-menu-level-4-width);
   }
 
   @include mq.up(sm) {
